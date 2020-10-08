@@ -8,15 +8,15 @@ include 'inc/sidebar.php';?>
 <div class="content">
     <?php
     if(!isset($_GET['page']) || $_GET['page'] == ''){
-        $page = 'home'; //If no page specified
+        $page = 'nieuws'; //If no page specified
     } else {
         $page = $_GET['page'];
     }
 
     switch($page)
         {
-            case 'home':
-                include 'pages/home.php'; //file path of your home page
+            case 'nieuws':
+                include 'pages/nieuws.php'; //file path of your home/nieuws page
                 break;
             case 'vakken':
                 include 'pages/vakken.php';

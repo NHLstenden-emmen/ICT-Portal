@@ -1,5 +1,5 @@
 <?php
-// head and nav information
+// head and nav information 
 $PageTitle="New Page Title";
 include 'inc/header.php';
 include 'inc/nav.php';

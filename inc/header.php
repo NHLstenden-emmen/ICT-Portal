@@ -1,5 +1,5 @@
 <!doctype html>
-<html lagn="nl">
+<html lang="nl">
     <head>
         <!-- normal meta data -->
         <meta charset="UTF-8">

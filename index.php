@@ -1,8 +1,14 @@
 <?php
 // head and nav information
+
+include 'inc/mysql.php';
 include 'inc/header.php';
 include 'inc/nav.php';
-include 'inc/sidebar.php';?>
+include 'inc/sidebar.php';
+
+$DB = new MySQL;
+
+?>
 <!-- the body -->
 <div class="content">
     <?php
@@ -14,6 +20,9 @@ include 'inc/sidebar.php';?>
 
     switch($page)
         {
+            case 'databasetest':
+                include 'pages/databasetest.php'; //file path of your home/nieuws page
+                break;
             case 'nieuws':
                 include 'pages/nieuws.php'; //file path of your home/nieuws page
                 break;
@@ -44,6 +53,3 @@ include 'inc/sidebar.php';?>
     ?>
 </div>
 <?php include 'inc/footer.php';?>
-
-todo title
-php connectie

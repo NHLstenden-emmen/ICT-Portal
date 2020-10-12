@@ -1,0 +1,64 @@
+.login .form{
+    margin: auto;
+    background: white;  
+    display: grid; 
+    padding: 55px;
+    width: 60%;
+    position: relative;
+    grid-template-columns: 15px auto 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.login .form:after{
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: 10%;
+  width: 90%;
+  border-top: 20px solid lightseagreen;
+}
+
+.login .form:after{
+    content: '';
+    position: absolute;
+    top: -20px;
+    height: 90%;
+    border-left: 20px solid lightseagreen;
+  }
+
+.login input{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+    margin: 8px 0;
+    width: 30vw;
+}
+
+.login input[type=submit]{
+    width: fit-content;
+    margin: auto;
+    padding: 12px 35px;
+}
+
+.formulier{
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 60vh 60vh 60vh;
+    display: grid;
+}
+
+.FormLeft{
+    width: 20vw;
+    height: 50vh;
+    display: grid;
+}
+
+.FormRight{
+    width: 20vw;
+    height: 50vh;
+    display: grid;
+}
+
+form{
+    height: auto;
+}
+

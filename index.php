@@ -8,10 +8,6 @@ include 'inc/sidebar.php';
 
 $DB = new MySQL;
 
-?>
-<!-- the body -->
-<div class="content">
-    <?php
     if(!isset($_GET['page']) || $_GET['page'] == ''){
         $page = 'nieuws'; //If no page specified
     } else {
@@ -50,6 +46,7 @@ $DB = new MySQL;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
-    ?>
-</div>
-<?php include 'inc/footer.php';?>
+    
+include 'inc/footer.php';
+
+?>

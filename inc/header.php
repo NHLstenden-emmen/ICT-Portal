@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/main/topnav.css">
         <link rel="stylesheet" href="css/main/sidebar.css">
         <link rel="stylesheet" href="css/main/footer.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
         <!-- link page spesific stylesheets -->
         <?php
             if(!isset($_GET['page']) || $_GET['page'] == ''){
@@ -57,3 +59,16 @@
         ?>
     </head>
     <body>
+
+<?php $activePage = basename($_SERVER['REQUEST_URI'], ".php");?>
+
+<nav class="navbar">
+    <a href="/index" class="logo"><img src="css/images/default_logo_white.png" alt="ICT Portal"></a>
+    <ul class="nav-links">
+      <li class="nav-item <?= ($activePage == 'nieuws') ? 'active':''; ?>"><a href="/nieuws">Nieuws</a></li>
+      <li class="nav-item <?= ($activePage == 'vakken') ? 'active':''; ?>"><a href="/vakken">Vakken</a></li>
+      <li class="nav-item <?= ($activePage == 'docenten') ? 'active':''; ?>"><a href="/docenten">Docenten</a></li>
+      <li class="nav-item <?= ($activePage == 'contact') ? 'active':''; ?>"><a href="/contact">Contact</a></li>
+      <li class="nav-item <?= ($activePage == 'login') ? 'active':''; ?>"><a href="/login">Login</a></li>
+    </ul>
+</nav>

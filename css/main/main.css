@@ -16,3 +16,18 @@
     */
 }
 
+.weatherReport {
+    border: #E0E0E0 1px solid;
+    padding: 20px;
+    width: 300px;
+}
+
+.weather-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.weather-forecast {
+    font-size: 1.2em;
+    font-weight: bold;
+}

@@ -1,10 +1,20 @@
 
 <main class="content">
-    <div class="pageTitle"><?= isset($pageTitle) ? $pageTitle : "ICT Portal"?></div>
-    <div class="pageSubTitle">Bla bla bla.</div>
-    <div class="inputSearchField">
-      <form>
-        <input type="search" placeholder="Zoek een ..."> 
-      </form>
+  <div class="subTitle">Test</div>
+		<div class = "contentBlock-grid">
+      <div class='contentBlock' style="width: 300px; height: 300px;">
+        <div class='contentBlock-side' style="width: 700px; height: 300px;"></div>
+          <div class='contentBlock-content' style="width: 700px; height: 300px;">
+            <div class='contentBlock-title'>Hallo</div>
+            <div class='contentBlock-text'>test</div>
+
+            <div class='contentBlock-info'>
+              <div class='contentBlock-date'>vandaag om 15:09</div>
+              <div class='contentBlock-link'><a href="">Lees meer</a></div>
+          </div>
+          </div>
+
+        </div>
     </div>
+  </div>
 </main>

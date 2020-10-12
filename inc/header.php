@@ -60,7 +60,6 @@
     </head>
     <body>
 
-<?php $activePage = basename($_SERVER['REQUEST_URI'], ".php");?>
 
 <nav class="navbar">
     <a href="/index" class="logo"><img src="css/images/default_logo_white.png" alt="ICT Portal"></a>
@@ -72,3 +71,14 @@
       <li class="nav-item <?= ($activePage == 'login') ? 'active':''; ?>"><a href="/login">Login</a></li>
     </ul>
 </nav>
+<div class="jumbotron">
+    <div class="jumbotron-content">
+        <div class="pageTitle"><?= isset($activePage) ? ucfirst($activePage) : "ICT Portal" ?></div>
+            <div class="pageSubTitle">Bla bla bla.</div>
+            <div class="inputSearchField">
+            <form>
+                <input type="search" placeholder="Zoek een ..."> 
+            </form>
+        </div>
+    </div>
+</div>

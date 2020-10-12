@@ -1,6 +1,8 @@
 <?php
 // head and nav information
 
+$activePage = basename($_SERVER['REQUEST_URI'], ".php");
+
 include 'inc/mysql.php';
 include 'inc/header.php';
 include 'inc/nav.php';
@@ -9,12 +11,12 @@ include 'inc/sidebar.php';
 $DB = new MySQL;
 
     if(!isset($_GET['page']) || $_GET['page'] == ''){
-        $page = 'nieuws'; //If no page specified
+        $pageTitle = 'nieuws'; //If no page specified
     } else {
-        $page = $_GET['page'];
+        $pageTitle = $_GET['page'];
     }
 
-    switch($page)
+    switch($pageTitle)
         {
             case 'databasetest':
                 include 'pages/databasetest.php'; //file path of your home/nieuws page

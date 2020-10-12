@@ -26,10 +26,10 @@ if ($result->num_rows > 0) {
     setcookie("auth", auth(128), time()+3600, '/; samesite=strict');
     setcookie("domain", $domain, time()+3600, '/; samesite=strict');
     
-    header("location:/../nieuws.php");
+    header("location:../docenten.php");
   }
 } else { //if password and/or username are incorrect, send to login page
-    header("location:/../login.php");
+    header("location:../login.php");
 }
 $conn->close(); //Close connection
 

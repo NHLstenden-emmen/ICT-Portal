@@ -1,6 +1,6 @@
 <div class="login">
   <!-- Login Formulier -->
-  <form action="/login/LoginHandler.php" method="POST"> 
+  <form action="login/LoginHandler.php" method="POST"> 
     <label for="gebruikersnaam">Gebruikersnaam:</label><br>
     <input type="text" id="gebruikersnaam" name="gebruikersnaam" value=""><br>
     <label for="wachtwoord">Last name:</label><br>

@@ -1,8 +1,7 @@
 <?php
-//logout.php
-setcookie("user", "", time()-3600);
+setcookie("user", "", time()-3600); //Remove cookie
 setcookie("auth", "", time()-3600);
 setcookie("domain", "", time()-3600);
-header("location:index.php");
 
+header("location:index.php"); //Goto login page
 ?>

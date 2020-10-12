@@ -24,6 +24,9 @@ include 'inc/sidebar.php';?>
             case 'docenten':
                 include 'pages/docenten.php';
                 break;
+            case 'login':
+                include 'pages/Login/index.php';
+                break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }

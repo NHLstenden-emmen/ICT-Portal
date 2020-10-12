@@ -35,6 +35,9 @@
                     case 'docenten':?>
                         <link rel="stylesheet" href="css/pages/docenten.css">
                         <?php break;
+                    case 'login':?>
+                        <link rel="stylesheet" href="css/pages/login.css">
+                        <?php break;
                     default:?>
                     <link rel="stylesheet" href="css/pages/404.css">
                     <?php

@@ -2,6 +2,6 @@
 //if no cookie specified in sent-headers
 if(!isset($_COOKIE["user"]) || !isset($_COOKIE["auth"]) || !isset($_COOKIE["domain"]))
 {   
-    header("location:index.php"); 
+    header("location:login.php"); 
 }
 ?>

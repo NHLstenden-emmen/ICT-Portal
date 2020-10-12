@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
     header("location:/../nieuws.php");
   }
 } else { //if password and/or username are incorrect, send to login page
-    header("location:../login.php");
+    header("location:/../login.php");
 }
 $conn->close(); //Close connection
 

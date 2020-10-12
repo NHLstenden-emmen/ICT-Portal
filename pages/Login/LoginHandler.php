@@ -1,49 +1,36 @@
 <?php
-
+//Get values from POST
 $usernameForm = $_POST["gebruikersnaam"];
-$passwordForm = md5($_POST["wachtwoord"]);
+$passwordForm = md5($_POST["wachtwoord"]); //Turn into MD5 hash
 
-//echo $usernameForm.$passwordForm;
-$domain = 'localhost';
+include('config.php'); //Database connection
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "project";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
-function Auth($length) {
+function Auth($length) { //Function to generate a random authentication key
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
+        $randomString .= $characters[rand(0, $charactersLength - 1)]; //Get random INT, generate a letter and add it to string
     }
-    return $randomString;
+    return $randomString; //Return String value
 }
 
-
-$sql = "SELECT * FROM users WHERE gebruikersnaam = '$usernameForm' AND wachtwoord = '$passwordForm'";
+$sql = "SELECT * FROM users WHERE gebruikersnaam = '$usernameForm' AND wachtwoord = '$passwordForm'"; //Select where username and password are equal to form input
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
+
+    //Add cookies to header()
     setcookie("user", $usernameForm, time()+3600, '/; samesite=strict');
     setcookie("auth", auth(128), time()+3600, '/; samesite=strict');
     setcookie("domain", $domain, time()+3600, '/; samesite=strict');
     
     header("location:pagina.php");
   }
-} else {
-  echo "Geen resulaten";
+} else { //if password and/or username are incorrect, send to login page
+    header("location:index.php");
 }
-$conn->close();
+$conn->close(); //Close connection
 
 ?>

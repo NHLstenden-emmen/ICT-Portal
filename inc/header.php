@@ -35,8 +35,20 @@
                     case 'docenten':?>
                         <link rel="stylesheet" href="css/pages/docenten.css">
                         <?php break;
+                    case 'contact':?>
+                        <link rel="stylesheet" href="css/pages/contact.css">
+                        <?php break;
                     case 'login':?>
                         <link rel="stylesheet" href="css/pages/login.css">
+                        <?php break;
+                    case 'gebruikers':?>
+                        <link rel="stylesheet" href="css/pages/gebruikers.css">
+                        <?php break;
+                    case 'uploadNieuws':?>
+                        <link rel="stylesheet" href="css/pages/uploadNieuws.css">
+                        <?php break;
+                    case 'docentenEdit':?>
+                        <link rel="stylesheet" href="css/pages/docentenEdit.css">
                         <?php break;
                     default:?>
                     <link rel="stylesheet" href="css/pages/404.css">

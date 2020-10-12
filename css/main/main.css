@@ -2,8 +2,32 @@
     margin: 0;
     padding: 0;
     
-    --primaryColor: red;
+    --lighterPrimaryColor: #54A7AB;
+    --lightPrimaryColor: #318C91;
+    --primaryColor: #188287;
+    --darkPrimaryColor: #0B696D;
+    --darkerPrimaryColor: #015256;
+    --dark: #131313;
+    --tekstColor: #FFFFFF;
     
-    /* var(--darkPrimaryColor); */
+    /* 
+        this is how you can call a primary color/var
+        var(--primaryColor); 
+    */
 }
 
+.weatherReport {
+    border: #E0E0E0 1px solid;
+    padding: 20px;
+    width: 300px;
+}
+
+.weather-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.weather-forecast {
+    font-size: 1.2em;
+    font-weight: bold;
+}

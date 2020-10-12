@@ -1,6 +1,6 @@
 <?php
 // head and nav information
-$PageTitle="New Page Title";
+
 include 'inc/header.php';
 include 'inc/nav.php';
 include 'inc/sidebar.php';?>

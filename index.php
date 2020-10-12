@@ -1,5 +1,6 @@
 <?php
 // head and nav information
+
 include 'inc/header.php';
 include 'inc/nav.php';
 include 'inc/sidebar.php';?>

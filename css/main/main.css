@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Fonts */
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +11,8 @@
     --darkerPrimaryColor: #015256;
     --dark: #131313;
     --tekstColor: #FFFFFF;
+
+    font-family: 'Roboto', sans-serif; /* Default font */
     
     /* 
         this is how you can call a primary color/var

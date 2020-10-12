@@ -4,7 +4,7 @@
     // The location to get the data from
     $cityName = "Emmen";
     // Open Weather api url
-    $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=NL&appid=" . $apiKey;
+    $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=&lang=NL&appid=" . $apiKey;
     // Create the call for the api
     $curl = curl_init();
     // Set the options for a CURL
@@ -16,10 +16,18 @@
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     // saves the response in a var
     $response = curl_exec($curl);
+        
+    
     // closes the connection
     curl_close($curl);
     // converts the response into a PHP variable
     $data = json_decode($response);
+
+    // A check if the api works as it should so you dont get a masive error
+    if ($data->cod != 200) {
+        echo("Er was een fout met het ophalen van de data van de weers api");
+    } else {
+
     // get the current time
     $currentTime = time();
 ?>
@@ -50,3 +58,6 @@
         </div>
     </div>
 </div>
+<?php
+}
+?>

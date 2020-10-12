@@ -44,6 +44,3 @@ include 'inc/sidebar.php';?>
     ?>
 </div>
 <?php include 'inc/footer.php';?>
-
-todo title
-php connectie

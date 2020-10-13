@@ -16,8 +16,8 @@
         <link rel="stylesheet" href="css/main/topnav.css">
         <link rel="stylesheet" href="css/main/sidebar.css">
         <link rel="stylesheet" href="css/main/footer.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <!-- link page spesific stylesheets -->
         <?php
             if(!isset($_GET['page']) || $_GET['page'] == ''){
@@ -64,21 +64,46 @@
 <nav class="navbar">
     <a href="/index" class="logo"><img src="css/images/default_logo_white.png" alt="ICT Portal"></a>
     <ul class="nav-links">
-      <li class="nav-item <?= ($activePage == 'nieuws') ? 'active':''; ?>"><a href="/nieuws">Nieuws</a></li>
-      <li class="nav-item <?= ($activePage == 'vakken') ? 'active':''; ?>"><a href="/vakken">Vakken</a></li>
-      <li class="nav-item <?= ($activePage == 'docenten') ? 'active':''; ?>"><a href="/docenten">Docenten</a></li>
-      <li class="nav-item <?= ($activePage == 'contact') ? 'active':''; ?>"><a href="/contact">Contact</a></li>
-      <li class="nav-item <?= ($activePage == 'login') ? 'active':''; ?>"><a href="/login">Login</a></li>
+      <li class="nav-item <?= ($activePage == 'nieuws') ? 'active':''; ?>" onclick="window.location.href='/nieuws'">Nieuws</li>
+      <li class="nav-item <?= ($activePage == 'vakken') ? 'active':''; ?>" onclick="window.location.href='/vakken'">Vakken</li>
+      <li class="nav-item <?= ($activePage == 'docenten') ? 'active':''; ?>" onclick="window.location.href='/docenten'">Docenten<li>
+      <li class="nav-item <?= ($activePage == 'contact') ? 'active':''; ?>" onclick="window.location.href='/contact'">Contact</li>
+      <li class="nav-item <?= ($activePage == 'login') ? 'active':''; ?>" onclick="window.location.href='/login'">Login</li>
     </ul>
 </nav>
 <div class="jumbotron">
     <div class="jumbotron-content">
         <div class="pageTitle"><?= isset($activePage) ? ucfirst($activePage) : "ICT Portal" ?></div>
-            <div class="pageSubTitle">Bla bla bla.</div>
+            <div class="pageSubTitle">Laatst bijgewerkt om 15:00</div>
             <div class="inputSearchField">
-            <form>
-                <input type="search" placeholder="Zoek een ..."> 
+            <form>  
+
+                <div class="inputWithIcon">
+  <input type="text" placeholder="Zoek een trefwoord">
+  <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+</div>
+
             </form>
         </div>
     </div>
 </div>
+
+
+<!--
+<button onclick="myFunction()">Toggle dark mode</button>
+
+<style>
+    body {
+  background-color: white;
+  color: black;
+}
+
+
+}
+</style>
+<script>
+    function myFunction() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+</script>-->

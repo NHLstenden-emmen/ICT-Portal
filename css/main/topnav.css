@@ -1,5 +1,5 @@
 /* Navbar & Buttons */
-nav {
+body > nav.navbar {
     height: 113px;
     width: 100%;
     background-color: #4ac4b3;
@@ -7,19 +7,20 @@ nav {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px 1px rgba(0,0,0,0.25);
-  }
-  
-.navbar > .logo {
+    transition: 0.3s;
+}
+
+body > .navbar > .logo {
     display: inline-block;
     margin-left: 278px;
 }
   
-.navbar > .nav-links {
+body > .navbar > .nav-links {
     list-style: none;
     display: flex;
 }
 
-.navbar .nav-links > .nav-item  {
+body > .navbar .nav-links > .nav-item  {
   transition: 0.3s;
   margin-right: 20px;
   display: inline-block;
@@ -28,24 +29,27 @@ nav {
   color: white;
 }
 
-.navbar .nav-links > .nav-item:hover {
+body > .navbar .nav-links > .nav-item:hover {
   background: #318C91 radial-gradient(circle, transparent 1%, #318C91 1%) center/15000%;
   box-shadow: inset 0 -5px 0 0 white;
 }
 
-.navbar .nav-links > .nav-item:active {
+body > .navbar .nav-links > .nav-item:active {
   background-color: #6eb9f7;
   background-size: 100%;
   transition: background 0s;
 }
 
-.navbar .nav-links > .nav-item.active {
+body > .navbar .nav-links > .nav-item.active {
   box-shadow: inset 0 -5px 0 0 white;
 }
+/* END NAVBAR */
 
-/* Jumbotron & Titel */
+/* Jumbotron & Titel 
 .jumbotron {
-  background-image: url("/css/images/jumbotron.png");
+  opacity: 0.6;
+  z-index: 1;
+  background-image: url("/css/images/jumbotron.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -53,22 +57,47 @@ nav {
   box-shadow: 0 2px 4px 1px rgba(0,0,0,0.25);
 }
 .jumbotron-content { 
+  z-index: 2;
   margin-top: 120px;
   position: absolute;
   margin-left: 278px;
 }
+*/
 
+body > .jumbotron {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
 
-.jumbotron-content > div.pageTitle {
+body > .jumbotron img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+body > .jumbotron > .jumbotron-content { 
+  margin-top: 120px;
+  margin-left: 278px;
+  position: relative;
+  z-index: 2;
+}
+
+body > .jumbotron > .jumbotron-content > div.pageTitle {
   opacity: 1 !important;
   font-size: 60px;
   font-weight: 700;
 }
 
-.jumbotron-content > div.pageSubTitle {
-  margin-top: 10px;
+body > .jumbotron > .jumbotron-content > div.pageSubTitle {
+  margin-top: 10px; 
 }
 
-.jumbotron-content > div.inputSearchField {
+body > .jumbotron > .jumbotron-content > div.inputSearchField {
   margin-top: 15px;
+  width: 300px;
 }

@@ -1,0 +1,90 @@
+/* Navbar & Buttons */
+body.darkmode {
+  background-color: #484c4c;
+  color: white;
+}
+
+
+body.darkmode > nav.navbar {
+  height: 113px;
+  width: 100%;
+  background-color: #2e3131;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 1px rgba(0,0,0,0.25);
+}
+
+body.darkmode > .navbar .nav-links > .nav-item:hover {
+  background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%) center/15000%;
+}
+
+body.darkmode > .navbar .nav-links > .nav-item:active {
+  background-color: #575a5a;
+}
+
+body.darkmode > .navbar .nav-links > .nav-item.active {
+  box-shadow: inset 0 -5px 0 0 white;
+}
+/* END NAVBAR */
+
+body.darkmode > .jumbotron img {
+  filter: brightness(0.5);
+}
+
+/*DARKMODE INPUT */
+
+input[type="text"].darkmode {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+
+}
+
+input[type="text"].darkmode:focus {
+  color: rgb(240, 240, 240);
+  border-color: #318C91;
+}
+
+input[type="text"].darkmode::placeholder {
+  color: #ffffff;
+}
+input[type="text"].darkmode:focus::placeholder {
+  color: #ffffff;
+}
+
+.inputWithIcon.darkmode i {
+  color: #ffffff !important;
+}
+
+
+/*BUTTONS */
+button.darkmode {
+  background-color: #2e3131;
+  border: none;
+  border-radius: 2px;
+  padding: 12px 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;  
+  outline: none;
+}
+
+button.darkmode:hover {
+  background-color: #575a5a;
+}
+
+
+/*CONTENTBLOCKS*/
+body.darkmode > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-side {
+  background-color: #318C91;
+} 
+
+body.darkmode > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content {
+  background-color: #3c3a3a;
+  color: white;
+}
+
+body.darkmode > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content > .contentBlock-text {
+  color: white;
+}

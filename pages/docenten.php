@@ -96,17 +96,19 @@
 		<div class = "docentenvakken">
 			
 			<?php
-			foreach ($docentenData as $docent) {
+			foreach ($docentenData as $docent) { //Herhaalt totdat alle docenten hun eigen vierkantje hebben
 				echo "
-				<div class = 'docentenvak' id= '$docent[docent_id]'>
-					<div class = 'green'>
-					</div>
-					<div class = 'white'>
-						<img class='docentenfoto' src='Images/$docent[foto]' alt='Foto van $docent[voornaam]'>
-						<p><b>$docent[voornaam] $docent[achternaam] </b></p>
-						<p>$docent[wachtwoord]</p>
-					</div>
-				</div>";
+				<a href='docent.php?docent=$docent[docent_id]'>
+                    <div class = 'docentenvak' id= '$docent[docent_id]'>
+					    <div class = 'green'>
+					    </div>
+					    <div class = 'white'>
+						    <img class='docentenfoto' src='Images/$docent[foto]' alt='Foto van $docent[voornaam]'>
+						    <p><b>$docent[voornaam] $docent[achternaam] </b></p>
+						    <p>$docent[wachtwoord]</p>
+					    </div>
+				    </div>
+                </a>";
 			}
 			?>
 		</div>

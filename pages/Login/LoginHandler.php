@@ -22,9 +22,10 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
 
     //Add cookies to header()
-    setcookie("user", $usernameForm, time()+3600, '/; samesite=strict');
-    setcookie("auth", auth(128), time()+3600, '/; samesite=strict');
-    setcookie("domain", $domain, time()+3600, '/; samesite=strict');
+    date_default_timezone_set('Europe/Amsterdam');
+    setcookie("user", $usernameForm, time()+10800, '/; samesite=strict');
+    setcookie("auth", auth(128), time()+10800, '/; samesite=strict');
+    setcookie("domain", $domain, time()+10800, '/; samesite=strict');
     
     header("location:../../docenten");
   }

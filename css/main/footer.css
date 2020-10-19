@@ -1,0 +1,24 @@
+div.scrollmenu {
+    transition: 0.3s;
+    background-color: #4ac4b3;
+    width: 100%;
+    display: flex;
+    flex: none;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu div {
+    font-size: 28px;
+    background-color: #4ac4b3;
+    border-right: 1px solid white;
+    display: inline-flex;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    text-decoration: none;
+}
+
+.footer {
+    margin-top: 50px;
+}

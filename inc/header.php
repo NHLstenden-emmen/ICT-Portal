@@ -76,7 +76,7 @@
     
 	<div class="banner_image">
 		<div class="banner_content-left">
-			<div><?= isset($paginaTitel) ? $paginaTitel : "ICT Portal" ?><br/></div>
+			<div><?= isset($activePage) ? $activePage : "ICT Portal" ?><br/></div>
                 <span>Laatst bijgewerkt om 15:00</span><br />
                 <div class="inputSearchField">
                     <form>  

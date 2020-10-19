@@ -15,6 +15,9 @@ if($result->num_rows > 0){
                     if(!empty($_POST['docentWachtwoord'])){
                         if($_POST['docentWachtwoord'] == $_POST['docentWachtwoordHerhaal']){
                             
+                            $docentWachtwoord = md5($_POST['docentWachtwoordHerhaal']);
+
+                    
                             if(!empty($_FILES["docentFoto"]["name"])) { 
                                 $fileName = basename($_FILES["docentFoto"]["name"]); 
                                 
@@ -25,7 +28,11 @@ if($result->num_rows > 0){
                                     $image = $_FILES['docentFoto']['tmp_name']; 
                                     $imgContent = addslashes(file_get_contents($image)); 
                                 }
+                            } else {
+                                $imgContent = $docentData['foto'];
                             }
+                                
+
 
                             $updateStatement = $DB->Get("UPDATE docenten SET 
                                 voornaam = '{$_POST["docentVoornaam"]}', 
@@ -33,7 +40,7 @@ if($result->num_rows > 0){
                                 email = '{$_POST["docentEmail"]}',
                                 telefoonnummer = '{$_POST["docentTelefoonnummer"]}',
                                 gebruikersnaam = '{$_POST["docentGebruikersnaam"]}',
-                                wachtwoord = '{$_POST["docentWachtwoord"]}',
+                                wachtwoord = '{$docentWachtwoord}',
                                 foto = '{$imgContent}',
                                 twitter = '{$_POST["docentTwitter"]}',
                                 linkedin = '{$_POST["docentLinkedin"]}',
@@ -94,20 +101,20 @@ if($result->num_rows > 0){
         <input type="text" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" style="width: 65%;" required><br />
        
         <label for="docentTelefoonnummer">Telefoonnummer</label><br />
-        <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678 (niet verplicht)" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678" style="width: 65%;"><br />
         
         <label for="docentGebruikersnaam">Gebruikersnaam*</label><br />
         <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="Gebruikersnaam" style="width: 65%;" required><br />
 
         <div class="subTitle">Socials</div>
-        <label for="docenttwitter">Twitterhandle</label><br />
-        <input type="text" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitterhandle (niet verplicht)" style="width: 65%;" required><br />
+        <label for="docenttwitter">Twitter</label><br />
+        <input type="text" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitter" style="width: 65%;"><br />
         
         <label for="docentLinkedin">Linkedin</label><br />
-        <input type="text" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin (niet verplicht)" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin" style="width: 65%;"><br />
         
         <label for="docentInstagram">Instagram</label><br />
-        <input type="text" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram (niet verplicht)" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram" style="width: 65%;"><br />
 
         <div class="subTitle">Beveiliging</div><br />
         <label for="docentWachtwoord">Wachtwoord*</label><br />

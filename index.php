@@ -46,6 +46,13 @@ $DB = new MySQL;
             case 'docentenBeschikbaarheid':
                 include 'pages/docentenBeschikbaarheid.php';
                  break;
+            // disclaimers
+            case 'privacyPolicy':
+                include 'pages/privacyPolicy.php';
+                break;
+            case 'termsAndConditions':
+                include 'pages/termsAndConditions.php';
+                break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }

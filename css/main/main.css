@@ -1,18 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Fonts */
 
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    
+    --lighterPrimaryColor: #54A7AB;
+    --lightPrimaryColor: #318C91;
+    --primaryColor: #188287;
+    --darkPrimaryColor: #0B696D;
+    --darkerPrimaryColor: #015256;
+    --dark: #131313;
+    --tekstColor: #FFFFFF;
 
-	box-sizing: border-box;
-	outline: none;
-	list-style: none;
-  text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-}
-
-body {
-  
-  margin: 0;
-  padding: 0;
+    font-family: 'Roboto', sans-serif; /* Default font */
+    
+    /* 
+        this is how you can call a primary color/var
+        var(--primaryColor); 
+    */
 }
 a {
   text-decoration: none;
@@ -168,4 +178,32 @@ button {
 }
 button:hover{
   background-color: #318C91;
+}
+.weatherReport {
+    border: #E0E0E0 1px solid;
+    padding: 20px;
+    width: 300px;
+}
+
+.weather-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.weather-forecast {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Rand voor blokken en objecten */
+.rand:after{
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 10%;
+    width: 90%;
+    border-top: 20px solid lightseagreen;
+    height: 90%;
+    border-left: 20px solid lightseagreen;
+    pointer-events:none;
 }

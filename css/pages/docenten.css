@@ -6,7 +6,6 @@
     grid-template-rows: 265px 265px 265px;
     grid-gap: 50px 50px;
 }
-
 .docentenvak {
     width: 265px;
     height: 265px;
@@ -34,12 +33,22 @@
     font-size: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
-
 .docentenfoto {
     display: block;
     border-radius: 50%;
     object-fit: cover;
     width: 100px;
     height: 100px;
-    margin: 10% auto 10% auto;    
+    margin: 10% auto 10% auto;
+}
+.docent .items p{
+    text-align: center;
+}
+
+.docent{
+    width: 265px;
+    height: 265px;
+    position: relative;
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }

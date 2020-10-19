@@ -1,6 +1,6 @@
 <?php
 // head and nav information
-$PageTitle="New Page Title";
+
 include 'inc/header.php';
 include 'inc/nav.php';
 include 'inc/sidebar.php';?>
@@ -23,6 +23,21 @@ include 'inc/sidebar.php';?>
                 break;
             case 'docenten':
                 include 'pages/docenten.php';
+                break;
+            case 'contact':
+                include 'pages/contact.php';
+                break;
+            case 'login':
+                include 'pages/login.php';
+                break;
+            case 'gebruikers':
+                include 'pages/gebruikers.php';
+                break;
+            case 'uploadNieuws':
+                include 'pages/uploadNieuws.php';
+                break;
+            case 'docentenEdit':
+                include 'pages/docentenEdit.php';
                 break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.

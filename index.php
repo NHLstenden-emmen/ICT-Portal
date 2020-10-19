@@ -1,12 +1,15 @@
 <?php
 // head and nav information
 $activePage = basename($_SERVER['REQUEST_URI'], ".php");
+
+include 'inc/core.php';
 include 'inc/mysql.php';
 include 'inc/header.php';
 include 'inc/nav.php';
 include 'inc/sidebar.php';
 
-$DB = new MySQL;
+$DB = new MySQL();
+$Core = new Core();
 
     if(!isset($_GET['page']) || $_GET['page'] == ''){
         $pageTitle = 'nieuws'; //If no page specified

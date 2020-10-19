@@ -1,5 +1,7 @@
-
-<link rel="stylesheet" href="../css/docenten.css">
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../css/docenten.css">
 <?php
 $docentenData = array(
 		'1' => array(

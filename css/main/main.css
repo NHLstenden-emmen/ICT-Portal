@@ -1,21 +1,19 @@
-/* MAIN ELEMENTS */
-body {
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+  text-decoration: none;
   font-family: 'Roboto', sans-serif;
-  color: black;
-  transition: 0.3s;
-}
- 
-main.content { 
-  margin-left: 278px;
-  margin-top: 60px;
 }
 
-main.content > .subTitle {
-  font-size: 30px;
-  font-weight: 700;
+body {
+  
+  margin: 0;
+  padding: 0;
 }
-
 a {
   text-decoration: none;
   color: #30dfc7;
@@ -66,6 +64,17 @@ body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBloc
   margin: 20px 0px 0px 20px;
 }
 
+main.content { 
+  min-height: calc(60vh - 90px);
+  transition: 0.3s;
+  padding: 2% 0% 0% 11%;
+}
+
+.subTitle {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content > .contentBlock-text {
   transition: 0.3s;
   font-size: 17px;
@@ -95,10 +104,9 @@ body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBloc
 }
 
 /*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
-input[type="text"] {
+input {
   font-size: 16px;
   color: rgb(80, 79, 79);
-  width: 100%;
   border: none;
   border-bottom: 2px solid rgb(80, 79, 79);
   margin: 8px 0;
@@ -109,20 +117,20 @@ input[type="text"] {
   background-color: transparent;
 }
 
-input[type="text"]:focus {
+input:focus {
   color: rgb(80, 79, 79);
   border-color: #4ac4b3;
 }
 
-input[type="text"]::placeholder {
+input::placeholder {
   color: rgb(80, 79, 79);
   transition: 0.3s;
 }
-input[type="text"]:focus::placeholder {
+input:focus::placeholder {
   color: #4ac4b3;
 }
 
-.inputWithIcon input[type="text"] {
+.inputWithIcon input {
   padding-left: 40px;
 }
 
@@ -131,9 +139,10 @@ input[type="text"]:focus::placeholder {
 }
 
 .inputWithIcon i {
+  font-size: 21px;
   position: absolute;
   left: 0;
-  top: 8px;
+  top: 33px;
   padding: 9px 8px;
   color: rgb(80, 79, 79);
   transition: 0.1s;
@@ -141,20 +150,6 @@ input[type="text"]:focus::placeholder {
 
 .inputWithIcon input[type="text"]:focus + i {
   color: #4ac4b3;
-}
-
-  /* Ripple effect */
-.ripple {
-  background-position: center;
-  transition: background 0.8s;
-}
-.ripple:hover {
-  background: #318C91 radial-gradient(circle, transparent 1%, #318C91 1%) center/15000%;
-}
-.ripple:active {
-  background-color: #6eb9f7;
-  background-size: 100%;
-  transition: background 0s;
 }
 
 

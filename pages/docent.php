@@ -32,11 +32,11 @@
 					</div>
 					<div class='icons'>	
 						
-						<a href='$docent[email]'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>
-						<a href='$docent[twitter]'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>
-						<a href='$docent[linkedin]'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>
+						<a href='$docent[email]'><img src='https://www.flaticon.com/svg/static/icons/svg/1946/1946389.svg'></a>
+						<a href='$docent[twitter]'><img src='https://www.flaticon.com/svg/static/icons/svg/254/254406.svg'></a>
+						<a href='$docent[linkedin]'><img src='https://www.flaticon.com/svg/static/icons/svg/1051/1051333.svg'></a>
 						<a href='$docent[instagram]'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>".( 
-						("$docent[telefoonnummer]"!=='' )?"<a href='$docent[telefoonnummer]'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>"
+						("$docent[telefoonnummer]"!=='' )?"<a href='$docent[telefoonnummer]'><img src='https://www.flaticon.com/svg/static/icons/svg/254/254407.svg'></a>"
 						: "")."
 						 
 					</div>

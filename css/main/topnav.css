@@ -68,17 +68,15 @@ text-align: right;
 color: #fff;
 }
 
-.banner_content-left div{
+.banner_content-left .bannerTitle {
 text-transform: capitalize;
-  font-size: 60px;
+  font-size: 5em;
   font-weight: 700;
 }
 
-.banner_content-left div span{
-  font-size: 16px;
+.banner_content-left .bannerSubTitle {
   font-weight: 400;
   text-transform: none;
-
 }
 
 body > .jumbotron > .jumbotron-content > div.inputSearchField {

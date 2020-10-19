@@ -76,13 +76,13 @@
     
 	<div class="banner_image">
 		<div class="banner_content-left">
-			<div><?= isset($activePage) ? $activePage : "ICT Portal" ?><br/></div>
-                <span>Laatst bijgewerkt om 15:00</span><br />
+			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?><br/></div>
+                <span class="bannerSubTitle">Laatst bijgewerkt om 15:00</span><br />
                 <div class="inputSearchField">
                     <form>  
                         <div class="inputWithIcon">
                             <input type="text" placeholder="Zoek een trefwoord">
-                            <i class="fa fa-search fa-lg fa-fw" aria-hidden="true"></i>
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </div>
                     </form>
                 </div>

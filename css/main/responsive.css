@@ -20,21 +20,31 @@
 	}
 
 	.banner_image {
-        background: #318C91 !important;
+        background: #1c5d61 !important;
         height: 250px !important;
   }
 
-  	.banner_content-left div {
-		font-size: 8vw !important;
+  	.banner_content-left {
+		padding: 5% 0% 0% 4% !important;
 	  }
+	 
+	.banner_content-left .bannerTitle {
+		font-size: 1.5em !important;
+	}
 
     .banner_content-right {
 		display: none;
         text-align: right;
 	}
-	.inputWithIcon i {
-		top: 8px !important;
+
+	.contentBlock-grid {
+		min-height: auto;
+		grid-template-columns: 40% 40% !important;
 	}
+
+
+
+
     .navbar .navbar_items ul li {
       display: none;
 	}

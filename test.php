@@ -1,30 +1,32 @@
-<style>
-/* Ripple effect */
-.ripple {
-  background-position: center;
-  transition: background 0.8s;
-}
-.ripple:hover {
-  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
-}
-.ripple:active {
-  background-color: #6eb9f7;
-  background-size: 100%;
-  transition: background 0s;
-}
-
-/* Button style */
-a {
-  border: none;
-  border-radius: 2px;
-  padding: 12px 18px;
+<style>@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+ 
+.search {
+  position: relative;
+  color: #aaa;
   font-size: 16px;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: white;
-  box-shadow: 0 0 4px #999;
-  outline: none;
+  display: inline-block;
 }
-
+.search input {
+  width: 250px;
+  height: 32px;
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+}
+.search input {
+  text-indent: 5px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+.search .fa-search {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+}
 </style>
-<button class="ripple">Button</button>
+<div class="search">
+  <span class="fa fa-search"></span>
+  <input type="text">
+</div>

@@ -97,15 +97,16 @@
 			
 			<?php
 			foreach ($docentenData as $docent) {
-                ?>
-                <div class="docent rand" id=<?php echo $docent['docent_id']; ?>>
-                    <div class="items">
-                        <img class='docentenfoto' src='<?php echo "Images/$docent[foto]"; ?>' alt='<?php echo "Foto van $docent[voornaam]"; ?>'>                    
-                        <p><b><?php echo $docent['voornaam']." ".$docent['achternaam']; ?></b></p>
-                        <p><?php echo $docent['telefoonnummer']; ?></p>
-                    </div>
-                </div>
-                <?php
+				echo "
+				<div class = 'docentenvak' id= '$docent[docent_id]'>
+					<div class = 'green'>
+					</div>
+					<div class = 'white'>
+						<img class='docentenfoto' src='Images/$docent[foto]' alt='Foto van $docent[voornaam]'>
+						<p><b>$docent[voornaam] $docent[achternaam] </b></p>
+						<p>$docent[wachtwoord]</p>
+					</div>
+				</div>";
 			}
 			?>
 		</div>

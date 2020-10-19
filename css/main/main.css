@@ -35,17 +35,3 @@
     font-size: 1.2em;
     font-weight: bold;
 }
-
-/* Rand voor blokken en objecten */
-.rand:after{
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: 10%;
-    width: 90%;
-    border-top: 20px solid lightseagreen;
-    height: 90%;
-    border-left: 20px solid lightseagreen;
-    pointer-events:none;
-}
-

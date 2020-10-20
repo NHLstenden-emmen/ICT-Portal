@@ -21,10 +21,11 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-
+    $id = $row['docent_id'];
     //Add cookies to header()
     date_default_timezone_set('Europe/Amsterdam');
     setcookie("user", $usernameForm, time()+3600, '/; samesite=strict');
+    setcookie("userID", $id, time()+3600, '/; samesite=strict');
     setcookie("auth", auth(128), time()+3600, '/; samesite=strict');
     
     header("location:../../docenten");

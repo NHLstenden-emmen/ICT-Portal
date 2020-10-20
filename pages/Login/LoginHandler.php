@@ -25,7 +25,6 @@ if ($result->num_rows > 0) {
     date_default_timezone_set('Europe/Amsterdam');
     setcookie("user", $usernameForm, time()+10800, '/; samesite=strict');
     setcookie("auth", auth(128), time()+10800, '/; samesite=strict');
-    setcookie("domain", $domain, time()+10800, '/; samesite=strict');
     
     header("location:../../docenten");
   }

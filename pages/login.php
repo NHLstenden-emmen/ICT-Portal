@@ -2,7 +2,7 @@
   <div class="formulier">
     <div class="formLeft"></div>
     <!-- Login Formulier -->
-    <div class="form">
+    <div class="form rand">
       <form action="/pages/login/LoginHandler.php" method="POST"> 
         <label for="gebruikersnaam">Gebruikersnaam:</label><br>
         <input type="text" id="gebruikersnaam" name="gebruikersnaam" value="" required><br>

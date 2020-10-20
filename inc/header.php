@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/main/darkmode.css">
         <link rel="stylesheet" href="css/main/responsive.css">
         <link rel="stylesheet" href="css/main/topnav.css">
+        <link rel="stylesheet" href="css/main/sidebar.css">
         <link rel="stylesheet" href="css/main/main.css">
         <link rel="stylesheet" href="css/main/footer.css">
 

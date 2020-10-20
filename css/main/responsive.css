@@ -44,6 +44,9 @@
 	.navbar .navbar_items .darkmodeSwitch {
 		display: none;
 	}
+	.sidebar{
+		display: none !important;
+	}
 }
 
 @media (min-width: 900px){

@@ -14,7 +14,7 @@
 	border: none;
 	padding: 12px 15px;
     margin: 8px 0;
-    width: 30vw;
+    width: 200%;
 }
 
 .login input[type=submit]{
@@ -43,5 +43,6 @@
 
 form{
     height: auto;
+    width: fit-content;
 }
 

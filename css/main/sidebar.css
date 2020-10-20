@@ -11,8 +11,12 @@
 
 .row{
     width: 100%;
-    height: 200px;
+    height: 350px;
     background: #F8F8F8;
+}
+
+.row0{
+    height: 50px;
 }
 
 h3{

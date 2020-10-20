@@ -11,10 +11,12 @@
             <li class="<?= ($activePage == 'login') ? 'active':''; ?>" onclick="window.location.href='login'">Login</li>
             <div class="divider"></div>
             <div class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
+            <div id="google_translate_element"></div>
 
             </ul>
       </div>
 </nav>
+
 
 <div class="banner_image">
       <div class="banner_content-left">

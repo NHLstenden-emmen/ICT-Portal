@@ -90,7 +90,7 @@ $docentenData = array(
 			'instagram' => '')
 	);
 	?>
-<h1>Docenten</h1>
+<br>
 <div class = "docentenvakken">
 	
 	<?php
@@ -98,7 +98,7 @@ $docentenData = array(
 		?>
 		<div class="docent rand" id=<?php echo $docent['docent_id']; ?>>
 			<div class="items">
-				<img class='docentenfoto' src='<?php echo "Images/$docent[foto]"; ?>' alt='<?php echo "Foto van $docent[voornaam]"; ?>'>                    
+				<img class='docentenfoto' src='<?php echo "gerjan.jpg"; ?>' alt='<?php echo "Foto van $docent[voornaam]"; ?>'>                    
 				<p><b><?php echo $docent['voornaam']." ".$docent['achternaam']; ?></b></p>
 				<p><?php echo $docent['telefoonnummer']; ?></p>
 			</div>

@@ -40,6 +40,7 @@
 ?>
 
 <div class="sidebar">
+    <div class="row0 row"></div> <!-- Spacing top -->
     <div class="row1 row">
     <?php
         if($pageTitle == "Nieuws"){

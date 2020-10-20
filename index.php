@@ -4,10 +4,13 @@ $activePage = basename($_SERVER['REQUEST_URI'], ".php");
 include 'inc/mysql.php';
 include 'inc/header.php';
 include 'inc/nav.php';
-include 'inc/sidebar.php';
+
 
 $DB = new MySQL;
-
+    ?>
+    <div class="page">
+    <div class="pageContent">
+    <?php
     if(!isset($_GET['page']) || $_GET['page'] == ''){
         $pageTitle = 'nieuws'; //If no page specified
     } else {
@@ -56,5 +59,12 @@ $DB = new MySQL;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
-  include 'inc/footer.php';
+    ?>
+    </div>
+    <?php
+    include 'inc/sidebar.php';
+    ?>
+    </div>
+    <?php
+    include 'inc/footer.php';
 ?>

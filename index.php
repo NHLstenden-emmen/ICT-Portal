@@ -37,6 +37,9 @@ $DB = new MySQL;
             case 'login':
                 include 'pages/login.php';
                 break;
+            case 'uitloggen':
+                include 'pages/Login/logout.php';
+                break;
             case 'gebruikers':
                 include 'pages/gebruikers.php';
                 break;

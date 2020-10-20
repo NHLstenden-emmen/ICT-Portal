@@ -2,7 +2,7 @@
 $servername = "localhost"; //Hostname server
 $username = "root"; //Username database
 $password = ""; //Password database
-$dbname = "project"; //Database name
+$dbname = "ictportal"; //Database name
 
 //Create new connection
 $conn = new mysqli($servername, $username, $password, $dbname);

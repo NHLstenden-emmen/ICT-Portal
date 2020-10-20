@@ -15,7 +15,8 @@ function Auth($length) { //Function to generate a random authentication key
     return $randomString; //Return String value
 }
 
-$sql = "SELECT * FROM users WHERE gebruikersnaam = '$usernameForm' AND wachtwoord = '$passwordForm'"; //Select where username and password are equal to form input
+// $sql = "SELECT * FROM docenten WHERE gebruikersnaam = '$usernameForm' AND wachtwoord = '$passwordForm'"; //Select where username and password are equal to form input
+$sql = "SELECT * FROM docenten WHERE gebruikersnaam = '$usernameForm' AND wachtwoord = '$passwordForm'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

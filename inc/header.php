@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="nl">
     <head>
         <!-- normal meta data -->
@@ -7,11 +6,15 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <title><?= isset($pageTitle) ? $pageTitle : "ICT Portal"?></title>
 
-        <link rel="stylesheet" href="css/main/darkmode.css">
-        <link rel="stylesheet" href="css/main/responsive.css">
-        <link rel="stylesheet" href="css/main/topnav.css">
-        <link rel="stylesheet" href="css/main/main.css">
-        <link rel="stylesheet" href="css/main/footer.css">
+        <link rel="stylesheet" href="/css/main/darkmode.css">
+        <link rel="stylesheet" href="/css/main/responsive.css">
+        <link rel="stylesheet" href="/css/main/topnav.css">
+        <link rel="stylesheet" href="/css/main/main.css">
+        <link rel="stylesheet" href="/css/main/sidebar.css">
+
+
+
+        <link rel="stylesheet" href="/css/main/footer.css">
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
@@ -58,7 +61,7 @@
     <body>
 <nav class="navbar">
 		<div class="logo">
-            <a href="/index" class="logo"><img src="css/images/default_logo_white.png" alt="ICT Portal"></a>
+            <a href="/index" class="logo"><img src="/css/images/default_logo_white.png" alt="ICT Portal"></a>
 		</div>
 		<div class="navbar_items">
 			<ul>
@@ -77,21 +80,11 @@
 	<div class="banner_image">
 		<div class="banner_content-left">
 			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?><br/></div>
-                <span class="bannerSubTitle">Laatst bijgewerkt om 15:00</span><br />
-                <div class="inputSearchField">
-                    <form>  
-                        <div class="inputWithIcon">
-                            <input type="text" placeholder="Zoek een trefwoord">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </div>
-                    </form>
-                </div>
             </div>
             <div class="banner_content-right">
 			<div>Vakkenblok.<br/>
 				<span>Span Vakkenblok.</span>
 			</div>
-		</div>
+		    </div>
         </div>
-
-	</div>
+    </div>

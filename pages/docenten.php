@@ -9,24 +9,21 @@
     <?php
     $result = $DB->Get("SELECT * FROM docenten");
     
-    while($row = $result->fetch_assoc()){
-echo "<div class='contentBlock'>
+    while($docentData = $result->fetch_assoc()){
+    
+    $docentenLink = 'window.location.href="/docent?docent='.$docentData['docent_id'].'"';
+    echo "<div class='contentBlock' onclick='{$docentenLink}'>
         <div class='contentBlock-side'></div>
-        <div class='contentBlock-content'>
-            <div class='contentBlock-title'>
-                Hallo
-            </div>
-            <div class='contentBlock-text'>
-                test
-            </div>
-            <div class='contentBlock-info'>
-                <div class='contentBlock-date'>
-                    vandaag om 15:09
-                </div>
-                <div class='contentBlock-link'>
-                    <a href=''>Lees meer</a>
-                </div>
-            </div>
+        <div class='contentBlock-content'>";
+       
+            if(!empty($docentData['foto'])){
+                echo '<img class="docentenFoto" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docentData['foto']).'" alt="foto van '.$docentData['voornaam'].'>" /><br />';
+            } else {
+                echo '<img class="docentenFoto" src="css/images/avatar_default.jpg" alt="Geen foto ingesteld" /><br />';
+            }
+
+            echo "<div class='docentBlok-voornaam'>{$docentData['voornaam']}</div>
+                 <div class='docentBlok-achternaam'>{$docentData['achternaam']}</div>
         </div>
         </div>";
     }

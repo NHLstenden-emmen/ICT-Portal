@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="../css/docent.css">
+		<link rel="stylesheet" href="css/pages/docent.css">
+
 		<?php
-        $_GET['docent'];
-		$docent = array(
-                    'docent_id' => 3,
-                    'voornaam' => 'Gerjan',
-                    'achternaam' => 'van Oenen',
-                    'email' => 'erat.volutpat.Nulla@eleifend.org',
-                    'telefoonnummer' => '0612345678',
-                    'gebruikersnaam' => 'JinWeaver',
-                    'wachtwoord' => 'indigo',
-                    'foto' => 'Gerjan van Oenen.jpg',
-                    'twitter' => '',
-                    'linkedin' => '',
-                    'instagram' => '');
+
+		$docentID = ($_GET['docent']);
+		$result = $DB->Get("SELECT * FROM docenten WHERE docent_id = '".$docentID."'"); //Haalt alle gegevens van de ID docent op.
+		$docent = $result->fetch_assoc();
+
 		?>
+
 	</head>
 	<body>
 		<?php
 			echo "
-			<h1>$docent[voornaam] $docent[achternaam]</h1>
+			
 			<div class= 'content'>
 				<div class='green'>
 				</div>
-				<div class='white'>
-					<img class='fotodocent' src='images/$docent[foto]' alt='foto van $docent[voornaam] $docent[achternaam]'>
+				<div class='white'>";
+					if(!empty($docent['foto'])){
+						echo '<img class="fotodocent" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docent['foto']).'" alt="foto van '.$docent['voornaam'].'>" /><br />';
+					} else {
+						echo '<img class="fotodocent" src="css/images/avatar_default.jpg" alt="Geen foto ingesteld" /><br />';
+					}
+					echo "
 					<div class='tekst'>	
+						<h1 class ='dcnaam'>{$docent['voornaam']} <br> {$docent['achternaam']}</h1>
 						<p>Jaarinfo & vakken</p>
 					</div>
-					<div class='icons'>	
-						
-						<a href='$docent[email]'><img src='https://www.flaticon.com/svg/static/icons/svg/1946/1946389.svg'></a>
-						<a href='$docent[twitter]'><img src='https://www.flaticon.com/svg/static/icons/svg/254/254406.svg'></a>
-						<a href='$docent[linkedin]'><img src='https://www.flaticon.com/svg/static/icons/svg/1051/1051333.svg'></a>
-						<a href='$docent[instagram]'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>".( 
-						("$docent[telefoonnummer]"!=='' )?"<a href='$docent[telefoonnummer]'><img src='https://www.flaticon.com/svg/static/icons/svg/254/254407.svg'></a>"
-						: "")."
-						 
+					<div class='icons'> ";
+					
+						if (!empty($docent['telefoonnummer'])) {
+							echo "<a class='telefoonnummer'><img src='https://www.flaticon.com/svg/static/icons/svg/254/254407.svg'>
+							<span class='telefoonnummerhover'>{$docent['telefoonnummer']}</span></a>";
+						}
+						if (!empty($docent['email'])) {
+							echo "<a href='mailto:{$docent['email']}' ><img src='https://www.flaticon.com/svg/static/icons/svg/1946/1946389.svg'></a>";
+						}
+						if (!empty($docent['twitter'])) {
+							echo "<a href='https://twitter.com/{$docent['twitter']}'  target='_blank'><img src='https://www.flaticon.com/svg/static/icons/svg/254/254406.svg'></a>";
+						}
+						if (!empty($docent['linkedin'])) {
+							echo "<a href='https://linkedin.com/{$docent['linkedin']}'  target='_blank'><img src='https://www.flaticon.com/svg/static/icons/svg/1051/1051333.svg'></a>";
+						}
+						if (!empty($docent['instagram'])) {
+							echo "<a href='https://instagram.com/{$docent['instagram']}' target='_blank'><img src='https://www.flaticon.com/svg/static/icons/svg/1384/1384031.svg'></a>";
+						}
+						echo "
+
 					</div>
 				</div>
 			</div>";

@@ -19,6 +19,32 @@ div.scrollmenu div {
     text-decoration: none;
 }
 
-.footer {
-    margin-top: 50px;
+.footer_desktop {
+
+    width: 100%;
+    background-color: lightseagreen;
+    color: white;
+    line-height: 3;
+    margin-top: 5vw;
+    transition: 0.3s;
 }
+
+.bottom{
+    width: 70vw;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin: 0 auto;
+}
+
+.footer_desktop .footer_desktop-right {
+    text-align: right;
+}
+  
+.siteNav li{
+    display: inline-block;
+}
+  
+.siteNav li a{
+    text-decoration: none;
+    color: white;
+}  

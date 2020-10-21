@@ -1,73 +1,17 @@
-.docentenvakken {
-    margin: 50px;
-    width: 945px;
-    display: grid;   
-    grid-template-columns: 265px 265px 265px 265px 265px;
-    grid-template-rows: 265px 265px 265px 265px 265px;
-    grid-gap: 50px 50px;
-}
-
-.docentenfoto {
+.docentenFoto {
     display: block;
     border-radius: 50%;
     object-fit: cover;
     width: 100px;
     height: 100px;
-    margin: 10% auto 10% auto;  
-    background: lightseagreen;
+    margin: 10% auto 0% auto;    
 }
-.docent .items p{
+.docentBlok-voornaam{
+    font-size: 1.4em;
     text-align: center;
 }
-
-.docent{
-    width: 265px;
-    height: 265px;
-    position: relative;
-    background: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-}
-
-@media only screen and (max-width: 2300px) {
-    .docentenvakken {
-        margin: 50px;
-        width: 945px;
-        display: grid;   
-        grid-template-columns: 265px 265px 265px 265px;
-        grid-template-rows: 265px 265px 265px 265px;
-        grid-gap: 50px 50px;
-    }
-}
-
-@media only screen and (max-width: 1880px) {
-    .docentenvakken {
-        margin: 50px;
-        width: 945px;
-        display: grid;   
-        grid-template-columns: 265px 265px 265px;
-        grid-template-rows: 265px 265px 265px;
-        grid-gap: 50px 50px;
-    }
-}
-
-@media only screen and (max-width: 1440px) {
-    .docentenvakken {
-        margin: 50px;
-        width: 945px;
-        display: grid;   
-        grid-template-columns: 265px 265px;
-        grid-template-rows: 265px 265px;
-        grid-gap: 50px 50px;
-    }
-}
-
-@media only screen and (max-width: 900px) {
-    .docentenvakken {
-        margin: 50px;
-        width: 945px;
-        display: grid;   
-        grid-template-columns: 265px;
-        grid-template-rows: 265px;
-        grid-gap: 50px 50px;
-    }
+.docentBlok-achternaam {
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1em;
 }

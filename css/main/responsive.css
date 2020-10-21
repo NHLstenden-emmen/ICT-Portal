@@ -1,56 +1,92 @@
 @media (max-width: 900px){
+	/* REPSONSIVE NAVBAR */
 	.navbar{
 		align-items: normal !;
 		height: auto;
 		flex-direction: column;
+		position: relative !important;
 	}
 
-	.navbar ul{
-		flex-direction: column;
-		text-align: center;
+    .navbar .navbar_items ul li {
+		display: none;
 	}
 
-	.logo{
-
-        padding: 0% 0% 0% 4% !important;
+	.navbar .navbar_items .divider {
+		  display: none;
 	}
 
+	.navbar .navbar_items .darkmodeSwitch {
+		  display: none;
+	}
 	.navbar ul li{
 		margin-bottom: 5px;
 	}
 
+	.navbar ul {
+		flex-direction: column;
+		text-align: center;
+	}
+	.navbar .logo{
+        padding: 2% 0% 2% 4% !important;
+	}
+
+	/*BANNER IMAGE RESPONSIVE */
 	.banner_image {
-        background: #318C91 !important;
-        height: 250px !important;
-  }
+        background: #1c5d61 !important;
+        height: 10em !important;
+  	}
 
-  	.banner_content-left div {
-		font-size: 8vw !important;
+  	.banner_content-left {
+		padding: 5% 0% 0% 4% !important;
 	  }
+	 
+	.banner_content-left .bannerTitle {
+		font-size: 1.5em !important;
+		color: #ffffff !important;
+	}
 
+	.banner_content-left .bannerSubTitle {
+		color: #ffffff !important;
+	}
+	
     .banner_content-right {
 		display: none;
         text-align: right;
 	}
-	.inputWithIcon i {
-		top: 8px !important;
-	}
-    .navbar .navbar_items ul li {
-      display: none;
-	}
-	.navbar .navbar_items .divider {
+
+	.footer_desktop {
 		display: none;
 	}
-	.navbar .navbar_items .darkmodeSwitch {
+	
+
+	main.content {
+		padding: 2% 11% 0% 11% !important;
+		grid-template-columns: unset !important;
+	}
+	main.content > .left_content {
+		max-width: 100% !important;
+	}
+
+
+	.contentBlock-grid {
+		grid-template-columns: none !important	;
+		grid-gap: unset !important;
+	}
+
+	.sideBar {
 		display: none;
 	}
-	.sidebar{
-		display: none !important;
+	.colorBlock {
+		display: none;
+	}
+
+	.loginWrapper{
+		grid-column: unset !important;
 	}
 }
 
 @media (min-width: 900px){
-	.footer > div.scrollmenu {
+	.footer-mobile > div.scrollmenu {
 		display: none;
 	}
 }

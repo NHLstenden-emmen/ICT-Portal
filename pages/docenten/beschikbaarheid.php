@@ -1,8 +1,7 @@
 <?php 
-    include('Login/authentication.php');
     $paginaTitel = "test";
     //Feike's Login systeem
-    $docentID = $_COOKIE['userID'];
+    $docentID = 6;
    
 
     $result = $DB->Get("SELECT beschikbaarheid_maandag, beschikbaarheid_dinsdag, beschikbaarheid_woensdag, beschikbaarheid_donderdag, beschikbaarheid_vrijdag FROM docenten_beschikbaarheid WHERE docent_id = '".$docentID."'");
@@ -25,7 +24,7 @@
     }
     else if($result->num_rows == 0){
         $DB->Get("INSERT INTO docenten_beschikbaarheid (docent_id) VALUES ($docentID)");
-        header('Location: docentenBeschikbaarheid');
+        header('Location: /docentenBeschikbaarheid');
     }
 
 
@@ -67,7 +66,7 @@ if(isset($_POST['submitAction'])){
             $DB->Get("UPDATE docenten_beschikbaarheid SET beschikbaarheid_vrijdag = NULL WHERE docent_id = '{$docentID}'");
         }
         
-        header('Location: docentenBeschikbaarheid');
+        header('Location: /docentenBeschikbaarheid');
 
     }
 }

@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px 1px rgba(48, 43, 43, 0.25);
+  z-index: 2;
 }
 
 .navbar .logo {
@@ -21,8 +22,8 @@
 }
 
 .navbar .navbar_items > ul li:hover {
-background: #318C91 radial-gradient(circle, transparent 1%, #318C91 1%) center/15000%;
-box-shadow: inset 0 -5px 0 0 white;
+  background: #318C91 radial-gradient(circle, transparent 1%, #318C91 1%) center/15000%;
+  box-shadow: inset 0 -5px 0 0 white;
 }
 
 .navbar .navbar_items > ul li.active {
@@ -36,52 +37,150 @@ box-shadow: inset 0 -5px 0 0 white;
   color: white;
   padding: 48px 35px 48px 35px;
 }
+
 .navbar .navbar_items ul > .divider {
   transition: 0.3s;
   width: 2px; 
   margin: 20px 0px 10px 10px;
   background-color: white;
 }
+
 .navbar .navbar_items ul > .darkmodeSwitch {
   padding: 48px 20px;
   color: white;
 }
+
 /* Banner Image */
 .banner_image {
   transition: 0.3s;
   background-color:rgba(0, 0, 0, 0.5);
-background: url("../images/jumbotron.jpg") no-repeat center;
-background-size: cover;
-width: 100%;
-height: 600px;
-display: flex;
-justify-content: space-between;
+  background: url("/css/images/jumbotron.jpg") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: max-content;
+  padding: 2vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .banner_content-left {
-  padding: 5% 0% 0% 11%;
-text-align: left;
+  padding: 4% 0% 0% 11%;
+  text-align: left;
 }
 
 .banner_content-right {
-text-align: right;
-color: #fff;
+  text-align: right;
+  color: #fff;
 }
 
-.banner_content-left div{
-text-transform: capitalize;
-  font-size: 60px;
+.bannerTitle {
+  text-transform: capitalize;
+  font-size: 3vw;
   font-weight: 700;
 }
 
-.banner_content-left div span{
-  font-size: 16px;
+.banner_content-left .bannerSubTitle {
   font-weight: 400;
   text-transform: none;
-
 }
 
 body > .jumbotron > .jumbotron-content > div.inputSearchField {
   margin-top: 15px;
   width: 300px;
 }
+
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 7vw 7vw 7vw 17vw 7vw 7vw 7vw 7vw 7vw 7vw 7vw;
+  grid-template-rows: 7vw 7vw 7vw 7vw;
+  grid-template-areas:
+    ". . . . . . . . . Jaar-1 ."
+    ". Titel Titel . Populair Populair . . . . Jaar-2"
+    ". . . . Populair Populair . Contact Jaar-4 Jaar-3 ."
+	". . . . . . Mededelingen . . . .";
+}
+
+.Titel { 
+	grid-area: Titel; 
+	width: 100%;
+    height: 100%;
+}
+
+.colorBlock{
+  background: #e1e1e185;
+  color: white;
+}
+
+.Populair { 
+	grid-area: Populair; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Mededelingen { 
+	grid-area: Mededelingen; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Contact { 
+	grid-area: Contact; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-4 { 
+	grid-area: Jaar-4;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-3 { 
+	grid-area: Jaar-3;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-2 { 
+	grid-area: Jaar-2;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-1 { 
+	grid-area: Jaar-1; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+.zoom:hover {
+	transform: scale(1.1);
+}
+
+.headerBlock p{
+    margin: 0;
+	font-size: 1vw;
+}
+
+.headerBlock{
+	text-align: center;
+    margin-top: 40%;
+    vertical-align: middle;
+    font-family: sans-serif;
+}
+
+.Mededelingen .headerBlock{
+	text-align: center;
+    margin-top: 35%;
+    vertical-align: middle;
+    font-family: sans-serif;
+}
+	

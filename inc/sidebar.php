@@ -6,7 +6,7 @@
     }
 
     // The private key
-    $apiKey = "api key";
+    $apiKey = "25957a1a29b039b5ca004840d8eecb9c";
     // The location to get the data from
     $cityName = "Emmen";
     // Open Weather api url
@@ -39,8 +39,7 @@
     $currentTime = time();
 ?>
 
-<div class="sidebar">
-    <div class="row0 row"></div> <!-- Spacing top -->
+<div class="sideBar">
     <div class="row1 row">
     <?php
         if($pageTitle == "Nieuws"){
@@ -104,10 +103,11 @@
     <div class="row3 row">
         <div class="rowContent">
             <h3>Webshop</h3><br>
-            <a href="https://webshop.stenden.com/"><div class="shop"></div></a>
+            <a href="#"><div class="shop"></div></a>
         </div>
     </div>    
 </div>
 <?php
 }
 ?>
+    

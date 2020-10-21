@@ -1,4 +1,4 @@
 
 <main class="content">
-    test
+    404!
 </main>

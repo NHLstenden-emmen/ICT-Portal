@@ -1,5 +1,4 @@
 <?php 
-
     //Feike's Login systeem
     $docentID = 3;
    
@@ -75,6 +74,8 @@ if($result->num_rows > 0){
 ?>
 
 <main class="content">
+    <div class="left_content">
+
     <div class="subTitle">Profiel bewerken</div>
 
     <form method="POST" enctype="multipart/form-data"> 
@@ -138,5 +139,5 @@ if($result->num_rows > 0){
 - instagram             (niet verplicht)
 - beschikbaarheid       moet nog
 -->
-
+    </div>
 </main> 

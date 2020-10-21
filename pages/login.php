@@ -39,11 +39,9 @@ print_r($Core->AuthCheck());
 
 <div class="login">
   <div class="formulier">
-    <div class="formLeft"></div>    
+    <div class="formLeft"></div>
     <div class="form rand">
-    <!-- Login Formulier met een POST method -->
-      <form action="pages/login/LoginHandler.php" method="POST"> 
-      <!-- Labels + Input voor het formulier -->
+      <form method="POST"> 
         <label for="gebruikersnaam">Gebruikersnaam:</label><br>
         <input type="text" id="gebruikersnaam" name="gebruikersnaam" required><br>
         <label for="wachtwoord">Wachtwoord:</label><br>

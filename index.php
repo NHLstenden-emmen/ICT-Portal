@@ -1,17 +1,21 @@
 <?php
-// head and nav information
-$activePage = basename($_SERVER['REQUEST_URI'], ".php");
-include 'inc/mysql.php';
-include 'inc/header.php';
-include 'inc/nav.php';
+    // head and nav information
+    $activePage = basename($_SERVER['REQUEST_URI'], ".php");
+
+    include 'inc/core.php';
+    include 'inc/mysql.php';
+
+    $DB = new MySQL();
+    $Core = new Core();
 
 
-$DB = new MySQL;
-    ?>
-    <div class="page">
-    <div class="pageContent">
-    <?php
-    if(!isset($_GET['page']) || $_GET['page'] == ''){
+    include 'inc/header.php';
+    //include 'inc/nav.php';
+    //include 'inc/sidebar.php';
+
+
+
+    if(empty($_GET['page'])){
         $pageTitle = 'nieuws'; //If no page specified
     } else {
         $pageTitle = $_GET['page'];
@@ -40,11 +44,8 @@ $DB = new MySQL;
             case 'login':
                 include 'pages/login.php';
                 break;
-            case 'uitloggen':
-                include 'pages/Login/logout.php';
-                break;
-            case 'gebruikers':
-                include 'pages/gebruikers.php';
+            case 'logout':
+                include 'pages/logout.php';
                 break;
             case 'uploadNieuws':
                 include 'pages/uploadNieuws.php';
@@ -55,22 +56,9 @@ $DB = new MySQL;
             case 'docentenBeschikbaarheid':
                 include 'pages/docentenBeschikbaarheid.php';
                  break;
-            // disclaimers
-            case 'privacyPolicy':
-                include 'pages/privacyPolicy.php';
-                break;
-            case 'termsAndConditions':
-                include 'pages/termsAndConditions.php';
-                break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
-    ?>
-    </div>
-    <?php
-    include 'inc/sidebar.php';
-    ?>
-    </div>
-    <?php
+
     include 'inc/footer.php';
 ?>

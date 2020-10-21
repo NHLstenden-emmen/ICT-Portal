@@ -1,4 +1,4 @@
-<?php
+ <?php
 //Get values from POST
 
 if(isset($_POST['submitButton'])){
@@ -34,27 +34,29 @@ print_r($Core->AuthCheck());
 <link rel="stylesheet" href="../css/pages/login.css">
 
 <main class="content">
-<div class="left_content">
-  <div class="subTitle">Login</div>
+  <div class="loginWrapper">
 
-<div class="login">
-  <div class="formulier">
-    <div class="formLeft"></div>
-    <div class="form rand">
-      <form method="POST"> 
-        <label for="gebruikersnaam">Gebruikersnaam:</label><br>
-        <input type="text" id="gebruikersnaam" name="gebruikersnaam" required><br>
-        <label for="wachtwoord">Wachtwoord:</label><br>
-        <input type="password" id="wachtwoord" name="wachtwoord" required><br><br>
-        <button type="submit" name="submitButton">Inloggen</button>
+  <div class='contentBlock-nohover' style="width: 100%; height: 300px;">
+        <div class='contentBlock-side' style="width: 100%;"></div>
+          <div class='contentBlock-content' style="width: 100%;">
+            <div class='contentBlock-title'>Inloggen</div>
+            <div class='contentBlock-text'>       
+            <form method="POST"> 
+              <label for="gebruikersnaam">Gebruikersnaam</label><br>
+              <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required> <br>
+              <br>
+              <label for="wachtwoord">Wachtwoord</label><br>
+              <input type="password" name="wachtwoord" placeholder="*********" required><br><br>
+            </div>
+            <div class='contentBlock-info'>
+            <button type="submit" name="submitButton">Inloggen</button>
       </form>
-    </div>
-    <div class="formRight"></div>
-  </div>
-</div>
+          </div>
+          </div>
+        </div>
 
-    
+ 
+
   </div>
-</div>
 </main>
 

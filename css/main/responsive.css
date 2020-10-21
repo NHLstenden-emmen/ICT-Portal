@@ -27,7 +27,7 @@
 		text-align: center;
 	}
 	.navbar .logo{
-        padding: 0% 0% 0% 4% !important;
+        padding: 2% 0% 2% 4% !important;
 	}
 
 	/*BANNER IMAGE RESPONSIVE */
@@ -58,29 +58,7 @@
 		display: none;
 	}
 	
-	input {
-		color: #ffffff !important;
-		border-bottom: 2px solid #ffffff !important;
-	  
-	  }
-	  
-	  input:focus {
-		color: rgb(240, 240, 240) !important;
-		border-color: #318C91 !important;
-	  }
-	  
-	  input::placeholder {
-		color: #ffffff !important;
-	  }
-	  input:focus::placeholder {
-		color: #ffffff !important;
-	  }
-	  
-	  .inputWithIcon i {
-		color: #ffffff !important;
-	  }
 
-	
 	main.content {
 		padding: 2% 11% 0% 11% !important;
 		grid-template-columns: unset !important;
@@ -102,6 +80,9 @@
 		display: none;
 	}
 
+	.loginWrapper{
+		grid-column: unset !important;
+	}
 }
 
 @media (min-width: 900px){

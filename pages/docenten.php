@@ -1,7 +1,3 @@
-
-<link rel="stylesheet" href="../css/pages/docenten.css">
-
-
 <main class="content">
     <div class="left_content">
 
@@ -13,7 +9,7 @@
     
     while($docentData = $result->fetch_assoc()){
     
-    $docentenLink = 'window.location.href="/docent?docent='.$docentData['docent_id'].'"';
+    $docentenLink = 'window.location.href="docent?docent='.$docentData['docent_id'].'"';
     echo "<div class='contentBlock' onclick='{$docentenLink}'>
         <div class='contentBlock-side'></div>
         <div class='contentBlock-content'>";

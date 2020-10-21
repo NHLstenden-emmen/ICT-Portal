@@ -14,7 +14,7 @@
         
         while($docentData = $result->fetch_assoc()){
         
-        $docentenLink = 'window.location.href="/vak?vak='.$docentData['docent_id'].'"';
+        $docentenLink = 'window.location.href="vak?vak='.$docentData['docent_id'].'"';
         echo "<div class='contentBlock' onclick='{$docentenLink}'>
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>

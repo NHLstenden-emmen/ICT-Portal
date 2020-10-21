@@ -24,7 +24,7 @@ if(isset($_POST['submitButton'])){
       setcookie("userID", $row['docent_id'], time()+3600);
       setcookie("auth", $Core->AuthKey(128), time()+3600);
 
-      header("location:../../docenten");
+      header("location:docenten");
     }
   } else { //if password and/or username are incorrect, send to login page
     header("location:../../login");

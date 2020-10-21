@@ -1,6 +1,3 @@
-
-		<link rel="stylesheet" href="/css/pages/docent.css">
-
 		<?php
 
 		$docentID = intval($_GET['docent']);

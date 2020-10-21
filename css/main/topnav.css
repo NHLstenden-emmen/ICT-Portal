@@ -54,22 +54,12 @@
 .banner_image {
   transition: 0.3s;
   background-color:rgba(0, 0, 0, 0.5);
-<<<<<<< HEAD
 background: url("../images/jumbotron.jpg") no-repeat center;
 background-size: cover;
 width: 100%;
 height: 600px;
 display: flex;
 justify-content: space-between;
-=======
-  background: url("/css/images/jumbotron.jpg") no-repeat center;
-  background-size: cover;
-  width: 100%;
-  height: max-content;
-  padding: 2vw;
-  display: flex;
-  justify-content: space-between;
->>>>>>> database
 }
 
 .banner_content-left {

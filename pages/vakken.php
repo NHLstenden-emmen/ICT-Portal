@@ -1,9 +1,5 @@
 <main class="content">
-<<<<<<< HEAD
     <div class="left_content"><br />
-=======
-    <div class="left_content">
->>>>>>> database
 
     <?php 
 
@@ -31,10 +27,6 @@
     }
     else {
 ?>
-<<<<<<< HEAD
-=======
-        <div class="subTitle">Vakkenlijst</div>
->>>>>>> database
         <p>Selecteer hier een jaar om alle vakken van het betreffende jaar te tonen.</p>
         <form method="POST">
         <select name="jaarSelectie">

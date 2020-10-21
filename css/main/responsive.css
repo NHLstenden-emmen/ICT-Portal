@@ -101,13 +101,9 @@
 	.colorBlock {
 		display: none;
 	}
-<<<<<<< HEAD
 	.sidebar{
 		display: none !important;
 	}
-=======
-
->>>>>>> database
 }
 
 @media (min-width: 900px){

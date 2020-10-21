@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 // head and nav information
 $activePage = basename($_SERVER['REQUEST_URI'], ".php");
 include 'inc/mysql.php';
@@ -13,25 +12,6 @@ $DB = new MySQL;
     <div class="pageContent">
     <?php
     if(!isset($_GET['page']) || $_GET['page'] == ''){
-=======
-    // head and nav information
-    $activePage = basename($_SERVER['REQUEST_URI'], ".php");
-
-    include 'inc/core.php';
-    include 'inc/mysql.php';
-
-    $DB = new MySQL();
-    $Core = new Core();
-
-
-    include 'inc/header.php';
-    //include 'inc/nav.php';
-    //include 'inc/sidebar.php';
-
-
-
-    if(empty($_GET['page'])){
->>>>>>> database
         $pageTitle = 'nieuws'; //If no page specified
     } else {
         $pageTitle = $_GET['page'];
@@ -60,16 +40,11 @@ $DB = new MySQL;
             case 'login':
                 include 'pages/login.php';
                 break;
-<<<<<<< HEAD
             case 'uitloggen':
                 include 'pages/Login/logout.php';
                 break;
             case 'gebruikers':
                 include 'pages/gebruikers.php';
-=======
-            case 'logout':
-                include 'pages/logout.php';
->>>>>>> database
                 break;
             case 'uploadNieuws':
                 include 'pages/uploadNieuws.php';
@@ -90,7 +65,6 @@ $DB = new MySQL;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
-<<<<<<< HEAD
     ?>
     </div>
     <?php
@@ -98,8 +72,5 @@ $DB = new MySQL;
     ?>
     </div>
     <?php
-=======
-
->>>>>>> database
     include 'inc/footer.php';
 ?>

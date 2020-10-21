@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <nav class="navbar">
       <div class="logo">
       <a href="/index" class="logo"><img src="css/images/default_logo_white.png" alt="ICT Portal"></a>
@@ -40,5 +39,3 @@
       </div>
 
 </div>
-=======
->>>>>>> database

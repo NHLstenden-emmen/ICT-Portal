@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <?php 
 	$blokken = 4;
@@ -86,5 +85,3 @@
         <center><a href="nieuws?all=TRUE">Lees alle artikelen</a></center>
 	</div>
 	</div>
-=======
->>>>>>> database

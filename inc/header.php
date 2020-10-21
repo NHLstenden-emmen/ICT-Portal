@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- this gets the page title from the current file -->
         <title><?= isset($pageTitle) ? $pageTitle : "ICT Portal"?></title>
+<<<<<<< Updated upstream
         <!-- link to the js files -->
         <script src="js/main.js"></script>
         <!-- link to the css files -->
@@ -17,6 +18,21 @@
         <link rel="stylesheet" href="css/main/sidebar.css">
         <link rel="stylesheet" href="css/main/footer.css">
         <!-- link page spesific stylesheets -->
+=======
+
+        <link rel="stylesheet" href="css/main/darkmode.css">
+        <link rel="stylesheet" href="css/main/topnav.css">
+        <link rel="stylesheet" href="css/main/main.css">
+        <link rel="stylesheet" href="css/main/sidebar.css">
+
+
+
+        <link rel="stylesheet" href="css/main/footer.css">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> Stashed changes
         <?php
             if(!isset($_GET['page']) || $_GET['page'] == ''){
                 $page = 'nieuws'; //If no page specified
@@ -55,5 +71,10 @@
                     <?php
                 }
         ?>
+        <link rel="stylesheet" href="css/main/responsive.css">
     </head>
+<<<<<<< Updated upstream
     <body>
+=======
+    <body>
+>>>>>>> Stashed changes

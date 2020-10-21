@@ -25,6 +25,7 @@ div.scrollmenu div {
     color: white;
     line-height: 3;
     margin-top: 5vw;
+    transition: 0.3s;
 }
 
 .bottom{

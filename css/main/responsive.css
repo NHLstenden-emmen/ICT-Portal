@@ -83,8 +83,11 @@
 	
 	main.content {
 		padding: 2% 11% 0% 11% !important;
+		grid-template-columns: unset !important;
 	}
-
+	main.content > .left_content {
+		max-width: 100% !important;
+	}
 
 
 	.contentBlock-grid {
@@ -96,7 +99,9 @@
 		display: none;
 	}
 
-
+	.docentenFoto{
+		
+	}
 }
 
 @media (min-width: 900px){

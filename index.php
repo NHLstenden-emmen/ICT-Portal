@@ -33,14 +33,14 @@
             case 'docenten':
                 include 'pages/docenten.php';
                 break;
+            case 'docent':
+                include 'pages/docent.php';
+                break;
             case 'contact':
                 include 'pages/contact.php';
                 break;
             case 'login':
                 include 'pages/login.php';
-                break;
-            case 'gebruikers':
-                include 'pages/gebruikers.php';
                 break;
             case 'uploadNieuws':
                 include 'pages/uploadNieuws.php';

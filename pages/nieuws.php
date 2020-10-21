@@ -1,4 +1,6 @@
 <main class="content">
+	<div class="left_content">
+
 		<div class="subTitle">
 			Uitgelicht nieuws
 		</div>
@@ -23,4 +25,5 @@
 				</div>
 			</div>
 		</div>
+</div>
 	</main>

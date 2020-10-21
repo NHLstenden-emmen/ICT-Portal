@@ -3,8 +3,10 @@
 
 
 <main class="content">
-  <div class="subTitle">Docenten</div>
-	<div class = "contentBlock-grid" style="">
+    <div class="left_content">
+
+        <div class="subTitle">Docenten</div>
+	        <div class = "contentBlock-grid" style="">
 
     <?php
     $result = $DB->Get("SELECT * FROM docenten");
@@ -28,7 +30,7 @@
         </div>";
     }
 ?>
-
+    </div>
   </div>
 </main> 
 

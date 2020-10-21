@@ -27,6 +27,7 @@
     }
     else {
 ?>
+        <div class="subTitle">Vakkenlijst</div>
         <p>Selecteer hier een jaar om alle vakken van het betreffende jaar te tonen.</p>
         <form method="POST">
         <select name="jaarSelectie">

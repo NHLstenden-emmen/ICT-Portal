@@ -1,6 +1,11 @@
  <?php
 //Get values from POST
 
+if($Core->AuthCheck()){
+  //Al ingelogd dus ga naar nieuwspagina.
+  header("location: /nieuws");
+}
+
 if(isset($_POST['submitButton'])){
 
   $usernameForm = $_POST["gebruikersnaam"];
@@ -26,7 +31,6 @@ if(isset($_POST['submitButton'])){
   }
 }
 
-print_r($Core->AuthCheck());
 ?>
 
 

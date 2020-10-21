@@ -1,5 +1,5 @@
 <main class="content">
-    <div class="left_content"><br />
+    <div class="left_content">
 
     <?php 
 
@@ -42,5 +42,4 @@
     }
     ?>
     </div>
-  <?php include ('inc/sidebar.php'); ?>
 </main>

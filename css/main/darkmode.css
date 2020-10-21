@@ -1,12 +1,12 @@
 /* Navbar & Buttons */
 body.darkmode {
-  background-color: #484c4c;
+  background-color: #151515;
   color: white;
 }
 
 
 body.darkmode > nav.navbar {
-  background-color: #2e3131;
+  background-color: #151515;
 }
 
 body.darkmode > .navbar .navbar_items > ul li:hover {
@@ -80,6 +80,10 @@ body.darkmode > main.content > div.left_content > div.contentBlock-grid > div.co
   color: white;
 }
 
+body.darkmode .colorBlock {
+  background-color: #3c3c3cad !important;
+  
+}
 
 /*FOOTER*/
 

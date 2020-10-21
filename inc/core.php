@@ -7,7 +7,7 @@ class Core
 
 	function AuthCheck()
 	{
-		if(!isset($_COOKIE["user"]) || !isset($_COOKIE["auth"]) || !isset($_COOKIE["domain"]))
+		if(isset($_COOKIE["user"]) || isset($_COOKIE["userID"]) || isset($_COOKIE["auth"]))
 		{   
 			return true;
 		}
@@ -28,8 +28,8 @@ class Core
 
 	function Logout(){
 		setcookie("user", "", time()-3600); //Remove cookie
+		setcookie("userID", "", time()-3600);
 		setcookie("auth", "", time()-3600);
-		setcookie("domain", "", time()-3600);
 
 		header("location: index.php"); //Goto login page
 	}

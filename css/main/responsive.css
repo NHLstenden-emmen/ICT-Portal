@@ -98,10 +98,10 @@
 	.sideBar {
 		display: none;
 	}
-
-	.docentenFoto{
-		
+	.colorBlock {
+		display: none;
 	}
+
 }
 
 @media (min-width: 900px){

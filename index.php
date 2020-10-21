@@ -3,15 +3,17 @@
     $activePage = basename($_SERVER['REQUEST_URI'], ".php");
 
     include 'inc/core.php';
-
     include 'inc/mysql.php';
+
+    $DB = new MySQL();
+    $Core = new Core();
+
 
     include 'inc/header.php';
     //include 'inc/nav.php';
     //include 'inc/sidebar.php';
 
-    $DB = new MySQL();
-    $Core = new Core();
+
 
     if(empty($_GET['page'])){
         $pageTitle = 'nieuws'; //If no page specified
@@ -41,6 +43,9 @@
                 break;
             case 'login':
                 include 'pages/login.php';
+                break;
+            case 'logout':
+                include 'pages/logout.php';
                 break;
             case 'uploadNieuws':
                 include 'pages/uploadNieuws.php';

@@ -31,25 +31,38 @@ a {
 
 /* CONTENTBLOCKS */
 .contentBlock-grid {
+  grid-template-columns: 25% 25% 25%;
   margin-top: 30px;
   display: grid;   
-  grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px 300px;
-  grid-gap: 50px 50px;
+  grid-column-gap: 6%;
 }
 
 .contentBlock {
+  transition: 0.3s;
+  display: grid;
+  grid-template-columns: 20px auto 20px;
+  grid-template-rows: 20px auto 20px;
+  margin-bottom: 4vh;
+}
+
+.contentBlock:hover {
+  transform: scale(1.1);
+}
+
+.contentBlock-nohover {
+  transition: all .2s ease-in-out;
   display: grid;
   grid-template-columns: 25px auto 25px;
   grid-template-rows: 25px auto 25px;
+  margin-bottom: 40px;
 }
-body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-side {
+.contentBlock-side {
   background-color: #4ac4b3;
   grid-column:1/3;
   grid-row:1/3;
 }
 
-body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content {
+.contentBlock-content {
   transition: 0.3s;
   position: relative;
   background-color: white;
@@ -75,17 +88,18 @@ body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBloc
 }
 
 main.content { 
-  min-height: calc(60vh - 90px);
+  min-height: calc(100vh - 90px); 
   transition: 0.3s;
-  padding: 2% 0% 0% 11%;
+  padding: 0% 0% 0% 11%;
 }
 
 .subTitle {
   font-size: 30px;
   font-weight: 700;
+  margin-top: 2vw;
 }
 
-body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content > .contentBlock-text {
+.contentBlock-text {
   transition: 0.3s;
   font-size: 17px;
   color: grey;
@@ -93,24 +107,19 @@ body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBloc
   text-align: left;
   margin: 10px 0px 0px 20px;
 }
-body > main.content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content > .contentBlock-info > .contentBlock-date {
+.contentBlock-date {
   color: rgb(184, 179, 179);
-  font-size: 13px;
-  position: relative;
-  float: left;
-  margin: 0px 0px 30px 30px;
+  /* font-size: 13px; */
+  /* position: relative; */
+  /* float: left; */
+  margin: 10px 10px 10px 20px;
 }
 
-.contentBlock-info {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
 .contentBlock-link {
-  position: relative;
-  float: right;
-  margin: 0px 30px 0px 0px;
+  /* position: relative; */
+  /* float: right; */
+  margin: 10px 30px 20px 20px;
 }
 
 /*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
@@ -152,13 +161,13 @@ input:focus::placeholder {
   font-size: 21px;
   position: absolute;
   left: 0;
-  top: 33px;
+  top: 6px;
   padding: 9px 8px;
   color: rgb(80, 79, 79);
   transition: 0.1s;
 }
 
-.inputWithIcon input[type="text"]:focus + i {
+.inputWithIcon input:focus + i {
   color: #4ac4b3;
 }
 
@@ -208,6 +217,7 @@ button:hover{
     pointer-events:none;
 }
 
+<<<<<<< HEAD
 .page{
   display: grid;
   width: 80vw;
@@ -249,3 +259,5 @@ button:hover{
 .inputSearchField{
   display: none;
 }
+=======
+>>>>>>> database

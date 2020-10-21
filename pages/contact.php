@@ -1,6 +1,9 @@
 
 <main class="content">
+<div class="left_content">
+
   <div class="subTitle">Test</div>
+
 		<div class = "contentBlock-grid">
       <div class='contentBlock' style="width: 300px; height: 300px;">
         <div class='contentBlock-side' style="width: 700px; height: 300px;"></div>
@@ -14,5 +17,7 @@
           </div>
         </div>
     </div>
+    
   </div>
+</div>
 </main>

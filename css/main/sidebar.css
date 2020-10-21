@@ -1,12 +1,3 @@
-
-/*
-.sidebar{
-    width: 15%;
-    background: red;
-    height: max-content;
-    font-family: sans-serif;
-}
-*/
 .sideBar {
     background: blue;
     flex: 1 0 auto;
@@ -46,4 +37,20 @@ h3{
 .rowContent a{
     text-decoration: none;
     color: black;
+}
+
+.weatherReport {
+    border: #E0E0E0 1px solid;
+    padding: 20px;
+    width: 300px;
+}
+
+.weather-icon {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.weather-forecast {
+    font-size: 1.2em;
+    font-weight: bold;
 }

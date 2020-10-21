@@ -4,7 +4,7 @@
 		align-items: normal !;
 		height: auto;
 		flex-direction: column;
-		position: relative !important;
+		position: relative;
 	}
 
     .navbar .navbar_items ul li {
@@ -27,28 +27,27 @@
 		text-align: center;
 	}
 	.navbar .logo{
-        padding: 2% 0% 2% 4% !important;
+        padding: 2% 0% 2% 4%;
 	}
 
 	/*BANNER IMAGE RESPONSIVE */
 	.banner_image {
-        background: #1c5d61 !important;
-        height: 10em !important;
+		display: none;
   	}
 
   	.banner_content-left {
-		padding: 5% 0% 0% 4% !important;
+		padding: 5% 0% 0% 4%;
 	  }
-	 
+
 	.banner_content-left .bannerTitle {
-		font-size: 1.5em !important;
-		color: #ffffff !important;
+		font-size: 1.5em;
+		color: #ffffff;
 	}
 
 	.banner_content-left .bannerSubTitle {
-		color: #ffffff !important;
+		color: #ffffff;
 	}
-	
+
     .banner_content-right {
 		display: none;
         text-align: right;
@@ -57,20 +56,20 @@
 	.footer_desktop {
 		display: none;
 	}
-	
+
 
 	main.content {
-		padding: 2% 11% 0% 11% !important;
-		grid-template-columns: unset !important;
+		padding: 2% 11% 0% 11%;
+		grid-template-columns: unset;
 	}
 	main.content > .left_content {
-		max-width: 100% !important;
+		max-width: 100%;
 	}
 
 
 	.contentBlock-grid {
-		grid-template-columns: none !important	;
-		grid-gap: unset !important;
+		grid-template-columns: none	;
+		grid-gap: unset;
 	}
 
 	.sideBar {
@@ -81,7 +80,11 @@
 	}
 
 	.loginWrapper{
-		grid-column: unset !important;
+		grid-column: unset;
+	}
+
+	.pageContentBlock{
+		width: 100%;
 	}
 }
 
@@ -89,4 +92,4 @@
 	.footer-mobile > div.scrollmenu {
 		display: none;
 	}
-}
+} 

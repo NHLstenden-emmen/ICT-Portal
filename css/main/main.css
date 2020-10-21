@@ -218,3 +218,18 @@ button:hover{
     pointer-events:none;
 }
 
+.devider{
+ 	display: inline-block;
+	width: 100%;
+}
+.pageContentBlock{
+	float: left;
+	width: 80%;
+	padding: 10px;
+	padding: 10px 10px 40px 40px;
+}
+.pageSidebarBlock{
+	float: left;
+	width: 20%;
+	padding: 40px 40px 10px 10px;
+}

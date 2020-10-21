@@ -51,7 +51,7 @@
                 case 'profiel-bewerken':
                     include 'pages/docenten/profiel.php';
                     break;
-                case 'Beschikbaarheid':
+                case 'beschikbaarheid':
                     include 'pages/docenten/beschikbaarheid.php';
                     break;
                 default:

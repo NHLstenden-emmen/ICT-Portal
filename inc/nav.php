@@ -14,7 +14,7 @@
 					<div class="dropdown-content">
 						<a href="uploadNieuws">Upload Nieuws</a>
 						<a href="profiel-bewerken">profiel bewerken</a>
-						<a href="Beschikbaarheid">beschikbaarheid</a>
+						<a href="beschikbaarheid">beschikbaarheid</a>
 					</div>
 				</div>
 				<li onclick="window.location.href='logout'">logout</li>

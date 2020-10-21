@@ -8,11 +8,10 @@
   height: 100vh;
 }
 .contentBlock{
-width: 90%;
+  width: 90%;
 }
 
 .sidebar{
-
   grid-area: sidebar;
 }
 .formulier{
@@ -51,14 +50,11 @@ width: 90%;
 .myForm > submit {
   grid-column: controls;
   grid-row: auto;
-  border: none;
-  background: #eee;
   padding: 1em;
 }
-.myForm > input[type=submit] {
+.myForm > button[type=submit] {
   grid-column: controls;
   justify-self: start;
-  border: 1px solid black;
 }
 textarea {
 resize: none;

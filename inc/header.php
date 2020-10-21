@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="css/main/sidebar.css">
         <link rel="stylesheet" href="css/main/main.css">
         <link rel="stylesheet" href="css/main/darkmode.css">
+        <link rel="stylesheet" href="css/main/responsive.css">
+
         <?php
             if(!isset($_GET['page']) || $_GET['page'] == ''){
                 $page = 'nieuws'; //If no page specified
@@ -54,6 +56,5 @@
                     <?php
                 }
         ?>
-        <link rel="stylesheet" href="css/main/responsive.css">
     </head>
     <body>

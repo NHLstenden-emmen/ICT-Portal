@@ -10,6 +10,7 @@
             <h2>Contactformulier:</h2><br>
             <form class="myForm" id="contactForm" action="mail.php" method="post">
                 <input type="text" id="fname" name="fname" placeholder="First Name"/><br>
+                <input type="text" id="lname" name="lname" placeholder="Last Name"/><br>
                 <input type="text" id="email" name="email" placeholder="Email"/><br>
                 <textarea id="subject" name="message" placeholder="Place your message here"
                           rows="4" cols="50"></textarea><br>

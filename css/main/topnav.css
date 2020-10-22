@@ -215,4 +215,8 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 
 .navDropdown:hover .dropdown-content {display: block;}
 
-.navDropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropbtn.darkmode {
+  padding: 48px 35px 48px 35px;
+  background-color: transparent;
+}

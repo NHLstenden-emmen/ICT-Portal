@@ -81,16 +81,16 @@ body.darkmode > main.content > div.left_content > div.contentBlock-grid > div.co
 }
 
 /*Login Contenblock */
-body.darkmode > main.content > div.loginWrapper > div.contentBlock-nohover > div.contentBlock-side {
+body.darkmode .contentBlock-side {
   background-color: #318C91;
-} 
+}
 
-body.darkmode > main.content > div.loginWrapper > div.contentBlock-nohover > div.contentBlock-content {
+body.darkmode .contentBlock-content {
   background-color: #3c3a3a;
   color: white;
 }
 
-body.darkmode > main.content > div.loginWrapper > div.contentBlock-nohover > div.contentBlock-content > .contentBlock-text {
+body.darkmode .contentBlock-text {
   color: white;
 }
 

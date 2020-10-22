@@ -25,7 +25,7 @@
       <div class="<?= ($activePage == 'beschikbaarheid') ? 'mbactive':''; ?>" onclick="window.location.href='beschikbaarheid'"><i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i></div>
       <div class="<?= ($activePage == 'logout') ? 'mbactive':''; ?>" onclick="window.location.href='logout'"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php }
-		
+
 			else {?>
         <div class="<?= ($activePage == 'login') ? 'mbactive':''; ?>" onclick="window.location.href='login'"><i class="fa fa-sign-in fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php } ?>

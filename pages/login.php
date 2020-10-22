@@ -23,11 +23,12 @@ if(isset($_POST['submitButton'])){
       setcookie("user", $usernameForm, time()+3600);
       setcookie("userID", $row['docent_id'], time()+3600);
       setcookie("auth", $Core->AuthKey(128), time()+3600);
+      setcookie("fullUser", $row['voornaam']. " ".$row['achternaam'], time()+3600);
 
-      header("location:docenten");
+      header("location: nieuws");
     }
   } else { //if password and/or username are incorrect, send to login page
-    header("location:../../login");
+    header("location: login?e=1");
   }
 }
 

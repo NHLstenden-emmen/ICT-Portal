@@ -1,3 +1,4 @@
+
 		<?php
 
 		$docentID = intval($_GET['docent']);
@@ -5,6 +6,7 @@
 		$docent = $result->fetch_assoc();
 
 		?>
+
 
 
 
@@ -34,6 +36,7 @@
 		<?php
         /*
 			echo "
+
 			<div class= 'content'>
 				<div class='green'>
 				</div>
@@ -75,3 +78,4 @@
     
     </div>
 </main>
+

@@ -37,7 +37,7 @@
 	<div class="grid-container">
 		<div class="Titel">
 			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?></div>
-			<p>Tekst.</p>
+			<p><!-- you can place some secret content in here --></p>
 		</div>
 	<div class="Mededelingen zoom colorBlock" onclick="window.location.href='nieuws?all=TRUE'"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
 	<div class="Contact zoom colorBlock" onclick="window.location.href='aanwezigen'"><div class="headerBlock"><p>Aanwezigen docenten</p></div></div>

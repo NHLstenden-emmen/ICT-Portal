@@ -9,7 +9,6 @@
 ?>
 
 <main class="content">
-		<div class="subTitle">Contact</div>
 			<div class='contentBlock-nohover'>
 				<div class='contentBlock-side'></div>
 				<div class='contentBlock-content'>

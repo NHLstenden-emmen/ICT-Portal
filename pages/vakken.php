@@ -36,7 +36,7 @@
             <option value="3">Jaar 3</option>
             <option value="4">Jaar 4</option>
         </select>
-        <button type="submit" name="submitVakken">opslaan</button>
+        <button type="submit" name="submitVakken">Vakken tonen</button>
         </form>
 <?php      
     }

@@ -1,6 +1,6 @@
 <nav class="navbar">
 	<div class="logo">
-		<a href="nieuws" class="logo"><img src="css/images/default_logo_white.png" alt="ICT Portal" style="width: 100px;"></a>
+		<a href="nieuws" class="logo"><img src="images/default_logo_white.png" alt="ICT Portal" style="width: 100px;"></a>
 	</div>
 	<div class="navbar_items">
 		<ul>

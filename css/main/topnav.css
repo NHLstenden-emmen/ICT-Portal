@@ -55,7 +55,7 @@
 .banner_image {
 	transition: 0.3s;
 	background-color: rgba(0, 0, 0, 0.5);
-	background: url("../images/jumbotron.jpg") no-repeat center;
+	background: url("../../images/jumbotron.jpg") no-repeat center;
 	background-size: cover;
 	width: 100%;
 	height: max-content;

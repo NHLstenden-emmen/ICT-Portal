@@ -36,32 +36,24 @@ if(isset($_POST['submitButton'])){
 
 
 
-<link rel="stylesheet" href="../css/pages/login.css">
-
 <main class="content">
-  <div class="loginWrapper">
-
-  <div class='contentBlock-nohover' style="width: 100%; height: 300px;">
-        <div class='contentBlock-side' style="width: 100%;"></div>
-          <div class='contentBlock-content' style="width: 100%;">
-            <div class='contentBlock-title'>Inloggen</div>
-            <div class='contentBlock-text'>       
-            <form method="POST"> 
+			<div class='contentBlock-nohover' style="width: 100%; height: 300px;">
+				<div class='contentBlock-side' style="width: 100%;"></div>
+				<div class='contentBlock-content' style="width: 100%;">
+					<div class='contentBlock-title'>
+						Contact
+					</div>
+					<div class='contentBlock-text-normal'>
+          <form method="POST"> 
               <label for="gebruikersnaam">Gebruikersnaam</label><br>
               <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required> <br>
               <br>
               <label for="wachtwoord">Wachtwoord</label><br>
               <input type="password" name="wachtwoord" placeholder="*********" required><br><br>
-            </div>
-            <div class='contentBlock-info'>
-            <button type="submit" name="submitButton">Inloggen</button>
-      </form>
-          </div>
-          </div>
-        </div>
 
- 
-
-  </div>
+              <button type="submit" id="submit" name="submit">Inloggen</button>
+						</form>
+					</div>
+				</div>
+		</div>
 </main>
-

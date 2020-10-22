@@ -5,9 +5,9 @@
     } else {
         $pageTitle = "Error";
     }
-
+    
     // The private key
-    $apiKey = "25957a1a29b039b5ca004840d8eecb9c";
+    $apiKey = "";
     // The location to get the data from
     $cityName = "Emmen";
     // Open Weather api url
@@ -31,6 +31,7 @@
 
     // get the current time
     $currentTime = time();
+    
 ?>
 
 <div class="sideBar">

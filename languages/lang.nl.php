@@ -9,7 +9,7 @@ $lang = array();
 
 
 // aanwezigen / PRESENT
-$lang['PRESENT_TITLE'] = 'On this page you can see the teachers present.';
+$lang['PRESENT_TITLE'] = 'Op deze pagina kun je de aanwezige docenten zien.';
 $lang['PRESENT_Teachers_Name'] = 'Docenten Naam';
 $lang['PRESENT_Monday'] = 'Maandag';
 $lang['PRESENT_Tuesday'] = 'Dinsdag';

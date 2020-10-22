@@ -16,7 +16,7 @@
 				if(!empty($docent['foto'])){
 					echo '<img class="docentenWeergaveFoto" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docent['foto']).'" alt="foto van '.$docent['voornaam'].'>" />';
 				} else {
-					echo '<img class="docentenWeergaveFoto" src="css/images/avatar_default.jpg" alt="Geen foto ingesteld" />';
+					echo '<img class="docentenWeergaveFoto" src="images/avatar_default.jpg" alt="Geen foto ingesteld" />';
 				}
 		
 				echo "<p class='docentBlok-naam'>{$docent['voornaam']}</p>

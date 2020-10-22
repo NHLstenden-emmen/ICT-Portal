@@ -1,4 +1,35 @@
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+th {
+  background-color: var(--lightPrimaryColor);
+  color: white;
+}
+</style>
 <div class="aanwezigen">
+	<h1>Op deze pagina kunt u de aanwezige docenten zien.</h1>
+	<table>
+		<tr>
+			<th><p>Docenten Naam</p></th>
+			<th><p>Maandag</p></th>
+			<th><p>Dinsdag</p></th>
+			<th><p>Woensdag</p></th>
+			<th><p>Donderdag</p></th>
+			<th><p>Vrijdag</p></th> 
+		</tr>
 	<?php 
     $docentID = 3;
    
@@ -29,44 +60,39 @@
 				$docentNamee = "Geen naam gevonden";
 			}
 		?>
-		
-		<div class="beschikbareTijden" style='margin-top:20px;'>
-			<h3><?= ($docentNamee == '') ? 'Naam docent':$docentNamee; ?></h3>
-			<strong><p>Maandag</p></strong>
-			<p>
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_maandag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_maandag'][0]; ?></span>
+		<tr>
+			<td><a href="docent?docent=<?php echo $beschikbaarheidOutput['docent_id'][0]; ?>"><?= ($docentNamee == '') ? 'Naam docent':$docentNamee; ?></a></td>
+			<td>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_maandag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_maandag'][0]; ?>
 				/
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_maandag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_maandag'][1]; ?></span>
-			</p>
-			<strong><p>Dinsdag</p></strong>
-			<p>
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_dinsdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_dinsdag'][0]; ?></span>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_maandag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_maandag'][1]; ?>
+			</td>
+			<td>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_dinsdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_dinsdag'][0]; ?>
 				/
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_dinsdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_dinsdag'][1]; ?></span>
-			</p>
-			<strong><p>Woensdag</p></strong>
-			<p>
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_woensdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_woensdag'][0]; ?></span>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_dinsdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_dinsdag'][1]; ?>
+			</td>
+			<td>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_woensdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_woensdag'][0]; ?>
 				/
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_woensdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_woensdag'][1]; ?></span>
-			</p>
-			<strong><p>Donderdag</p></strong>
-			<p>
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_donderdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_donderdag'][0]; ?></span>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_woensdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_woensdag'][1]; ?>
+			</td>
+			<td>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_donderdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_donderdag'][0]; ?>
 				/
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_donderdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_donderdag'][1]; ?></span>
-			</p>
-			<strong><p>Vrijdag</p></strong>
-			<p>
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_vrijdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_vrijdag'][0]; ?></span>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_donderdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_donderdag'][1]; ?>
+			</td>
+			<td>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_vrijdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_vrijdag'][0]; ?>
 				/
-				<span><?= ($beschikbaarheidOutput['beschikbaarheid_vrijdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_vrijdag'][1]; ?></span>
-			</p>
-		</div>
+				<?= ($beschikbaarheidOutput['beschikbaarheid_vrijdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_vrijdag'][1]; ?>
+			</td>
+		</tr>
 		<?php 
 		}else if($resultTimes->num_rows == 0){
-			echo"<h1>Er zijn geen uuren gevonden.</h1>";
+			echo"<h1>Er zijn geen docneten aanwezig</h1>";
 		}
 	}
 	?>
+	</table>
 </div>

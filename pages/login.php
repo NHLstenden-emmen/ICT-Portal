@@ -41,7 +41,7 @@ if(isset($_POST['submitButton'])){
 				<div class='contentBlock-side' style="width: 100%;"></div>
 				<div class='contentBlock-content' style="width: 100%;">
 					<div class='contentBlock-title'>
-						Contact
+						Inloggen
 					</div>
 					<div class='contentBlock-text-normal'>
           <form method="POST"> 

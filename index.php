@@ -39,6 +39,9 @@
                 case 'contact':
                     include 'pages/contact.php';
                     break;
+                case 'aanwezigen':
+                    include 'pages/aanwezigen.php';
+                    break;
                 case 'login':
                     include 'pages/login.php';
                     break;
@@ -51,7 +54,7 @@
                 case 'profiel-bewerken':
                     include 'pages/docenten/profiel.php';
                     break;
-                case 'beschikbaarheid':
+                case 'docenten-beschikbaarheid':
                     include 'pages/docenten/beschikbaarheid.php';
                     break;
                     // disclaimers

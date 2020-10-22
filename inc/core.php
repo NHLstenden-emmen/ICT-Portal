@@ -32,7 +32,7 @@ class Core
 		setcookie("auth", "", time()-3600);
 		setcookie("fullUser", "", time()-3600);
 
-		header("location: index.php"); //Goto login page
+		header("location: nieuws"); //Goto login page
 	}
 
 	

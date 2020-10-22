@@ -62,7 +62,7 @@
         echo"<div class='pageSidebarBlock'>";
         include 'inc/sidebar.php';
         echo"</div>";
-    echo "</div>";
+    echo "</div>"; 
 
     include 'inc/footer.php';
 ?>

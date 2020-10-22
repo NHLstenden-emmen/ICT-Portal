@@ -3,7 +3,7 @@
 
 if($Core->AuthCheck()){
   //Al ingelogd dus ga naar nieuwspagina.
-  header("location: /nieuws");
+  header("location: nieuws");
 }
 
 if(isset($_POST['submitButton'])){

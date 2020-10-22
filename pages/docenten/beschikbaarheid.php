@@ -24,7 +24,7 @@
     }
     else if($result->num_rows == 0){
         $DB->Get("INSERT INTO docenten_beschikbaarheid (docent_id) VALUES ($docentID)");
-        header('Location: /docentenBeschikbaarheid');
+        header('Location: beschikbaarheid');
     }
 
 
@@ -66,7 +66,7 @@ if(isset($_POST['submitAction'])){
             $DB->Get("UPDATE docenten_beschikbaarheid SET beschikbaarheid_vrijdag = NULL WHERE docent_id = '{$docentID}'");
         }
         
-        header('Location: /docentenBeschikbaarheid');
+        header('Location: beschikbaarheid');
 
     }
 }

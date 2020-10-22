@@ -1,69 +1,79 @@
-.contact{
-  display: grid;
-  grid-template-rows:  1fr 300px ;
-  grid-template-columns: 200px 1fr 1fr 200px;
-  grid-template-areas: 
-                       '...... formulier sidebar ......'
-                       '...... contactInfo kaartSchool ......';
-  height: 100vh;
+.contact {
+    display: grid;
+    grid-template-rows: 1fr 300px;
+    grid-template-columns: 200px 1fr 1fr 200px;
+    grid-template-areas:
+        "...... formulier sidebar ......"
+        "...... contactInfo kaartSchool ......";
+    height: 100vh;
 }
-.contentBlock{
-  width: 90%;
-}
-
-.sidebar{
-  grid-area: sidebar;
-}
-.formulier{
-  grid-area: formulier;
-}
-.formulier > h1, h2, p{
-  padding-left: 5px;
-}
-.contactInfo{
-  grid-area: contactInfo;
-}
-.kaartSchool{
-  grid-area: kaartSchool;
+.contentBlock {
+    width: 90%;
 }
 
+.sidebar {
+    grid-area: sidebar;
+}
+.formulier {
+    grid-area: formulier;
+}
+.formulier > h1,
+h2,
+p {
+    padding-left: 5px;
+}
+.important-pages > p {
+    padding-left: 5px;
+    margin: 20px 0;
+}
+.important-pages > p:hover a {
+    padding-left: 5px;
+    margin: 20px 0;
+    color: var(--primaryColor);
+}
+.contactInfo {
+    grid-area: contactInfo;
+}
+.kaartSchool {
+    grid-area: kaartSchool;
+}
 
-.grid-item{
-  background-color: coral;
-  border: 1px solid black;
-  padding: 5px;
+.grid-item {
+    background-color: coral;
+    border: 1px solid black;
+    padding: 5px;
 }
 
 .myForm {
-  display: grid;
-  grid-template-columns: [labels] auto [controls] 1fr;
-  grid-auto-flow: row;
-  grid-gap: .8em;
-  padding: 1.2em;
+    display: grid;
+    grid-template-columns: [labels] auto [controls] 1fr;
+    grid-auto-flow: row;
+    grid-gap: 0.8em;
+    padding: 1.2em;
 }
-.myForm > label  {
-  grid-column: labels;
-  grid-row: auto;
+.myForm > label {
+    grid-column: labels;
+    grid-row: auto;
 }
 .myForm > input,
 .myForm > textarea,
 .myForm > submit {
-  grid-column: controls;
-  grid-row: auto;
-  padding: 1em;
+    grid-column: controls;
+    grid-row: auto;
+    padding: 1em;
 }
-.myForm > button[type=submit] {
-  grid-column: controls;
-  justify-self: start;
+.myForm > button[type="submit"] {
+    grid-column: controls;
+    justify-self: start;
 }
 textarea {
-resize: none;
-} 
+    resize: none;
+}
 
-.contentBlockContactPage{
-transition: 0.3s;
-display: grid;
-grid-template-columns: 20px auto 20px;
-grid-template-rows: 20px auto 20px;
-margin-bottom: 4vh;
-} 
+.contentBlockContactPage {
+    transition: 0.3s;
+    display: grid;
+    grid-template-columns: 20px auto 20px;
+    grid-template-rows: 20px auto 20px;
+    margin-bottom: 4vh;
+}

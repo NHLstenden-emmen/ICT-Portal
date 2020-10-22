@@ -43,7 +43,7 @@ if($result->num_rows > 0){
                                     instagram = '{$_POST["docentInstagram"]}'
                                         WHERE docent_id = '{$docentID}'");
 
-                                    header('Location: /docentenEdit');
+                                    header('Location: profiel-bewerken');
 
                             }
                             else {

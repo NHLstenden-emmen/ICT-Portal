@@ -7,7 +7,7 @@
     }
     
     // The private key
-    $apiKey = "";
+    $apiKey = "25957a1a29b039b5ca004840d8eecb9c";
     // The location to get the data from
     $cityName = "Emmen";
     // Open Weather api url
@@ -68,7 +68,7 @@
     <div class="row2 row">
         <div class="rowContent important-pages">
             <h3>Belangrijke pagina's</h3>
-            <p><a href="http://localhost/ICT-Portal/vakken">Vakken jaar 1</a></p>
+            <p><a href="http://localhost/ICT-Portal/vakken?jaar=1">Vakken jaar 1</a></p>
             <p><a href="http://localhost/ICT-Portal/nieuws?all=TRUE">Al het nieuws</a></p>
             <p><a href="http://localhost/ICT-Portal/contact">Contact</a></p>
         </div>

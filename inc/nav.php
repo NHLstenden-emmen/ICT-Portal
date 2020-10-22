@@ -39,8 +39,7 @@
 			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?></div>
 			<p>Tekst.</p>
 		</div>
-	<div class="Populair zoom colorBlock"></div>
-	<div class="Mededelingen zoom colorBlock" onclick="window.location.href='nieuws'"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
+	<div class="Mededelingen zoom colorBlock" onclick="window.location.href='nieuws?all=TRUE'"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
 	<div class="Contact zoom colorBlock" onclick="window.location.href='contact'"><div class="headerBlock"><p>Contact</p></div></div>
 	<div class="Jaar-4 zoom colorBlock" onclick="window.location.href='vakken?jaar=4'"><div class="headerBlock"><p>Jaar 4</p></div></div>
 	<div class="Jaar-3 zoom colorBlock" onclick="window.location.href='vakken?jaar=3'"><div class="headerBlock"><p>Jaar 3</p></div></div>

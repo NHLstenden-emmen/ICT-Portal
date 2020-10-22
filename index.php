@@ -59,7 +59,7 @@
                 case 'profiel-bewerken':
                     include 'pages/docenten/profiel.php';
                     break;
-                case 'docenten-beschikbaarheid':
+                case 'beschikbaarheid':
                     include 'pages/docenten/beschikbaarheid.php';
                     break;
                     // disclaimers

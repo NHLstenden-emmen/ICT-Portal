@@ -11,10 +11,13 @@
 
 .contentBlock-content {
     width: 50vw; 
+    height: 40vw ;
     height: auto;
     display: grid;
-    grid-template-columns: 1vw 10vw 1vw;
+    /*grid-template-columns: 1vw 10vw 1vw; waarom gebruik je hier vw en niet gewoon % */
     /*grid-template-rows: 1vw 10vw 1vw;*/
+    grid-template-columns: 1vw 14vw 1vw 16vw 1vw 16vw 1vw;
+    grid-template-rows: 1vw 30vw 8vw 1vw;
 }
 
 .docentenFoto {

@@ -36,6 +36,9 @@
                     case 'docenten':?>
                         <link rel="stylesheet" href="css/pages/docenten.css">
                         <?php break;
+                    case 'docent':?>
+                        <link rel="stylesheet" href="css/pages/docent.css">
+                        <?php break;
                     case 'contact':?>
                         <link rel="stylesheet" href="css/pages/contact.css">
                         <?php break;

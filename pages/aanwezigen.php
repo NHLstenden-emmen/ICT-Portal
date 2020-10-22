@@ -1,10 +1,10 @@
 <?php 
     $docentID = 3;
    
-    $result = $DB->Get("SELECT docent_id, beschikbaarheid_maandag, beschikbaarheid_dinsdag, beschikbaarheid_woensdag, beschikbaarheid_donderdag, beschikbaarheid_vrijdag FROM docenten_beschikbaarheid");
-	for ($i=0; $i < $result->num_rows; $i++) { 
-		if($result->num_rows > 0){
-			$beschikbaarheidDB = $result->fetch_assoc();
+    $resultTimes = $DB->Get("SELECT docent_id, beschikbaarheid_maandag, beschikbaarheid_dinsdag, beschikbaarheid_woensdag, beschikbaarheid_donderdag, beschikbaarheid_vrijdag FROM docenten_beschikbaarheid");
+	for ($i=0; $i < $resultTimes->num_rows; $i++) {
+		if($resultTimes->num_rows > 0){
+			$beschikbaarheidDB = $resultTimes->fetch_assoc();
 			
 			foreach($beschikbaarheidDB as $key => $value){
 				if(!empty($value)){
@@ -16,10 +16,21 @@
 					$beschikbaarheidOutput[$key][0] = '';
 					$beschikbaarheidOutput[$key][1] = '';
 				}
+				$beschikbaarheidOutput['docent_id'][0];
+			}
+			//make a second db call to see the name
+			$resultName = $DB->Get("SELECT voornaam, achternaam FROM docenten WHERE docent_id = ".$beschikbaarheidOutput['docent_id'][0]);
+			$docentName = $resultName->fetch_assoc();
+			if(!empty($docentName)){
+				$docentNamee = $docentName['voornaam']." ".$docentName['achternaam'];
+			}
+			else {
+				$docentNamee = "Geen naam gevonden";
 			}
 		?>
+		
 		<div class="beschikbareTijden" style='margin-top:20px;'>
-			<h3>docenten naam</h3>
+			<h3><?= ($docentNamee == '') ? 'Naam docent':$docentNamee; ?></h3>
 			<strong><p>Maandag</p></strong>
 			<p>
 				<span><?= ($beschikbaarheidOutput['beschikbaarheid_maandag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_maandag'][0]; ?></span>
@@ -53,7 +64,7 @@
 
 		</div>
 		<?php 
-		}else if($result->num_rows == 0){
+		}else if($resultTimes->num_rows == 0){
 			echo"<h1>Er zijn geen uuren gevonden.</h1>";
 		}
 	}

@@ -221,3 +221,6 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	padding: 48px 35px 48px 35px;
 	background-color: transparent;
 }
+.langsitch button {
+	padding: 48px 20px 48px 20px;
+}

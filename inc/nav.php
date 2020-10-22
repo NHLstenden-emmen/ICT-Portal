@@ -10,9 +10,9 @@
 			<li class="<?= ($activePage == 'contact') ? 'active':''; ?>" onclick="window.location.href='contact'">Contact</li>
 			<?php if($Core->AuthCheck()){?>
 				<div class="navDropdown">
-					<button class="dropbtn" style="text-transform: none;">
-						<i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i><strong><?= $_COOKIE['fullUser']; ?></strong>
-					</button>
+					<li class="dropbtn" style="text-transform: none;" onclick="window.location.href='/docent?docent=<?= $_COOKIE['userID'] ?>'">
+						<i class="fa fa-user fa-lg fa-fw" aria-hidden="true" ></i><strong><?= $_COOKIE['fullUser']; ?></strong>
+					</li>
 					<div class="dropdown-content">
 						<a href="uploadNieuws">Upload Nieuws</a>
 						<a href="profiel-bewerken">profiel bewerken</a>

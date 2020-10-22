@@ -50,13 +50,13 @@
 					if (!empty($docent['email'])) {
 						echo "<a href='mailto:{$docent['email']}' ><i class='fa fa-envelope' aria-hidden='true'></i></a>";
 					}
-					if (empty($docent['twitter'])) {
+					if (!empty($docent['twitter'])) {
 						echo "<a href='https://twitter.com/{$docent['twitter']}' target='_blank'><i class='fa fa-twitter' aria-hidden='true'></i></a>";
 					}
-					if (empty($docent['linkedin'])) {
+					if (!empty($docent['linkedin'])) {
 						echo "<a href='https://linkedin.com/{$docent['linkedin']}' target='_blank'><i class='fa fa-linkedin' aria-hidden='true'></i></a>";
 					}
-					if (empty($docent['instagram'])) {
+					if (!empty($docent['instagram'])) {
 					echo "<a href='https://instagram.com/{$docent['instagram']}' target='_blank'><i class='fa fa-instagram' aria-hidden='true'></i></a>";
 					}
 

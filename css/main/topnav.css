@@ -42,7 +42,7 @@
 .navbar .navbar_items ul > .divider {
 	transition: 0.3s;
 	width: 2px;
-	margin: 20px 0px 10px 10px;
+	margin: 20px 10px 10px 10px;
 	background-color: var(--tekstColor);
 }
 
@@ -51,6 +51,17 @@
 	color: var(--tekstColor);
 }
 
+button.languageSwitch, button.darkmodeSwitch {
+	border-radius: unset;
+	padding: 48px 20px;
+	color: var(--tekstColor);
+}
+
+
+
+.navbar .navbar_items ul button > .languageSwitch.English {
+	color: white;
+}
 /* Banner Image */
 .banner_image {
 	transition: 0.3s;

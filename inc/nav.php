@@ -27,15 +27,15 @@
 			<li class="<?= ($activePage == 'login') ? 'active':''; ?>" onclick="window.location.href='login'">Login</li>
 			<?php } ?>
 			<div class="divider"></div>
-			<div> 
-				<form method="POST" class="langsitch"> 
-					<button type="submit" name="changelang" value="nl">NL</button>
-					<button type="submit" name="changelang"value="en">EN</button>
-				</form>
-			</div>
-			<div class="divider"></div>
-			<div class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
-
+			<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
+			
+				<?php if(empty($_COOKIE['lang'])){
+					echo "<form method='post'><button type='submit' value='en' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN</button></form>";
+				}
+				else if(!empty($_COOKIE['lang']) && $_COOKIE['lang'] == 'en'){
+					echo "<form method='post'><button type='submit' value='nl' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL</button></form>";
+				}
+				?>
 		</ul>
 	</div>
 </nav>

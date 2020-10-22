@@ -14,7 +14,7 @@
 	--primaryColor: #188287;
 	--darkPrimaryColor: #0b696d;
 	--darkerPrimaryColor: #015256;
-	--dark: #131313;
+	--dark: #151515;
 	--tekstColor: #ffffff;
 
 	font-family: "Roboto", sans-serif; /* Default font */
@@ -225,8 +225,17 @@ button {
 	outline: none;
 	transition: 0.3s;
 }
+
 button:hover {
 	background-color: var(--lightPrimaryColor);
+}
+
+button.languageSwitch:hover {
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
+}
+
+button.darkmodeSwitch:hover {
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
 }
 .beschikbareTijden {
 	display: inline-block;

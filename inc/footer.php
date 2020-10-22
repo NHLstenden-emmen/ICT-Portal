@@ -16,6 +16,15 @@
 <!-- Mobile Tabs -->
 <div class="footer-mobile">
   <div class="scrollmenu">
+    			
+  <?php if(empty($_COOKIE['lang'])){
+					//echo "<form method='post'><button type='submit' value='en' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN</button></form>";
+				}
+				else if(!empty($_COOKIE['lang']) && $_COOKIE['lang'] == 'en'){
+					//echo "<form method='post'><button type='submit' value='nl' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL</button></form>";
+				}
+  ?>
+
     <div class="<?= ($activePage == 'nieuws') ? 'mbactive':''; ?>" onclick="window.location.href='nieuws'"><i class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'vakken') ? 'mbactive':''; ?>" onclick="window.location.href='vakken'"><i class="fa fa-book fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'docenten') ? 'mbactive':''; ?>" onclick="window.location.href='docenten'"><i class="fa fa-address-book fa-lg fa-fw" aria-hidden="true"></i></div>

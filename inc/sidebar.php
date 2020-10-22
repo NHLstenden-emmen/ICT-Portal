@@ -5,7 +5,7 @@
     } else {
         $pageTitle = "Error";
     }
-
+    
     // The private key
     $apiKey = "25957a1a29b039b5ca004840d8eecb9c";
     // The location to get the data from
@@ -31,18 +31,11 @@
 
     // get the current time
     $currentTime = time();
+    
 ?>
 
 <div class="sideBar">
-    <div class="row1 row">
-        <div class="rowContent important-pages">
-            <h3>Belangrijke pagina's</h3>
-            <p><a href="http://localhost/ICT-Portal/vakken">Vakken jaar 1</a></p>
-            <p><a href="http://localhost/ICT-Portal/nieuws?all=TRUE">Al het nieuws</a></p>
-            <p><a href="http://localhost/ICT-Portal/contact">Contact</a></p>
-        </div>
-    </div>
-    <div class="row2 row weer">
+    <div class="row1 row weer">
         <?php
             // A check if the api works as it should so you dont get a masive error
             if ($data->cod != 200) {?>
@@ -71,6 +64,14 @@
         <?php
         }
         ?>
+    </div>
+    <div class="row2 row">
+        <div class="rowContent important-pages">
+            <h3>Belangrijke pagina's</h3>
+            <p><a href="http://localhost/ICT-Portal/vakken?jaar=1">Vakken jaar 1</a></p>
+            <p><a href="http://localhost/ICT-Portal/nieuws?all=TRUE">Al het nieuws</a></p>
+            <p><a href="http://localhost/ICT-Portal/contact">Contact</a></p>
+        </div>
     </div>
     <div class="row3 row">
         <div class="rowContent">

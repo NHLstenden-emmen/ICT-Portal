@@ -59,13 +59,8 @@
 
 
 	main.content {
-		padding: 2% 11% 0% 11%;
 		grid-template-columns: unset;
 	}
-	main.content > .left_content {
-		max-width: 100%;
-	}
-
 
 	.contentBlock-grid {
 		grid-template-columns: none	;

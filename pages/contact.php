@@ -1,30 +1,39 @@
-<main class="content">
-	<div class='contentBlockContactPage'>
-		<div class='contentBlock-side'></div>
-		<div class='contentBlock-content'>
-			<div class='contentBlock-title'>Contact</div>
-			<div class='contentBlock-text'>
-				<form class="myForm" method="post">
-					<label for="fname">Voornaam</label>
-					<input type="text" name="fname" placeholder="Voornaam" required/><br>
-					<input type="text" id="lname" name="lname" placeholder="Achternaam" required/><br>
-					<input type="text" id="email" name="email" placeholder="Emailadres" required/><br>
-					<textarea id="subject" name="message" placeholder="Type hier uw bericht" rows="4" cols="50" required></textarea><br>
-					<button type="submit" id="submit" name="submit">Verstuur</button>
+<?php
+	if(isset($_POST['submitButton'])){
+		$name = $_POST["contactVoornaam"]." ".$_POST["contactAchternaam"];
+		$email = $_POST["contactEmail"];
+		//wordwrap so it wont be one long string.
+		$message = wordwrap($_POST["contactMessage"],70,"<br>\n");
+		$Core->Mail($name,$email,$message);
+	}
+?>
 
-				</form>
-				<?php
-						if(!empty(array_key_exists('submit', $_POST))){
-							$name = $_POST["fname"]." ".$_POST["lname"];
-							$email = $_POST["email"];
-							//wordwrap so it wont be one long string.
-							$message = wordwrap($_POST["message"],70,"<br>\n");
-							mailingfunction($name,$email,$message);
-						}
-					?>
-			</div>
+<main class="content">
+		<div class="subTitle">Contact</div>
+			<div class='contentBlock-nohover'>
+				<div class='contentBlock-side'></div>
+				<div class='contentBlock-content'>
+					<div class='contentBlock-title'>Contact</div>
+						<div class='contentBlock-text-normal'>
+							<form method="post">
+								<label for="contactVoornaam">Voornaam</label><br>
+								<input type="text" name="contactVoornaam" placeholder="Voornaam" required/><br><br>
+
+								<label for="contactAchternaam">Achternaam</label><br>
+								<input type="text" name="contactAchternaam" placeholder="Achternaam" required/><br><br>
+
+								<label for="contactEmail">Emailadres</label><br>
+								<input type="text" name="contactEmail" placeholder="Emailadres" required/><br><br>
+
+								<label for="contactMessage">Bericht</label><br>
+								<textarea name="contactMessage" placeholder="Type hier uw bericht" rows="4" cols="50" required></textarea><br>
+								
+								<button type="submit" id="submit" name="submitButton">Verstuur</button>
+							</form>
+						</div>
+				</div>
 		</div>
-	</div>
+
 	<div class="contactInfo">
 		<p>Telefoonnummer: <a href="tel:0612312312">0612312312</a><br /> 
 		Adresgegevens: Van schaikweg 26<br>
@@ -37,24 +46,3 @@
 	</div>
 
 </main>
-
-<?php
-function mailingfunction($name,$email,$message){
-	$headers = "From: noreply@ICTPortal.com" . "\r\n" .
-	"Bcc:".$email;
-
-	if(empty($email || $message)) {
-		$msgerror = '<span class="error"> Vul alle velden in</span>';
-		// check if name is valid
-	} else if (!preg_match("/^[a-zA-Z-' ]{2,}$/",$name)) {
-		$msgerror = "Vul uw voor en achternaam in. Alleen letters en spaties zijn toegestaan";
-		// check if email is valid
-	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		$msgerror = "Dit is geen geldige e mailadres";
-	}  else {
-		$msgerror = '';
-	}
-	echo $msgerror;
-	mail("studentinfo@nhlstenden.com","This is a mail from ICT PORTAL","From:".$name."<br>Email:".$email."<br><br>".$message );
-}
-?>

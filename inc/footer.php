@@ -6,7 +6,9 @@
           <li><a href="nieuws">Nieuws |</a></li>
           <li><a href="vakken">Vakken |</a></li>
           <li><a href="docenten">Docenten |</a></li>
-          <li><a href="contact">Contact</a></li>
+          <li><a href="contact">Contact |</a></li>
+          <li><a href="privacyPolicy">privacy Policy |</a></li>
+          <li><a href="termsAndConditions">terms And Conditions</a></li>
         </ul>
   	</div>
 </footer>

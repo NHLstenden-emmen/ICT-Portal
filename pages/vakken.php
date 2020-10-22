@@ -2,21 +2,27 @@
     <div class="left_content">
 
     <?php
-    if(isset($_POST['submitVakken'])){
+    if(isset($_POST['submitVakken']) || isset($_GET['jaar'])){
         //Query voor alle vakken uit dat jaar.
-        echo "<div class='subTitle'>Jaar {$_POST['jaarSelectie']} | Vakken</div>
+        if(isset($_POST['jaarSelectie'])){
+            $jaarSelectie = $_POST['jaarSelectie'];
+        }
+        else if(isset($_GET['jaar'])){
+            $jaarSelectie = $_GET['jaar'];
+        }
+
+        echo "<div class='subTitle'>Jaar {$jaarSelectie} | Vakken</div>
         <div class = 'contentBlock-grid'>";
 
-        $result = $DB->Get("SELECT * FROM docenten");
-
-        while($docentData = $result->fetch_assoc()){
-
-        $docentenLink = 'window.location.href="vak?vak='.$docentData['docent_id'].'"';
-        echo "<div class='contentBlock' onclick='{$docentenLink}'>
+        $result = $DB->Get("SELECT * FROM vakken WHERE jaarlaag = '{$jaarSelectie}' ORDER BY periode ASC");
+        while($vakData = $result->fetch_assoc()){
+            
+        $vakkenLink = 'window.location.href="vak?vak='.$vakData['vak_id'].'"';
+        echo "<div class='contentBlock' onclick='{$vakkenLink}'>
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>
-            <div class='contentBlock-title'>Vaknaam</div>
-            <div class='contentBlock-text'>Vakbeschrijving</div>
+            <div class='contentBlock-title'>{$vakData['vak']}</div>
+            <div class='contentBlock-text'>Periode: {$vakData['periode']}</div>
             </div>
             </div>";
         }

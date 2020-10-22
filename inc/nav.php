@@ -19,7 +19,6 @@
 						<hr	/>
 						<a href="beschikbaarheid">Mijn beschikbaarheid</a>
 						<a href="logout">Uitloggen</a>
-						
 					</div>
 				</div>
 			<?php }
@@ -27,6 +26,13 @@
 			else { ?>    
 			<li class="<?= ($activePage == 'login') ? 'active':''; ?>" onclick="window.location.href='login'">Login</li>
 			<?php } ?>
+			<div class="divider"></div>
+			<div> 
+				<form method="POST" class="langsitch"> 
+					<button type="submit" name="changelang" value="nl">NL</button>
+					<button type="submit" name="changelang"value="en">EN</button>
+				</form>
+			</div>
 			<div class="divider"></div>
 			<div class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
 

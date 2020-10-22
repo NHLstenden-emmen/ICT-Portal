@@ -15,6 +15,7 @@
 
 
     include 'inc/header.php';
+    include 'languages/selector.php';
     include 'inc/nav.php';
     echo "<div class='devider'>";
         echo"<div class='pageContentBlock'>";
@@ -23,7 +24,6 @@
         } else {
             $pageTitle = $_GET['page'];
         }
-        //print_R($pageTitle);
         switch($pageTitle)
             {
                 case 'databasetest':
@@ -59,7 +59,7 @@
                 case 'profiel-bewerken':
                     include 'pages/docenten/profiel.php';
                     break;
-                case 'docenten-beschikbaarheid':
+                case 'beschikbaarheid':
                     include 'pages/docenten/beschikbaarheid.php';
                     break;
                     // disclaimers

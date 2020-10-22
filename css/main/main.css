@@ -266,7 +266,6 @@ button:hover {
 .disclaimers h2 {
 	margin-top: 30px;
 }
-
 .bewerkenFoto {
     display: block;
     border-radius: 50%;
@@ -274,4 +273,24 @@ button:hover {
 	margin: 2vw;
 	height: 250px;
 	width: 250px; 
+}
+.aanwezigen table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.aanwezigen th,
+td {
+	text-align: left;
+	padding: 8px;
+}
+
+.aanwezigen tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.aanwezigen th {
+	background-color: var(--lightPrimaryColor);
+	color: white;
 }

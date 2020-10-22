@@ -68,15 +68,15 @@
     <div class="row2 row">
         <div class="rowContent important-pages">
             <h3>Belangrijke pagina's</h3>
-            <p><a href="http://localhost/ICT-Portal/vakken?jaar=1">Vakken jaar 1</a></p>
-            <p><a href="http://localhost/ICT-Portal/nieuws?all=TRUE">Al het nieuws</a></p>
-            <p><a href="http://localhost/ICT-Portal/contact">Contact</a></p>
+            <p><a href="aanwezigen">aanwezigen docenten</a></p>
+            <p><a href="vakken?jaar=1">Vakken jaar 1</a></p>
+            <p><a href="nieuws?all=TRUE">Al het nieuws</a></p>
         </div>
     </div>
     <div class="row3 row">
         <div class="rowContent">
             <h3>Webshop</h3><br>
-            <a href="https://webshop.stenden.com/" target="_blank"><div class="shop"></div></a>
+            <a href="https://www.p-p.nl/portfolio/nhl-stenden-hogeschool/" target="_blank">Ga nu naar de NHL Stenden webshop voor de GloedNieuwe dopper en meer...</a>
         </div>
     </div>    
 </div>

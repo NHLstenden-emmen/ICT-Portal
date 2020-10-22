@@ -16,7 +16,6 @@
 <!-- Mobile Tabs -->
 <div class="footer-mobile">
   <div class="scrollmenu">
-    <div class="darkmodeSwitchMobile" style="font-size: 24px; background-color: #318C91 !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'nieuws') ? 'mbactive':''; ?>" onclick="window.location.href='nieuws'"><i class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'vakken') ? 'mbactive':''; ?>" onclick="window.location.href='vakken'"><i class="fa fa-book fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'docenten') ? 'mbactive':''; ?>" onclick="window.location.href='docenten'"><i class="fa fa-address-book fa-lg fa-fw" aria-hidden="true"></i></div>
@@ -31,6 +30,7 @@
 			else {?>
         <div class="<?= ($activePage == 'login') ? 'mbactive':''; ?>" onclick="window.location.href='login'"><i class="fa fa-sign-in fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php } ?>
+      <div class="darkmodeSwitchMobile" style="font-size: 24px; background-color: var(--lightPrimaryColor) !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
   </div>
 </div>
 

@@ -52,7 +52,7 @@ class Core
 			$msgerror = '';
 		}
 		echo $msgerror;
-		mail("studentinfo@nhlstenden.com","This is a mail from ICT PORTAL","From:".$name."<br>Email:".$email."<br><br>".$message );
+		mail("studentinfo@nhlstenden.com","This is a mail from ICT PORTAL","From:".$name."<br>Email:".$email."<br><br>".$message,$headers );
 	}
 }
 ?>

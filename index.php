@@ -1,6 +1,11 @@
 <?php
     // head and nav information
     $activePage = basename($_SERVER['REQUEST_URI'], ".php");
+    // removes the part after the ? for a nicer title
+    if (strpos($activePage, '?') !== false) {
+        $activePage = substr($activePage, 0, strpos($activePage, '?'));
+    }
+    
 
     include 'inc/core.php';
     include 'inc/mysql.php';
@@ -39,6 +44,9 @@
                 case 'contact':
                     include 'pages/contact.php';
                     break;
+                case 'aanwezigen':
+                    include 'pages/aanwezigen.php';
+                    break;
                 case 'login':
                     include 'pages/login.php';
                     break;
@@ -51,7 +59,7 @@
                 case 'profiel-bewerken':
                     include 'pages/docenten/profiel.php';
                     break;
-                case 'beschikbaarheid':
+                case 'docenten-beschikbaarheid':
                     include 'pages/docenten/beschikbaarheid.php';
                     break;
                     // disclaimers

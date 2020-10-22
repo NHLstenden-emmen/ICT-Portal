@@ -16,15 +16,9 @@
 					<div class="dropdown-content">
 						<a href="uploadNieuws">Nieuws beheren	</a>
 						<a href="profiel-bewerken">Mijn profiel</a>
-						<hr class="koekje" />
+						<hr	/>
 						<a href="beschikbaarheid">Mijn beschikbaarheid</a>
 						<a href="logout">Uitloggen</a>
-					<style>
-						.koekje::before {
-							content: "Profiel";
-
-						}
-						</style>
 						
 					</div>
 				</div>

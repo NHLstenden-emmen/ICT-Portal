@@ -34,5 +34,25 @@ class Core
 
 		header("location: index.php"); //Goto login page
 	}
+
+	
+	function Mail($name,$email,$message){
+		$headers = "From: noreply@ICTPortal.com" . "\r\n" .
+		"Bcc:".$email;
+
+		if(empty($email || $message)) {
+			$msgerror = '<span class="error"> Vul alle velden in</span>';
+			// check if name is valid
+		} else if (!preg_match("/^[a-zA-Z-' ]{2,}$/",$name)) {
+			$msgerror = "Vul uw voor en achternaam in. Alleen letters en spaties zijn toegestaan";
+			// check if email is valid
+		} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$msgerror = "Dit is geen geldige e mailadres";
+		}  else {
+			$msgerror = '';
+		}
+		echo $msgerror;
+		mail("studentinfo@nhlstenden.com","This is a mail from ICT PORTAL","From:".$name."<br>Email:".$email."<br><br>".$message );
+	}
 }
 ?>

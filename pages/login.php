@@ -13,6 +13,7 @@ if(isset($_POST['submitButton'])){
 
  //Select where username and password are equal to form input
   $result = $DB->Get("SELECT * FROM docenten WHERE gebruikersnaam = '$usernameForm' AND wachtwoord = '$passwordForm'");
+
   if ($result->num_rows > 0) {
      
     while($row = $result->fetch_assoc()) {
@@ -50,7 +51,7 @@ if(isset($_POST['submitButton'])){
               <label for="wachtwoord">Wachtwoord</label><br>
               <input type="password" name="wachtwoord" placeholder="*********" required><br><br>
 
-              <button type="submit" name="submitButton">Inloggen</button>
+              <button type="submit" id="submit" name="submitButton">Inloggen</button>
 						</form>
 					</div>
 				</div>

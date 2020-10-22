@@ -4,13 +4,13 @@ body.darkmode {
   color: white;
 }
 
-
 body.darkmode > nav.navbar {
   background-color: #151515;
 }
 
 body.darkmode > .navbar .navbar_items > ul li:hover {
-  background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%) center/15000%;
+  background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%)
+    center/15000%;
 }
 
 body.darkmode > .navbar .navbar_items ul > .divider {
@@ -18,22 +18,20 @@ body.darkmode > .navbar .navbar_items ul > .divider {
 }
 
 body.darkmode > .navbar .navbar_items ul > .darkmodeSwitch {
-  color: #318C91;
+  color: #318c91;
 }
 /* END NAVBAR */
-
 
 /*DARKMODE INPUT */
 
 input.darkmode {
   color: #ffffff;
   border-bottom: 2px solid #ffffff;
-
 }
 
 input.darkmode:focus {
   color: rgb(240, 240, 240);
-  border-color: #318C91;
+  border-color: #318c91;
 }
 
 input.darkmode::placeholder {
@@ -47,7 +45,6 @@ input.darkmode:focus::placeholder {
   color: #ffffff !important;
 }
 
-
 /*BUTTONS */
 button.darkmode {
   background-color: #2e3131;
@@ -57,7 +54,7 @@ button.darkmode {
   font-size: 16px;
   text-transform: uppercase;
   cursor: pointer;
-  color: white;  
+  color: white;
   outline: none;
 }
 
@@ -65,24 +62,39 @@ button.darkmode:hover {
   background-color: #575a5a;
 }
 
-
 /*CONTENTBLOCKS*/
-body.darkmode > main.content > div.left_content > div.contentBlock-grid > div.contentBlock > div.contentBlock-side {
-  background-color: #318C91;
-} 
+body.darkmode
+  > main.content
+  > div.left_content
+  > div.contentBlock-grid
+  > div.contentBlock
+  > div.contentBlock-side {
+  background-color: #318c91;
+}
 
-body.darkmode > main.content > div.left_content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content {
+body.darkmode
+  > main.content
+  > div.left_content
+  > div.contentBlock-grid
+  > div.contentBlock
+  > div.contentBlock-content {
   background-color: #3c3a3a;
   color: white;
 }
 
-body.darkmode > main.content > div.left_content > div.contentBlock-grid > div.contentBlock > div.contentBlock-content > .contentBlock-text {
+body.darkmode
+  > main.content
+  > div.left_content
+  > div.contentBlock-grid
+  > div.contentBlock
+  > div.contentBlock-content
+  > .contentBlock-text {
   color: white;
 }
 
 /*Login Contenblock */
 body.darkmode .contentBlock-side {
-  background-color: #318C91;
+  background-color: #318c91;
 }
 
 body.darkmode .contentBlock-content {
@@ -94,10 +106,8 @@ body.darkmode .contentBlock-text {
   color: white;
 }
 
-
 body.darkmode .colorBlock {
   background-color: #3c3c3cad !important;
-  
 }
 
 /*FOOTER*/
@@ -112,5 +122,5 @@ body.darkmode > div.footer-mobile > div.scrollmenu > div {
 }
 
 body.darkmode > footer.footer_desktop {
-  background-color: #318C91 !important;
+  background-color: #318c91 !important;
 }

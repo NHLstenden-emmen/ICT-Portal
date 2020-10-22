@@ -1,5 +1,4 @@
 <?php 
-    $paginaTitel = "test";
     //Feike's Login systeem
     $docentID = 6;
    

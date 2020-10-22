@@ -87,4 +87,7 @@
 	.footer-mobile > div.scrollmenu {
 		display: none;
 	}
+	.mobileDivider {
+		display: none;
+	}
 } 

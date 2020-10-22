@@ -149,3 +149,8 @@ body.darkmode > div.footer-mobile > div.scrollmenu > div {
 body.darkmode > footer.footer_desktop {
   background-color: #318c91 !important;
 }
+
+/*DOCENTBLOK */
+body.darkmode .docentBlok-Icons a {
+  color: #318C91 !important;
+}

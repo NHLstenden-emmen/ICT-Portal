@@ -1,19 +1,18 @@
-
 .contentBlock-content {
     display: grid;
     grid-template-columns:  2% 30% 2% 64% 2% ;
-    grid-template-rows: 2% 85% 11% 2%;
+    grid-template-rows: 2% 15% 20% 52% 2%;
 }
 
-.docentenFoto {
-    /*display: block;*/
+.docentenWeergaveFoto {
+    display: block;
     border-radius: 50%;
     object-fit: cover;
     margin: 2vw;
-    width: 200px;
-    height: 200px;
-    /*grid-column: 2/3;
-    grid-row: 2/3;*/  
+    width: 250px;
+    height: 250px;
+    grid-column: 2/3;
+    grid-row: 2/3;  
 }
 
 .docentBlok-naam{
@@ -21,30 +20,42 @@
     font-size: 4.4vw;
     text-align: center;
     grid-column: 4/5;
-    grid-row: 2/3;  
-    
-}
-
-.docent-Text {
-    grid-column: 4/5;
     grid-row: 2/3;
 }
 
-.icons {
+.docentBlok-achternaam{
+    margin: 2vw auto 0 auto;
+    font-size: 2.4vw;
+    text-align: center;
+    grid-column: 4/5;
+    grid-row: 3;
+}
+
+.docentBlok-vakken {
+    font-size: 1.4vw;
+    text-align: center;
+    grid-column: 4/5;
+    grid-row: 4;  
+}
+
+.docentBlok-Icons {
     grid-column: 2/6;
-    grid-row: 3/4;
+    grid-row: 5;
+    margin-bottom: 1vh;
 }
 
-.icons img {
-    height: 50px;
-    margin: 15px;
+.docentBlok-Icons a {
+    color: #4ac4b3;
+    margin: 0 1vw 0 1vw;
 }
 
+.docentBlok-Icons i {
+    font-size: 3vw;
+}
 
 .telefoonnummer {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black;
 }
 
 .telefoonnummer .telefoonnummerhover {
@@ -82,31 +93,61 @@
 
 @media (max-width: 900px){
     .contentBlock-content {
-        display: block;
-
+        grid-template-columns: auto;
+        grid-template-rows: auto;
     }
-    .docentenFoto {
+    
+
+    .docentenWeergaveFoto {
         display: block;
         border-radius: 50%;
         object-fit: cover;
         margin: 5vw auto 5vw auto;
         width: 200px;
         height: 200px;
-        /*grid-column: 2/3;
-        grid-row: 2/3;*/  
+        grid-column: 2/5;
+        grid-row: 2; 
     }
-    .docentBlok-naam{
-        margin: 2vw auto 0 auto;
+
+    .docentBlok-naam {
         font-size: 8vw;
-    }
-    .icons {
-        display: block;
-        margin: auto;
+        grid-column: 2/5;
+        grid-row: 3;
     }
     
-    .icons img {
-        display: block;
-        height: 50px;
-        margin: auto;
+    .docentBlok-achternaam{
+        font-size: 8vw;
+        grid-column: 2/5;
+        grid-row: 4;
+    }
+
+    .docentBlok-vakken {
+        margin-top: 2vh;
+        font-size: 4vw;
+        grid-column: 2/5;
+        grid-row: 5;
+    }
+
+    .mobileDivider {
+        width: 50%;
+        border-top: 1px solid #b7acac;
+        grid-column: 2/5;
+        grid-row: 6;
+        margin: 2vw auto 0 auto;
+        height: 1px;    
+    }
+
+    .docentBlok-Icons {
+        grid-column: 2/5;
+        grid-row: 7;
+        margin: 2vw auto 2vh auto;
+    }
+
+    .docentBlok-Icons a {
+        margin: 0 3vw 0 3vw;
+    }
+
+    .docentBlok-Icons i {
+        font-size: 8vw;
     }
 }

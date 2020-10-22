@@ -51,7 +51,7 @@ if(isset($_POST['submitButton'])){
               <label for="wachtwoord">Wachtwoord</label><br>
               <input type="password" name="wachtwoord" placeholder="*********" required><br><br>
 
-              <button type="submit" id="submit" name="submit">Inloggen</button>
+              <button type="submit" id="submit" name="submitButton">Inloggen</button>
 						</form>
 					</div>
 				</div>

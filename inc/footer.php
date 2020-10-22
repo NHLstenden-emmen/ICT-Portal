@@ -7,8 +7,8 @@
           <li><a href="vakken">Vakken |</a></li>
           <li><a href="docenten">Docenten |</a></li>
           <li><a href="contact">Contact |</a></li>
-          <li><a href="privacyPolicy">privacy Policy |</a></li>
-          <li><a href="termsAndConditions">terms And Conditions</a></li>
+          <li><a href="privacyPolicy">Privacy policy |</a></li>
+          <li><a href="termsAndConditions">Terms & Conditions</a></li>
         </ul>
   	</div>
 </footer>
@@ -19,7 +19,7 @@
     <div class="darkmodeSwitchMobile" style="font-size: 24px; background-color: #318C91 !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'nieuws') ? 'mbactive':''; ?>" onclick="window.location.href='nieuws'"><i class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'vakken') ? 'mbactive':''; ?>" onclick="window.location.href='vakken'"><i class="fa fa-book fa-lg fa-fw" aria-hidden="true"></i></div>
-    <div class="<?= ($activePage == 'docenten') ? 'mbactive':''; ?>" onclick="window.location.href='docenten'"><i class="fa fa-id-card-o fa-lg fa-fw" aria-hidden="true"></i></div>
+    <div class="<?= ($activePage == 'docenten') ? 'mbactive':''; ?>" onclick="window.location.href='docenten'"><i class="fa fa-address-book fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'contact') ? 'mbactive':''; ?>" onclick="window.location.href='contact'"><i class="fa fa-envelope-o fa-lg fa-fw" aria-hidden="true"></i></div>
     <?php if($Core->AuthCheck()){?>
       <div class="<?= ($activePage == 'uploadNieuws') ? 'mbactive':''; ?>" onclick="window.location.href='uploadNieuws'"><i class="fa fa-pencil fa-lg fa-fw" aria-hidden="true"></i></div>

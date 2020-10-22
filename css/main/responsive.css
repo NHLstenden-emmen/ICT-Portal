@@ -41,11 +41,11 @@
 
 	.banner_content-left .bannerTitle {
 		font-size: 1.5em;
-		color: #ffffff;
+		color: var(--tekstColor);
 	}
 
 	.banner_content-left .bannerSubTitle {
-		color: #ffffff;
+		color: var(--tekstColor);
 	}
 
 	.banner_content-right {

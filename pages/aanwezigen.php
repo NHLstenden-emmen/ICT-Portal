@@ -1,4 +1,5 @@
-<?php 
+<div class="aanwezigen">
+	<?php 
     $docentID = 3;
    
     $resultTimes = $DB->Get("SELECT docent_id, beschikbaarheid_maandag, beschikbaarheid_dinsdag, beschikbaarheid_woensdag, beschikbaarheid_donderdag, beschikbaarheid_vrijdag FROM docenten_beschikbaarheid");
@@ -61,11 +62,11 @@
 				/
 				<span><?= ($beschikbaarheidOutput['beschikbaarheid_vrijdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_vrijdag'][1]; ?></span>
 			</p>
-
 		</div>
 		<?php 
 		}else if($resultTimes->num_rows == 0){
 			echo"<h1>Er zijn geen uuren gevonden.</h1>";
 		}
 	}
-?>
+	?>
+</div>

@@ -5,15 +5,15 @@ div.scrollmenu {
 	display: flex;
 	flex: none;
 	overflow: auto;
-	white-space: nowrap;
+	var(--tekstColor)-space: nowrap;
 }
 
 div.scrollmenu div {
 	font-size: 28px;
 	background-color: #4ac4b3;
-	border-right: 1px solid white;
+	border-right: 1px solid var(--tekstColor);
 	display: inline-flex;
-	color: white;
+	color: var(--tekstColor);
 	text-align: center;
 	padding: 35px;
 	text-decoration: none;
@@ -28,7 +28,7 @@ div.scrollmenu div {
 .footer_desktop {
 	width: 100%;
 	background-color: lightseagreen;
-	color: white;
+	color: var(--tekstColor);
 	line-height: 3;
 	margin-top: 5vw;
 	transition: 0.3s;
@@ -51,8 +51,8 @@ div.scrollmenu div {
 
 .siteNav li a {
 	text-decoration: none;
-	color: white;
+	color: var(--tekstColor);
 }
 .mbactive {
-	box-shadow: inset 0 10px 0 0 white;
+	box-shadow: inset 0 10px 0 0 var(--tekstColor);
 }

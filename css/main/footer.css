@@ -20,10 +20,10 @@ div.scrollmenu div {
 }
 
 .footer-mobile {
+	z-index: 15;
 	position: sticky;
 	bottom: 0;
 }
-
 
 .footer_desktop {
 	width: 100%;

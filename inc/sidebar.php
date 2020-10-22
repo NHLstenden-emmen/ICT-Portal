@@ -68,9 +68,9 @@
     <div class="row2 row">
         <div class="rowContent important-pages">
             <h3>Belangrijke pagina's</h3>
-            <p><a href="http://localhost/ICT-Portal/vakken?jaar=1">Vakken jaar 1</a></p>
-            <p><a href="http://localhost/ICT-Portal/nieuws?all=TRUE">Al het nieuws</a></p>
-            <p><a href="http://localhost/ICT-Portal/contact">Contact</a></p>
+            <p><a href="vakken?jaar=1">Vakken jaar 1</a></p>
+            <p><a href="nieuws?all=TRUE">Al het nieuws</a></p>
+            <p><a href="contact">Contact</a></p>
         </div>
     </div>
     <div class="row3 row">

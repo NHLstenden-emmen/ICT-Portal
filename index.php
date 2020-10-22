@@ -1,6 +1,11 @@
 <?php
     // head and nav information
     $activePage = basename($_SERVER['REQUEST_URI'], ".php");
+    // removes the part after the ? for a nicer title
+    if (strpos($activePage, '?') !== false) {
+        $activePage = substr($activePage, 0, strpos($activePage, '?'));
+    }
+    
 
     include 'inc/core.php';
     include 'inc/mysql.php';

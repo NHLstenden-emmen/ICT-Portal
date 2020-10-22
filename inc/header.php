@@ -4,7 +4,7 @@
         <!-- normal meta data -->
         <meta charset="UTF-8">
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <title><?= isset($pageTitle) ? $pageTitle : "ICT Portal"?></title>
+        <title><?php echo "ICT Portal - ". $activePage ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?Php include 'inc/favicon.php'; ?>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">

@@ -19,6 +19,12 @@ div.scrollmenu div {
 	text-decoration: none;
 }
 
+.footer-mobile {
+	position: sticky;
+	bottom: 0;
+}
+
+
 .footer_desktop {
 	width: 100%;
 	background-color: lightseagreen;

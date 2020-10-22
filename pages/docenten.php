@@ -1,11 +1,7 @@
 
 <main class="content">
-    <div class="left_content">
-
-        <div class="subTitle">Docenten</div>
-	        <div class = "contentBlock-grid" style="">
-
-
+        <div class="subTitle">Docentenlijst</div>
+	        <div class = "contentBlock-grid">
     <?php
     $result = $DB->Get("SELECT * FROM docenten");
     
@@ -29,9 +25,6 @@
         </div>";
     }
 ?>
-
-    </div>
-
   </div>
 </main> 
 

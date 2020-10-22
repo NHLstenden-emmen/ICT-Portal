@@ -45,6 +45,31 @@ input.darkmode:focus::placeholder {
   color: #ffffff !important;
 }
 
+
+/*DARKMODE INPUT */
+
+textarea.darkmode {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+textarea.darkmode:focus {
+  color: rgb(240, 240, 240);
+  border-color: #318c91;
+}
+
+textarea.darkmode::placeholder {
+  color: #ffffff;
+}
+textarea.darkmode:focus::placeholder {
+  color: #ffffff;
+}
+
+.inputWithIcon.darkmode i {
+  color: #ffffff !important;
+}
+
+
 /*BUTTONS */
 button.darkmode {
   background-color: #2e3131;

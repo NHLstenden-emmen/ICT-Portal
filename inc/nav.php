@@ -18,6 +18,7 @@
 						<a href="profiel-bewerken">profiel bewerken</a>
 						<a href="Beschikbaarheid">beschikbaarheid</a>
 						<a href="logout">Uitloggen</a>
+
 					</div>
 				</div>
 			<?php }

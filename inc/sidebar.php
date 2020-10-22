@@ -1,3 +1,4 @@
+<!-- Made By Kevin Smulders -->
 <?php
     //Only works when $pageTitle is called in header.php 
     if (function_exists('pageTitle')) {
@@ -27,13 +28,6 @@
 
     // converts the response into a PHP variable
     $data = json_decode($response);
-
-    // A check if the api works as it should so you dont get a masive error
-    $test = 0;
-    //$data->cod != 200
-    if ($test != 0) {
-        echo("Er was een fout met het ophalen van de data van de weers api");
-    } else {
 
     // get the current time
     $currentTime = time();
@@ -71,34 +65,34 @@
     ?>
     </div>
     <div class="row2 row">
+        <?php
+            // A check if the api works as it should so you dont get a masive error
+            if ($data->cod != 200) {?>
+                <h3>Weer</h3>
+                <p>Er is iets fout gegaan met het ophalen van de weer data</p>
+            <?php } else {?>
         <div class="rowContent">
         <h3>Weer</h3><br>
-        <div class="weatherReport">
-            <p<?php echo $data->name; ?></p>
-            <div class="time">
-                <!-- Adds the current time so you can see when it updated for the last time -->
-                <div>Laatst geupdate: <?php echo date("l g:i a", $currentTime); ?></div>
-                <!-- Gets the Description about what kind of weather it is -->
-                <div>Het is: <?php echo($data->weather[0]->description); ?></div>
-            </div>
-            <div class="weather-forecast">
-                <span class="min-temperature">
-                    <!-- Gets a max temp -->
-                    <?php echo $data->main->temp_max; ?>°
-                    /
-                    <!-- Gets a min temp -->
-                    <?php echo $data->main->temp_min; ?>°
-                </span>
-                <!-- Get the right icon for the current weatherReport -->
-                <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" />
-            </div>
-            <div class="extra information">
-                <div>Temperatuur: <?php echo $data->main->temp; ?>°</div>
-                <div>Vochtigheid: <?php echo $data->main->humidity; ?> %</div>
-                <div>Wind kracht: <?php echo $data->wind->speed; ?> km/h</div>
-            </div>
+        <p<?php echo $data->name; ?></p>
+        <div class="time">
+            <!-- Adds the current time so you can see when it updated for the last time -->
+            <div><strong> Laatst geupdate:</strong> <?php echo date("l g:i a", $currentTime); ?></div>
+            <!-- Gets the Description about what kind of weather it is -->
+            <div><strong> Het is:</strong> <?php echo($data->weather[0]->description); ?></div>
+        </div>
+        <div class="weather-forecast">
+            <div><strong>Temperatuur:</strong> <br> <?php echo $data->main->temp; ?>°</div>
+            <!-- Get the right icon for the current weatherReport -->
+            <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" />
+        </div>
+        <div class="extra information">
+            <div><strong>Vochtigheid:</strong> <?php echo $data->main->humidity; ?> %</div>
+            <div><strong>Wind kracht:</strong> <?php echo $data->wind->speed; ?> km/h</div>
         </div>
         </div>
+        <?php
+        }
+        ?>
     </div>
     <div class="row3 row">
         <div class="rowContent">
@@ -107,7 +101,4 @@
         </div>
     </div>    
 </div>
-<?php
-}
-?>
     

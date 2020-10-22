@@ -3,13 +3,9 @@
     flex: 1 0 auto;
     /* enable grow, disable shrink */
 }
-.weatherReport{
-    display: none;
-}
-
 .row{
     width: 100%;
-    height: 200px;
+    height: 300px;
     background: #F8F8F8;
 }
 
@@ -39,12 +35,6 @@ h3{
     color: black;
 }
 
-.weatherReport {
-    border: #E0E0E0 1px solid;
-    padding: 20px;
-    width: 300px;
-}
-
 .weather-icon {
     vertical-align: middle;
     margin-right: 20px;
@@ -52,5 +42,4 @@ h3{
 
 .weather-forecast {
     font-size: 1.2em;
-    font-weight: bold;
 }

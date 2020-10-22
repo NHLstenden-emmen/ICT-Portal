@@ -1,3 +1,222 @@
-.active a{
-    color: var(--primaryColor); ;
+
+/* Navigation bar */
+.navbar{
+  transition: 0.3s;
+  background-color: #4ac4b3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 1px rgba(48, 43, 43, 0.25);
+  z-index: 2;
+}
+
+.navbar .logo {
+  padding: 0% 0% 0% 10%;
+}
+.navbar .navbar_items > ul {
+  margin: 0;
+}
+.navbar .navbar_items > ul li {
+  transition: 0.3s;
+}
+
+.navbar .navbar_items > ul li:hover {
+  background: #318C91 radial-gradient(circle, transparent 1%, #318C91 1%) center/15000%;
+  box-shadow: inset 0 -5px 0 0 white;
+}
+
+.navbar .navbar_items > ul li.active {
+  box-shadow: inset 0 -5px 0 0 white;
+}
+.navbar .navbar_items ul {
+  display: flex;
+}
+
+.navbar .navbar_items ul li {
+  color: white;
+  padding: 48px 35px 48px 35px;
+}
+
+.navbar .navbar_items ul > .divider {
+  transition: 0.3s;
+  width: 2px; 
+  margin: 20px 0px 10px 10px;
+  background-color: white;
+}
+
+.navbar .navbar_items ul > .darkmodeSwitch {
+  padding: 48px 20px;
+  color: white;
+}
+
+/* Banner Image */
+.banner_image {
+  transition: 0.3s;
+  background-color:rgba(0, 0, 0, 0.5);
+  background: url("../images/jumbotron.jpg") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: max-content;
+  padding: 2vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner_content-left {
+  padding: 4% 0% 0% 11%;
+  text-align: left;
+}
+
+.banner_content-right {
+  text-align: right;
+  color: #fff;
+}
+
+.bannerTitle {
+  text-transform: capitalize;
+  font-size: 3vw;
+  font-weight: 700;
+}
+
+.banner_content-left .bannerSubTitle {
+  font-weight: 400;
+  text-transform: none;
+}
+
+body > .jumbotron > .jumbotron-content > div.inputSearchField {
+  margin-top: 15px;
+  width: 300px;
+}
+
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 7vw 7vw 7vw 17vw 7vw 7vw 7vw 7vw 7vw 7vw 7vw;
+  grid-template-rows: 7vw 7vw 7vw 7vw;
+  grid-template-areas:
+    ". . . . . . . . . Jaar-1 ."
+    ". Titel Titel . Populair Populair . . . . Jaar-2"
+    ". . . . Populair Populair . Contact Jaar-4 Jaar-3 ."
+	". . . . . . Mededelingen . . . .";
+}
+
+.Titel { 
+	grid-area: Titel; 
+	width: 100%;
+    height: 100%;
+}
+
+.colorBlock{
+  background: #e1e1e185;
+  color: white;
+}
+
+.Populair { 
+	grid-area: Populair; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Mededelingen { 
+	grid-area: Mededelingen; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Contact { 
+	grid-area: Contact; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-4 { 
+	grid-area: Jaar-4;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-3 { 
+	grid-area: Jaar-3;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-2 { 
+	grid-area: Jaar-2;
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+
+.Jaar-1 { 
+	grid-area: Jaar-1; 
+	width: 100%;
+    height: 100%;
+	transition: 0.3s;
+}
+.zoom:hover {
+	transform: scale(1.1);
+}
+
+.headerBlock p{
+    margin: 0;
+	font-size: 1vw;
+}
+
+.headerBlock{
+	text-align: center;
+    margin-top: 40%;
+    vertical-align: middle;
+    font-family: sans-serif;
+}
+
+.Mededelingen .headerBlock{
+	text-align: center;
+    margin-top: 35%;
+    vertical-align: middle;
+    font-family: sans-serif;
+}
+  
+
+.navDropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+  color: white;
+  padding: 48px 35px 48px 35px;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.navDropdown:hover .dropdown-content {display: block;}
+
+
+.dropbtn.darkmode {
+  padding: 48px 35px 48px 35px;
+  background-color: transparent;
 }

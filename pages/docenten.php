@@ -1,10 +1,10 @@
 
-<link rel="stylesheet" href="css/pages/docenten.css">
-
-
 <main class="content">
-  <div class="subTitle">Docenten</div>
-	<div class = "contentBlock-grid" style="">
+    <div class="left_content">
+
+        <div class="subTitle">Docenten</div>
+	        <div class = "contentBlock-grid" style="">
+
 
     <?php
     $result = $DB->Get("SELECT * FROM docenten");
@@ -24,11 +24,13 @@
 
             echo "<div class='docentBlok-voornaam'>{$docentData['voornaam']}</div>
                  <div class='docentBlok-achternaam'>{$docentData['achternaam']}</div>
-                <br>
+
         </div>
         </div>";
     }
 ?>
+
+    </div>
 
   </div>
 </main> 

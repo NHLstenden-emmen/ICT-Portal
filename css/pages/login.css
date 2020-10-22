@@ -1,0 +1,77 @@
+
+.login .form{
+    margin: auto;
+    background: white;  
+    display: grid; 
+    padding: 55px;
+    width: 60%;
+    position: relative;
+    grid-template-columns: 15px auto 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+.login input{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+    margin: 8px 0;
+    width: 30vw;
+}
+
+.login input[type=submit]{
+    width: fit-content;
+    margin: auto;
+    padding: 12px 35px;
+}
+
+.formulier{
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 60vh 60vh 60vh;
+    display: grid;
+}
+
+.FormLeft{
+    width: 20vw;
+    height: 50vh;
+    display: grid;
+}
+
+.FormRight{
+    width: 20vw;
+    height: 50vh;
+    display: grid;
+}
+
+form{
+    height: auto;
+}
+
+main.content {
+    padding: 0;
+    grid-template-columns: 35% 30% 35%;
+    display: grid;
+}
+
+div.loginWrapper {
+    grid-column: 2/3;
+}
+
+.contentBlock-text {
+    font-style: normal;
+}
+
+.contentBlock-text input{
+    width: 85%;
+}
+
+.contentBlock-info{
+    padding: 20px;
+}
+
+@media (min-width: 900px){
+    main.content {
+        padding: 0;
+        grid-template-columns: 35% 30% 35%;
+        min-height: unset;
+    }
+}

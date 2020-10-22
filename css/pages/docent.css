@@ -1,9 +1,48 @@
-body {
+.contentBlock-nohover {
+    width: 50vw; 
+    height: 30vh;
+    margin-top: 2vh;
 }
 
-h1 {
-    color: lightseagreen;
+.contentBlock-side {
+    width: 50vw; 
+    height: auto;
 }
+
+.contentBlock-content {
+    width: 50vw; 
+    height: auto;
+    display: grid;
+    grid-template-columns: 1vw 10vw 1vw;
+    /*grid-template-rows: 1vw 10vw 1vw;*/
+}
+
+.docentenFoto {
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 20vw;
+    height: 20vw;
+    grid-column: 2/3;
+    grid-row: 2/3;  
+}
+
+.docentBlok-voornaam{
+    font-size: 3vw;
+    text-align: center;
+    grid-column: 4/5;
+    grid-row: 2/3;  
+    
+}
+.docentBlok-achternaam {
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+    grid-column: 4/5;
+    grid-row: 2/3;  
+}
+
+
 
 .docentenvakken {
     margin: 50px;
@@ -14,13 +53,6 @@ h1 {
     grid-gap: 50px 50px;
 }
 
-.content {
-    width: 765px;
-    height: 515px;
-    display: grid;
-    grid-template-columns: 15px auto 15px;
-    grid-template-rows: 15px auto 15px;
-}
 
 .green {
     height: 500px;
@@ -47,13 +79,14 @@ h1 {
 
 
 .fotodocent {
-    width: 210px;
+    width: 20vw;
     height: auto;
     grid-column: 2/3;
     grid-row: 2/3;
 }
 
-.tekst {
+
+.docent-Text {
     grid-column: 4/5;
     grid-row: 2/3;
 }

@@ -1,22 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="nl">
     <head>
         <!-- normal meta data -->
         <meta charset="UTF-8">
-        <meta name="description" content="ICT Portal for NHL Stenden student platform">
-        <meta name="keywords" content="ICT Portal">
-        <meta name="author" content="1D">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- this gets the page title from the current file -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <title><?= isset($pageTitle) ? $pageTitle : "ICT Portal"?></title>
-        <!-- link to the js files -->
-        <script src="js/main.js"></script>
-        <!-- link to the css files -->
-        <link rel="stylesheet" href="css/main/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?Php include 'inc/favicon.php'; ?>
+
+        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+        
+        
+        <link rel="stylesheet" href="css/main/footer.css">
         <link rel="stylesheet" href="css/main/topnav.css">
         <link rel="stylesheet" href="css/main/sidebar.css">
-        <link rel="stylesheet" href="css/main/footer.css">
-        <!-- link page spesific stylesheets -->
+        <link rel="stylesheet" href="css/main/main.css">
+        <link rel="stylesheet" href="css/main/darkmode.css">
+
         <?php
             if(!isset($_GET['page']) || $_GET['page'] == ''){
                 $page = 'nieuws'; //If no page specified
@@ -55,5 +56,6 @@
                     <?php
                 }
         ?>
+            <link rel="stylesheet" href="css/main/responsive.css">
     </head>
     <body>

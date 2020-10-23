@@ -36,8 +36,6 @@ th {
 		</tr>
 	<?php 
 
-	print_r($lang);
-
     $docentID = 3;
    
 

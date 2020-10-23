@@ -43,18 +43,25 @@
 			<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
 			
 				<?php
-				if($_COOKIE['lang'] == 'nl'){
+				// check if there is a cookie for lang set
+				if(!isset($_COOKIE['lang'])){
 					echo "<form method='post'>
 						<button type='submit' value='en' class='languageSwitch' name='changelang'>
 							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN
 						</button>
 					</form>";
-				}
-				// change the button to a dutch button cause the lang is set to english
+				} // change the button to a dutch button cause the lang is set to english
 				else if($_COOKIE['lang'] == 'en'){
 					echo "<form method='post'>
 						<button type='submit' value='nl' class='languageSwitch' name='changelang'>
 							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL
+						</button>
+					</form>";
+				} // change the button to a english button cause the lang is set to dutch
+				else if($_COOKIE['lang'] == 'nl'){
+					echo "<form method='post'>
+						<button type='submit' value='en' class='languageSwitch' name='changelang'>
+							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN
 						</button>
 					</form>";
 				}

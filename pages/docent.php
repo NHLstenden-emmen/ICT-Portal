@@ -44,7 +44,7 @@
 				<div class='docentBlok-Icons'>";
 
 					if (!empty($docent['telefoonnummer'])) {
-					echo "<a class='telefoonnummer'><i class='fa fa-phone' aria-hidden='true'></i>
+					echo "<a href='tel:{$docent['telefoonnummer']}' class='telefoonnummer'><i class='fa fa-phone' aria-hidden='true'></i>
 					<span class='telefoonnummerhover'>{$docent['telefoonnummer']}</span></a>";
 					}
 					if (!empty($docent['email'])) {

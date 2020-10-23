@@ -80,6 +80,11 @@
 	.pageContentBlock {
 		width: 100%;
 	}
+
+	button.languageSwitch, button.darkmodeSwitch {
+		display: none;
+	}
+
 }
 
 @media (min-width: 950px) {

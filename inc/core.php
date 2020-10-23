@@ -1,7 +1,4 @@
 <?php
-/**
-*
-*/
 class Core
 {
 
@@ -25,16 +22,6 @@ class Core
 		}
 		return $randomString; //Return String value
 	}
-
-	function Logout(){
-		setcookie("user", "", time()-3600); //Remove cookie
-		setcookie("userID", "", time()-3600);
-		setcookie("auth", "", time()-3600);
-		setcookie("fullUser", "", time()-3600);
-
-		header("location: index.php"); //Goto login page
-	}
-
 	
 
 	function Logout() { 

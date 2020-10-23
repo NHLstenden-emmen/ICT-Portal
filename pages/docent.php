@@ -19,7 +19,7 @@
 				if(!empty($docent['foto'])){
 					echo '<img class="docentenWeergaveFoto" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docent['foto']).'" alt="foto van '.$docent['voornaam'].'>" />';
 				} else {
-					echo '<img class="docentenWeergaveFoto" src="css/images/avatar_default.jpg" alt="Geen foto ingesteld" />';
+					echo '<img class="docentenWeergaveFoto" src="images/avatar_default.jpg" alt="Geen foto ingesteld" />';
 				}
 		
 				echo "<p class='docentBlok-naam'>{$docent['voornaam']}</p>
@@ -79,19 +79,19 @@
 				<div class='docentBlok-Icons'>";
 
 					if (!empty($docent['telefoonnummer'])) {
-					echo "<a class='telefoonnummer'><i class='fa fa-phone' aria-hidden='true'></i>
+					echo "<a href='tel:{$docent['telefoonnummer']}' class='telefoonnummer'><i class='fa fa-phone' aria-hidden='true'></i>
 					<span class='telefoonnummerhover'>{$docent['telefoonnummer']}</span></a>";
 					}
 					if (!empty($docent['email'])) {
 						echo "<a href='mailto:{$docent['email']}' ><i class='fa fa-envelope' aria-hidden='true'></i></a>";
 					}
-					if (empty($docent['twitter'])) {
+					if (!empty($docent['twitter'])) {
 						echo "<a href='https://twitter.com/{$docent['twitter']}' target='_blank'><i class='fa fa-twitter' aria-hidden='true'></i></a>";
 					}
-					if (empty($docent['linkedin'])) {
+					if (!empty($docent['linkedin'])) {
 						echo "<a href='https://linkedin.com/{$docent['linkedin']}' target='_blank'><i class='fa fa-linkedin' aria-hidden='true'></i></a>";
 					}
-					if (empty($docent['instagram'])) {
+					if (!empty($docent['instagram'])) {
 					echo "<a href='https://instagram.com/{$docent['instagram']}' target='_blank'><i class='fa fa-instagram' aria-hidden='true'></i></a>";
 					}
 

@@ -8,7 +8,6 @@
 			<li class="<?= ($activePage == 'vakken') ? 'active':''; ?>" onclick="window.location.href='vakken'">Vakken</li>
 			<li class="<?= ($activePage == 'docenten') ? 'active':''; ?>" onclick="window.location.href='docenten'">Docenten</li>
 			<li class="<?= ($activePage == 'contact') ? 'active':''; ?>" onclick="window.location.href='contact'">Contact</li>
-<<<<<<< Updated upstream
 			<?php if($Core->AuthCheck()){?>
 				<div class="navDropdown">
 					<li class="dropbtn" style="text-transform: none;" onclick="window.location.href='docent?docent=<?= $_COOKIE['userID'] ?>'">
@@ -17,18 +16,24 @@
 					<div class="dropdown-content">
 						<a href="uploadNieuws">Nieuws beheren	</a>
 						<a href="profiel-bewerken">Mijn profiel</a>
-						<hr class="koekje" />
 						<a href="beschikbaarheid">Mijn beschikbaarheid</a>
-						<a href="logout">Uitloggen</a>
-					<style>
-						.koekje::before {
-							content: "Profiel";
-
-						}
-						</style>
-						
+						<hr	/>
+						<form method='post'>
+							<button type='submit' value='en' class='logoutbutton' name='logout'>
+								Logout
+							</button>
+						</form>
+						<?php 
+							if(!empty(isset($_POST['logout']))){
+								setcookie("auth", "", time()-3600);
+								setcookie("fullUser", "", time()-3600);
+								setcookie("user", "", time()-3600); //Remove cookie
+								setcookie("userID", "", time()-3600);
+								header("location: nieuws"); //Goto login page
+							}
+						?>
 					</div>
-=======
+
 			<?php if($Core->AuthCheck()) { 
 				
 				echo "<div class='navDropdown'>
@@ -44,19 +49,16 @@
 					<hr />
 					<a href='uitloggen'>Uitloggen</a>
 					</form>
->>>>>>> Stashed changes
 				</div>
 			</div>";
  			}
 		
-<<<<<<< Updated upstream
 			else { ?>    
 			<li class="<?= ($activePage == 'login') ? 'active':''; ?>" onclick="window.location.href='login'">Login</li>
 			<?php } ?>
 			<div class="divider"></div>
 			<div class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
 
-=======
 			else { 
 				echo "<li class='".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>Login</li>";
 			 } 
@@ -67,6 +69,9 @@
 				<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
 				<!-- END DARKMODESWITCH -->
 
+
+			<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
+			
 				<?php
 				// check if there is a cookie for lang set
 				if(!isset($_COOKIE['lang'])){
@@ -91,7 +96,7 @@
 					</form>";
 				}
 				?>
->>>>>>> Stashed changes
+ 
 		</ul>
 	</div>
 </nav>

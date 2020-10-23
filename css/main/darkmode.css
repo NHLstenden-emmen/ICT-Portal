@@ -9,8 +9,7 @@ body.darkmode > nav.navbar {
 }
 
 body.darkmode > .navbar .navbar_items > ul li:hover {
-	background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%)
-		center/15000%;
+	background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%) center/15000%;
 }
 
 body.darkmode > .navbar .navbar_items ul > .divider {
@@ -84,6 +83,18 @@ button.darkmode {
 button.darkmode:hover {
 	background-color: #575a5a;
 }
+
+button.darkmode.languageSwitch, button.darkmode.darkmodeSwitch {
+	padding: 48px 20px;
+	background-color: var(--dark);
+	border-radius: unset;
+}
+
+button.darkmode.languageSwitch:hover, button.darkmode.darkmodeSwitch:hover {
+	background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%) center/15000%;
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
+}
+
 
 /*CONTENTBLOCKS*/
 body.darkmode

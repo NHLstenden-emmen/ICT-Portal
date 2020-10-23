@@ -14,7 +14,7 @@
 	--primaryColor: #188287;
 	--darkPrimaryColor: #0b696d;
 	--darkerPrimaryColor: #015256;
-	--dark: #131313;
+	--dark: #151515;
 	--tekstColor: #ffffff;
 
 	font-family: "Roboto", sans-serif; /* Default font */
@@ -225,8 +225,17 @@ button {
 	outline: none;
 	transition: 0.3s;
 }
+
 button:hover {
 	background-color: var(--lightPrimaryColor);
+}
+
+button.languageSwitch:hover {
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
+}
+
+button.darkmodeSwitch:hover {
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
 }
 .beschikbareTijden {
 	display: inline-block;
@@ -266,12 +275,31 @@ button:hover {
 .disclaimers h2 {
 	margin-top: 30px;
 }
-
 .bewerkenFoto {
-    display: block;
-    border-radius: 50%;
-    object-fit: cover;
+	display: block;
+	border-radius: 50%;
+	object-fit: cover;
 	margin: 2vw;
 	height: 250px;
-	width: 250px; 
+	width: 250px;
+}
+.aanwezigen table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.aanwezigen th,
+td {
+	text-align: left;
+	padding: 8px;
+}
+
+.aanwezigen tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.aanwezigen th {
+	background-color: var(--lightPrimaryColor);
+	color: white;
 }

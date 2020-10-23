@@ -1,9 +1,11 @@
 <!-- Made By Kevin Smulders -->
 <?php
-<<<<<<< Updated upstream
-=======
- 
->>>>>>> Stashed changes
+
+    if(isSet($_COOKIE['lang'])) {
+        $lang = $_COOKIE['lang'];
+    } else{
+        $lang = "nl";
+    }
     //Only works when $pageTitle is called in header.php 
     if (function_exists('pageTitle')) {
     } else {
@@ -15,11 +17,10 @@
     // The location to get the data from
     $cityName = "Emmen";
     // Open Weather api url
-<<<<<<< Updated upstream
     $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=NL&appid=" . $apiKey;
-=======
     $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=".$_COOKIE['lang']. "&appid=" . $apiKey;
->>>>>>> Stashed changes
+
+    $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=".$lang. "&appid=" . $apiKey;
 
     // Create the call for the api
     $curl = curl_init();

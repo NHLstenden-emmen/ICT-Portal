@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <style>
 table {
   border-collapse: collapse;
@@ -20,30 +19,27 @@ th {
   color: white;
 }
 </style>
-=======
+
 <div class='devider'>
     <div class='pageContentBlock'>
 
->>>>>>> Stashed changes
 <div class="aanwezigen">
-	<h1>Op deze pagina kunt u de aanwezige docenten zien.</h1>
+	<h1><?php echo $lang['PRESENT_TITLE']; ?></h1>
 	<table>
 		<tr>
-			<th><p>Docenten Naam</p></th>
-			<th><p>Maandag</p></th>
-			<th><p>Dinsdag</p></th>
-			<th><p>Woensdag</p></th>
-			<th><p>Donderdag</p></th>
-			<th><p>Vrijdag</p></th> 
+			<th><p><?php echo $lang['PRESENT_Teachers_Name']; ?></p></th>
+			<th><p><?php echo $lang['PRESENT_Monday']; ?></p></th>
+			<th><p><?php echo $lang['PRESENT_Tuesday']; ?></p></th>
+			<th><p><?php echo $lang['PRESENT_Wednesday']; ?></p></th>
+			<th><p><?php echo $lang['PRESENT_Thursday']; ?></p></th>
+			<th><p><?php echo $lang['PRESENT_Friday']; ?></p></th> 
 		</tr>
 	<?php 
-<<<<<<< Updated upstream
     $docentID = 3;
    
     $resultTimes = $DB->Get("SELECT docent_id, beschikbaarheid_maandag, beschikbaarheid_dinsdag, beschikbaarheid_woensdag, beschikbaarheid_donderdag, beschikbaarheid_vrijdag FROM docenten_beschikbaarheid");
-=======
+
     $resultTimes = $DB->Get("SELECT docent_id, Maandag, Dinsdag, Woensdag, Donderdag, Vrijdag FROM docenten_beschikbaarheid");
->>>>>>> Stashed changes
 	for ($i=0; $i < $resultTimes->num_rows; $i++) {
 		if($resultTimes->num_rows > 0){
 			$beschikbaarheidDB = $resultTimes->fetch_assoc();

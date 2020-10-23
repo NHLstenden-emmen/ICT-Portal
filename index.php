@@ -18,8 +18,7 @@
     ob_start();
 
     include 'inc/header.php';
-<<<<<<< Updated upstream
-=======
+
     include 'languages/selector.php';
 
 
@@ -39,7 +38,8 @@
     
 
     $pageSubtitleText = $Core->subTitleText($pageTitle);
->>>>>>> Stashed changes
+
+    include 'languages/selector.php';
     include 'inc/nav.php';
 
  
@@ -77,9 +77,6 @@
             case 'profiel-bewerken':
                 include 'pages/docenten/profiel.php';
                 break;
-            case 'profiel-bewerken':
-                include 'pages/docenten/vakken.php';
-                break;
             case 'beschikbaarheid':
                 include 'pages/docenten/beschikbaarheid.php';
                 break;
@@ -96,63 +93,13 @@
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
-<<<<<<< Updated upstream
-        //print_R($pageTitle);
-        switch($pageTitle)
-            {
-                case 'databasetest':
-                    include 'pages/databasetest.php'; //file path of your home/nieuws page
-                    break;
-                case 'nieuws':
-                    include 'pages/nieuws.php'; //file path of your home/nieuws page
-                    break;
-                case 'vakken':
-                    include 'pages/vakken.php';
-                    break;
-                case 'docenten':
-                    include 'pages/docenten.php';
-                    break;
-                case 'docent':
-                    include 'pages/docent.php';
-                    break;
-                case 'contact':
-                    include 'pages/contact.php';
-                    break;
-                case 'aanwezigen':
-                    include 'pages/aanwezigen.php';
-                    break;
-                case 'login':
-                    include 'pages/login.php';
-                    break;
-                case 'logout':
-                    include 'pages/logout.php';
-                    break;
-                case 'uploadNieuws':
-                    include 'pages/docenten/uploadNieuws.php';
-                    break;
-                case 'profiel-bewerken':
-                    include 'pages/docenten/profiel.php';
-                    break;
-                case 'docenten-beschikbaarheid':
-                    include 'pages/docenten/beschikbaarheid.php';
-                    break;
-                    // disclaimers
-                case 'privacyPolicy':
-                    include 'pages/privacyPolicy.php';
-                    break;
-                case 'termsAndConditions':
-                    include 'pages/termsAndConditions.php';
-                    break;
-                default:
-                    include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
-            }
+
         echo "</div>";
         
         echo"<div class='pageSidebarBlock'>";
-=======
+
         /*
         echo "<div class='pageSidebarBlock'>";
->>>>>>> Stashed changes
         include 'inc/sidebar.php';
         echo "</div>"; //closes pageSidebarBlock
         */

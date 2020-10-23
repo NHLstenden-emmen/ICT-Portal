@@ -17,9 +17,29 @@
         <div class = 'contentBlock-grid'>";
 
         $result = $DB->Get("SELECT * FROM vakken WHERE jaarlaag = '{$jaarSelectie}' ORDER BY periode ASC");
+
+
+
+
         while($vakData = $result->fetch_assoc()){
-            
-        $vakkenLink = 'window.location.href="vak?vak='.$vakData['vak_id'].'"';
+            if(isset($_GET['vak'])){
+                
+                $bin = $vakData['moduleboek'];
+                $myfilename="c-form".date('m-d-Y_hia').'.pdf';
+                // collect the data to the be returned to the user, no need to save to disk
+                // unless you really want to, if so, use file_put_contents()
+                $dataForFile=$bin;
+
+                header('Content-type: application/x-download');
+                header('Content-Disposition: attachment; filename="'.$myfilename.'"');
+                header('Content-Transfer-Encoding: binary');
+                header('Content-Length: '.strlen($dataForFile));
+                set_time_limit(0);
+                echo $dataForFile;
+                exit;
+            }
+
+        $vakkenLink = 'window.location.href="/download.php?vak='.$vakData['vak_id'].'"';
         echo "<div class='contentBlock' onclick='{$vakkenLink}'>
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>

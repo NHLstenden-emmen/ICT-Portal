@@ -1,4 +1,5 @@
 <?php
+
     // head and nav information
     $pageTitle = basename($_SERVER['REQUEST_URI'], ".php");
 
@@ -98,7 +99,6 @@
             case 'profiel-bewerken':
                 include 'pages/docenten/vakken.php';
                 break;
-
             case 'beschikbaarheid':
                 include 'pages/docenten/beschikbaarheid.php';
                 break;
@@ -114,6 +114,7 @@
                 break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
+            
         }
 
 

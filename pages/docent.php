@@ -1,4 +1,7 @@
-<main class="content">
+<div class='devider'>
+    <div class='pageContentBlock'>
+
+	<main class="content">
 <?php
 
 	$docentID = intval($_GET['docent']);
@@ -20,8 +23,40 @@
 				}
 		
 				echo "<p class='docentBlok-naam'>{$docent['voornaam']}</p>
-				 <p class='docentBlok-achternaam'>{$docent['achternaam']}</p>
-						<p class='docentBlok-vakken'><b>Vakken</b><br /><i>";
+				<p class='docentBlok-achternaam'>{$docent['achternaam']}</p>";
+					 
+
+				$beschikbaarheidResult = $DB->Get("SELECT 
+					Maandag, 
+					Dinsdag, 
+					Woensdag, 
+					Donderdag, 
+					Vrijdag  
+					FROM docenten_beschikbaarheid 
+					WHERE docent_id = '{$docentID}' LIMIT 1");
+
+				if ($beschikbaarheidResult->num_rows > 0) {
+					$beschikbaarheidData = $beschikbaarheidResult->fetch_assoc();
+					//Beschikbaarheid
+					echo "<p class='docentBlok-beschikbaarheid'>
+							<b>Beschikbaarheid</b><i><br />";
+
+
+					foreach ($beschikbaarheidData as $key => $value) {
+						
+						$beschikbaarheidOutput = $key.": ";
+						if (empty($value)) {
+							$beschikbaarheidOutput.= "Vrij<br /> ";
+						} else {
+							$beschikbaarheidOutput.= $value. "<br /> ";
+						}
+						echo $beschikbaarheidOutput;
+					}
+				}
+
+					print_r($beschikbaarheidResult->fetch_assoc());
+					echo "</i></p>";
+				echo "<p class='docentBlok-vakken'><b>Vakken</b><br /><i>";
 						
 				$vakkenResult = $DB->Get("	SELECT vakken.vak, vakken.jaarlaag, vakken.periode 
 											FROM docenten_vakken INNER JOIN vakken 
@@ -73,3 +108,5 @@
 		//404
 	}
 ?>
+</main>
+</div>

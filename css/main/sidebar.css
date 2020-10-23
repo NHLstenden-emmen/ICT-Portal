@@ -1,12 +1,10 @@
 .sideBar {
-	background: blue;
 	flex: 1 0 auto;
 	/* enable grow, disable shrink */
-}
-.row {
-	width: 100%;
-	height: 200px;
-	background: #f8f8f8;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-template-rows: 10% auto;
+	padding: 1vw;
 }
 .weer {
 	width: 100%;
@@ -14,30 +12,26 @@
 	background: #f8f8f8;
 }
 
-h3 {
-	margin: 0;
+h2 {
+	margin: 0 0 1vw 0;
+	grid-row: 1/2;
 }
 
-.rowContent {
-	padding: 15px;
+.weather-name {
+	color: black;
+	font-size: 1.5vw;
+	margin: 0.8vw 0 0 0;
+	grid-column: 1/2;
 }
 
-.rowContent a {
-	text-decoration: none;
-	color: var(--dark);
-}
-.rowContent a:hover {
+.weather-data {
 	color: var(--primaryColor);
+	font-size: 1.4vw;
+	grid-column: 1/2;
 }
 
 .weather-icon {
 	vertical-align: middle;
-	margin-right: 20px;
-}
-
-.weather-forecast {
-	font-size: 1.2em;
-}
-.important-pages p {
-	padding: 10px 0;
+	grid-column: 2/3;
+	grid-row: 1/2;
 }

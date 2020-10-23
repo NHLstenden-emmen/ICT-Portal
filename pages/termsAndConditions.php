@@ -1,3 +1,6 @@
+<div class='devider'>
+    <div class='pageContentBlock'>
+
 <div class="disclaimers">
     <h1>Terms and Conditions</h1>
     <p>Last updated: October 18, 2020</p>
@@ -82,3 +85,4 @@
     <li>By email: studentinfo@nhlstenden.com</li>
     </ul>
 </div>
+    </div>

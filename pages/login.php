@@ -18,10 +18,10 @@ if(isset($_POST['submitButton'])){
     while($row = $result->fetch_assoc()) {
       //Add cookies to header()
       date_default_timezone_set('Europe/Amsterdam');
-      setcookie("user", $usernameForm, time()+3600);
-      setcookie("userID", $row['docent_id'], time()+3600);
-      setcookie("auth", $Core->AuthKey(128), time()+3600);
-      setcookie("fullUser", $row['voornaam']. " ".$row['achternaam'], time()+3600);
+      setcookie("user", $usernameForm, time()+ (3600 * 24 * 30));
+      setcookie("userID", $row['docent_id'], time()+ (3600 * 24 * 30));
+      setcookie("auth", $Core->AuthKey(128), time()+ (3600 * 24 * 30));
+      setcookie("fullUser", $row['voornaam']. " ".$row['achternaam'], time()+ (3600 * 24 * 30));
       header("location: nieuws");
     }
   } else { //if password and/or username are incorrect, send to login page
@@ -31,6 +31,8 @@ if(isset($_POST['submitButton'])){
 ?>
 
 
+<div class='devider'>
+    <div class='pageContentBlock'>
 
 <main class="content">
 	<div class='contentBlock-nohover' style="width: 100%; height: 300px;">
@@ -53,3 +55,4 @@ if(isset($_POST['submitButton'])){
 		</div>
 	</div>
 </main>
+</div>

@@ -24,22 +24,21 @@
         while($vakData = $result->fetch_assoc()){
             if(isset($_GET['vak'])){
                 
-                $bin = $vakData['moduleboek'];
-                $myfilename="c-form".date('m-d-Y_hia').'.pdf';
-                // collect the data to the be returned to the user, no need to save to disk
-                // unless you really want to, if so, use file_put_contents()
-                $dataForFile=$bin;
+                ob_end_clean(); 
+
+                $downloadBoek = $DB->Get("SELECT * FROM vakken WHERE vak_id = '{$_GET['vak']}'");
+                $downloadFetch = $downloadBoek->fetch_assoc();
+
+                $bestand = $downloadFetch['vak'].' '.$downloadFetch['jaarlaag'].'-'.$downloadFetch['periode'].' - moduleboek.pdf';
 
                 header('Content-type: application/x-download');
-                header('Content-Disposition: attachment; filename="'.$myfilename.'"');
+                header('Content-Disposition: attachment; filename="'.$bestand.'"');
                 header('Content-Transfer-Encoding: binary');
-                header('Content-Length: '.strlen($dataForFile));
-                set_time_limit(0);
-                echo $dataForFile;
-                exit;
+                header('Content-Length: '.strlen($downloadFetch['moduleboek']));
+                echo $downloadFetch['moduleboek'];
             }
 
-        $vakkenLink = 'window.location.href="/download.php?vak='.$vakData['vak_id'].'"';
+        $vakkenLink = 'window.location.href="vakken?jaar='.$vakData['jaarlaag'].'&vak='.$vakData['vak_id'].'"';
         echo "<div class='contentBlock' onclick='{$vakkenLink}'>
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>

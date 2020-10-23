@@ -19,24 +19,8 @@
     ob_start();
 
     include 'inc/header.php';
-
     include 'languages/selector.php';
 
-
-    if(empty($_GET['page'])){
-        $pageTitle = 'nieuws';
-        $activePage = 'nieuws';
-    }
-    else if(!empty($_GET['page'])){         //If no page specified
-        if($_GET['page'] == 'index'){       //If index specified go to news
-            $activePage = 'nieuws';  
-            $pageTitle = 'nieuws';
-        }
-        else {
-            $activePage = $_GET['page']; 
-        }
-    }
-    
 
     $pageSubtitleText = $Core->subTitleText($pageTitle);
 

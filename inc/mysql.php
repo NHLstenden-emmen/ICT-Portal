@@ -15,13 +15,15 @@ class MySQL
 		$database = 'ictportal';
 
 		$this->link = new MySQLi($hostname, $username, $password, $database);
-		
 	}
 
 	function Get($query)
 	{
 		return $this->link->query($query);
 	}
-	
+
+	function LastID(){
+		return $this->link->insert_id;
+	}
 }
 ?>

@@ -1,0 +1,18 @@
+.pageContentBlock {
+    width:70%;
+}
+
+.contactInfo {
+    text-align: center;
+    color: var(--primaryColor);
+    font-size: 1em;
+    margin: 2vw 0 2vw 0;
+}
+.kaartSchool {
+    width: 100%;
+}
+
+a {
+	text-decoration: none;
+    color: var(--lightPrimaryColor);
+}

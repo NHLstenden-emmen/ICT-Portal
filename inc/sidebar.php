@@ -1,6 +1,12 @@
 <!-- Made By Kevin Smulders -->
 <?php
- 
+
+
+    if(isSet($_COOKIE['lang'])) {
+        $lang = $_COOKIE['lang'];
+    } else{
+        $lang = "nl";
+    }
     //Only works when $pageTitle is called in header.php 
     if (function_exists('pageTitle')) {
     } else {

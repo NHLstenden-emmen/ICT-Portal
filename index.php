@@ -18,6 +18,27 @@
     ob_start();
 
     include 'inc/header.php';
+
+    include 'languages/selector.php';
+
+
+    if(empty($_GET['page'])){
+        $pageTitle = 'nieuws';
+        $activePage = 'nieuws';
+    }
+    else if(!empty($_GET['page'])){         //If no page specified
+        if($_GET['page'] == 'index'){       //If index specified go to news
+            $activePage = 'nieuws';  
+            $pageTitle = 'nieuws';
+        }
+        else {
+            $activePage = $_GET['page']; 
+        }
+    }
+    
+
+    $pageSubtitleText = $Core->subTitleText($pageTitle);
+
     include 'languages/selector.php';
 
 
@@ -77,6 +98,7 @@
             case 'profiel-bewerken':
                 include 'pages/docenten/vakken.php';
                 break;
+
             case 'beschikbaarheid':
                 include 'pages/docenten/beschikbaarheid.php';
                 break;
@@ -93,6 +115,12 @@
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
+
+
+        echo "</div>";
+        
+        echo"<div class='pageSidebarBlock'>";
+
         /*
         echo "<div class='pageSidebarBlock'>";
         include 'inc/sidebar.php';

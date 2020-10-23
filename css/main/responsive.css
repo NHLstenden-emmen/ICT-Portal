@@ -1,4 +1,4 @@
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 	/* REPSONSIVE NAVBAR */
 	.navbar {
 		align-items: normal !;
@@ -87,7 +87,7 @@
 
 }
 
-@media (min-width: 900px) {
+@media (min-width: 950px) {
 	.footer-mobile > div.scrollmenu {
 		display: none;
 	}
@@ -95,5 +95,3 @@
 		display: none;
 	}
 } 
-
-}

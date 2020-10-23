@@ -33,13 +33,43 @@
 							}
 						?>
 					</div>
+
+			<?php if($Core->AuthCheck()) { 
+				
+				echo "<div class='navDropdown'>
+				<li class='dropbtn' style='text-transform: none;' onclick="."window.location.href='docent?docent={$_COOKIE["userID"]}'>
+					<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong>{$_COOKIE['fullUser']}</strong>
+				</li>
+				<div class='dropdown-content'>
+					<a href='uploadNieuws'>Nieuws beheren	</a>
+					<a href='profiel-bewerken'>Mijn profiel</a>
+					<a href='beschikbaarheid'>Mijn beschikbaarheid</a>
+					<hr	/>
+					<a href='vakkenbeheer'>Vakkenbeheer</a>
+					<hr />
+					<a href='uitloggen'>Uitloggen</a>
+					</form>
 				</div>
-			<?php }
+			</div>";
+ 			}
 		
 			else { ?>    
 			<li class="<?= ($activePage == 'login') ? 'active':''; ?>" onclick="window.location.href='login'">Login</li>
 			<?php } ?>
 			<div class="divider"></div>
+			<div class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
+
+			else { 
+				echo "<li class='".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>Login</li>";
+			 } 
+			 
+			?>
+				<!-- DARKMODESWITCH -->
+				<div class="divider"></div>
+				<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
+				<!-- END DARKMODESWITCH -->
+
+
 			<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
 			
 				<?php
@@ -66,6 +96,7 @@
 					</form>";
 				}
 				?>
+ 
 		</ul>
 	</div>
 </nav>
@@ -74,13 +105,30 @@
 	<div class="grid-container">
 		<div class="Titel">
 			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?></div>
-			<p><!-- you can place some secret content in here --></p>
+			<p><?= isset($pageSubtitleText) ? $pageSubtitleText : "" ?></p>
 		</div>
-	<div class="Mededelingen zoom colorBlock" onclick="window.location.href='nieuws?all=TRUE'"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
-	<div class="Contact zoom colorBlock" onclick="window.location.href='aanwezigen'"><div class="headerBlock"><p>Aanwezigen docenten</p></div></div>
-	<div class="Jaar-4 zoom colorBlock" onclick="window.location.href='vakken?jaar=4'"><div class="headerBlock"><p>Jaar 4</p></div></div>
-	<div class="Jaar-3 zoom colorBlock" onclick="window.location.href='vakken?jaar=3'"><div class="headerBlock"><p>Jaar 3</p></div></div>
-	<div class="Jaar-2 zoom colorBlock" onclick="window.location.href='vakken?jaar=2'"><div class="headerBlock"><p>Jaar 2</p></div></div>
-	<div class="Jaar-1 zoom colorBlock" onclick="window.location.href='vakken?jaar=1'"><div class="headerBlock"><p>Jaar 1</p></div></div>
+	
+		<div class="Populair zoom colorBlock weatherWidget">
+				<div class="weahterIcon"><i class='wi wi-owm-<?= $Core->weatherData()->weather[0]->id ?>'></i></div>
+				<div class="weatherTemp">
+					<?= (strlen($Core->weatherData()->main->temp) > 2) ? substr($Core->weatherData()->main->temp, 0, 2): ''; ?>
+				</div>
+				<div class="weatherTempIcon">°C</div>
+				<div class="weatherCity"><?= $Core->weatherData()->name ?></div>
+				<div class="weatherDesc"><?= $Core->weatherData()->weather[0]->description ?></div>
+		</div>
+			<div onclick="window.location.href='nieuws?all=TRUE'" class="Mededelingen zoom colorBlock"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
+			<div onclick="window.location.href='aanwezigen'" class="Contact zoom colorBlock"><div class="headerBlock"><p>Aanwezigen docenten</p></div></div>
+			<div onclick="window.location.href='vakken?jaar=4'" class="J4 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">4</div></div>
+			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">3</div></div>
+			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">2</div></div>
+			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">1</div></div>
+
+		
+		<!--
+			<div onclick="window.location.href='vakken?jaar=4'" class="J3 zoom colorBlock"><div class="headerBlock"><p>Jaar 3</p></div></div>
+			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock"><div class="headerBlock"><p>Jaar 3</p></div></div>
+			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock"><div class="headerBlock"><p>Jaar 2</p></div></div>
+			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock"><div class="headerBlock"><p>Jaar 1</p></div></div>-->
 	</div>
 </div>

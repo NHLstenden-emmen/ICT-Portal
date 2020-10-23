@@ -1,6 +1,7 @@
 <?php 
-    //Feike's Login systeem
-    $docentID = 3;
+    if($Core->AuthCheck()){
+
+    $docentID = intval($_COOKIE['userID']);
    
     $result = $DB->Get("SELECT * FROM docenten WHERE docent_id = '".$docentID."'");
     $docentData = $result->fetch_assoc();
@@ -73,6 +74,9 @@ if($result->num_rows > 0){
 }
 ?>
 
+<div class='devider'>
+    <div class='pageContentBlock'>
+
 <main class="content">
 
     <div class="subTitle">Profiel bewerken</div>
@@ -140,3 +144,11 @@ if($result->num_rows > 0){
 -->
     </div>
 </main> 
+    </div>
+    <?php 
+
+}
+else {
+    header("Location: nieuws");
+}   
+?>

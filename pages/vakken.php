@@ -1,5 +1,7 @@
+<div class='devider'>
+    <div class='pageContentBlock'>
+
 <main class="content">
-    <div class="left_content">
 
     <?php
     if(isset($_POST['submitVakken']) || isset($_GET['jaar'])){

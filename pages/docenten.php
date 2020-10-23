@@ -1,3 +1,5 @@
+<div class='devider'>
+    <div class='pageContentBlock'>
 
 <main class="content">
         <div class="subTitle">Docentenlijst</div>
@@ -7,8 +9,7 @@
     
     while($docentData = $result->fetch_assoc()){
     
-    $docentenLink = 'window.location.href="docent?docent='.$docentData['docent_id'].'"';
-    echo "<div class='contentBlock' onclick='{$docentenLink}'>
+    echo "<div class='contentBlock' onclick="."window.location.href='docent?docent={$docentData["docent_id"]}'>
         <div class='contentBlock-side'></div>
         <div class='contentBlock-content'>";
        
@@ -26,5 +27,5 @@
     }
 ?>
   </div>
-</main> 
-
+</main>
+</div>

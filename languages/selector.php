@@ -6,11 +6,16 @@ if(isSet($_COOKIE['lang'])) {
 }
 // this is the main language
 else {
+	setcookie("lang", "nl", time()+3600);
+=======
 	$lang = 'nl';
 }
 
 //when the language changes set cookie or change it
 if(!empty(isset($_POST['changelang']))){
+
+	setcookie("lang", $_POST["changelang"], time()+ (3600 * 24 * 30));
+
 	$lang = $_POST["changelang"];
 	
 	setcookie("lang", $lang);

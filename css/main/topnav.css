@@ -194,22 +194,30 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	font-family: sans-serif;
 }
 
-.navDropdown {
-	position: relative;
-	display: inline-block;
-}
 .dropbtn {
 	color: var(--tekstColor);
 	padding: 48px 35px 48px 35px;
 }
 
+.navDropdown {
+	position: relative;
+	display: inline-block;
+}
 .dropdown-content {
-	display: none;
+	max-height: 0;
+	transition: max-height 0.15s ease-out;
+	overflow: hidden;
+	display: block;
 	position: absolute;
 	background-color: #f1f1f1;
-	min-width: 160px;
+	width: 200px;
+	margin-left: 10px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
+}
+.navDropdown:hover .dropdown-content {
+	max-height: 500px;
+	transition: max-height 0.5s ease-in;
 }
 
 .dropdown-content a {
@@ -223,10 +231,6 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	background-color: #ddd;
 }
 
-.navDropdown:hover .dropdown-content {
-	display: block;
-}
-
 .dropbtn.darkmode {
 	padding: 48px 35px 48px 35px;
 	background-color: transparent;
@@ -234,9 +238,17 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 .langsitch button {
 	padding: 48px 20px 48px 20px;
 }
-.logout button {
+.logoutbutton {
 	color: var(--dark);
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
+	background: none;
+	text-transform: none;
+	text-transform: none;
+	text-align: left;
+	width: 100%;
+}
+.logoutbutton:hover {
+	background-color: #ddd;
 }

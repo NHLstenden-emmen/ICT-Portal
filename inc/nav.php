@@ -16,10 +16,10 @@
 					<div class="dropdown-content">
 						<a href="uploadNieuws">Nieuws beheren	</a>
 						<a href="profiel-bewerken">Mijn profiel</a>
-						<hr	/>
 						<a href="beschikbaarheid">Mijn beschikbaarheid</a>
+						<hr	/>
 						<form method='post'>
-							<button type='submit' value='en' class='logout' name='logout'>
+							<button type='submit' value='en' class='logoutbutton' name='logout'>
 								Logout
 							</button>
 						</form>

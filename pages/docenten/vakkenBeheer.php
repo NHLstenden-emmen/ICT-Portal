@@ -136,11 +136,8 @@
 
 
                         $insertResult = $DB->Get("INSERT INTO 
-                                                vakken (vak, jaarlaag, periode)
-                                                VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}')");//>vakken 
-                        $vakID = $DB->LastID();
-                        $DB->Get("UPDATE vakken SET moduleboek = '{$pdfContent}' WHERE vak_id = '{$vakID}'");
-                       
+                                                vakken (vak, jaarlaag, periode, moduleboek)
+                                                VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}')");//>vakken 
                     } 
                 }
                     $vakID = $DB->LastID();

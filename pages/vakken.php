@@ -24,18 +24,28 @@
         while($vakData = $result->fetch_assoc()){
             if(isset($_GET['vak'])){
                 
-                ob_end_clean(); 
+                //Alle output buffers leegmaken
 
+                //Gegevens uit database halen
                 $downloadBoek = $DB->Get("SELECT * FROM vakken WHERE vak_id = '{$_GET['vak']}'");
                 $downloadFetch = $downloadBoek->fetch_assoc();
 
-                $bestand = $downloadFetch['vak'].' '.$downloadFetch['jaarlaag'].'-'.$downloadFetch['periode'].' - moduleboek.pdf';
+                if(!empty($downloadFetch['moduleboek'])){
+                    ob_end_clean();
+                
+                    //Bestandsnaam genereren aan de hand van waarden uit database
+                    $bestand = $downloadFetch['vak'].' '.$downloadFetch['jaarlaag'].'-'.$downloadFetch['periode'].' - moduleboek.pdf';
 
-                header('Content-type: application/x-download');
-                header('Content-Disposition: attachment; filename="'.$bestand.'"');
-                header('Content-Transfer-Encoding: binary');
-                header('Content-Length: '.strlen($downloadFetch['moduleboek']));
-                echo $downloadFetch['moduleboek'];
+                    //Headers genereren voor export pdf + pdf downloaden door echo
+                    header('Content-type: application/x-download');
+                    header('Content-Disposition: attachment; filename="'.$bestand.'"');
+                    header('Content-Transfer-Encoding: binary');
+                    header('Content-Length: '.strlen($downloadFetch['moduleboek']));
+                    echo $downloadFetch['moduleboek'];
+                }
+                else {
+                    header('Location: vakken');
+                }
             }
 
         $vakkenLink = 'window.location.href="vakken?jaar='.$vakData['jaarlaag'].'&vak='.$vakData['vak_id'].'"';

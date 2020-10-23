@@ -15,6 +15,7 @@ if(!empty(isset($_POST['changelang']))){
 	
 	setcookie("lang", $lang);
 	setcookie("lang", $lang, time()+ (3600 * 24 * 30));
+	header("Refresh:0");
 }
 
 switch ($lang) {

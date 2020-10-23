@@ -29,12 +29,20 @@
 			<div class="divider"></div>
 			<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
 			
-				<?php if(empty($_COOKIE['lang'])){
-					echo "<form method='post'><button type='submit' value='en' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN</button></form>";
-				}
-				else if(!empty($_COOKIE['lang']) && $_COOKIE['lang'] == 'en'){
-					echo "<form method='post'><button type='submit' value='nl' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL</button></form>";
-				}
+				<?php if($_COOKIE['lang'] == 'nl'){?>
+					<form method='post'>
+						<button type='submit' value='en' class='languageSwitch' name="changelang">
+							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN
+						</button>
+					</form>
+				<?php }
+				else if($_COOKIE['lang'] == 'en'){ ?>
+					<form method='post'>
+						<button type='submit' value='nl' class='languageSwitch' name="changelang">
+							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL
+						</button>
+					</form>
+				<?php }
 				?>
 		</ul>
 	</div>

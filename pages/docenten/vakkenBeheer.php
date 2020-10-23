@@ -109,7 +109,7 @@
         if(isset($_POST['submitInvoegen'])){
             if(isset($_POST['vakNaam'])){
                 
-                if(!isset($_FILES["vakBoek"]["name"])){
+                if(empty($_FILES["vakBoek"]["name"])){
                     //Geen moduleboek
                     $vakNaam = $_POST['vakNaam'];
                     $vakJaarlaag = $_POST['vakJaarlaag'];
@@ -141,10 +141,7 @@
                         $vakID = $DB->LastID();
                         $DB->Get("UPDATE vakken SET moduleboek = '{$pdfContent}' WHERE vak_id = '{$vakID}'");
                        
-                    } else {
-                        echo "Je mag alleen een .pdf";
-                    }
-
+                    } 
                 }
                     $vakID = $DB->LastID();
                     $vakDocent = $_POST['vakDocent'];

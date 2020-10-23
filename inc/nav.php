@@ -18,7 +18,20 @@
 						<a href="profiel-bewerken">Mijn profiel</a>
 						<hr	/>
 						<a href="beschikbaarheid">Mijn beschikbaarheid</a>
-						<a href="logout">Uitloggen</a>
+						<form method='post'>
+							<button type='submit' value='en' class='logout' name='logout'>
+								Logout
+							</button>
+						</form>
+						<?php 
+							if(!empty(isset($_POST['logout']))){
+								setcookie("auth", "", time()-3600);
+								setcookie("fullUser", "", time()-3600);
+								setcookie("user", "", time()-3600); //Remove cookie
+								setcookie("userID", "", time()-3600);
+								header("location: nieuws"); //Goto login page
+							}
+						?>
 					</div>
 				</div>
 			<?php }
@@ -29,20 +42,22 @@
 			<div class="divider"></div>
 			<button class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></button>
 			
-				<?php if($_COOKIE['lang'] == 'nl'){?>
-					<form method='post'>
-						<button type='submit' value='en' class='languageSwitch' name="changelang">
+				<?php
+				if($_COOKIE['lang'] == 'nl'){
+					echo "<form method='post'>
+						<button type='submit' value='en' class='languageSwitch' name='changelang'>
 							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN
 						</button>
-					</form>
-				<?php }
-				else if($_COOKIE['lang'] == 'en'){ ?>
-					<form method='post'>
-						<button type='submit' value='nl' class='languageSwitch' name="changelang">
+					</form>";
+				}
+				// change the button to a dutch button cause the lang is set to english
+				else if($_COOKIE['lang'] == 'en'){
+					echo "<form method='post'>
+						<button type='submit' value='nl' class='languageSwitch' name='changelang'>
 							<i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL
 						</button>
-					</form>
-				<?php }
+					</form>";
+				}
 				?>
 		</ul>
 	</div>

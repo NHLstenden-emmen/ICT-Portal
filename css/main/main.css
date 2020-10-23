@@ -276,12 +276,12 @@ button.darkmodeSwitch:hover {
 	margin-top: 30px;
 }
 .bewerkenFoto {
-    display: block;
-    border-radius: 50%;
-    object-fit: cover;
+	display: block;
+	border-radius: 50%;
+	object-fit: cover;
 	margin: 2vw;
 	height: 250px;
-	width: 250px; 
+	width: 250px;
 }
 .aanwezigen table {
 	border-collapse: collapse;

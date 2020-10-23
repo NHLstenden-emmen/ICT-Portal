@@ -16,7 +16,7 @@ if(!empty(isset($_POST['changelang']))){
 	header("Refresh:0");
 }
 
-switch ($lang) {
+switch ($selectLang) {
 	case 'en':
 	$lang_file = 'lang.en.php';
 	break;

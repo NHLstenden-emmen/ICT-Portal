@@ -138,6 +138,9 @@
                         $insertResult = $DB->Get("INSERT INTO 
                                                 vakken (vak, jaarlaag, periode, moduleboek)
                                                 VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}')");//>vakken 
+                    }
+                    else {
+                        echo "Je mag alleen een .pdf bestand uploaden.";
                     } 
                 }
                     $vakID = $DB->LastID();

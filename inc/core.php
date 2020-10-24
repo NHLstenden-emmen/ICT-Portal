@@ -72,6 +72,24 @@ class Core
 		}
 	}
 
+	//Deze functie heeft een resultaat (directe longblob uit DB), en een bestandmaam nodig van de query voordat hij kan werken
+	function downloadFile($queryResult, $fileName){
+
+		ob_end_clean();
+            
+		//Bestandsnaam genereren aan de hand van waarden uit database
+			
+		//Headers genereren voor export pdf + pdf downloaden door echo
+		header('Content-type: application/x-download');
+		header('Content-Disposition: attachment; filename="'.$fileName.'"');
+		header('Content-Transfer-Encoding: binary');
+		header('Content-Length: '.strlen($queryResult));
+		
+		return $queryResult;
+
+	}
+
+
 
 	function subTitleText($pageTitle){
 		global $lang;

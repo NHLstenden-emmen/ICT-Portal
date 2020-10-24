@@ -31,17 +31,8 @@
                 $downloadFetch = $downloadBoek->fetch_assoc();
 
                 if(!empty($downloadFetch['moduleboek'])){
-                    ob_end_clean();
-                
-                    //Bestandsnaam genereren aan de hand van waarden uit database
-                    $bestand = $downloadFetch['vak'].' '.$downloadFetch['jaarlaag'].'-'.$downloadFetch['periode'].' - moduleboek.pdf';
-
-                    //Headers genereren voor export pdf + pdf downloaden door echo
-                    header('Content-type: application/x-download');
-                    header('Content-Disposition: attachment; filename="'.$bestand.'"');
-                    header('Content-Transfer-Encoding: binary');
-                    header('Content-Length: '.strlen($downloadFetch['moduleboek']));
-                    echo $downloadFetch['moduleboek'];
+                    $fileName = $downloadFetch['vak'].' '.$downloadFetch['jaarlaag'].'-'.$downloadFetch['periode'].' - moduleboek.pdf';
+                    echo $Core->downloadFile($downloadFetch['moduleboek'], $fileName);
                 }
                 else {
                     header('Location: vakken');

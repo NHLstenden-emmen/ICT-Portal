@@ -1,7 +1,4 @@
-<div class='devider'>
-    <div class='pageContentBlock'>
-
-	<main class="content">
+<main class="content">
 <?php
 
 	$docentID = intval($_GET['docent']);
@@ -109,4 +106,3 @@
 	}
 ?>
 </main>
-</div>

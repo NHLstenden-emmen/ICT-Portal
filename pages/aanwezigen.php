@@ -1,28 +1,3 @@
-<style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 50px;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-
-th {
-  background-color: var(--lightPrimaryColor);
-  color: white;
-}
-</style>
-
-<div class='devider'>
-    <div class='pageContentBlock'>
-
 <div class="aanwezigen">
 	<h1><?php echo $lang['PRESENT_TITLE']; ?></h1>
 	<table>
@@ -35,9 +10,6 @@ th {
 			<th><p><?php echo $lang['PRESENT_Friday']; ?></p></th> 
 		</tr>
 	<?php 
-
-    $docentID = 3;
-   
 
     $resultTimes = $DB->Get("SELECT docent_id, Maandag, Dinsdag, Woensdag, Donderdag, Vrijdag FROM docenten_beschikbaarheid");
 	for ($i=0; $i < $resultTimes->num_rows; $i++) {
@@ -101,5 +73,4 @@ th {
 	}
 	?>
 	</table>
-</div>
 </div>

@@ -1,7 +1,4 @@
-<div class='devider'>
-    <div class='pageContentBlock'>
-        <main class="content">
-
+<main class="content">
 <?php 
     /* Action Handlers */
 
@@ -229,19 +226,6 @@
             }
 
             echo '</select><br />';
-                    
-            /*
-            echo '<div class="subTitle">Opleiding</div>';
-            $opleidingResult = $DB->Get("SELECT * FROM opleidingen");
-
-            echo "<label for='vakPeriode'>Opleiding*</label><br />
-                    <select name='vakOpleiding'>";
-            while($opleidingData = $opleidingResult->fetch_assoc()){
-                echo "<option value='{$opleidingData['opleiding_id']}'>{$opleidingData['opleidingnaam']}</option>";
-            }
-            echo '</select><br />
-            <div class="subTitle">Docent(en)</div>';
- */
             $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
            
             echo "<label for='vakDocent'>Docent*</label><br />
@@ -292,4 +276,3 @@
     ?>
         </div>
 </main> 
-    </div>

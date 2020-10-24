@@ -1,32 +1,20 @@
 <?php
-
     // head and nav information
     $pageTitle = basename($_SERVER['REQUEST_URI'], ".php");
-
     // removes the part after the ? for a nicer title
     if (strpos($pageTitle, '?') !== false) {
         $pageTitle = substr($pageTitle, 0, strpos($pageTitle, '?'));
     }
         $pageTitle = str_replace("-", " ", $pageTitle);
-
-
     include 'inc/core.php';
     include 'inc/mysql.php';
-
     $DB = new MySQL();
     $Core = new Core();
-
     ob_start();
-
     include 'inc/header.php';
     include 'languages/selector.php';
-
-
     $pageSubtitleText = $Core->subTitleText($pageTitle);
-
     include 'languages/selector.php';
-
-
     if(empty($_GET['page'])){
         $pageTitle = 'nieuws';
         $activePage = 'nieuws';
@@ -40,12 +28,9 @@
             $activePage = $_GET['page']; 
         }
     }
-    
-
     $pageSubtitleText = $Core->subTitleText($pageTitle);
     include 'inc/nav.php';
-
- 
+    echo "<div class='page-content'>";
     if(!$Core->AuthCheck()) {
         switch($activePage){
             /* Student pagina's */
@@ -142,6 +127,6 @@
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
         }
     }
-        echo "</div>";
+    echo"</div>";
     include 'inc/footer.php';
 ?>

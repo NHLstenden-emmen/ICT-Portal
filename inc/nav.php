@@ -12,7 +12,7 @@
 				
 				<div class='navDropdown'>
 					<li class='dropbtn' style='text-transform: none;' onclick="."window.location.href='docent?docent=<?php $_COOKIE["userID"] ?>'>
-						<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong><?php $_COOKIE['fullUser'] ?></strong>
+						<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong><?php echo $_COOKIE['fullUser'] ?></strong>
 					</li>
 					<div class='dropdown-content'>
 						<a href='uploadNieuws'>Nieuws beheren	</a>

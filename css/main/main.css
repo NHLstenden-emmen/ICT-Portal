@@ -88,17 +88,6 @@ a {
 	margin-bottom: 2vw;
 }
 
-main.content {
-    transition: 0.3s;
-    display: grid;
-}
-
-.subTitle {
-    font-size: 30px;
-    font-weight: 700;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-}
 
 .contentBlock-text {
     transition: 0.3s;
@@ -120,6 +109,14 @@ main.content {
 	margin-bottom: 2vw;
 }
 
+
+.contentBlock input,
+.contentBlock-nohover input,
+.contentBlock textarea,
+.contentBlock-nohover textarea {
+    width: 90%;
+}
+
 .contentBlock-info {
     padding: 20px;
 }
@@ -133,11 +130,18 @@ main.content {
     margin: 10px 30px 20px 20px;
 }
 
-.contentBlock input,
-.contentBlock-nohover input,
-.contentBlock textarea,
-.contentBlock-nohover textarea {
-    width: 90%;
+
+main.content {
+    transition: 0.3s;
+    display: grid;
+    padding: 2vw 5vw 2vw 5vw;
+}
+
+.subTitle {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 input, select, textarea {

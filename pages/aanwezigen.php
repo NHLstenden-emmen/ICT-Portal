@@ -18,9 +18,6 @@ th {
   color: white;
 }
 </style>
-
-<div class='devider'>
-<div class='pageContentBlock'>
 		<main class="content">
 			<div class='contentBlock-nohover'>
 				<div class='contentBlock-side'></div>
@@ -126,5 +123,3 @@ th {
 
 			</div>
 		</main>
-	</div>
-</div>

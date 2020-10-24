@@ -11,7 +11,7 @@
 ?>
 <div class='devider'>
     <div class='pageContentBlock'>
-		<main class="content">
+		<main class="content" style="padding: 0">
 			<div class='contentBlock-nohover'>
 				<div class='contentBlock-side'></div>
 				<div class='contentBlock-content'>
@@ -39,7 +39,6 @@
 		</main>
 	</div>
 
-</main>
 <div class="pageSidebarBlock">
 	<div class="contactInfo">
 		<p><b>Telefoonnummer:</b> <a href="tel:0612312312">0612312312</a><br /> 

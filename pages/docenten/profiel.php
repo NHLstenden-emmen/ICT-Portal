@@ -124,24 +124,9 @@ if($result->num_rows > 0){
         <p>Vakken met een * zijn verplicht</p>
         <button type="submit" name="submitAction">opslaan</button>
     </form>
-    
-<!--
-- voornaam
-- achternaam
-- email
-- telefoonnummer        (niet verplicht)
-- gebruikersnaam
-- wachtwoord            
-- foto                  (niet verplicht)
-- twitter               (niet verplicht)
-- linkedin              (niet verplicht)
-- instagram             (niet verplicht)
-- beschikbaarheid       moet nog
--->
     </div>
 </main> 
     <?php 
-
 }
 else {
     header("Location: nieuws");

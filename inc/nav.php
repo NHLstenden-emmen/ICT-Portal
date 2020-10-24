@@ -8,24 +8,25 @@
 			<li class="<?= ($activePage == 'vakken') ? 'active':''; ?>" onclick="window.location.href='vakken'">Vakken</li>
 			<li class="<?= ($activePage == 'docenten') ? 'active':''; ?>" onclick="window.location.href='docenten'">Docenten</li>
 			<li class="<?= ($activePage == 'contact') ? 'active':''; ?>" onclick="window.location.href='contact'">Contact</li>
-			<?php if($Core->AuthCheck()) { ?>
+			<?php if($Core->AuthCheck()) { 
 				
 				echo "<div class='navDropdown'>
 				<li class='dropbtn' style='text-transform: none;' onclick="."window.location.href='docent?docent={$_COOKIE["userID"]}'>
 					<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong>{$_COOKIE['fullUser']}</strong>
 				</li>
 				<div class='dropdown-content'>
-					<a href='uploadNieuws'>Nieuws beheren</a>
 					<a href='profiel-bewerken'>Mijn profiel bewerken</a>
 					<a href='beschikbaarheid'>Mijn beschikbaarheid</a>
 					<hr	/>
+					<a href='uploadNieuws'>Nieuwsbeheer</a>
 					<a href='vakkenbeheer'>Vakkenbeheer</a>
-					<a href='Docent-toevoegen'>Docent toevoegen</a>
+					<a href='docent-toevoegen'>Docentbeheer</a>
 					<hr />
 					<a href='uitloggen'>Uitloggen</a>
 					</form>
 				</div>
- 			<?php }
+			</div>";
+ 			}
 		
 			else { 
 				echo "<li class='".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>Login</li>";
@@ -72,7 +73,7 @@
 			<p class="bannerSubTitle"><?= isset($pageSubtitleText) ? $pageSubtitleText : "" ?></p>
 		</div>
 	
-		<div onclick="window.open('https://www.buienradar.nl/weer/Emmen/','_blank')" class="Populair zoom colorBlock weatherWidget">
+		<div onclick="window.location.href='https://www.buienradar.nl/weer/Emmen/'" class="Populair zoom colorBlock weatherWidget">
 				<div class="weahterIcon"><i class='wi wi-owm-<?= $Core->weatherData()->weather[0]->id ?>'></i></div>
 				<div class="weatherTemp">
 					<?= (strlen($Core->weatherData()->main->temp) > 2) ? substr($Core->weatherData()->main->temp, 0, 2): ''; ?>
@@ -93,6 +94,6 @@
 			<div onclick="window.location.href='vakken?jaar=4'" class="J3 zoom colorBlock"><div class="headerBlock"><p>Jaar 3</p></div></div>
 			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock"><div class="headerBlock"><p>Jaar 3</p></div></div>
 			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock"><div class="headerBlock"><p>Jaar 2</p></div></div>
-			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock"><div class="headerBlock"><p>Jaar 1</p></div></div>
+			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock"><div class="headerBlock"><p>Jaar 1</p></div></div>-->
 	</div>
 </div>

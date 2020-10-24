@@ -71,11 +71,11 @@
 ?>
 
 <main class="content">
-	<div class='contentBlock-nohover' style="width: 100%; height: 300px;">
-		<div class='contentBlock-side' style="width: 100%;"></div>
-		<div class='contentBlock-content' style="width: 100%;">
+	<div class='contentBlock-nohover'>
+		<div class='contentBlock-side'></div>
+		<div class='contentBlock-content'>
 			<div class='contentBlock-title'>
-                Docent registreren
+                Docentregistratie
 			</div>
 			<div class='contentBlock-text-normal'>
                 <form method="POST" enctype="multipart/form-data"> 
@@ -83,29 +83,29 @@
                     <br />
                     <div class="subTitle">Persoonlijke informatie</div><br />
                     <label for="docentVoornaam">Voornaam*</label><br />
-                    <input type="text" value="Voornaam" name="docentVoornaam" placeholder="Voornaam" style="width: 65%;" required><br />
+                    <input type="text" name="docentVoornaam" placeholder="Voornaam" style="width: 65%;" required><br />
                     
                     <label for="docentAchternaam">Achternaam*</label><br />
-                    <input type="text" value="Achternaam" name="docentAchternaam" placeholder="Achternaam" style="width: 65%;" required><br />
+                    <input type="text" name="docentAchternaam" placeholder="Achternaam" style="width: 65%;" required><br />
                     
                     <label for="docentEmail">Email*</label><br />
-                    <input type="text" value="Email" name="docentEmail" placeholder="Docent@nhlstenden.com" style="width: 65%;" required><br />
+                    <input type="text" name="docentEmail" placeholder="Docent@nhlstenden.com" style="width: 65%;" required><br />
                 
                     <label for="docentTelefoonnummer">Telefoonnummer</label><br />
-                    <input type="text" value="Telefoonnummer" name="docentTelefoonnummer" placeholder="0612345678" style="width: 65%;"><br />
+                    <input type="text" name="docentTelefoonnummer" placeholder="0612345678" style="width: 65%;"><br />
                     
                     <label for="docentGebruikersnaam">Gebruikersnaam*</label><br />
-                    <input type="text" value="Gebruikersnaam" name="docentGebruikersnaam" placeholder="Gebruikersnaam" style="width: 65%;" required><br />
+                    <input type="text" name="docentGebruikersnaam" placeholder="Gebruikersnaam" style="width: 65%;" required><br />
                     <br />
                     <div class="subTitle">Socials</div><br />
                     <label for="docenttwitter">Twitter</label><br />
-                    <input type="text" value="gebruikers naam van twitter" name="docentTwitter" placeholder="Twitter" style="width: 65%;"><br />
+                    <input type="text" name="docentTwitter" placeholder="Twitter" style="width: 65%;"><br />
                     
                     <label for="docentLinkedin">Linkedin</label><br />
-                    <input type="text" value="gebruikers naam van linkedin" name="docentLinkedin" placeholder="Linkedin" style="width: 65%;"><br />
+                    <input type="text" name="docentLinkedin" placeholder="Linkedin" style="width: 65%;"><br />
                     
                     <label for="docentInstagram">Instagram</label><br />
-                    <input type="text" value="gebruikers naam van instagram" name="docentInstagram" placeholder="Instagram" style="width: 65%;"><br />
+                    <input type="text" name="docentInstagram" placeholder="Instagram" style="width: 65%;"><br />
                     <br />
                     <div class="subTitle">Beveiliging</div><br />
                     <label for="docentWachtwoord">Wachtwoord*</label><br />

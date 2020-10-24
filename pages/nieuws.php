@@ -1,146 +1,103 @@
-<div class='devider'>
-    <div class='pageContentBlock'>
-
-
-
     <!-- -->
-    <div class="newsTop">
-        <div class="kop">
-            <h2>Laatste nieuwsberichten</h2>
-        </div>
-        
-        <div class="nieuwsBlokken">
-            <?php
 
-                $result = $DB->Get("SELECT * FROM nieuws_nl");
-                while($lastPost = $result->fetch_assoc()){
-                    $lastPostIdEnd = $lastPost['nieuws_nl_id'];                
-                }
-                $lastPostIdStart = $lastPostIdEnd - 3;
-
-                // Laatse bericht = $lastPostIdEnd
-                // Eerste bericht = $lastPostIdStart
-                $i = 0;
-                for($x = $lastPostIdEnd; $lastPostIdEnd >= $lastPostIdStart; $lastPostIdEnd--){
-                    
-                    //Select from DB
-                    $newsQuery = $DB->Get("SELECT * FROM nieuws_nl WHERE nieuws_nl_id = '$lastPostIdEnd'");
-
-                    while($newsItem = $newsQuery->fetch_assoc()){
-                        $id = $newsItem['nieuws_nl_id'];
-                        $titel = $newsItem['titel_nederlands'];
-                        $text = $newsItem['tekst_nederlands'];
-                        $bijlage = $newsItem['bijlage_nederlands'];
-                        $afbeelding = base64_encode($newsItem['afbeelding_nederlands']);
-                        
-                        ?>
-
-                        <!-- START GENEREER NIEUWS BLOK -->
-                        <div class="nieuwsGrid rand">
-                            <div class="titel">
-                                <h3><?php echo $titel; ?></h3>
-                            </div>
-                            <div class="content">
-                                <div class="text">
-                                    <p><?php echo $text;?></p>
-                                </div>
-                                <div class="image">
-                                    <div class="imagePlaceholder"></div>
-                                    <div class="imageSource" style="background-image: url('data:image/jpeg;base64,<?php echo $afbeelding;?>');"></div>                           
-                                    <div class="imagePlaceholder"></div>
-                                </div>
-                            </div> 
-                            <div class="metaData">
-                                <div class="tijd">
-                                    <p>Hier komt een tijd</p>
-                                </div>
-                                <div class="lees">
-                                    <a href="#"><p>Lees meer<p></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- EINDE GENEREER NIEUWS BLOK -->
-
-                        <?php
-                    }    
-
-                }
-
-            ?>
-
-        </div>
-    </div>
+    <main class="content">
 
 
-    <!-- -->
-    <!-- ONDERSTE STUK NIEUWSPAGINA -->
 
-<?php
-        //Array met nieuwsberichten        
+    <?php 
 
-        $news = array();
-        $time = array();
-        $result = $DB->Get("SELECT * FROM nieuws_nl");
-        while($posts = $result->fetch_assoc()){
-            $titel = $posts['titel_nederlands'];    
-            $tijd = $posts['nieuws_nl_id']; //VERANDEREN NAAR TIJD!
-            array_push($news, $titel);
-            array_push($time, $tijd);
-        }
+        if(!isset($_POST['allNewsSumbit'])){
+            echo '<div class="subTitle">Laatste nieuwsberichten</div>
+                     <div class = "contentBlock-grid">';
 
-        if(isset($_GET['all']))
-        {
-            if($_GET['all'] == 'TRUE'){
-                //Lees alle artikelen
-                $total = count($news);
-            ?>
-                <style>
-                    .more{
-                        display: none;
-                    }
-                </style>
-            <?php
-            } else {
-                //Lees 5 artikelen
-                $total = 2;
+             $nieuwsResult = $DB->Get("SELECT 
+                    SUBSTRING(tekst_{$_COOKIE['lang']}, 1, 150) AS tekst,
+                    titel_{$_COOKIE['lang']} AS titel,
+                    afbeelding_{$_COOKIE['lang']} AS afbeelding,
+                    nieuws.datum AS datum,
+                    docenten.voornaam,
+                    docenten.achternaam,
+                    klassen.klas_naam
+                    FROM nieuws_{$_COOKIE['lang']}
+                    INNER JOIN nieuws 
+                    ON nieuws.nieuws_id = nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id
+                    INNER JOIN docenten
+                    ON nieuws.docent_id = docenten.docent_id
+                    INNER JOIN klassen
+                    ON nieuws.klas_id = klassen.klas_id
+                    ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC
+                    LIMIT 4");
+
+            while($nieuwsData = $nieuwsResult->fetch_assoc()){
+                echo "<div class='contentBlock'>
+                    <div class='contentBlock-side'></div>
+                    <div class='contentBlock-content' style='display: grid;grid-template-rows: 20% 55% 25%;grid-template-columns: 70% 30%;'>
+                    <div class='contentBlock-title'>{$nieuwsData['titel']}</div>
+                        <div class='contentBlock-text-normal' style='grid-row: 2;grid-column: 1/3;margin-top: 2vw;'>{$nieuwsData['tekst']}</div>
+                        <div class='contentBlock-date' style='grid-row: 3;margin: 0;margin-left: 2vw;margin-top: 1vw;'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
+                        <div class='contentBlock-link' style='grid-row: 3;grid-column: 2;margin: 0;margin-top: 1vw;'>Lees meer</div>
+                    </div>
+                </div>";
+            } 
+            
+            echo "</div>";
+
+            //Lijst van laatste 5 nieuwsberichten
+            echo '<div class="subTitle">Alle nieuwsberichten</div>';
+
+            $nieuwsResult10 = $DB->Get("SELECT 
+                titel_{$_COOKIE['lang']} AS titel,
+                datum
+                FROM nieuws_{$_COOKIE['lang']}
+                INNER JOIN nieuws 
+                ON nieuws.nieuws_id = nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id
+                ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC
+                LIMIT 10");
+            echo '<table>';
+            while($nieuwsData10 = $nieuwsResult10->fetch_assoc()){
+                echo '<tr>
+                        <td class="dotTD">
+                            <span class="dotIcon"></span>
+                        </td>
+                        <td>
+                            <p>'.$nieuwsData10['titel'].'</p>
+                        </td>
+                        <td class="time">
+                            <p>'.$nieuwsData10['datum'].'</p>
+                        </td></tr>';
             }
-        } else{
-			$total = 2;
-		}
-               
-        $x = 0;
-?>
+            echo '</table>';
 
-<div class="allList">
-<div class="all-news">
-<h2>Alle nieuwsberichten</h2><br>
-    <?php 
-        while($x < $total){ 
-            $titel = $news[$x];
-            $tijd = $time[$x];
+            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">Lees alle artikelen</button></form>';
+        }
+        else if(isset($_POST['allNewsSumbit'])){
+            echo '<div class="subTitle">Alle nieuwsberichten</div>';
+
+            $nieuwsResultAll = $DB->Get("SELECT 
+                titel_{$_COOKIE['lang']} AS titel,
+                datum
+                FROM nieuws_{$_COOKIE['lang']}
+                INNER JOIN nieuws 
+                ON nieuws.nieuws_id = nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id
+                ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC");
+
+            echo '<table>';
+            while($nieuwsDataAll = $nieuwsResultAll->fetch_assoc()){
+                echo '<tr>
+                        <td class="dotTD">
+                            <span class="dotIcon"></span>
+                        </td>
+                        <td>
+                            <p>'.$nieuwsDataAll['titel'].'</p>
+                        </td>
+                        <td class="time">
+                            <p>'.$nieuwsDataAll['datum'].'</p>
+                        </td></tr>';
+            }
+            echo '</table>';
+            echo "<button onclick="."window.location.href='nieuws'>terug</button>";
+        }
     ?>
-        <div class="itemRow">
-            <span class="dot"></span>
-            <div class="newsItem">
-                <p><?php echo $titel; ?></p>
-            </div>
-            <div class="time">
-                <p><?php echo $tijd; ?></p>
-            </div>
-        </div>
-    <?php 
-        $x++;
-        } 
-    ?>
+    
     </div>
-    <div class="more">
-        
-        <a href="nieuws?all=TRUE">Lees alle artikelen</a>
-	</div>
-	</div>
-</div>            
-
-
-
-
-</div>          
+</main>

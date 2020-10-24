@@ -1,265 +1,305 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); /* Fonts */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    
-    --lighterPrimaryColor: #54A7AB;
-    --lightPrimaryColor: #318C91;
-    --primaryColor: #188287;
-    --darkPrimaryColor: #0B696D;
-    --darkerPrimaryColor: #015256;
-    --dark: #131313;
-    --tekstColor: #FFFFFF;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: "Roboto", sans-serif;
 
-    font-family: 'Roboto', sans-serif; /* Default font */
-    
-    /* 
+	--lighterPrimaryColor: #54a7ab;
+	--lightPrimaryColor: #318c91;
+	--primaryColor: #188287;
+	--darkPrimaryColor: #0b696d;
+	--darkerPrimaryColor: #015256;
+	--dark: #151515;
+	--tekstColor: #ffffff;
+
+	font-family: "Roboto", sans-serif; /* Default font */
+
+	/* 
         this is how you can call a primary color/var
-        var(--primaryColor); 
+        var(--tekstColor); 
     */
 }
 a {
-  text-decoration: none;
-  color: #30dfc7;
+	text-decoration: none;
+	color: var(--lightPrimaryColor);
 }
 
 /* CONTENTBLOCKS */
 .contentBlock-grid {
-  grid-template-columns: 25% 25% 25%;
-  /*margin-top: 30px;*/
-  display: grid;   
-  grid-column-gap: 6%;
+	grid-template-columns: auto auto auto;
+	display: grid;
+	grid-column-gap: 6%;
 }
 
 .contentBlock {
-  transition: 0.3s;
-  display: grid;
-  grid-template-columns: 20px auto 20px;
-  grid-template-rows: 20px auto 20px;
-  margin-bottom: 4vh;
+	transition: 0.3s;
+	display: grid;
+	grid-template-columns: 20px auto 20px;
+	grid-template-rows: 20px auto 20px;
+	margin-bottom: 4vh;
 }
 
 .contentBlock:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .contentBlock-nohover {
-  transition: all .2s ease-in-out;
-  display: grid;
-  grid-template-columns: 25px auto 25px;
-  grid-template-rows: 25px auto 25px;
-  margin-bottom: 40px;
+	transition: all 0.2s ease-in-out;
+	display: grid;
+	grid-template-columns: 25px auto 25px;
+	grid-template-rows: 25px auto 25px;
+	margin-bottom: 40px;
 }
 .contentBlock-side {
-  background-color: #4ac4b3;
-  grid-column:1/3;
-  grid-row:1/3;
+	background-color: #4ac4b3;
+	grid-column: 1/3;
+	grid-row: 1/3;
 }
 
 .contentBlock-content {
-  transition: 0.3s;
-  position: relative;
-  background-color: white;
-  grid-column: 2/4;
-  grid-row: 2/4;
-  color: black;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+	transition: 0.3s;
+	position: relative;
+	background-color: var(--tekstColor);
+	grid-column: 2/4;
+	grid-row: 2/4;
+	color: var(--dark);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .contentBlock-photo {
-  display: block;
-  border-radius: 50%;
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
-  margin: 10% auto 10% auto;    
+	display: block;
+	border-radius: 50%;
+	object-fit: cover;
+	width: 100px;
+	height: 100px;
+	margin: 10% auto 10% auto;
 }
 
 .contentBlock-title {
-  font-size: 24px;
-  text-align: left;
-  margin: 20px 0px 0px 20px;
+	font-size: 24px;
+	text-align: left;
+	margin: 20px 0px 0px 20px;
 }
 
-main.content { 
- /* min-height: calc(100vh - 90px); */
-  transition: 0.3s;
-  /*padding: 0% 0% 0% 11%;*/
-  /*margin-top: 50px;*/
-  display: grid;
+main.content {
+	transition: 0.3s;
+	display: grid;
 }
 
 .subTitle {
-  font-size: 30px;
-  font-weight: 700;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+	font-size: 30px;
+	font-weight: 700;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
 }
 
 .contentBlock-text {
-  transition: 0.3s;
-  font-size: 17px;
-  color: grey;
-  font-style: italic;
-  text-align: left;
-  margin: 10px 0px 0px 20px;
+	transition: 0.3s;
+	font-size: 17px;
+	color: grey;
+	font-style: italic;
+	text-align: left;
+	margin: 10px 0px 0px 20px;
 }
 
 .contentBlock-text-normal {
-  transition: 0.3s;
-  font-size: 1em;
-  color: grey;
-  font-style: normal;
-  text-align: left;
-  margin: 10px 0px 20px 20px;
+	transition: 0.3s;
+	font-size: 1em;
+	color: grey;
+	font-style: normal;
+	text-align: left;
+	margin: 10px 0px 20px 20px;
 }
 
-.contentBlock-info{
-  padding: 20px;
+.contentBlock-info {
+	padding: 20px;
 }
 
 .contentBlock-date {
-  color: rgb(184, 179, 179);
-  /* font-size: 13px; */
-  /* position: relative; */
-  /* float: left; */
-  margin: 10px 10px 10px 20px;
+	color: rgb(184, 179, 179);
+	margin: 10px 10px 10px 20px;
 }
 
 .contentBlock-link {
-  /* position: relative; */
-  /* float: right; */
-  margin: 10px 30px 20px 20px;
+	margin: 10px 30px 20px 20px;
 }
 
-.contentBlock input, .contentBlock-nohover input, .contentBlock textarea, .contentBlock-nohover textarea {
-  width: 90%;
+.contentBlock input,
+.contentBlock-nohover input,
+.contentBlock textarea,
+.contentBlock-nohover textarea {
+	width: 90%;
 }
 
-/*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
 input {
-  font-size: 16px;
-  color: rgb(80, 79, 79);
-  border: none;
-  border-bottom: 2px solid rgb(80, 79, 79);
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-  background-color: transparent;
+	font-size: 16px;
+	color: rgb(80, 79, 79);
+	border: none;
+	border-bottom: 2px solid rgb(80, 79, 79);
+	margin: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+	transition: 0.3s;
+	background-color: transparent;
 }
 
 input:focus {
-  color: rgb(80, 79, 79);
-  border-color: #4ac4b3;
+	color: rgb(80, 79, 79);
+	border-color: #4ac4b3;
 }
 
 input::placeholder {
-  color: rgb(80, 79, 79);
-  transition: 0.3s;
+	color: rgb(80, 79, 79);
+	transition: 0.3s;
 }
 input:focus::placeholder {
-  color: #4ac4b3;
+	color: #4ac4b3;
 }
 
 /*TEXTAREA*/
 textarea {
-  font-size: 16px;
-  color: rgb(80, 79, 79);
-  border: none;
-  border-bottom: 2px solid rgb(80, 79, 79);
-  margin: 8px 0;
-  outline: none;
-  padding: 8px;
-  box-sizing: border-box;
-  transition: 0.3s;
-  resize: none;
-  background-color: transparent;
-  width: 70%;
+	font-size: 16px;
+	color: rgb(80, 79, 79);
+	border: none;
+	border-bottom: 2px solid rgb(80, 79, 79);
+	margin: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+	transition: 0.3s;
+	resize: none;
+	background-color: transparent;
+	width: 70%;
 }
 
 textarea:focus {
-  color: rgb(80, 79, 79);
-  border-color: #4ac4b3;
+	color: rgb(80, 79, 79);
+	border-color: #4ac4b3;
 }
 
 textarea::placeholder {
-  color: rgb(80, 79, 79);
-  transition: 0.3s;
+	color: rgb(80, 79, 79);
+	transition: 0.3s;
 }
 textarea:focus::placeholder {
-  color: #4ac4b3;
+	color: #4ac4b3;
 }
 .inputWithIcon input {
-  padding-left: 40px;
+	padding-left: 40px;
 }
 
 .inputWithIcon {
-  position: relative;
+	position: relative;
 }
 
 .inputWithIcon i {
-  font-size: 21px;
-  position: absolute;
-  left: 0;
-  top: 6px;
-  padding: 9px 8px;
-  color: rgb(80, 79, 79);
-  transition: 0.1s;
+	font-size: 21px;
+	position: absolute;
+	left: 0;
+	top: 6px;
+	padding: 9px 8px;
+	color: rgb(80, 79, 79);
+	transition: 0.1s;
 }
 
 .inputWithIcon input:focus + i {
-  color: #4ac4b3;
+	color: #4ac4b3;
 }
-
 
 /* Button style */
 button {
-  background-color: #4ac4b3;
-  border: none;
-  border-radius: 2px;
-  padding: 12px 18px;
-  font-size: 16px;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: white;
-  outline: none;
-  transition: 0.3s;
-}
-button:hover{
-  background-color: #318C91;
-}
-/* Rand voor blokken en objecten */
-.rand:after{
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: 10%;
-    width: 90%;
-    border-top: 20px solid lightseagreen;
-    height: 90%;
-    border-left: 20px solid lightseagreen;
-    pointer-events:none;
+	background-color: #4ac4b3;
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: var(--tekstColor);
+	outline: none;
+	transition: 0.3s;
 }
 
-.devider{
- 	display: inline-block;
+button:hover {
+	background-color: var(--lightPrimaryColor);
+}
+
+button.languageSwitch:hover {
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
+}
+
+button.darkmodeSwitch:hover {
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
+}
+.beschikbareTijden {
+	display: inline-block;
+	margin: 30px;
+	width: 200px;
+}
+/* Rand voor blokken en objecten */
+.rand:after {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 10%;
+	width: 90%;
+	border-top: 20px solid lightseagreen;
+	height: 90%;
+	border-left: 20px solid lightseagreen;
+	pointer-events: none;
+}
+/* page layout */
+.devider {
+	display: inline-block;
 	width: 100%;
 }
-.pageContentBlock{
+.pageContentBlock {
 	float: left;
-	width: 80%;
+	width: 100%;
 	padding: 2vh 6vw 0vh 6vw;
 }
-.pageSidebarBlock{
+.pageSidebarBlock {
 	float: left;
 	width: 20%;
 	padding: 40px 40px 10px 10px;
+}
+.disclaimers {
+	text-align: center;
+}
+.disclaimers h2 {
+	margin-top: 30px;
+}
+.bewerkenFoto {
+	display: block;
+	border-radius: 50%;
+	object-fit: cover;
+	margin: 2vw;
+	height: 250px;
+	width: 250px;
+}
+.aanwezigen table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 50px;
+}
+
+.aanwezigen th,
+td {
+	text-align: left;
+	padding: 8px;
+}
+
+.aanwezigen tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.aanwezigen th {
+	background-color: var(--lightPrimaryColor);
+	color: white;
 }

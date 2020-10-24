@@ -1,6 +1,7 @@
 <?php 
-    //Feike's Login systeem
-    $docentID = 3;
+    if($Core->AuthCheck()){
+
+    $docentID = intval($_COOKIE['userID']);
    
     $result = $DB->Get("SELECT * FROM docenten WHERE docent_id = '".$docentID."'");
     $docentData = $result->fetch_assoc();
@@ -73,15 +74,17 @@ if($result->num_rows > 0){
 }
 ?>
 
+<div class='devider'>
+    <div class='pageContentBlock'>
+
 <main class="content">
-    <div class="left_content">
 
     <div class="subTitle">Profiel bewerken</div>
 
     <form method="POST" enctype="multipart/form-data"> 
         <?php 
         if(!empty($docentData['foto'])){
-            echo '<img style="max-width: 65%;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docentData['foto']).'" alt="foto van '.$docentData['voornaam'].'>" /><br />';
+            echo '<img class="bewerkenFoto" style="max-width: 65%;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docentData['foto']).'" alt="foto van '.$docentData['voornaam'].'>" /><br />';
         } else {
             echo '<label for="docentFoto">Foto</label><br />';
         }
@@ -141,3 +144,11 @@ if($result->num_rows > 0){
 -->
     </div>
 </main> 
+    </div>
+    <?php 
+
+}
+else {
+    header("Location: nieuws");
+}   
+?>

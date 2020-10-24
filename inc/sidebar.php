@@ -1,5 +1,12 @@
 <!-- Made By Kevin Smulders -->
 <?php
+
+
+    if(isSet($_COOKIE['lang'])) {
+        $lang = $_COOKIE['lang'];
+    } else{
+        $lang = "nl";
+    }
     //Only works when $pageTitle is called in header.php 
     if (function_exists('pageTitle')) {
     } else {
@@ -7,11 +14,11 @@
     }
     
     // The private key
-    $apiKey = "";
+    $apiKey = "25957a1a29b039b5ca004840d8eecb9c";
     // The location to get the data from
     $cityName = "Emmen";
     // Open Weather api url
-    $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=NL&appid=" . $apiKey;
+    $googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=".$_COOKIE['lang']. "&appid=" . $apiKey;
 
     // Create the call for the api
     $curl = curl_init();
@@ -33,51 +40,50 @@
     $currentTime = time();
     
 ?>
-
 <div class="sideBar">
-    <div class="row1 row weer">
-        <?php
-            // A check if the api works as it should so you dont get a masive error
-            if ($data->cod != 200) {?>
-                <h3>Weer</h3>
-                <p>Er is iets fout gegaan met het ophalen van de weer data</p>
-            <?php } else {?>
-        <div class="rowContent">
-        <h3>Weer</h3><br>
-        <p<?php echo $data->name; ?></p>
-        <div class="time">
-            <!-- Adds the current time so you can see when it updated for the last time -->
-            <div><strong> Laatst geupdate:</strong> <?php echo date("l g:i a", $currentTime); ?></div>
-            <!-- Gets the Description about what kind of weather it is -->
-            <div><strong> Het is:</strong> <?php echo($data->weather[0]->description); ?></div>
-        </div>
-        <div class="weather-forecast">
-            <div><strong>Temperatuur:</strong> <br> <?php echo $data->main->temp; ?>°</div>
-            <!-- Get the right icon for the current weatherReport -->
-            <img src="http://openweathermap.org/img/w/<?php echo $data->weather[0]->icon; ?>.png" class="weather-icon" />
-        </div>
-        <div class="extra information">
-            <div><strong>Vochtigheid:</strong> <?php echo $data->main->humidity; ?> %</div>
-            <div><strong>Wind kracht:</strong> <?php echo $data->wind->speed; ?> km/h</div>
-        </div>
-        </div>
-        <?php
-        }
-        ?>
-    </div>
+    <?php
+    // A check if the api works as it should so you dont get a masive error
+    if ($data->cod != 200) {
+        echo"
+            <h3>Weer</h3>
+            <p>Er is iets fout gegaan met het ophalen van de weer data</p>";
+    } else {
+
+    $date = date("l g:i a", $currentTime);
+    //echo "<pre>";
+        //print_r($data);
+    echo "
+        <img src='http://openweathermap.org/img/w/{$data->weather[0]->icon}.png' class='weather-icon' />    
+        
+        <h2>Weer</h2>
+        <p class='weather-data'>Emmen</p> 
+
+        <!-- Adds the current time so you can see when it updated for the last time -->
+        <p class='weather-name'><b> Laatst geupdate:</b></p><p class='weather-data'>$date</p>
+
+        <!-- Gets the Description about what kind of weather it is -->
+        <p class='weather-name'><b> Het is:</b></p><p class='weather-data'> {$data->weather[0]->description} </p> 
+        <p class='weather-name'><b>Temperatuur:</b></p><p class='weather-data'' >{$data->main->temp}°C</p>
+
+        <!-- Get the right icon for the current weatherReport -->
+        <p class='weather-name'><b>Vochtigheid:</b></p><p class='weather-data'>{$data->main->humidity}%</p>
+        <p class='weather-name'><b>Wind kracht:</b></p><p class='weather-data'>{$data->wind->speed} km/h</p>";
+    }?>
+    
+    <!--
     <div class="row2 row">
         <div class="rowContent important-pages">
             <h3>Belangrijke pagina's</h3>
-            <p><a href="http://localhost/ICT-Portal/vakken">Vakken jaar 1</a></p>
-            <p><a href="http://localhost/ICT-Portal/nieuws?all=TRUE">Al het nieuws</a></p>
-            <p><a href="http://localhost/ICT-Portal/contact">Contact</a></p>
+            <p><a href="aanwezigen">aanwezigen docenten</a></p>
+            <p><a href="vakken?jaar=1">Vakken jaar 1</a></p>
+            <p><a href="nieuws?all=TRUE">Al het nieuws</a></p>
         </div>
     </div>
     <div class="row3 row">
         <div class="rowContent">
             <h3>Webshop</h3><br>
-            <a href="https://webshop.stenden.com/" target="_blank"><div class="shop"></div></a>
+            <a href="https://www.p-p.nl/portfolio/nhl-stenden-hogeschool/" target="_blank">Ga nu naar de NHL Stenden webshop voor de GloedNieuwe dopper en meer...</a>
         </div>
-    </div>    
+    </div> -->   
+
 </div>
-    

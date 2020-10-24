@@ -1,5 +1,7 @@
+<div class='devider'>
+    <div class='pageContentBlock'>
+
 <main class="content">
-    <div class="left_content">
 
     <?php
     if(isset($_POST['submitVakken']) || isset($_GET['jaar'])){
@@ -15,9 +17,38 @@
         <div class = 'contentBlock-grid'>";
 
         $result = $DB->Get("SELECT * FROM vakken WHERE jaarlaag = '{$jaarSelectie}' ORDER BY periode ASC");
+
+
+
+
         while($vakData = $result->fetch_assoc()){
-            
-        $vakkenLink = 'window.location.href="vak?vak='.$vakData['vak_id'].'"';
+            if(isset($_GET['vak'])){
+                
+                //Alle output buffers leegmaken
+
+                //Gegevens uit database halen
+                $downloadBoek = $DB->Get("SELECT * FROM vakken WHERE vak_id = '{$_GET['vak']}'");
+                $downloadFetch = $downloadBoek->fetch_assoc();
+
+                if(!empty($downloadFetch['moduleboek'])){
+                    ob_end_clean();
+                
+                    //Bestandsnaam genereren aan de hand van waarden uit database
+                    $bestand = $downloadFetch['vak'].' '.$downloadFetch['jaarlaag'].'-'.$downloadFetch['periode'].' - moduleboek.pdf';
+
+                    //Headers genereren voor export pdf + pdf downloaden door echo
+                    header('Content-type: application/x-download');
+                    header('Content-Disposition: attachment; filename="'.$bestand.'"');
+                    header('Content-Transfer-Encoding: binary');
+                    header('Content-Length: '.strlen($downloadFetch['moduleboek']));
+                    echo $downloadFetch['moduleboek'];
+                }
+                else {
+                    header('Location: vakken');
+                }
+            }
+
+        $vakkenLink = 'window.location.href="vakken?jaar='.$vakData['jaarlaag'].'&vak='.$vakData['vak_id'].'"';
         echo "<div class='contentBlock' onclick='{$vakkenLink}'>
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>

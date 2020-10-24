@@ -1,6 +1,6 @@
 <?php 
 
 	if($Core->Logout()){
-		header("location: /nieuws"); //Goto login page
+		header("location: nieuws"); //Goto login page
 	}
 ?>

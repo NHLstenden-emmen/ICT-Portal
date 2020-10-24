@@ -74,7 +74,7 @@ th {
 				<?= ($beschikbaarheidOutput['Maandag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['Maandag'][1]; ?>
 			</td>
 			<td>
-				<?= ($beschikbaarheidOutput['Dinsdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['beschikbaarheid_dinsdag'][0]; ?>
+				<?= ($beschikbaarheidOutput['Dinsdag'][0] == '') ? 'Vrij':$beschikbaarheidOutput['Dinsdag'][0]; ?>
 				/
 				<?= ($beschikbaarheidOutput['Dinsdag'][1] == '') ? 'Vrij':$beschikbaarheidOutput['Dinsdag'][1]; ?>
 			</td>

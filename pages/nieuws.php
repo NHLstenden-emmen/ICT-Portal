@@ -1,4 +1,3 @@
-
 <?php 
 	$blokken = 4;
 	$string = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
@@ -60,28 +59,28 @@
 ?>
 
 <div class="allList">
-<div class="all-news">
-<h2>Alle nieuwsberichten</h2><br>
-    <?php 
-        while($x < $total){ 
-            $value = $news[$x];
-    ?>
-        <div class="itemRow">
-            <span class="dot"></span>
-            <div class="newsItem">
-                <p><?php echo $value; ?></p>
+    <div class="all-news">
+        <h2>Alle nieuwsberichten</h2><br>
+        <?php 
+            while($x < $total){ 
+                $value = $news[$x];
+        ?>
+            <div class="itemRow">
+                <span class="dot"></span>
+                <div class="newsItem">
+                    <p><?php echo $value; ?></p>
+                </div>
+                <div class="time">
+                    <p>10 uur</p>
+                </div>
             </div>
-            <div class="time">
-                <p>10 uur</p>
-            </div>
-        </div>
-    <?php 
-        $x++;
-        } 
-    ?>
+        <?php 
+            $x++;
+            } 
+        ?>
     </div>
     <div class="more">
         <!-- <center> moet ik nog even met css doen, maar even geen zin -->
         <center><a href="nieuws?all=TRUE">Lees alle artikelen</a></center>
-	</div>
-	</div>
+    </div>
+</div>

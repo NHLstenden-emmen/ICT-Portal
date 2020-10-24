@@ -1,4 +1,3 @@
-
 <main class="content">
     <div class='contentBlock-nohover'>
 				<div class='contentBlock-side'></div>

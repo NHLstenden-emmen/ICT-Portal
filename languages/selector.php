@@ -1,24 +1,22 @@
 <?php
 
 //check if cookie is set
-if(isSet($_COOKIE['lang'])) {
-	$lang = $_COOKIE['lang'];
+if(isset($_COOKIE['lang'])) {
+	$selectLang = $_COOKIE['lang'];
 }
 // this is the main language
 else {
-	$lang = 'nl';
+	setcookie("lang", "nl", time()+3600);
+	$selectLang = 'nl';
 }
 
 //when the language changes set cookie or change it
 if(!empty(isset($_POST['changelang']))){
-	$lang = $_POST["changelang"];
-	
-	setcookie("lang", $lang);
-	setcookie("lang", $lang, time()+ (3600 * 24 * 30));
+	setcookie("lang", $_POST["changelang"], time()+ (3600 * 24 * 30));
 	header("Refresh:0");
 }
 
-switch ($lang) {
+switch ($selectLang) {
 	case 'en':
 	$lang_file = 'lang.en.php';
 	break;

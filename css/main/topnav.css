@@ -61,6 +61,50 @@ button.darkmodeSwitch {
 .navbar .navbar_items ul button > .languageSwitch.English {
 	color: white;
 }
+
+/* Weather Widget */
+
+.weatherWidget {
+	display: grid; 
+	grid-template-rows: 25% 40% 15% auto; 
+	grid-template-columns: 15% 42% auto;
+}
+
+
+.weahterIcon {
+	margin-left: 1.8vw; 
+	font-size: 3vw; 
+	grid-column: 3; 
+	grid-row: 1;
+}
+
+.weatherTemp {
+	font-size: 5vw; 
+	grid-column: 2; 
+	grid-row: 2;
+}
+
+.weatherTempIcon{
+	font-size: 3vw; 
+	grid-column: 3; 
+	grid-row: 2;
+	margin-top: 1.5vh;
+}
+
+.weatherCity{
+	font-size: 1.5vw; 
+	grid-column: 2;
+	grid-row: 3; 
+	margin-left: 0.8vw;
+}
+.weatherDesc {
+	grid-column: 2/4; 
+	grid-row: 4; 
+	margin-left: 0.8vw; 
+	font-style: italic;
+	font-size: 1vw;
+}
+
 /* Banner Image */
 .banner_image {
 	transition: 0.3s;
@@ -106,9 +150,9 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	grid-template-columns: 7vw 7vw 7vw 17vw 7vw 7vw 7vw 7vw 7vw 7vw 7vw;
 	grid-template-rows: 7vw 7vw 7vw 7vw;
 	grid-template-areas:
-		". . . . . . . . . Jaar-1 ."
-		". Titel Titel . Populair Populair . . . . Jaar-2"
-		". . . . Populair Populair . Contact Jaar-4 Jaar-3 ."
+		". . . . . . . . . J1 ."
+		". Titel Titel . Populair Populair . . . . J2"
+		". . . . Populair Populair . Contact J4 J3 ."
 		". . . . . . Mededelingen . . . .";
 }
 
@@ -125,48 +169,33 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 
 .Populair {
 	grid-area: Populair;
-	width: 100%;
-	height: 100%;
-	transition: 0.3s;
 }
 
 .Mededelingen {
 	grid-area: Mededelingen;
-	width: 100%;
-	height: 100%;
-	transition: 0.3s;
 }
 
 .Contact {
 	grid-area: Contact;
-	width: 100%;
-	height: 100%;
-	transition: 0.3s;
 }
 
-.Jaar-4 {
-	grid-area: Jaar-4;
-	width: 100%;
-	height: 100%;
-	transition: 0.3s;
+.J4 {
+	grid-area: J4;
 }
 
-.Jaar-3 {
-	grid-area: Jaar-3;
-	width: 100%;
-	height: 100%;
-	transition: 0.3s;
+.J3 {
+	grid-area: J3;
 }
 
-.Jaar-2 {
-	grid-area: Jaar-2;
-	width: 100%;
-	height: 100%;
-	transition: 0.3s;
+.J2 {
+	grid-area: J2;
 }
 
-.Jaar-1 {
-	grid-area: Jaar-1;
+.J1 {
+	grid-area: J1;
+}
+
+.J1, .J2, .J3, .J4, .Contact, .Mededelingen, .Populair {
 	width: 100%;
 	height: 100%;
 	transition: 0.3s;

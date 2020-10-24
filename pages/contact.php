@@ -6,6 +6,8 @@
 		$message = wordwrap($_POST["contactMessage"],70,"<br>\n");
 		$Core->Mail($name,$email,$message);
 	}
+
+	//TODO: PHP Validatie van velden
 ?>
 <div class='devider'>
     <div class='pageContentBlock'>

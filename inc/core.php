@@ -36,8 +36,7 @@ class Core
 		}
 		else {
 			return false;
-		}
-
+    }
 	}
 
 	function weatherData(){

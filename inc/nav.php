@@ -83,16 +83,9 @@
 		</div>
 			<div onclick="window.location.href='nieuws?all=TRUE'" class="Mededelingen zoom colorBlock"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
 			<div onclick="window.location.href='aanwezigen'" class="Contact zoom colorBlock"><div class="headerBlock"><p>Aanwezigen docenten</p></div></div>
-			<div onclick="window.location.href='vakken?jaar=4'" class="J4 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">4</div></div>
-			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">3</div></div>
-			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">2</div></div>
-			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">1</div></div>
-
-		
-		<!--
-			<div onclick="window.location.href='vakken?jaar=4'" class="J3 zoom colorBlock"><div class="headerBlock"><p>Jaar 3</p></div></div>
+			<div onclick="window.location.href='vakken?jaar=4'" class="J4 zoom colorBlock"><div class="headerBlock"><p>Jaar 4</p></div></div>
 			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock"><div class="headerBlock"><p>Jaar 3</p></div></div>
 			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock"><div class="headerBlock"><p>Jaar 2</p></div></div>
-			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock"><div class="headerBlock"><p>Jaar 1</p></div></div>-->
+			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock"><div class="headerBlock"><p>Jaar 1</p></div></div>
 	</div>
 </div>

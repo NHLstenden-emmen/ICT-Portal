@@ -8,6 +8,7 @@
     font-size: 1em;
     margin: 2vw 0 2vw 0;
 }
+
 .kaartSchool {
     width: 100%;
 }
@@ -15,4 +16,10 @@
 a {
 	text-decoration: none;
     color: var(--lightPrimaryColor);
+}
+
+@media (max-width: 950px) {
+    .pageSidebarBlock {
+        width:100vw;
+    }
 }

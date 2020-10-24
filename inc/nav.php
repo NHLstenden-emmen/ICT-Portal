@@ -15,8 +15,8 @@
 					<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong>{$_COOKIE['fullUser']}</strong>
 				</li>
 				<div class='dropdown-content'>
-					<a href='uploadNieuws'>Nieuws beheren	</a>
-					<a href='profiel-bewerken'>Mijn profiel</a>
+					<a href='uploadNieuws'>Nieuws beheren</a>
+					<a href='profiel-bewerken'>Mijn profiel bewerken</a>
 					<a href='beschikbaarheid'>Mijn beschikbaarheid</a>
 					<hr	/>
 					<a href='vakkenbeheer'>Vakkenbeheer</a>
@@ -69,7 +69,7 @@
 	<div class="grid-container">
 		<div class="Titel">
 			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?></div>
-			<p><?= isset($pageSubtitleText) ? $pageSubtitleText : "" ?></p>
+			<p class="bannerSubTitle"><?= isset($pageSubtitleText) ? $pageSubtitleText : "" ?></p>
 		</div>
 	
 		<div onclick="window.location.href='https://www.buienradar.nl/weer/Emmen/'" class="Populair zoom colorBlock weatherWidget">
@@ -82,11 +82,11 @@
 				<div class="weatherDesc"><?= $Core->weatherData()->weather[0]->description ?></div>
 		</div>
 			<div onclick="window.location.href='nieuws?all=TRUE'" class="Mededelingen zoom colorBlock"><div class="headerBlock"><p>Belangrijke<br>mededelingen</p></div></div>
-			<div onclick="window.location.href='aanwezigen'" class="Contact zoom colorBlock"><div class="headerBlock"><p>Aanwezigen docenten</p></div></div>
-			<div onclick="window.location.href='vakken?jaar=4'" class="J4 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">4</div></div>
-			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">3</div></div>
-			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">2</div></div>
-			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 2;font-size: 2vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">1</div></div>
+			<div onclick="window.location.href='aanwezigheid'" class="Contact zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: 50% 50%;"><div style="grid-row: 1;grid-column: 1;font-size: 3.4vw;margin-left: 3.7vw;"><i class="fa fa-clock-o" aria-hidden="true"></i></div><div style="grid-row: 1;grid-column: 1/2;font-size: 1vw;margin-top: 4.9vw;margin-left: 0.2vw;">Aanwezigheid</div></div>
+			<div onclick="window.location.href='vakken?jaar=4'" class="J4 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 1;grid-column: 1/3;font-size: 2vw;margin-top: 4.3vw;margin-left: 0.3vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">4</div></div>
+			<div onclick="window.location.href='vakken?jaar=3'" class="J3 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 1;grid-column: 1/3;font-size: 2vw;margin-top: 4.3vw;margin-left: 0.3vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">3</div></div>
+			<div onclick="window.location.href='vakken?jaar=2'" class="J2 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 1;grid-column: 1/3;font-size: 2vw;margin-top: 4.3vw;margin-left: 0.3vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">2</div></div>
+			<div onclick="window.location.href='vakken?jaar=1'" class="J1 zoom colorBlock" style="display: grid;grid-template-columns: auto 40%;grid-template-rows: auto auto;"><div style="grid-row: 1;grid-column: 1/3;font-size: 2vw;margin-top: 4.3vw;margin-left: 0.3vw;">Jaar</div><div style="grid-row: 1;grid-column: 2;font-size: 4vw;">1</div></div>
 
 		
 		<!--

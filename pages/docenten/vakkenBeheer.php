@@ -33,6 +33,16 @@
             }
 
                 $DB->Get("UPDATE docenten_vakken SET docent_id = '{$vakDocent}', vak_id = '{$vakID}'");
+
+                if(isset($_POST['vakKlas'])){
+                    // verwijder alle klassen die het vak hadden
+                        $DB->Get("DELETE FROM klassen_vakken WHERE vak_id='{$vakID}'");
+                    foreach ($_POST['vakKlas'] as $key => $klasID) {
+                        // voeg alle klassen toe die zijn ingevuld
+                        $DB->Get("INSERT INTO klassen_vakken (klas_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
+                    }
+            }
+
         }
         else {
             echo "Vaknaam is niet ingevuld.";
@@ -179,7 +189,7 @@
                     }
                     
                     echo "</select><br />        
-                    <div class='subTitle'>Vakbestanden</div><br />
+                    <div class='subTitle'>Vakbestanden</div>
                         <label for='vakBoek'>Moduleboek (.pdf)</label><br />
                         <input type='file' name='vakBoek' style='width: 65%;'><br />
                         <p>Vakken met een * zijn verplicht</p>
@@ -236,22 +246,25 @@
             echo '</select><br />';
                     
             
-                   
-            $klassen_vakkenResult = $DB->Get("SELECT * FROM klassen_vakken
+               
+            $klassen_vakkenResult = $DB->Get("SELECT klassen_vakken.klas_id, klassen.klas_naam FROM klassen_vakken
                                         INNER JOIN klassen 
                                         ON klassen_vakken.klas_id = klassen.klas_id
-                                        WHERE klassen_vakken.vak_id = '{$currentData['vak_id']}'
-                                        ");
+                                        WHERE klassen_vakken.vak_id = '{$currentData['vak_id']}'");
             
 
             $klassenResult = $DB->Get("SELECT * FROM klassen");
 
             echo "<label for='vakPeriode'>Klassen* (Selecteer meerdere met control.)</label><br />
                     <select name='vakKlas[]' multiple style='width: 65%;'>";
-            while($klassenData = $klassenResult->fetch_assoc()){
-                if(!in_array($klassenData['klas_id'], $klassen_vakkenResult->fetch_assoc())){
+
+
+           $klassenVakData = $klassen_vakkenResult->fetch_assoc();
+           while($klassenData = $klassenResult->fetch_assoc()){
+                if(in_array($klassenData['klas_id'], $klassenVakData)){
+                    $klassenVakData = $klassen_vakkenResult->fetch_assoc();
                     //selected
-                    echo "<option value='{$klassenData['klas_id']}' selected>{$klassenData['klas_naam']}</option>";
+                    echo "<option value='{$klassenData['klas_id']}' selected >{$klassenData['klas_naam']}</option>";
                 }
                 else {
                     //unselected
@@ -275,19 +288,19 @@
                 }
             }
             echo "</select><br />
-            <div class='subTitle'>Vakbestanden</div><br />";
+            <div class='subTitle'>Vakbestanden</div>";
                 if(empty($currentData['moduleboek'])){
                     echo "<label for='vakBoek'>Moduleboek (.pdf)</label> <b>Momenteel niks geupload</b><br />";
                 }
                 else {
                     echo "<label for='vakBoek'>Moduleboek (.pdf) 
-                <input type='hidden' name='boekVakID' value='{$currentData['vak_id']}'>
                 <button type='submit' name='boekView'>weergeven</button></label><br />";
                 }
 
                 echo "
                 <input type='file' name='vakBoek' style='width: 65%;'><br />
                 <p>Vakken met een * zijn verplicht</p>
+                <input type='hidden' name='boekVakID' value='{$currentData['vak_id']}'>
                 <button type='submit' name='aanpassenSubmit'>opslaan</button>
                 <button type='button' onclick="."window.location.href='vakkenbeheer'".">annuleren</button>
             </form>

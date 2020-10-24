@@ -46,6 +46,8 @@ input.darkmode:focus::placeholder {
 
 /*DARKMODE INPUT */
 
+
+
 textarea.darkmode {
 	color: var(--tekstColor);
 	border-bottom: 2px solid var(--tekstColor);
@@ -162,4 +164,16 @@ body.darkmode > footer.footer_desktop {
 /*DOCENTBLOK */
 body.darkmode .docentBlok-Icons a {
   color: #318C91 !important;
+}
+
+/* Dropdown menu */
+body.darkmode .dropdown-content {
+	background-color: var(--dark);
+}
+body.darkmode .dropdown-content a {
+	color: var(--tekstColor);
+}
+
+body.darkmode .dropdown-content a:hover {
+	background-color: #575a5a ;
 }

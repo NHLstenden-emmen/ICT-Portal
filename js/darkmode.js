@@ -8,7 +8,7 @@ const enableDarkMode = () => {
   // 1. Add the class to the body
   $('body').addClass('darkmode');
   $('input').addClass('darkmode');
-  $('.inputWithIcon').addClass('darkmode');
+  $('textarea').addClass('darkmode');
   $('button').addClass('darkmode');
 
   // 2. Update darkMode in localStorage
@@ -19,7 +19,7 @@ const disableDarkMode = () => {
   // 1. Remove the class from the body
   $('body').removeClass('darkmode');
   $('input').removeClass('darkmode');
-  $('.inputWithIcon').removeClass('darkmode');
+  $('textarea').removeClass('darkmode');
   $('button').removeClass('darkmode');
 
   // 2. Update darkMode in localStorage 

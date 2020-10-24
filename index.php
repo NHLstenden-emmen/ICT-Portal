@@ -64,7 +64,7 @@
             case 'contact':
                 include 'pages/contact.php';
                 break;
-            case 'aanwezigen':
+            case 'aanwezigheid':
                 include 'pages/aanwezigen.php';
                 break;
             case 'login':

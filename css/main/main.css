@@ -113,7 +113,7 @@ main.content {
 	color: grey;
 	font-style: normal;
 	text-align: left;
-	margin: 10px 0px 20px 20px;
+	margin: 1vw;
 }
 
 .contentBlock-info {
@@ -267,7 +267,7 @@ button.darkmodeSwitch:hover {
 .pageSidebarBlock {
 	float: left;
 	width: 20%;
-	padding: 40px 40px 10px 10px;
+	padding: 1vw;
 }
 .disclaimers {
 	text-align: center;

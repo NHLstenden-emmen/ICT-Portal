@@ -5,7 +5,7 @@ div.scrollmenu {
 	display: flex;
 	flex: none;
 	overflow: auto;
-	var(--tekstColor)-space: nowrap;
+	color: var(--tekstColor);
 }
 
 div.scrollmenu div {

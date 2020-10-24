@@ -259,15 +259,13 @@
                     <select class='selectMult' name='vakKlas[]' multiple style='width: 65%;'>";
 
 
-           $klassenVakData = $klassen_vakkenResult->fetch_assoc();
-           while($klassenData = $klassenResult->fetch_assoc()){
-               print_r($klassenVakData);
-                if(in_array($klassenData['klas_id'], $klassenVakData)){
-                    $klassenVakData = $klassen_vakkenResult->fetch_assoc();
+            $klassenVakData = $klassen_vakkenResult->fetch_assoc();
+            while($klassenData = $klassenResult->fetch_assoc()){
+                if(in_array($klassenData['klas_id'], $klassenVakData) && $klassenVakData != NULL){
                     //selected
                     echo "<option class='optionSelected' value='{$klassenData['klas_id']}' selected >{$klassenData['klas_naam']}</option>";
                 }
-                else if(!in_array($klassenData['klas_id'], $klassenVakData)){
+                else{
                     //unselected
                     echo "<option value='{$klassenData['klas_id']}'>{$klassenData['klas_naam']}</option>";
                 }

@@ -83,7 +83,9 @@ a {
 .contentBlock-title {
 	font-size: 24px;
 	text-align: left;
-	margin: 5vw;
+	margin-left: 2vw;
+	margin-top: 1vw;
+	margin-bottom: 2vw;
 }
 
 main.content {
@@ -113,7 +115,9 @@ main.content {
 	color: grey;
 	font-style: normal;
 	text-align: left;
-	margin: 5vw;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	margin-bottom: 2vw;
 }
 
 .contentBlock-info {

@@ -18,9 +18,6 @@
 
         $result = $DB->Get("SELECT * FROM vakken WHERE jaarlaag = '{$jaarSelectie}' ORDER BY periode ASC");
 
-
-
-
         while($vakData = $result->fetch_assoc()){
             if(isset($_GET['vak'])){
                 

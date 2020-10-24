@@ -1,75 +1,130 @@
-.uitgelicht {
-	margin-top: 5vh;
-	margin-left: 25px;
-	display: grid;
-	grid-template-columns: 40% 40%;
-	grid-template-rows: 20vh 20vh;
-	column-gap: 5%;
-	row-gap: 20%;
-	height: 100%;
-}
 
-.blocks {
-	height: calc(max-content + 200px);
-}
+/* NIEUWS BLOKKEN */
 
-.item {
+.kop{
 	width: 100%;
-	height: 100%;
-	background: var(--tekstColor);
+	padding-top: 3vh;
+}
+
+.kop h2{
+	width: 82.5%;
+	margin: 0 auto;
+}
+
+.nieuwsBlokken{
+	padding-top: 4vh;
+	width: 80%;
+	margin: 0 auto;
+	height: auto;
+	display: grid;
+	grid-template-columns: 47.5% 47.5%;
+	grid-template-rows: auto auto;
+	grid-column-gap: 5%;
+	grid-row-gap: 5vh;
+}
+
+.nieuwsGrid{
+	display: grid;
+	height: 25vh;
+	grid-template-columns: 100%;
+	grid-template-rows: 15% 70% 15%;
+	padding: 1vw;
 	position: relative;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 2px 10px 0 rgba(0, 0, 0, 0.3);
 }
 
-.item .titel {
+.titel{
 	width: 100%;
-	padding: 15px;
+	height: 100%;
 }
 
-.message {
-	padding: 15px;
+.titel h3{
+	padding: 0;
+	margin: 0;
+}
+
+.content{
+	height: 100%;
+	width: 100%;
 	display: grid;
-	grid-template-columns: 65% 30%;
+	grid-template-columns: 65% 35%;
 	grid-template-rows: 100%;
-	column-gap: 5%;
-	height: 40%;
 }
 
-.text {
+.text{
 	height: 100%;
 	width: 100%;
+	word-break: normal; /* Kapt alle woorden af */
+	overflow: hidden; 
+	text-overflow: ellipsis;
 }
 
-.image {
-	background-color: #f4f4f4;
+.image{
 	width: 100%;
 	height: 100%;
-}
-
-.text p {
-	word-break: break-word;
-}
-
-.meta {
 	display: grid;
-	padding: 15px;
-	width: 100%;
-	grid-template-columns: 65% 30%;
-	column-gap: 5%;
+	grid-template-columns: 100%;
+	grid-template-rows: 12.5% 75% 12.5%;
 }
 
-.meer {
+.image .imageSource{
+	width: 75%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.image .imageSource{	
+    background-size: cover;
+    background-position: center;
+}
+
+.metaData{
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 100%;
+}
+
+.tijd{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.tijd p{
+	bottom: 0;
+	position: absolute;
+}
+
+.lees{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.lees a{
+	bottom: 0;
+	right: 12.5%;
+	position: absolute;
 	text-align: right;
 }
 
-/* */
+
+/* NIEUWS LIJST */
+
+.allList{
+	width: 82.5%;
+	margin: 0 auto;
+}
+
 .dot {
 	height: 25px;
 	width: 25px;
 	background-color: #bbb;
 	border-radius: 50%;
 	display: inline-block;
-	margin: auto;
+	margin: auto auto auto 0;
 }
 
 .all-news {
@@ -93,11 +148,9 @@ p {
 }
 
 .more {
-	width: 100%;
-	padding: 20px;
-	background-color: grey;
-	margin-bottom: 100px;
-	margin-top: 50px;
+	width: 25%;
+    margin-bottom: 100px;
+    margin-top: 50px;
 }
 
 .time {
@@ -108,12 +161,40 @@ p {
 	margin: auto 0;
 }
 
-@media only screen and (max-width: 1410px) {
-	.uitgelicht {
-		grid-template-columns: 80%;
-	}
-}
 
 .allList {
-	margin-bottom: 100px;
+	margin-top: -100px;
+}
+
+
+/* RESPONSIVE BLOKKIES */
+
+@media only screen and (max-width: 900px) {
+
+	.nieuwsBlokken{
+		width: 95%;
+		height: auto;
+		display: grid;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto auto auto;
+		grid-row-gap: 7vh;
+	}
+
+	.nieuwsGrid{
+		margin: 0 auto;
+	}
+
+	.kop h2{
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.all-news {
+		width: 100%;
+	}
+
+	.more{
+		width: 50%;
+	}
+
 }

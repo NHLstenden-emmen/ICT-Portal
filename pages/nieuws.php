@@ -1,41 +1,91 @@
 <div class='devider'>
     <div class='pageContentBlock'>
-<?php 
-	$blokken = 4;
-	$string = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-	$result = substr($string, 0, 100)."...";
-?>
-<br><br>
-<div class="blocks">
-<h2>Uitgelicht nieuws</h2>
-<div class="uitgelicht">
-	<?php
-	for($x=0; $x < $blokken; $x++){
-	?>
-	<div class="item rand">
-		<div class="titel"><h3>Titel</h3></div>
-		<div class="message">
-			<div class="text">
-				<?php echo $result; ?>	
-			</div>
-			<div class="image"></div>
-		</div>
-		<div class="meta">
-			<div class="time"><p>21-10-2020 om 15:00</p></div>
-			<div class="meer"><p>Lees meer</p></div>
-		</div>
-	</div>
-	<?php
-	}
-	?>
-</div>
-</div>
+
+
+    <!-- -->
+    <div class="newsTop">
+        <div class="kop">
+            <h2>Laatste nieuwsberichten</h2>
+        </div>
+        
+        <div class="nieuwsBlokken">
+            <?php
+
+                $result = $DB->Get("SELECT * FROM nieuws_nl");
+                while($lastPost = $result->fetch_assoc()){
+                    $lastPostIdEnd = $lastPost['nieuws_nl_id'];                
+                }
+                $lastPostIdStart = $lastPostIdEnd - 3;
+
+                // Laatse bericht = $lastPostIdEnd
+                // Eerste bericht = $lastPostIdStart
+                $i = 0;
+                for($x = $lastPostIdEnd; $lastPostIdEnd >= $lastPostIdStart; $lastPostIdEnd--){
+                    
+                    //Select from DB
+                    $newsQuery = $DB->Get("SELECT * FROM nieuws_nl WHERE nieuws_nl_id = '$lastPostIdEnd'");
+
+                    while($newsItem = $newsQuery->fetch_assoc()){
+                        $id = $newsItem['nieuws_nl_id'];
+                        $titel = $newsItem['titel_nederlands'];
+                        $text = $newsItem['tekst_nederlands'];
+                        $bijlage = $newsItem['bijlage_nederlands'];
+                        $afbeelding = base64_encode($newsItem['afbeelding_nederlands']);
+                        
+                        ?>
+
+                        <!-- START GENEREER NIEUWS BLOK -->
+                        <div class="nieuwsGrid rand">
+                            <div class="titel">
+                                <h3><?php echo $titel; ?></h3>
+                            </div>
+                            <div class="content">
+                                <div class="text">
+                                    <p><?php echo $text;?></p>
+                                </div>
+                                <div class="image">
+                                    <div class="imagePlaceholder"></div>
+                                    <div class="imageSource" style="background-image: url('data:image/jpeg;base64,<?php echo $afbeelding;?>');"></div>                           
+                                    <div class="imagePlaceholder"></div>
+                                </div>
+                            </div> 
+                            <div class="metaData">
+                                <div class="tijd">
+                                    <p>Hier komt een tijd</p>
+                                </div>
+                                <div class="lees">
+                                    <a href="#"><p>Lees meer<p></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- EINDE GENEREER NIEUWS BLOK -->
+
+                        <?php
+                    }    
+
+                }
+
+            ?>
+
+        </div>
+    </div>
+
+
+    <!-- -->
+    <!-- ONDERSTE STUK NIEUWSPAGINA -->
 
 <?php
-
-
         //Array met nieuwsberichten        
-        $news = array("Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8", "Item 9", "Item 10", "Item 11", "Item 12", "Item 13");
+
+        $news = array();
+        $time = array();
+        $result = $DB->Get("SELECT * FROM nieuws_nl");
+        while($posts = $result->fetch_assoc()){
+            $titel = $posts['titel_nederlands'];    
+            $tijd = $posts['nieuws_nl_id']; //VERANDEREN NAAR TIJD!
+            array_push($news, $titel);
+            array_push($time, $tijd);
+        }
 
         if(isset($_GET['all']))
         {
@@ -51,10 +101,10 @@
             <?php
             } else {
                 //Lees 5 artikelen
-                $total = 5;
+                $total = 2;
             }
         } else{
-			$total = 5;
+			$total = 2;
 		}
                
         $x = 0;
@@ -65,15 +115,16 @@
 <h2>Alle nieuwsberichten</h2><br>
     <?php 
         while($x < $total){ 
-            $value = $news[$x];
+            $titel = $news[$x];
+            $tijd = $time[$x];
     ?>
         <div class="itemRow">
             <span class="dot"></span>
             <div class="newsItem">
-                <p><?php echo $value; ?></p>
+                <p><?php echo $titel; ?></p>
             </div>
             <div class="time">
-                <p>10 uur</p>
+                <p><?php echo $tijd; ?></p>
             </div>
         </div>
     <?php 
@@ -82,8 +133,13 @@
     ?>
     </div>
     <div class="more">
-        <!-- <center> moet ik nog even met css doen, maar even geen zin -->
-        <center><a href="nieuws?all=TRUE">Lees alle artikelen</a></center>
+        
+        <a href="nieuws?all=TRUE">Lees alle artikelen</a>
 	</div>
 	</div>
-</div>
+</div>            
+
+
+
+
+</div>          

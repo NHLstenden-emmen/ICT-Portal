@@ -9,7 +9,6 @@
     }
         $pageTitle = str_replace("-", " ", $pageTitle);
 
-
     include 'inc/core.php';
     include 'inc/mysql.php';
 

@@ -59,6 +59,8 @@
 
 	main.content {
 		display: block;
+		/* min-height: 100vh; */
+		/* margin-bottom: 30vw; */
 	}
 
 	.contentBlock-grid {
@@ -70,7 +72,7 @@
 		display: none;
 	}
 	.colorBlock {
-		display: none;
+		/*display: none;*/
 	}
 
 	.loginWrapper {
@@ -79,6 +81,7 @@
 
 	.pageContentBlock {
 		width: 100%;
+		margin-bottom: 5vh;
 	}
 
 	button.languageSwitch, button.darkmodeSwitch {

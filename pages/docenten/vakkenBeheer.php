@@ -170,7 +170,7 @@
                     $klassenResult = $DB->Get("SELECT * FROM klassen");
 
                     echo "<label for='vakPeriode'>Klassen*</label><br />
-                            <select name='vakKlas[]' multiple style='width: 65%;'>";
+                            <select class='selectMult' name='vakKlas[]' multiple style='width: 65%;'>";
                     while($klassenData = $klassenResult->fetch_assoc()){
                         echo "<option value='{$klassenData['klas_id']}'>{$klassenData['klas_naam']}</option>";
                     }
@@ -223,7 +223,7 @@
 
                 for ($i=1; $i <= 4; $i++) { 
                     if($i == $currentData['jaarlaag']){
-                        echo '<option value="'.$currentData['jaarlaag'].'" selected>Jaar '.$currentData['jaarlaag'].' (geselecteerd)</option>';
+                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>Jaar '.$currentData['jaarlaag'].' (geselecteerd)</option>';
                     }
                     else if($i != $currentData['jaarlaag']){
                         echo '<option value="'.$i.'">Jaar '.$i.'</option>';
@@ -236,7 +236,7 @@
 
             for ($i=1; $i <= 4; $i++) { 
                 if($i == $currentData['periode']){
-                    echo '<option value="'.$currentData['periode'].'" selected>Periode '.$currentData['periode'].' (geselecteerd)</option>';
+                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>Periode '.$currentData['periode'].' (geselecteerd)</option>';
                 }
                 else if($i != $currentData['periode']){
                     echo '<option value="'.$i.'">Periode '.$i.'</option>';
@@ -256,17 +256,18 @@
             $klassenResult = $DB->Get("SELECT * FROM klassen");
 
             echo "<label for='vakPeriode'>Klassen* (Selecteer meerdere met control.)</label><br />
-                    <select name='vakKlas[]' multiple style='width: 65%;'>";
+                    <select class='selectMult' name='vakKlas[]' multiple style='width: 65%;'>";
 
 
            $klassenVakData = $klassen_vakkenResult->fetch_assoc();
            while($klassenData = $klassenResult->fetch_assoc()){
+               print_r($klassenVakData);
                 if(in_array($klassenData['klas_id'], $klassenVakData)){
                     $klassenVakData = $klassen_vakkenResult->fetch_assoc();
                     //selected
-                    echo "<option value='{$klassenData['klas_id']}' selected >{$klassenData['klas_naam']}</option>";
+                    echo "<option class='optionSelected' value='{$klassenData['klas_id']}' selected >{$klassenData['klas_naam']}</option>";
                 }
-                else {
+                else if(!in_array($klassenData['klas_id'], $klassenVakData)){
                     //unselected
                     echo "<option value='{$klassenData['klas_id']}'>{$klassenData['klas_naam']}</option>";
                 }
@@ -281,7 +282,7 @@
                     <select name='vakDocent'>";
             while($docentData = $docentResult->fetch_assoc()){
                 if($docentData['docent_id'] == $currentData['docent_id']){
-                    echo "<option value='{$currentData['docent_id']}' selected>{$currentData['voornaam']} {$currentData ['achternaam']} (geselecteerd)</option>";
+                    echo "<option class='optionSelected' value='{$currentData['docent_id']}' selected>{$currentData['voornaam']} {$currentData ['achternaam']} (geselecteerd)</option>";
                 }
                 else {
                     echo "<option value='{$docentData['docent_id']}'>{$docentData['voornaam']} {$docentData['achternaam']}</option>";

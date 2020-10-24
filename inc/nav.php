@@ -68,7 +68,7 @@
 <div class="banner_image">
 	<div class="grid-container">
 		<div class="Titel">
-			<div class="bannerTitle"><?= isset($activePage) ? $activePage : "ICT Portal" ?></div>
+			<div class="bannerTitle"><?= isset($pageTitle) ? $pageTitle : "ICT Portal" ?></div>
 			<p class="bannerSubTitle"><?= isset($pageSubtitleText) ? $pageSubtitleText : "" ?></p>
 		</div>
 	

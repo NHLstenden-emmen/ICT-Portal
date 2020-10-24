@@ -33,7 +33,7 @@
       <div class="<?= ($activePage == 'uploadNieuws') ? 'mbactive':''; ?>" onclick="window.location.href='uploadNieuws'"><i class="fa fa-pencil fa-lg fa-fw" aria-hidden="true"></i></div>
       <div class="<?= ($activePage == 'profiel-bewerken') ? 'mbactive':''; ?>" onclick="window.location.href='profiel-bewerken'"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i></div>
       <div class="<?= ($activePage == 'beschikbaarheid') ? 'mbactive':''; ?>" onclick="window.location.href='beschikbaarheid'"><i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'logout') ? 'mbactive':''; ?>" onclick="window.location.href='logout'"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="<?= ($activePage == 'logout') ? 'mbactive':''; ?>" onclick="window.location.href='uitloggen'"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php }
 
 			else {?>

@@ -23,51 +23,54 @@ body.darkmode > .navbar .navbar_items ul > .darkmodeSwitch {
 
 /*DARKMODE INPUT */
 
-input.darkmode {
+input.darkmode, textarea.darkmode, select.darkmode, .selectMult.darkmode {
 	color: var(--tekstColor);
 	border-bottom: 2px solid var(--tekstColor);
 }
 
-input.darkmode:focus {
+input.darkmode:focus, textarea.darkmode:focus, select.darkmode:focus, .selectMult.darkmode:focus {
 	color: rgb(240, 240, 240);
 	border-color: var(--lightPrimaryColor);
 }
 
-input.darkmode::placeholder {
-	color: var(--tekstColor);
-}
-input.darkmode:focus::placeholder {
+input.darkmode::placeholder, textarea.darkmode::placeholder, select.darkmode::placeholder, .selectMult.darkmode::placeholder {
 	color: var(--tekstColor);
 }
 
-.inputWithIcon.darkmode i {
-	color: #ffffff !important;
-}
-
-/*DARKMODE INPUT */
-
-
-
-textarea.darkmode {
-	color: var(--tekstColor);
-	border-bottom: 2px solid var(--tekstColor);
-}
-
-textarea.darkmode:focus {
-	color: rgb(240, 240, 240);
-	border-color: var(--lightPrimaryColor);
-}
-
-textarea.darkmode::placeholder {
-	color: var(--tekstColor);
-}
-textarea.darkmode:focus::placeholder {
+input.darkmode:focus::placeholder, textarea.darkmode:focus::placeholder, select.darkmode:focus::placeholder, .selectMult.darkmode:focus::placeholder {	
 	color: var(--tekstColor);
 }
 
-.inputWithIcon.darkmode i {
-	color: #ffffff !important;
+option.darkmode {
+	background-color: var(--dark);
 }
+
+.selectMult.darkmode {
+	padding: 0;
+}
+
+
+/* Scrollsbars*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
 
 /*BUTTONS */
 button.darkmode {

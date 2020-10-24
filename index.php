@@ -46,8 +46,8 @@
     include 'inc/nav.php';
 
  
-    switch($activePage)
-        {
+    if(!$Core->AuthCheck()) {
+        switch($activePage){
             /* Student pagina's */
             case 'nieuws':
                 include 'pages/nieuws.php'; //file path of your home/nieuws page
@@ -73,6 +73,52 @@
             case 'uitloggen':
                 include 'pages/uitloggen.php';
                 break;
+            // disclaimers
+            case 'privacyPolicy':
+                include 'pages/privacyPolicy.php';
+                break;
+            case 'termsAndConditions':
+                include 'pages/termsAndConditions.php';
+                break;
+            default:
+                include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
+        }
+    }
+    // a check if the user is singed in or not
+    if($Core->AuthCheck()) {
+        switch($activePage){
+            /* Student pagina's */
+            case 'nieuws':
+                include 'pages/nieuws.php'; //file path of your home/nieuws page
+                break;
+            case 'vakken':
+                include 'pages/vakken.php';
+                break;
+            case 'docenten':
+                include 'pages/docenten.php';
+                break;
+            case 'docent':
+                include 'pages/docent.php';
+                break;
+            case 'contact':
+                include 'pages/contact.php';
+                break;
+            case 'aanwezigen':
+                include 'pages/aanwezigen.php';
+                break;
+            case 'login':
+                include 'pages/login.php';
+                break;
+            case 'uitloggen':
+                include 'pages/uitloggen.php';
+                break;
+            // disclaimers
+            case 'privacyPolicy':
+                include 'pages/privacyPolicy.php';
+                break;
+            case 'termsAndConditions':
+                include 'pages/termsAndConditions.php';
+                break;
             /* Docent pagina's */
             case 'uploadNieuws':
                 include 'pages/docenten/uploadNieuws.php';
@@ -86,32 +132,16 @@
             case 'beschikbaarheid':
                 include 'pages/docenten/beschikbaarheid.php';
                 break;
+            case 'Docent-toevoegen':
+                include 'pages/docenten/Docent-toevoegen.php';
+                break;
             case 'vakkenbeheer':
                 include 'pages/docenten/vakkenBeheer.php';
                 break;
-            // disclaimers
-            case 'privacyPolicy':
-                include 'pages/privacyPolicy.php';
-                break;
-            case 'termsAndConditions':
-                include 'pages/termsAndConditions.php';
-                break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
-            
         }
-
-
+    }
         echo "</div>";
-        
-        echo"<div class='pageSidebarBlock'>";
-
-        /*
-        echo "<div class='pageSidebarBlock'>";
-        include 'inc/sidebar.php';
-        echo "</div>"; //closes pageSidebarBlock
-        */
-        echo "</div>"; //closes devider
-
     include 'inc/footer.php';
 ?>

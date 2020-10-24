@@ -8,24 +8,25 @@
 			<li class="<?= ($activePage == 'vakken') ? 'active':''; ?>" onclick="window.location.href='vakken'">Vakken</li>
 			<li class="<?= ($activePage == 'docenten') ? 'active':''; ?>" onclick="window.location.href='docenten'">Docenten</li>
 			<li class="<?= ($activePage == 'contact') ? 'active':''; ?>" onclick="window.location.href='contact'">Contact</li>
-			<?php if($Core->AuthCheck()) { 
+			<?php if($Core->AuthCheck()) { ?>
 				
-				echo "<div class='navDropdown'>
-				<li class='dropbtn' style='text-transform: none;' onclick="."window.location.href='docent?docent={$_COOKIE["userID"]}'>
-					<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong>{$_COOKIE['fullUser']}</strong>
-				</li>
-				<div class='dropdown-content'>
-					<a href='uploadNieuws'>Nieuws beheren	</a>
-					<a href='profiel-bewerken'>Mijn profiel</a>
-					<a href='beschikbaarheid'>Mijn beschikbaarheid</a>
-					<hr	/>
-					<a href='vakkenbeheer'>Vakkenbeheer</a>
-					<hr />
-					<a href='uitloggen'>Uitloggen</a>
-					</form>
+				<div class='navDropdown'>
+					<li class='dropbtn' style='text-transform: none;' onclick="."window.location.href='docent?docent=<?php $_COOKIE["userID"] ?>'>
+						<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong><?php $_COOKIE['fullUser'] ?></strong>
+					</li>
+					<div class='dropdown-content'>
+						<a href='uploadNieuws'>Nieuws beheren	</a>
+						<a href='profiel-bewerken'>Mijn profiel</a>
+						<a href='beschikbaarheid'>Mijn beschikbaarheid</a>
+						<hr	/>
+						<a href='vakkenbeheer'>Vakkenbeheer</a>
+						<a href='Docent-toevoegen'>Docent toevoegen</a>
+						<hr />
+						<a href='uitloggen'>Uitloggen</a>
+						</form>
+					</div>
 				</div>
-			</div>";
- 			}
+ 			<?php }
 		
 			else { 
 				echo "<li class='".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>Login</li>";

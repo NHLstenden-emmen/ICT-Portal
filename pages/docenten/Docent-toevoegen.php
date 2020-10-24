@@ -17,29 +17,17 @@
                                 if(!empty($_POST['docentWachtwoord'])){
                                     if($_POST['docentWachtwoord'] == $_POST['docentWachtwoordHerhaal']){
                                         $docentWachtwoord = md5($_POST['docentWachtwoordHerhaal']);
-                                        if(!empty($_FILES["docentFoto"]["name"])) { 
-                                            $fileName = basename($_FILES["docentFoto"]["name"]); 
-                                            
-                                            $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-                                            
-                                            $allowTypes = array('jpg','png','jpeg','gif'); 
-                                            if(in_array($fileType, $allowTypes)){ 
-                                                $image = $_FILES['docentFoto']['tmp_name']; 
-                                                $imgContent = addslashes(file_get_contents($image)); 
-                                                $DB->Get("UPDATE docenten SET foto = '{$imgContent}' WHERE docent_id = '{$docentID}'");
-                                            }
-                                        }
-                                        $updateStatement = $DB->Get("UPDATE docenten SET 
-                                            voornaam = '{$_POST["docentVoornaam"]}', 
-                                            achternaam = '{$_POST["docentAchternaam"]}', 
-                                            email = '{$_POST["docentEmail"]}',
-                                            telefoonnummer = '{$_POST["docentTelefoonnummer"]}',
-                                            gebruikersnaam = '{$_POST["docentGebruikersnaam"]}',
-                                            wachtwoord = '{$docentWachtwoord}',
-                                            twitter = '{$_POST["docentTwitter"]}',
-                                            linkedin = '{$_POST["docentLinkedin"]}',
-                                            instagram = '{$_POST["docentInstagram"]}'");
-                                            // INSERT INTO docenten(voornaam, achternaam, email, telefoonnummer, gebruikersnaam, wachtwoord, foto, twitter, linkedin, instagram) VALUES ($_POST['docentVoornaam'],$_POST['docentAchternaam'],$_POST['docentEmail'],$_POST['docentTelefoonnummer'], $_POST['docentGebruikersnaam'],$docentWachtwoord,$_POST['docentTwitter'],$_POST['docentLinkedin'],$_POST['docentInstagram']
+                                        // store the post in a var
+                                        $voornaam = $_POST["docentVoornaam"];
+                                        $achternaam = $_POST["docentAchternaam"];
+                                        $email = $_POST["docentEmail"];
+                                        $telefoonnummer = $_POST["docentTelefoonnummer"];
+                                        $gebruikersnaam = $_POST["docentGebruikersnaam"];
+                                        $twitter = $_POST["docentTwitter"];
+                                        $linkedin = $_POST["docentLinkedin"];
+                                        $instagram = $_POST["docentInstagram"];
+
+                                        $poststatement = $DB->put("INSERT INTO `docenten`(`voornaam`, `achternaam`, `email`, `telefoonnummer`, `gebruikersnaam`, `wachtwoord`, `twitter`, `linkedin`, `instagram`) VALUES ('$voornaam', '$achternaam', '$email' , '$telefoonnummer', '$gebruikersnaam', '$docentWachtwoord', '$twitter', '$linkedin', '$instagram')");
                                             // header('Location: profiel-bewerken');
                                     }
                                     else {
@@ -79,33 +67,31 @@
 			</div>
 			<div class='contentBlock-text-normal'>
                 <form method="POST" enctype="multipart/form-data"> 
-                    <input type="file" name="docentFoto" style="width: 65%;"><br />
-                    <br />
                     <div class="subTitle">Persoonlijke informatie</div><br />
                     <label for="docentVoornaam">Voornaam*</label><br />
-                    <input type="text" value="Voornaam" name="docentVoornaam" placeholder="Voornaam" style="width: 65%;" required><br />
+                    <input type="text" placeholder="Voornaam" name="docentVoornaam" placeholder="Voornaam" style="width: 65%;" required><br />
                     
                     <label for="docentAchternaam">Achternaam*</label><br />
-                    <input type="text" value="Achternaam" name="docentAchternaam" placeholder="Achternaam" style="width: 65%;" required><br />
+                    <input type="text" placeholder="Achternaam" name="docentAchternaam" placeholder="Achternaam" style="width: 65%;" required><br />
                     
                     <label for="docentEmail">Email*</label><br />
-                    <input type="text" value="Email" name="docentEmail" placeholder="Docent@nhlstenden.com" style="width: 65%;" required><br />
+                    <input type="text" placeholder="Email" name="docentEmail" placeholder="Docent@nhlstenden.com" style="width: 65%;" required><br />
                 
                     <label for="docentTelefoonnummer">Telefoonnummer</label><br />
-                    <input type="text" value="Telefoonnummer" name="docentTelefoonnummer" placeholder="0612345678" style="width: 65%;"><br />
+                    <input type="text" placeholder="Telefoonnummer" name="docentTelefoonnummer" placeholder="0612345678" style="width: 65%;"><br />
                     
                     <label for="docentGebruikersnaam">Gebruikersnaam*</label><br />
-                    <input type="text" value="Gebruikersnaam" name="docentGebruikersnaam" placeholder="Gebruikersnaam" style="width: 65%;" required><br />
+                    <input type="text" placeholder="Gebruikersnaam" name="docentGebruikersnaam" placeholder="Gebruikersnaam" style="width: 65%;" required><br />
                     <br />
                     <div class="subTitle">Socials</div><br />
                     <label for="docenttwitter">Twitter</label><br />
-                    <input type="text" value="gebruikers naam van twitter" name="docentTwitter" placeholder="Twitter" style="width: 65%;"><br />
+                    <input type="text" placeholder="gebruikers naam van twitter" name="docentTwitter" placeholder="Twitter" style="width: 65%;"><br />
                     
                     <label for="docentLinkedin">Linkedin</label><br />
-                    <input type="text" value="gebruikers naam van linkedin" name="docentLinkedin" placeholder="Linkedin" style="width: 65%;"><br />
+                    <input type="text" placeholder="gebruikers naam van linkedin" name="docentLinkedin" placeholder="Linkedin" style="width: 65%;"><br />
                     
                     <label for="docentInstagram">Instagram</label><br />
-                    <input type="text" value="gebruikers naam van instagram" name="docentInstagram" placeholder="Instagram" style="width: 65%;"><br />
+                    <input type="text" placeholder="gebruikers naam van instagram" name="docentInstagram" placeholder="Instagram" style="width: 65%;"><br />
                     <br />
                     <div class="subTitle">Beveiliging</div><br />
                     <label for="docentWachtwoord">Wachtwoord*</label><br />

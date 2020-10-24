@@ -40,13 +40,22 @@ class Core
 	}
 
 	function weatherData(){
+		if(!isset($_COOKIE['lang'])){
+			$lang = 'nl';
+		} // change the button to a dutch button cause the lang is set to english
+		else if($_COOKIE['lang'] == 'en'){
+			$lang = 'en';
+		} // change the button to a english button cause the lang is set to dutch
+		else if($_COOKIE['lang'] == 'nl'){
+			$lang = 'nl';
+		}
 				
 		// The private key
 		$apiKey = "25957a1a29b039b5ca004840d8eecb9c";
 		// The location to get the data from
 		$cityName = "Emmen";
 		// Open Weather api url
-		$googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=".$_COOKIE['lang']. "&appid=" . $apiKey;
+		$googleApiUrl = "api.openweathermap.org/data/2.5/weather?q=" . $cityName . "&units=metric&lang=".$lang."&appid=" . $apiKey;
 
 		// Create the call for the api
 		$curl = curl_init();
@@ -71,6 +80,24 @@ class Core
 			return $data;
 		}
 	}
+
+	//Deze functie heeft een resultaat (directe longblob uit DB), en een bestandmaam nodig van de query voordat hij kan werken
+	function downloadFile($queryResult, $fileName){
+
+		ob_end_clean();
+            
+		//Bestandsnaam genereren aan de hand van waarden uit database
+			
+		//Headers genereren voor export pdf + pdf downloaden door echo
+		header('Content-type: application/x-download');
+		header('Content-Disposition: attachment; filename="'.$fileName.'"');
+		header('Content-Transfer-Encoding: binary');
+		header('Content-Length: '.strlen($queryResult));
+		
+		return $queryResult;
+
+	}
+
 
 
 	function subTitleText($pageTitle){

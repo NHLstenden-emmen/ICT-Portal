@@ -73,10 +73,6 @@ if($result->num_rows > 0){
     }
 }
 ?>
-
-<div class='devider'>
-    <div class='pageContentBlock'>
-
 <main class="content">
 
     <div class="subTitle">Profiel bewerken</div>
@@ -144,7 +140,6 @@ if($result->num_rows > 0){
 -->
     </div>
 </main> 
-    </div>
     <?php 
 
 }

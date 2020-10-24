@@ -72,10 +72,6 @@ if(isset($_POST['submitAction'])){
 
 
 ?>
-
-<div class='devider'>
-    <div class='pageContentBlock'>
-
 <main class="content">
     <div class="subTitle">Beschikbaarheid bewerken</div>
     
@@ -110,7 +106,6 @@ if(isset($_POST['submitAction'])){
 -->
 
 </main>
-</div>
 <?php 
 
     }

@@ -81,9 +81,11 @@ a {
 }
 
 .contentBlock-title {
-    font-size: 24px;
-    text-align: left;
-    margin: 20px 0px 0px 20px;
+	font-size: 24px;
+	text-align: left;
+	margin-left: 2vw;
+	margin-top: 1vw;
+	margin-bottom: 2vw;
 }
 
 main.content {
@@ -108,12 +110,14 @@ main.content {
 }
 
 .contentBlock-text-normal {
-    transition: 0.3s;
-    font-size: 1em;
-    color: grey;
-    font-style: normal;
-    text-align: left;
-    margin: 10px 0px 20px 20px;
+	transition: 0.3s;
+	font-size: 1em;
+	color: grey;
+	font-style: normal;
+	text-align: left;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	margin-bottom: 2vw;
 }
 
 .contentBlock-info {
@@ -136,81 +140,33 @@ main.content {
     width: 90%;
 }
 
-input {
-    font-size: 16px;
-    color: rgb(80, 79, 79);
-    border: none;
-    border-bottom: 2px solid rgb(80, 79, 79);
-    margin: 8px 0;
-    outline: none;
-    padding: 8px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    background-color: transparent;
+input, select, textarea {
+	font-size: 16px;
+	color: rgb(80, 79, 79);
+	border: none;
+	border-bottom: 2px solid rgb(80, 79, 79);
+	margin: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+	transition: 0.3s;
+	background-color: transparent;
 }
 
-input:focus {
-    color: rgb(80, 79, 79);
-    border-color: #4ac4b3;
+input:focus, textarea:focus, select:focus  {
+	color: rgb(80, 79, 79);
+	border-color: #4ac4b3;
 }
 
-input::placeholder {
-    color: rgb(80, 79, 79);
-    transition: 0.3s;
-}
-input:focus::placeholder {
-    color: #4ac4b3;
+input::placeholder, textarea::placeholder, select::placeholder {
+	color: rgb(80, 79, 79);
+	transition: 0.3s;
 }
 
-/*TEXTAREA*/
-textarea {
-    font-size: 16px;
-    color: rgb(80, 79, 79);
-    border: none;
-    border-bottom: 2px solid rgb(80, 79, 79);
-    margin: 8px 0;
-    outline: none;
-    padding: 8px;
-    box-sizing: border-box;
-    transition: 0.3s;
-    resize: none;
-    background-color: transparent;
-    width: 70%;
+input:focus::placeholder, textarea:focus::placeholder, select:focus::placeholder {
+	color: #4ac4b3;
 }
 
-textarea:focus {
-    color: rgb(80, 79, 79);
-    border-color: #4ac4b3;
-}
-
-textarea::placeholder {
-    color: rgb(80, 79, 79);
-    transition: 0.3s;
-}
-textarea:focus::placeholder {
-    color: #4ac4b3;
-}
-.inputWithIcon input {
-    padding-left: 40px;
-}
-
-.inputWithIcon {
-    position: relative;
-}
-
-.inputWithIcon i {
-    font-size: 21px;
-    position: absolute;
-    left: 0;
-    top: 6px;
-    padding: 9px 8px;
-    color: rgb(80, 79, 79);
-    transition: 0.1s;
-}
-
-.inputWithIcon input:focus + i {
-    color: #4ac4b3;
-}
 
 /* Button style */
 button {
@@ -244,15 +200,30 @@ button.darkmodeSwitch:hover {
 }
 /* Rand voor blokken en objecten */
 .rand:after {
-    content: "";
-    position: absolute;
-    top: -20px;
-    right: 10%;
-    width: 90%;
-    border-top: 20px solid lightseagreen;
-    height: 90%;
-    border-left: 20px solid lightseagreen;
-    pointer-events: none;
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 10%;
+	width: 90%;
+	border-top: 20px solid lightseagreen;
+	height: 90%;
+	border-left: 20px solid lightsea    green;
+	pointer-events: none;
+}
+/* page layout */
+.devider {
+	display: inline-block;
+	width: 100%;
+}
+.pageContentBlock {
+	float: left;
+	width: 100%;
+	padding: 2vh 6vw 0vh 6vw;
+}
+.pageSidebarBlock {
+	float: left;
+	width: 20%;
+	padding: 1vw;
 }
 .disclaimers {
     text-align: center;

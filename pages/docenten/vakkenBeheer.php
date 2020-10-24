@@ -30,6 +30,16 @@
             }
 
                 $DB->Get("UPDATE docenten_vakken SET docent_id = '{$vakDocent}', vak_id = '{$vakID}'");
+
+                if(isset($_POST['vakKlas'])){
+                    // verwijder alle klassen die het vak hadden
+                        $DB->Get("DELETE FROM klassen_vakken WHERE vak_id='{$vakID}'");
+                    foreach ($_POST['vakKlas'] as $key => $klasID) {
+                        // voeg alle klassen toe die zijn ingevuld
+                        $DB->Get("INSERT INTO klassen_vakken (klas_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
+                    }
+            }
+
         }
         else {
             echo "Vaknaam is niet ingevuld.";
@@ -62,9 +72,11 @@
 
             if(empty($_FILES["vakBoek"]["name"])){
                 //Geen moduleboek
+                
                 $insertResult = $DB->Get("INSERT INTO 
                                         vakken (vak, jaarlaag, periode)
                                         VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}')");//>vakken
+                    
             }
             else {
                 //Moduleboek toegevoegd
@@ -74,9 +86,11 @@
                 if($fileType == 'pdf'){ 
                     $pdf = $_FILES['vakBoek']['tmp_name']; 
                     $pdfContent = addslashes(file_get_contents($pdf)); 
+                    
                     $insertResult = $DB->Get("INSERT INTO 
                                             vakken (vak, jaarlaag, periode, moduleboek)
                                             VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}')");//>vakken 
+                    
                 }
                 else {
                     echo "Je mag alleen een .pdf bestand uploaden.";
@@ -84,7 +98,10 @@
             }
                 $vakID = $DB->LastID();
                 $DB->Get("INSERT INTO docenten_vakken (docent_id, vak_id) VALUES ('{$vakDocent}','{$vakID}')");
-                // vak_id wordt gegenereerd door db dus moet eerst worden opgehaald uit db
+
+                foreach ($_POST['vakKlas'] as $key => $klasID) {
+                    $DB->Get("INSERT INTO klassen_vakken (klas_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
+                }
         }
         else {
             echo "Vaknaam is niet ingevuld.";
@@ -116,8 +133,6 @@
                     echo "<td>Periode {$vakkenData['periode']}</td>";
                     echo "<td><form method='post'><input type='hidden' value='{$vakkenData['vak_id']}' name='aanpassenID'><button type='submit' name='aanpassenPage'><i class='fa fa-pencil' aria-hidden='true'></i></button></form></td>";
                     echo "<td><form method='post'><input type='hidden' value='{$vakkenData['vak_id']}' name='verwijderID'><button type='submit' name='submitDelete'><i class='fa fa-trash' aria-hidden='true'></i></button></form></td>";
-                    //echo "<td><a href='vakkenbeheer?action=aanpassen&id={$vakkenData['vak_id']}'><i class='fa fa-pencil' aria-hidden='true'></i></a></td>";
-                    //echo "<td><a href='vakkenbeheer?action=verwijderen&id={$vakkenData['vak_id']}'><i class='fa fa-trash' aria-hidden='true'></i></a></td>";
                 echo "</tr>";
             }
             echo "</table><form method='post'><button type='submit' name='invoegenPage'>Invoegen</button></form>";
@@ -147,17 +162,17 @@
                                 <option value="3">Periode 3</option>
                                 <option value="4">Periode 4</option>
                             </select><br />
-                            <div class="subTitle">Opleiding</div>';
-                    /*
-                    $opleidingResult = $DB->Get("SELECT * FROM opleidingen");
-            
-                    echo "<label for='vakPeriode'>Opleiding*</label><br />
-                            <select name='vakOpleiding'>";
-                    while($opleidingData = $opleidingResult->fetch_assoc()){
-                        echo "<option value='{$opleidingData['opleiding_id']}'>{$opleidingData['opleidingnaam']}</option>";
+                            <div class="subTitle">Klassen</div>';
+                    
+                    $klassenResult = $DB->Get("SELECT * FROM klassen");
+
+                    echo "<label for='vakPeriode'>Klassen*</label><br />
+                            <select class='selectMult' name='vakKlas[]' multiple style='width: 65%;'>";
+                    while($klassenData = $klassenResult->fetch_assoc()){
+                        echo "<option value='{$klassenData['klas_id']}'>{$klassenData['klas_naam']}</option>";
                     }
                    
-                    echo '</select><br />'; */
+                    echo '</select><br />';
                     echo '
                     <div class="subTitle">Docent(en)</div>';
  
@@ -171,7 +186,7 @@
                     }
                     
                     echo "</select><br />        
-                    <div class='subTitle'>Vakbestanden</div><br />
+                    <div class='subTitle'>Vakbestanden</div>
                         <label for='vakBoek'>Moduleboek (.pdf)</label><br />
                         <input type='file' name='vakBoek' style='width: 65%;'><br />
                         <p>Vakken met een * zijn verplicht</p>
@@ -205,7 +220,7 @@
 
                 for ($i=1; $i <= 4; $i++) { 
                     if($i == $currentData['jaarlaag']){
-                        echo '<option value="'.$currentData['jaarlaag'].'" selected>Jaar '.$currentData['jaarlaag'].' (geselecteerd)</option>';
+                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>Jaar '.$currentData['jaarlaag'].' (geselecteerd)</option>';
                     }
                     else if($i != $currentData['jaarlaag']){
                         echo '<option value="'.$i.'">Jaar '.$i.'</option>';
@@ -218,7 +233,7 @@
 
             for ($i=1; $i <= 4; $i++) { 
                 if($i == $currentData['periode']){
-                    echo '<option value="'.$currentData['periode'].'" selected>Periode '.$currentData['periode'].' (geselecteerd)</option>';
+                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>Periode '.$currentData['periode'].' (geselecteerd)</option>';
                 }
                 else if($i != $currentData['periode']){
                     echo '<option value="'.$i.'">Periode '.$i.'</option>';
@@ -226,32 +241,62 @@
             }
 
             echo '</select><br />';
+                    
+            
+               
+            $klassen_vakkenResult = $DB->Get("SELECT klassen_vakken.klas_id, klassen.klas_naam FROM klassen_vakken
+                                        INNER JOIN klassen 
+                                        ON klassen_vakken.klas_id = klassen.klas_id
+                                        WHERE klassen_vakken.vak_id = '{$currentData['vak_id']}'");
+            
+
+            $klassenResult = $DB->Get("SELECT * FROM klassen");
+
+            echo "<label for='vakPeriode'>Klassen* (Selecteer meerdere met control.)</label><br />
+                    <select class='selectMult' name='vakKlas[]' multiple style='width: 65%;'>";
+
+
+            $klassenVakData = $klassen_vakkenResult->fetch_assoc();
+            while($klassenData = $klassenResult->fetch_assoc()){
+                if(in_array($klassenData['klas_id'], $klassenVakData) && $klassenVakData != NULL){
+                    //selected
+                    echo "<option class='optionSelected' value='{$klassenData['klas_id']}' selected >{$klassenData['klas_naam']}</option>";
+                }
+                else{
+                    //unselected
+                    echo "<option value='{$klassenData['klas_id']}'>{$klassenData['klas_naam']}</option>";
+                }
+            }
+           
+            echo '</select><br />
+            <div class="subTitle">Docent(en)</div>';
+ 
             $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
            
             echo "<label for='vakDocent'>Docent*</label><br />
                     <select name='vakDocent'>";
             while($docentData = $docentResult->fetch_assoc()){
                 if($docentData['docent_id'] == $currentData['docent_id']){
-                    echo "<option value='{$currentData['docent_id']}' selected>{$currentData['voornaam']} {$currentData ['achternaam']} (geselecteerd)</option>";
+                    echo "<option class='optionSelected' value='{$currentData['docent_id']}' selected>{$currentData['voornaam']} {$currentData ['achternaam']} (geselecteerd)</option>";
                 }
                 else {
                     echo "<option value='{$docentData['docent_id']}'>{$docentData['voornaam']} {$docentData['achternaam']}</option>";
                 }
             }
             echo "</select><br />
-            <div class='subTitle'>Vakbestanden</div><br />";
+            <div class='subTitle'>Vakbestanden</div>";
                 if(empty($currentData['moduleboek'])){
                     echo "<label for='vakBoek'>Moduleboek (.pdf)</label> <b>Momenteel niks geupload</b><br />";
                 }
                 else {
                     echo "<label for='vakBoek'>Moduleboek (.pdf) 
-                <input type='hidden' name='boekVakID' value='{$currentData['vak_id']}'>
                 <button type='submit' name='boekView'>weergeven</button></label><br />";
                 }
 
                 echo "
                 <input type='file' name='vakBoek' style='width: 65%;'><br />
                 <p>Vakken met een * zijn verplicht</p>
+                <input type='hidden' name='boekVakID' value='{$currentData['vak_id']}'>
                 <button type='submit' name='aanpassenSubmit'>opslaan</button>
                 <button type='button' onclick="."window.location.href='vakkenbeheer'".">annuleren</button>
             </form>

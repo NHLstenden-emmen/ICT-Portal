@@ -42,7 +42,7 @@ input.darkmode:focus::placeholder, textarea.darkmode:focus::placeholder, select.
 }
 
 option.darkmode {
-	background-color: var(--dark);
+	background-color: #3c3a3a;
 }
 
 .selectMult.darkmode {
@@ -143,7 +143,7 @@ body.darkmode .contentBlock-content {
 	color: var(--tekstColor);
 }
 
-body.darkmode .contentBlock-text {
+body.darkmode .contentBlock-text, body.darkmode .contentBlock-text-normal {
 	color: var(--tekstColor);
 }
 
@@ -172,9 +172,14 @@ body.darkmode .docentBlok-Icons a {
 }
 
 /* Dropdown menu */
-body.darkmode .dropdown-content {
-	background-color: var(--dark);
+
+body.darkmode .navDropdown:hover, body.darkmode .dropdown-content:hover {
+	background: #575a5a;
 }
+body.darkmode .dropdown-content, body.darkmode .dropdown-content:hover  {
+	background: #3c3a3a;
+}
+
 body.darkmode .dropdown-content a {
 	color: var(--tekstColor);
 }

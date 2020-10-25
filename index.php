@@ -39,6 +39,13 @@
             $activePage = $_GET['page']; 
         }
     }
+    
+    if($_COOKIE['lang'] == 'nl'){
+        $langTitle = 'Nederlands';
+    }
+    else if($_COOKIE['lang'] == 'en'){
+        $langTitle = 'Engels';
+    }
 
     $pageSubtitleText = $Core->subTitleText($pageTitle);
     include 'inc/nav.php';
@@ -72,14 +79,14 @@
                 include 'pages/uitloggen.php';
                 break;
             /* Docent pagina's */
-            case 'uploadNieuws':
-                include 'pages/docenten/uploadNieuws.php';
+            case 'nieuwsbeheer':
+                include 'pages/docenten/nieuwsBeheer.php';
                 break;
             case 'profiel-bewerken':
                 include 'pages/docenten/profiel.php';
                 break;
-            case 'docent-toevoegen':
-                include 'pages/docenten/docent-toevoegen.php';
+            case 'docentbeheer':
+                include 'pages/docenten/docentBeheer.php';
                 break;
             case 'beschikbaarheid':
                 include 'pages/docenten/beschikbaarheid.php';

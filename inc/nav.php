@@ -18,9 +18,9 @@
 					<a href='profiel-bewerken'>Mijn profiel bewerken</a>
 					<a href='beschikbaarheid'>Mijn beschikbaarheid</a>
 					<hr	/>
-					<a href='uploadNieuws'>Nieuwsbeheer</a>
+					<a href='nieuwsbeheer'>Nieuwsbeheer</a>
 					<a href='vakkenbeheer'>Vakkenbeheer</a>
-					<a href='docent-toevoegen'>Docentbeheer</a>
+					<a href='docentbeheer'>Docentbeheer</a>
 					<hr />
 					<a href='uitloggen'>Uitloggen</a>
 					</form>

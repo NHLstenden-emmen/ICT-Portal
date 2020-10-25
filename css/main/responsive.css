@@ -67,7 +67,9 @@
 		grid-template-columns: none;
 		grid-gap: unset;
 	}
-
+	.contentBlock-date-view {
+		font-size: 4vw;
+	}
 	.sideBar {
 		display: none;
 	}

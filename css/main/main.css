@@ -121,9 +121,10 @@ a {
     padding: 20px;
 }
 
-.contentBlock-date {
+.contentBlock-date, .contentBlock-date-view {
     color: rgb(184, 179, 179);
-    margin: 10px 10px 10px 20px;
+    /* margin: 10px 10px 10px 20px; */
+    /* font-size: 1.5vw; */
 }
 
 .contentBlock-link {
@@ -240,8 +241,8 @@ button.darkmodeSwitch:hover {
     border-radius: 50%;
     object-fit: cover;
     margin: 2vw;
-    height: 250px;
-    width: 250px;
+    height: 30vw;
+    width: 30vw;
 }
 .aanwezigen table {
     border-collapse: collapse;

@@ -1,6 +1,24 @@
+<style>
+    table {
+        width: 100%;
+    }
+    td:nth-child(1){
+        width: 70%;
+    }
+    td:nth-child(2){
+        width: 8%;
+    }
+</style>
 <main class="content">
+
+<div class='contentBlock-nohover'>
+		<div class='contentBlock-side'></div>
+		<div class='contentBlock-content'>
+
+
 <?php 
     /* Action Handlers */
+if($Core->AuthCheck()){
 
     if(isset($_POST['aanpassenSubmit'])){
         if(isset($_POST['vakNaam'])){
@@ -109,13 +127,12 @@
     }
 
 
-    if($Core->AuthCheck()){
 
         $docentID = intval($_COOKIE['userID']);
 
         //Laat de weergave pagina zien
         if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage'])){
-            echo "<div class='subTitle'>Vakkenbeheer | Keuzemenu </div>";
+            echo "<div class='contentBlock-title'>Vakkenbeheer | Keuzemenu </div><div class='contentBlock-text-normal'>";
             //lijst met vakken met optie om ze aan te passen. (verwijderen)
             //knop voor nieuw vak
 
@@ -140,7 +157,8 @@
         }
         //Laat de invoegen pagina zien
         else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage'])){
-                echo '<div class="subTitle">Vakkenbeheer | Invoegen</div><hr style="width: 30%"  />
+                echo '<div class="contentBlock-title">Vakkenbeheer | Invoegen</div>
+                        <div class="contentBlock-text-normal">
                         <form method="POST" enctype="multipart/form-data"> 
                             <div class="subTitle">Vakinformatie</div>
                             
@@ -186,7 +204,7 @@
                     }
                     
                     echo "</select><br />        
-                    <div class='subTitle'>Vakbestanden</div>
+                    <div class='subTitle'>Bestanden</div>
                         <label for='vakBoek'>Moduleboek (.pdf)</label><br />
                         <input type='file' name='vakBoek' style='width: 65%;'><br />
                         <p>Vakken met een * zijn verplicht</p>
@@ -208,7 +226,8 @@
 
         $currentData = $currentResult->fetch_assoc();
 
-    echo '<div class="subTitle">Vakkenbeheer | Aanpassen</div><hr style="width: 30%"  />
+    echo '<div class="contentBlock-title">Vakkenbeheer | Bewerken</div>
+            <div class="contentBlock-text-normal">
             <form method="POST" enctype="multipart/form-data"> 
             <div class="subTitle">Vakinformatie</div>
             
@@ -258,8 +277,9 @@
 
             $klassenVakData = $klassen_vakkenResult->fetch_assoc();
             while($klassenData = $klassenResult->fetch_assoc()){
-                if(in_array($klassenData['klas_id'], $klassenVakData) && $klassenVakData != NULL){
+                if(@in_array($klassenData['klas_id'], $klassenVakData) && $klassenVakData != NULL){
                     //selected
+                    $klassenVakData = $klassen_vakkenResult->fetch_assoc();
                     echo "<option class='optionSelected' value='{$klassenData['klas_id']}' selected >{$klassenData['klas_naam']}</option>";
                 }
                 else{
@@ -284,7 +304,7 @@
                 }
             }
             echo "</select><br />
-            <div class='subTitle'>Vakbestanden</div>";
+            <div class='subTitle'>Bestanden</div>";
                 if(empty($currentData['moduleboek'])){
                     echo "<label for='vakBoek'>Moduleboek (.pdf)</label> <b>Momenteel niks geupload</b><br />";
                 }
@@ -319,5 +339,9 @@
         header("Location: nieuws");
     }   
     ?>
-        </div>
+    </div>
+             
+			</div>
+		</div>
+    </div>
 </main> 

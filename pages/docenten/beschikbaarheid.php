@@ -67,7 +67,13 @@
     }
 ?>
 <main class="content">
-    <div class="subTitle">Beschikbaarheid bewerken</div>
+    
+<div class='contentBlock-nohover'>
+    <div class='contentBlock-side'></div>
+    <div class='contentBlock-content'>
+    <p class='contentBlock-title'>Beschikbaarheid bewerken</p>
+
+    <div class='contentBlock-text-normal'>
     
     <form method="POST"> 
 
@@ -98,5 +104,5 @@
 <!--
 - standaard waarde in de database moet nog weg
 -->
-
+</div></div></div>
 </main>

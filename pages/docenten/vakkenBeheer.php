@@ -38,6 +38,7 @@
                     $pdf = $_FILES['vakBoek']['tmp_name']; 
                     $pdfContent = addslashes(file_get_contents($pdf)); 
                     $DB->Get("UPDATE vakken SET vak = '{$vakNaam}', jaarlaag = '{$vakJaarlaag}', periode = '{$vakPeriode}', moduleboek = '{$pdfContent}' WHERE vak_id = '{$vakID}'");
+                    
                 }
                 else {
                     echo "Je mag alleen een .pdf bestand uploaden.";
@@ -53,12 +54,14 @@
                         // voeg alle klassen toe die zijn ingevuld
                         $DB->Get("INSERT INTO klassen_vakken (klas_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                     }
-            }
-
+                }
+                
+            header("Location: vakkenBeheer");
         }
         else {
             echo "Vaknaam is niet ingevuld.";
         }
+       
     }
 
 
@@ -91,7 +94,7 @@
                 $insertResult = $DB->Get("INSERT INTO 
                                         vakken (vak, jaarlaag, periode)
                                         VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}')");//>vakken
-                    
+                header("Location: vakkenBeheer");
             }
             else {
                 //Moduleboek toegevoegd
@@ -105,7 +108,7 @@
                     $insertResult = $DB->Get("INSERT INTO 
                                             vakken (vak, jaarlaag, periode, moduleboek)
                                             VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}')");//>vakken 
-                    
+                    header("Location: vakkenBeheer");   
                 }
                 else {
                     echo "Je mag alleen een .pdf bestand uploaden.";
@@ -117,6 +120,7 @@
                 foreach ($_POST['vakKlas'] as $key => $klasID) {
                     $DB->Get("INSERT INTO klassen_vakken (klas_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                 }
+                header("Location: vakkenBeheer");
         }
         else {
             echo "Vaknaam is niet ingevuld.";
@@ -204,7 +208,7 @@
                     <div class='subTitle'>Bestanden</div>
                         <label for='vakBoek'>Moduleboek (.pdf)</label><br />
                         <input type='file' name='vakBoek' style='width: 65%;'><br />
-                        <p>Vakken met een * zijn verplicht</p>
+                        <p>Invulvakken met een * zijn verplicht</p>
                         <button type='submit' name='submitInvoegen'>opslaan</button>
                         <button type='button' onclick="."window.location.href='vakkenbeheer'".">annuleren</button>
                     </form>";

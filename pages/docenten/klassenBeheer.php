@@ -29,6 +29,7 @@
                                         periode = '{$_POST['klasPeriode']}', 
                                         opleiding_id = '{$_POST['klasOpleiding']}'
                                         WHERE klas_id = '{$_POST['klasEditID']}'");
+                                        header("Location: klassenBeheer");
                         }
                     } 
                 } 
@@ -44,6 +45,7 @@
                 if(isset($_POST['klasPeriode'])){
                     if(isset($_POST['klasOpleiding'])){
                         $DB->Get("INSERT INTO klassen (klas_naam, jaar, periode, opleiding_id) VALUES ('{$_POST['klasNaam']}', '{$_POST['klasJaarlaag']}', '{$_POST['klasPeriode']}', '{$_POST['klasOpleiding']}')");
+                        header("Location: klassenBeheer");
                     } 
                 } 
             } 
@@ -133,7 +135,7 @@
                     }
                     
                         echo "<br />
-                        <p>Vakken met een * zijn verplicht</p>
+                        <p>Invulvakken met een * zijn verplicht</p>
                         <button type='submit' name='submitInvoegen'>opslaan</button>
                         <button type='button' onclick="."window.location.href='klassenbeheer'".">annuleren</button>
                     </form>";

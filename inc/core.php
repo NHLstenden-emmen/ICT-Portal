@@ -101,47 +101,27 @@ class Core
 
 
 	function subTitleText($pageTitle){
-		global $lang;
+		global $lang, $DB;
 		switch ($pageTitle) {
 			case 'nieuws':
-                $pageSubtitle = "Test";
+				$bijgewerktTime = $DB->Get("SELECT datum FROM nieuws ORDER BY datum DESC");
+				$pageSubtitle = 'Laatst bijgewerkt: <br />'.$bijgewerktTime->fetch_assoc()['datum'];
                 break;
             case 'vakken':
-                $pageSubtitle = "";
+                $pageSubtitle = "Bekijk op deze pagina alle vakken. Door een vak te selecteren kom je alles te weten.";
                 break;
-            case 'docenten':
-                $pageSubtitle = "";
-                break;
-            case 'docent':
-                $pageSubtitle = "";
+			case 'docenten':
+			case 'docent':	
+                $pageSubtitle = "Bekijk een docent, hier kan je informatie vinden zoals een emailadres van een docent.";
                 break;
             case 'contact':
-                $pageSubtitle = "";
+                $pageSubtitle = "Op deze pagina staan alle contactgevens van NHL Stenden Emmen.";
                 break;
-            case 'aanwezigen':
-                $pageSubtitle = "";
+            case 'aanwezigheid':
+                $pageSubtitle = "Op deze pagina kan je de beschikbaarheid zien van alle docenten in een makkelijk overzicht.";
                 break;
             case 'login':
-                $pageSubtitle = "";
-                break;
-            case 'uitloggen':
-                $pageSubtitle = "";
-                break;
-            case 'uploadNieuws':
-                $pageSubtitle = "";
-                break;
-            case 'profiel-bewerken':
-                $pageSubtitle = "";
-                break;
-            case 'beschikbaarheid':
-                $pageSubtitle = "";
-                break;
-            // disclaimers
-            case 'privacyPolicy':
-                $pageSubtitle = "";
-                break;
-            case 'termsAndConditions':
-                $pageSubtitle = "";
+                $pageSubtitle = "Op deze pagina kan een docent inloggen om de site te beheren.";
                 break;
             default:
 				$pageSubtitle = "";

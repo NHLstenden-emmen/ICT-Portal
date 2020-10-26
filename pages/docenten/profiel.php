@@ -73,8 +73,10 @@ if($result->num_rows > 0){
 ?>
 <main class="content">
 
-    <div class="subTitle">Profiel bewerken</div>
-
+<div class='contentBlock-nohover'>
+    <div class='contentBlock-side'></div>
+    <div class='contentBlock-content'>
+    <div class='contentBlock-text-normal'>
     <form method="POST" enctype="multipart/form-data"> 
         <?php 
         if(!empty($docentData['foto'])){
@@ -87,40 +89,43 @@ if($result->num_rows > 0){
         <br />
         <div class="subTitle">Persoonlijke informatie</div><br />
         <label for="docentVoornaam">Voornaam*</label><br />
-        <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" placeholder="Voornaam" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" placeholder="Voornaam" required><br />
         
         <label for="docentAchternaam">Achternaam*</label><br />
-        <input type="text" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="Achternaam" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="Achternaam" required><br />
         
         <label for="docentEmail">Email*</label><br />
-        <input type="text" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" required><br />
        
         <label for="docentTelefoonnummer">Telefoonnummer</label><br />
-        <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678" style="width: 65%;"><br />
+        <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678"><br />
         
         <label for="docentGebruikersnaam">Gebruikersnaam*</label><br />
-        <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="Gebruikersnaam" style="width: 65%;" required><br />
+        <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="Gebruikersnaam" required><br />
         <br />
         <div class="subTitle">Socials</div><br />
         <label for="docenttwitter">Twitter</label><br />
-        <input type="text" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitter" style="width: 65%;"><br />
+        <input type="text" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitter"><br />
         
         <label for="docentLinkedin">Linkedin</label><br />
-        <input type="text" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin" style="width: 65%;"><br />
+        <input type="text" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin"><br />
         
         <label for="docentInstagram">Instagram</label><br />
-        <input type="text" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram" style="width: 65%;"><br />
+        <input type="text" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram"><br />
         <br />
         <div class="subTitle">Beveiliging</div><br />
         <label for="docentWachtwoord">Wachtwoord*</label><br />
-        <input type="password" name="docentWachtwoord" placeholder="Wachtwoord" style="width: 65%;" required><br />
+        <input type="password" name="docentWachtwoord" placeholder="Wachtwoord" required><br />
 
         <label for="docentWachtwoordHerhaal">Wachtwoord herhalen*</label><br />
-        <input type="password" name="docentWachtwoordHerhaal" placeholder="Wachtwoord herhalen" style="width: 65%;" required><br />
+        <input type="password" name="docentWachtwoordHerhaal" placeholder="Wachtwoord herhalen" required><br />
 
 
-        <p>Vakken met een * zijn verplicht</p>
+        <p>Invulvakken met een * zijn verplicht</p>
         <button type="submit" name="submitAction">opslaan</button>
     </form>
+    </div>
+    </div>
+</div>
     </div>
 </main>

@@ -66,7 +66,7 @@
                                                 '{$_POST['docentInstagram']}',
                                                 '{$imgContent}'
                                                 )");
-
+                                                header("Location: docentbeheer");
                                             //$DB->Get("UPDATE docenten SET foto = '{$imgContent}' WHERE docent_id = '{$docentID}'");
                                         }
                                     }
@@ -96,7 +96,7 @@
 
                                     $lastID = $DB->LastID();
                                     $DB->Get("INSERT INTO docenten_beschikbaarheid (docent_id) VALUES ('{$lastID}')");
-
+                                    header("Location: docentbeheer");
                                 }
                                 else {
                                     echo "Nieuwe docent toevoegen mislukt: Wachtwoorden niet gelijk";
@@ -186,7 +186,7 @@
                 <label for='docentWachtwoordHerhaal'>Wachtwoord herhalen*</label><br />
                 <input type='password' name='docentWachtwoordHerhaal' placeholder='Wachtwoord herhalen' required><br />
 
-                <p>Vakken met een * zijn verplicht</p>
+                <p>Invulvakken met een * zijn verplicht</p>
                 <button type='submit' name='submitInvoegen'>opslaan</button>
                 <button type='button' onclick="."window.location.href='docentbeheer'".">annuleren</button>
             </form>";

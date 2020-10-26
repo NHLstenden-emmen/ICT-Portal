@@ -25,6 +25,7 @@
     if(isset($_POST['submitInvoegen'])){
         if(isset($_POST['opleidingNaam'])){
             $DB->Get("INSERT INTO opleidingen (opleidingnaam) VALUES ('{$_POST['opleidingNaam']}')");
+            header("Location: opleidingBeheer");
         }
     }
 
@@ -32,6 +33,7 @@
     if(isset($_POST['aanpassenSubmit'])){
         if(isset($_POST['opleidingNaam'])){
             $DB->Get("UPDATE opleidingen SET opleidingnaam = '{$_POST['opleidingNaam']}' WHERE opleiding_id = '{$_POST['opleidingID']}'");
+            header("Location: opleidingBeheer");
         }
     }
         $docentID = intval($_COOKIE['userID']);
@@ -67,7 +69,7 @@
                 <label for='opleidingNaam'>Opleidingnaam*</label><br />
                 <input type='text' name='opleidingNaam' placeholder='Opleidingnaam' required><br />
 
-                <p>Vakken met een * zijn verplicht</p>
+                <p>Invulvakken met een * zijn verplicht</p>
                 <button type='submit' name='submitInvoegen'>opslaan</button>
                 <button type='button' onclick="."window.location.href='opleidingbeheer'".">annuleren</button>
             </form>";
@@ -84,7 +86,7 @@
             <input type='text' name='opleidingNaam' placeholder='Opleidingnaam' value='{$currentData['opleidingnaam']}' required><br />
             <input type='hidden' name='opleidingID' value='{$currentData['opleiding_id']}'><br />
 
-            <p>Vakken met een * zijn verplicht</p>
+            <p>Invulvakken met een * zijn verplicht</p>
             <button type='submit' name='aanpassenSubmit'>opslaan</button>
             <button type='button' onclick="."window.location.href='opleidingbeheer'".">annuleren</button>
         </form>";

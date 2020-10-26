@@ -84,7 +84,7 @@
 						}
 						//tempratuur in 1 getal
 						else if(strlen($Core->weatherData()->main->temp) == 4){
-							echo '<div class="weatherTemp" style="margin-left: 2vw;">'.substr($Core->weatherData()->main->temp, 0, 1).'</div>';
+							echo '<div class="weatherTemp" style="margin-left: 3vw;">'.substr($Core->weatherData()->main->temp, 0, 1).'</div>';
 						}
 						?>
 

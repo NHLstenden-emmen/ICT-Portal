@@ -83,6 +83,7 @@
                                   bijlage_{$_COOKIE['lang']} = {$attachContentAtt},
                                   bijlage_{$_COOKIE['lang']}_type ={$fileTypeAttDB}
                                   WHERE nieuws_{$_COOKIE['lang']}_id = {$_POST['nieuwsFileID']}");
+                    header("Location: nieuwsbeheer");
             }
             else {
                 echo "Fout bij uploaden {$langTitle} nieuws: Geen tekst ingevoerd";
@@ -99,6 +100,7 @@
             if(!empty($_POST['nieuwsTekst'])){
 
                 $DB->Get("INSERT INTO nieuws (docent_id) VALUES ('{$docentID}')");
+           
                 $LastID = $DB->LastID();
 
                 $imgContent = "NULL";
@@ -164,6 +166,7 @@
                     {$attachContentAtt},
                     {$fileTypeAttDB}
                     )");
+                    header("Location: nieuwsbeheer");
             }
             else {
                 echo "Fout bij uploaden {$langTitle} nieuws: Geen tekst ingevoerd";
@@ -233,7 +236,7 @@
             
     
             echo '<div class="contentBlock-title">Nieuwsbeheer | Keuzemenu ('.$langTitle.')</div>
-            <div class="contentBlock-text-normal">';
+            <div class="contentBlock-text-normal"><p><b>Pas de taal van de site aan om nieuwsberichten in te voeren in het Engels!</b></p>';
             
             $nieuwsResult = $DB->Get("SELECT 
                 nieuws.nieuws_id,
@@ -266,7 +269,7 @@
         }
         //Laat de invoegen pagina zien
         else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage'])){
-                echo "<div class='contentBlock-title'>Vakkenbeheer | Invoegen ($langTitle)</div>
+                echo "<div class='contentBlock-title'>Nieuwsbeheer | Invoegen ($langTitle)</div>
                 <div class='contentBlock-text-normal'>
                 <form method='post' enctype='multipart/form-data'>
                         <label for='nieuwsTitel'>Titel</label><br>

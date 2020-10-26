@@ -40,11 +40,15 @@
         }
     }
 
-    if($_COOKIE['lang'] == 'nl'){
+    if(empty($_COOKIE)){
+        $langTitle = 'Nederlands';
+    } else if($_COOKIE['lang'] == 'nl'){
         $langTitle = 'Nederlands';
     }
     else if($_COOKIE['lang'] == 'en'){
         $langTitle = 'Engels';
+    } else{
+        $langTitle = 'Nederlands';
     }
 
     $pageSubtitleText = $Core->subTitleText($pageTitle);

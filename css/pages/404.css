@@ -1,0 +1,19 @@
+h1
+{
+	font-size: 100px;
+	color: lightseagreen;
+}
+
+.content
+{	
+	text-align: center;
+}
+
+#error
+{
+	height: 300px;
+	width: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

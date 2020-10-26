@@ -2,6 +2,9 @@
     <main class="content">
 
     <?php 
+    if(empty($_COOKIE)){
+        $_COOKIE['lang'] = 'nl';
+    }
 
         if(!isset($_GET['all']) && !isset($_GET['id'])){
             echo '<div class="subTitle">Laatste nieuwsberichten</div>

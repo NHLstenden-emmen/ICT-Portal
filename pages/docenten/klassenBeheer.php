@@ -17,9 +17,6 @@
 
 
 <?php 
-    /* Action Handlers */
-if($Core->AuthCheck()){
-
     if(isset($_POST['aanpassenSubmit'])){
         if(isset($_POST['klasNaam'])){
             if(isset($_POST['klasJaarlaag'])){
@@ -223,12 +220,6 @@ if($Core->AuthCheck()){
         $DB->Get("DELETE FROM klassen WHERE klas_id='{$_POST['verwijderID']}'");
         header('location: klassenbeheer');
     }
-
-    }
-    else {
-        //Niet ingelogd, dus ga naar de nieuwspagina.
-        header("Location: nieuws");
-    }   
     ?>
     </div>
              

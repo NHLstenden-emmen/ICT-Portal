@@ -1,6 +1,6 @@
-
-<link rel="stylesheet" type="text/css" href="404.css">
 <main class="content">
     <h1>404</h1>
-    <img src="../project-periode-1/images/404.jpg" alt="mooie 404 meme" id="error">
+    <p><a href="nieuws">Klik hier om terug te gaan naar de hoofd pagina</a></p> 
+    <br>
+    <img src="images/404.jpg" alt="mooie 404 meme" id="error">
 </main>

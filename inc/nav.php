@@ -74,11 +74,20 @@
 			<p class="bannerSubTitle"><?= isset($pageSubtitleText) ? $pageSubtitleText : "" ?></p>
 		</div>
 	
-		<div onclick="window.location.href='https://www.buienradar.nl/weer/Emmen/'" class="Populair zoom colorBlock weatherWidget">
+		<div onclick="window.location.href='https://www.buienradar.nl/weer/Emmen/NL/2756136'" class="Populair zoom colorBlock weatherWidget">
 				<div class="weahterIcon"><i class='wi wi-owm-<?= $Core->weatherData()->weather[0]->id ?>'></i></div>
-				<div class="weatherTemp">
-					<?= (strlen($Core->weatherData()->main->temp) > 2) ? substr($Core->weatherData()->main->temp, 0, 2): ''; ?>
-				</div>
+					<?php 
+						//tempratuur in 2 getallen
+					
+						if(strlen($Core->weatherData()->main->temp) == 5){
+							echo '<div class="weatherTemp">'.substr($Core->weatherData()->main->temp, 0, 2).'</div>';
+						}
+						//tempratuur in 1 getal
+						else if(strlen($Core->weatherData()->main->temp) == 4){
+							echo '<div class="weatherTemp" style="margin-left: 2vw;">'.substr($Core->weatherData()->main->temp, 0, 1).'</div>';
+						}
+						?>
+
 				<div class="weatherTempIcon">°C</div>
 				<div class="weatherCity"><?= $Core->weatherData()->name ?></div>
 				<div class="weatherDesc"><?= $Core->weatherData()->weather[0]->description ?></div>

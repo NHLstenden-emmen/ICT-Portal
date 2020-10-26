@@ -12,14 +12,11 @@
 <main class="content">
 
 <div class='contentBlock-nohover'>
-		<div class='contentBlock-side'></div>
-		<div class='contentBlock-content'>
+    <div class='contentBlock-side'></div>
+    <div class='contentBlock-content'>
 
 
 <?php 
-    /* Action Handlers */
-if($Core->AuthCheck()){
-
     if(isset($_POST['aanpassenSubmit'])){
         if(isset($_POST['vakNaam'])){
             $vakNaam = $_POST['vakNaam'];
@@ -332,12 +329,6 @@ if($Core->AuthCheck()){
         $DB->Get("DELETE FROM vakken WHERE vak_id='{$_POST['verwijderID']}'");
         header('location: vakkenbeheer');
     }
-
-    }
-    else {
-        //Niet ingelogd, dus ga naar de nieuwspagina.
-        header("Location: nieuws");
-    }   
     ?>
     </div>
              

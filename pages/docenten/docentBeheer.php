@@ -20,10 +20,7 @@
 		<div class='contentBlock-content'>
 
 
-<?php 
-    /* Action Handlers */
-if($Core->AuthCheck()){
-
+<?php
     //Toevoegen
     if(isset($_POST['submitInvoegen'])){
 
@@ -198,12 +195,6 @@ if($Core->AuthCheck()){
         $DB->Get("DELETE FROM docenten WHERE docent_id='{$_POST['verwijderID']}'");
         header('location: docentbeheer');
     }
-
-}
-    else {
-        //Niet ingelogd, dus ga naar de nieuwspagina.
-        header("Location: nieuws");
-    }   
     ?>
     </div>
              

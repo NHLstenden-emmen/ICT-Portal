@@ -1,5 +1,5 @@
 .pageContentBlock {
-    width:70%;
+    width: 70%;
 }
 
 .contactInfo {
@@ -14,12 +14,26 @@
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
     color: var(--lightPrimaryColor);
 }
 
+.devider {
+    display: inline-block;
+    width: 100%;
+}
+.pageContentBlock {
+    float: left;
+    width: 100%;
+    padding: 2vh 6vw 0vh 6vw;
+}
+.pageSidebarBlock {
+    float: left;
+    width: 20%;
+    padding: 1vw;
+}
 @media (max-width: 950px) {
     .pageSidebarBlock {
-        width:100vw;
+        width: 100vw;
     }
 }

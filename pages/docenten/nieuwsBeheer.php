@@ -20,9 +20,6 @@
 
 
 <?php 
-    /* Action Handlers */
-if($Core->AuthCheck()){
-
     $docentID = intval($_COOKIE['userID']);
 
     if(isset($_POST['aanpassenSubmit'])){
@@ -366,12 +363,6 @@ if($Core->AuthCheck()){
         $DB->Get("DELETE FROM nieuws WHERE nieuws_id='{$_POST['verwijderID']}'");
         header('location: nieuwsbeheer');
     }
-
-}
-else {
-    //Niet ingelogd, dus ga naar de nieuwspagina.
-    header("Location: nieuws");
-}   
     ?>
     </div>
              

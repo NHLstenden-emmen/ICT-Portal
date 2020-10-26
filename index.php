@@ -41,12 +41,14 @@
     }
 
     if(empty($_COOKIE)){
-        $langTitle = 'nl';
-    }else if($_COOKIE['lang'] == 'nl'){
+        $langTitle = 'Nederlands';
+    } else if($_COOKIE['lang'] == 'nl'){
         $langTitle = 'Nederlands';
     }
     else if($_COOKIE['lang'] == 'en'){
         $langTitle = 'Engels';
+    } else{
+        $langTitle = 'Nederlands';
     }
 
     $pageSubtitleText = $Core->subTitleText($pageTitle);

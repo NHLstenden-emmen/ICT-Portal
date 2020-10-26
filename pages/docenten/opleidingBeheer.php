@@ -21,9 +21,6 @@
 
 
 <?php 
-    /* Action Handlers */
-if($Core->AuthCheck()){
-
     //Toevoegen
     if(isset($_POST['submitInvoegen'])){
         if(isset($_POST['opleidingNaam'])){
@@ -96,12 +93,6 @@ if($Core->AuthCheck()){
         $DB->Get("DELETE FROM opleidingen WHERE opleiding_id='{$_POST['verwijderID']}'");
         header('location: opleidingbeheer');
     }
-
-}
-    else {
-        //Niet ingelogd, dus ga naar de nieuwspagina.
-        header("Location: nieuws");
-    }   
     ?>
     </div>
              

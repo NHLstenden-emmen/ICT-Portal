@@ -2,8 +2,6 @@
     <main class="content">
 
     <?php 
-    
-
     if(empty($_COOKIE)){
         $_COOKIE['lang'] = 'nl';
     }

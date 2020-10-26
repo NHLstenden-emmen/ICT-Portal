@@ -81,13 +81,12 @@ a {
 }
 
 .contentBlock-title {
-	font-size: 24px;
-	text-align: left;
-	margin-left: 2vw;
-	margin-top: 1vw;
-	margin-bottom: 2vw;
+    font-size: 24px;
+    text-align: left;
+    margin-left: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
 }
-
 
 .contentBlock-text {
     transition: 0.3s;
@@ -99,16 +98,15 @@ a {
 }
 
 .contentBlock-text-normal {
-	transition: 0.3s;
-	font-size: 1em;
-	color: grey;
-	font-style: normal;
-	text-align: left;
-	margin-left: 2vw;
-	margin-right: 2vw;
-	margin-bottom: 2vw;
+    transition: 0.3s;
+    font-size: 1em;
+    color: grey;
+    font-style: normal;
+    text-align: left;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 2vw;
 }
-
 
 .contentBlock input,
 .contentBlock-nohover input,
@@ -123,7 +121,8 @@ a {
     padding: 20px;
 }
 
-.contentBlock-date, .contentBlock-date-view {
+.contentBlock-date,
+.contentBlock-date-view {
     color: rgb(184, 179, 179);
     /* margin: 10px 10px 10px 20px; */
     /* font-size: 1.5vw; */
@@ -132,7 +131,6 @@ a {
 .contentBlock-link {
     margin: 10px 30px 20px 20px;
 }
-
 
 main.content {
     transition: 0.3s;
@@ -147,33 +145,40 @@ main.content {
     margin-bottom: 2vh;
 }
 
-input, select, textarea {
-	font-size: 16px;
-	color: rgb(80, 79, 79);
-	border: none;
-	border-bottom: 2px solid rgb(80, 79, 79);
-	margin: 8px 0;
-	outline: none;
-	padding: 8px;
-	box-sizing: border-box;
-	transition: 0.3s;
-	background-color: transparent;
+input,
+select,
+textarea {
+    font-size: 16px;
+    color: rgb(80, 79, 79);
+    border: none;
+    border-bottom: 2px solid rgb(80, 79, 79);
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+    background-color: transparent;
 }
 
-input:focus, textarea:focus, select:focus  {
-	color: rgb(80, 79, 79);
-	border-color: #4ac4b3;
+input:focus,
+textarea:focus,
+select:focus {
+    color: rgb(80, 79, 79);
+    border-color: #4ac4b3;
 }
 
-input::placeholder, textarea::placeholder, select::placeholder {
-	color: rgb(80, 79, 79);
-	transition: 0.3s;
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+    color: rgb(80, 79, 79);
+    transition: 0.3s;
 }
 
-input:focus::placeholder, textarea:focus::placeholder, select:focus::placeholder {
-	color: #4ac4b3;
+input:focus::placeholder,
+textarea:focus::placeholder,
+select:focus::placeholder {
+    color: #4ac4b3;
 }
-
 
 /* Button style */
 button {
@@ -207,30 +212,15 @@ button.darkmodeSwitch:hover {
 }
 /* Rand voor blokken en objecten */
 .rand:after {
-	content: "";
-	position: absolute;
-	top: -20px;
-	right: 10%;
-	width: 90%;
-	border-top: 20px solid lightseagreen;
-	height: 90%;
-	border-left: 20px solid lightsea    green;
-	pointer-events: none;
-}
-/* page layout */
-.devider {
-	display: inline-block;
-	width: 100%;
-}
-.pageContentBlock {
-	float: left;
-	width: 100%;
-	padding: 2vh 6vw 0vh 6vw;
-}
-.pageSidebarBlock {
-	float: left;
-	width: 20%;
-	padding: 1vw;
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 10%;
+    width: 90%;
+    border-top: 20px solid lightseagreen;
+    height: 90%;
+    border-left: 20px solid lightsea green;
+    pointer-events: none;
 }
 .disclaimers {
     text-align: center;

@@ -1,6 +1,4 @@
 <?php 
-    if($Core->AuthCheck()){
-
     $docentID = intval($_COOKIE['userID']);
    
     $result = $DB->Get("SELECT * FROM docenten WHERE docent_id = '".$docentID."'");
@@ -125,10 +123,4 @@ if($result->num_rows > 0){
         <button type="submit" name="submitAction">opslaan</button>
     </form>
     </div>
-</main> 
-    <?php 
-}
-else {
-    header("Location: nieuws");
-}   
-?>
+</main>

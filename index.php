@@ -54,9 +54,9 @@
     $pageSubtitleText = $Core->subTitleText($pageTitle);
     include 'inc/nav.php';
 
- 
-    switch($activePage)
-        {
+    // if user is signed in
+	if($Core->AuthCheck()){
+        switch($activePage){
             /* Student pagina's */
             case 'nieuws':
                 include 'pages/nieuws.php'; //file path of your home/nieuws page
@@ -113,20 +113,51 @@
                 break;
             default:
                 include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
-            
         }
-
-
-        echo "</div>";
-        
-        echo"<div class='pageSidebarBlock'>";
-
-        /*
-        echo "<div class='pageSidebarBlock'>";
-        include 'inc/sidebar.php';
-        echo "</div>"; //closes pageSidebarBlock
-        */
-        echo "</div>"; //closes devider
+    }
+    // if user is signd out
+    if(!$Core->AuthCheck()){
+        switch($activePage){
+            /* Student pagina's */
+            case 'nieuws':
+                include 'pages/nieuws.php'; //file path of your home/nieuws page
+                break;
+            case 'vakken':
+                include 'pages/vakken.php';
+                break;
+            case 'docenten':
+                include 'pages/docenten.php';
+                break;
+            case 'docent':
+                include 'pages/docent.php';
+                break;
+            case 'contact':
+                include 'pages/contact.php';
+                break;
+            case 'aanwezigheid':
+                include 'pages/aanwezigen.php';
+                break;
+            case 'login':
+                include 'pages/login.php';
+                break;
+            case 'uitloggen':
+                include 'pages/uitloggen.php';
+                break;
+            /* Docent pagina's */
+            case 'nieuwsbeheer' || 'profiel-bewerken' || 'klassenbeheer' || 'opleidingbeheer' || 'docentbeheer' || 'beschikbaarheid' || 'vakkenbeheer':
+                include 'pages/docenten/notLogedin.php';
+                break;
+            // disclaimers
+            case 'privacyPolicy':
+                include 'pages/privacyPolicy.php';
+                break;
+            case 'termsAndConditions':
+                include 'pages/termsAndConditions.php';
+                break;
+            default:
+                include 'pages/404.php'; //If any page that doesn't exists, then get back to home.
+        }
+    }
 
     include 'inc/footer.php';
 ?>

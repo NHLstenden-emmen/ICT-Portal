@@ -21,6 +21,10 @@ class MySQL
 	{
 		return $this->link->query($query);
 	}
+	function put($query)
+	{
+		return $this->link->query($query);
+	}
 
 	function LastID(){
 		return $this->link->insert_id;

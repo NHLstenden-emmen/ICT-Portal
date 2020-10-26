@@ -39,7 +39,7 @@
             $activePage = $_GET['page']; 
         }
     }
-    
+
     if($_COOKIE['lang'] == 'nl'){
         $langTitle = 'Nederlands';
     }
@@ -93,6 +93,9 @@
                 break;
             case 'vakkenbeheer':
                 include 'pages/docenten/vakkenBeheer.php';
+                break;
+            case 'opleidingbeheer':
+                include 'pages/docenten/opleidingBeheer.php';
                 break;
             // disclaimers
             case 'privacyPolicy':

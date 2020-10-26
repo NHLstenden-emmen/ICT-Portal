@@ -21,6 +21,7 @@
 					<a href='nieuwsbeheer'>Nieuwsbeheer</a>
 					<a href='vakkenbeheer'>Vakkenbeheer</a>
 					<a href='docentbeheer'>Docentbeheer</a>
+					<a href='opleidingbeheer'>Opleidingbeheer</a>
 					<hr />
 					<a href='uitloggen'>Uitloggen</a>
 					</form>

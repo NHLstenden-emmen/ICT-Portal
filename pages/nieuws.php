@@ -3,7 +3,7 @@
 
     <?php 
 
-        if(!isset($_POST['allNewsSumbit']) && !isset($_GET['id'])){
+        if(!isset($_GET['all']) && !isset($_GET['id'])){
             echo '<div class="subTitle">Laatste nieuwsberichten</div>
                      <div class = "contentBlock-grid">';
 
@@ -77,7 +77,7 @@
 
             echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">Lees alle artikelen</button></form>';
         }
-        else if(isset($_POST['allNewsSumbit'])  && !isset($_GET['id'])){
+        else if(isset($_GET['all'])  && !isset($_GET['id']) && $_GET['all'] == true){
             echo '<div class="subTitle">Alle nieuwsberichten</div>';
 
             $nieuwsResultAll = $DB->Get("SELECT 
@@ -108,7 +108,7 @@
             echo '</table>';
             echo "<button onclick="."window.location.href='nieuws'>terug</button>";
         }
-        else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id'])){
+        else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id']) && intval($_GET['id'])){
             
                 $nieuwsViewResult = $DB->Get("SELECT 
                 nieuws_{$_COOKIE['lang']}_id AS id,

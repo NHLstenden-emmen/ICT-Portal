@@ -30,35 +30,35 @@
 if(isset($_POST['submitAction'])){
     if($result->num_rows > 0){
         //Update
-        if(!empty($_POST['beschikbaarheidMaandagBegin']) || !empty ($_POST['beschikbaarheidMaandagEind'])){
+        if(!empty($_POST['beschikbaarheidMaandagBegin']) && !empty ($_POST['beschikbaarheidMaandagEind'])){
             $beschikbaarheidMaandag = $_POST['beschikbaarheidMaandagBegin']. ' - ' . $_POST['beschikbaarheidMaandagEind'];
             $DB->Get("UPDATE docenten_beschikbaarheid SET Maandag = '{$beschikbaarheidMaandag}' WHERE docent_id = '{$docentID}'");
         } else {
             $DB->Get("UPDATE docenten_beschikbaarheid SET Maandag = NULL WHERE docent_id = '{$docentID}'");
         }
 
-        if(!empty($_POST['beschikbaarheidDinsdagBegin']) || !empty ($_POST['beschikbaarheidDinsdagEind'])){
+        if(!empty($_POST['beschikbaarheidDinsdagBegin']) && !empty ($_POST['beschikbaarheidDinsdagEind'])){
             $beschikbaarheidDinsdag = $_POST['beschikbaarheidDinsdagBegin']. ' - ' . $_POST['beschikbaarheidDinsdagEind'];
             $DB->Get("UPDATE docenten_beschikbaarheid SET Dinsdag = '{$beschikbaarheidDinsdag}' WHERE docent_id = '{$docentID}'");
         } else {
             $DB->Get("UPDATE docenten_beschikbaarheid SET Dinsdag = NULL WHERE docent_id = '{$docentID}'");
         }
 
-        if(!empty($_POST['beschikbaarheidWoensdagBegin']) || !empty ($_POST['beschikbaarheidWoensdagEind'])){
+        if(!empty($_POST['beschikbaarheidWoensdagBegin']) && !empty ($_POST['beschikbaarheidWoensdagEind'])){
             $beschikbaarheidWoensdag = $_POST['beschikbaarheidWoensdagBegin']. ' - ' . $_POST['beschikbaarheidWoensdagEind'];
             $DB->Get("UPDATE docenten_beschikbaarheid SET Woensdag = '{$beschikbaarheidWoensdag}' WHERE docent_id = '{$docentID}'");
         } else {
             $DB->Get("UPDATE docenten_beschikbaarheid SET Woensdag = NULL WHERE docent_id = '{$docentID}'");
         }
 
-        if(!empty($_POST['beschikbaarheidDonderdagBegin']) || !empty ($_POST['beschikbaarheidDonderdagEind'])){
+        if(!empty($_POST['beschikbaarheidDonderdagBegin']) && !empty ($_POST['beschikbaarheidDonderdagEind'])){
             $beschikbaarheidDonderdag = $_POST['beschikbaarheidDonderdagBegin']. ' - ' . $_POST['beschikbaarheidDonderdagEind'];
             $DB->Get("UPDATE docenten_beschikbaarheid SET Donderdag = '{$beschikbaarheidDonderdag}' WHERE docent_id = '{$docentID}'");
         } else {
             $DB->Get("UPDATE docenten_beschikbaarheid SET Donderdag = NULL WHERE docent_id = '{$docentID}'");
         }
 
-        if(!empty($_POST['beschikbaarheidVrijdagBegin']) || !empty ($_POST['beschikbaarheidVrijdagEind'])){
+        if(!empty($_POST['beschikbaarheidVrijdagBegin']) && !empty ($_POST['beschikbaarheidVrijdagEind'])){
             $beschikbaarheidVrijdag = $_POST['beschikbaarheidVrijdagBegin']. ' - ' . $_POST['beschikbaarheidVrijdagEind'];
             $DB->Get("UPDATE docenten_beschikbaarheid SET Vrijdag = '{$beschikbaarheidVrijdag}' WHERE docent_id = '{$docentID}'");
         } else {

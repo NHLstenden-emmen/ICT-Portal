@@ -9,35 +9,36 @@
 
 	//TODO: PHP Validatie van velden
 ?>
-<main class="content">
-	<div class='contentBlock-nohover'>
-		<div class='contentBlock-side'></div>
-		<div class='contentBlock-content'>
-			<p class='contentBlock-title'>Contact</p>
-			<div class='contentBlock-text-normal'>
-				<form method="post">
-					<label for="contactVoornaam">Voornaam</label><br>
-					<input type="text" name="contactVoornaam" placeholder="Voornaam" required/><br><br>
+<div class='devider'>
+    <div class='pageContentBlock'>
+		<main class="content" style="padding: 0">
+			<div class='contentBlock-nohover'>
+				<div class='contentBlock-side'></div>
+				<div class='contentBlock-content'>
+					<p class='contentBlock-title'>Contact</p>
+					<div class='contentBlock-text-normal'>
+						<form method="post">
+							<label for="contactVoornaam">Voornaam</label><br>
+							<input type="text" name="contactVoornaam" placeholder="Voornaam" required/><br><br>
 
-					<label for="contactAchternaam">Achternaam</label><br>
-					<input type="text" name="contactAchternaam" placeholder="Achternaam" required/><br><br>
+							<label for="contactAchternaam">Achternaam</label><br>
+							<input type="text" name="contactAchternaam" placeholder="Achternaam" required/><br><br>
 
-					<label for="contactEmail">Emailadres</label><br>
-					<input type="text" name="contactEmail" placeholder="Emailadres" required/><br><br>
+							<label for="contactEmail">Emailadres</label><br>
+							<input type="text" name="contactEmail" placeholder="Emailadres" required/><br><br>
 
-					<label for="contactMessage">Bericht</label><br>
-					<textarea name="contactMessage" placeholder="Type hier uw bericht" rows="4" cols="50" required></textarea><br>
-					
-					<button type="submit" id="submit" name="submitButton">Verstuur</button>
-				</form>
+							<label for="contactMessage">Bericht</label><br>
+							<textarea name="contactMessage" placeholder="Type hier uw bericht" rows="4" cols="50" required></textarea><br>
+							
+							<button type="submit" id="submit" name="submitButton">Verstuur</button>
+						</form>
+					</div>
+				</div>
+
 			</div>
-		</div>
-
-		
-
+		</main>
 	</div>
 
-</main>
 <div class="pageSidebarBlock">
 	<div class="contactInfo">
 		<p><b>Telefoonnummer:</b> <a href="tel:0612312312">0612312312</a><br /> 

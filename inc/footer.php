@@ -30,16 +30,18 @@
     <div class="<?= ($activePage == 'docenten') ? 'mbactive':''; ?>" onclick="window.location.href='docenten'"><i class="fa fa-address-book fa-lg fa-fw" aria-hidden="true"></i></div>
     <div class="<?= ($activePage == 'contact') ? 'mbactive':''; ?>" onclick="window.location.href='contact'"><i class="fa fa-envelope-o fa-lg fa-fw" aria-hidden="true"></i></div>
     <?php if($Core->AuthCheck()){?>
-      <div class="<?= ($activePage == 'uploadNieuws') ? 'mbactive':''; ?>" onclick="window.location.href='uploadNieuws'"><i class="fa fa-pencil fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="<?= ($activePage == 'docentbeheer') ? 'mbactive':''; ?>" onclick="window.location.href='docentbeheer'"><i class="fa fa-paw fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="<?= ($activePage == 'vakkenbeheer') ? 'mbactive':''; ?>" onclick="window.location.href='vakkenbeheer'"><i class="fa fa-file-o fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="<?= ($activePage == 'nieuwsbeheer') ? 'mbactive':''; ?>" onclick="window.location.href='nieuwsbeheer'"><i class="fa fa-pencil fa-lg fa-fw" aria-hidden="true"></i></div>
       <div class="<?= ($activePage == 'profiel-bewerken') ? 'mbactive':''; ?>" onclick="window.location.href='profiel-bewerken'"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i></div>
       <div class="<?= ($activePage == 'beschikbaarheid') ? 'mbactive':''; ?>" onclick="window.location.href='beschikbaarheid'"><i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'logout') ? 'mbactive':''; ?>" onclick="window.location.href='logout'"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="<?= ($activePage == 'logout') ? 'mbactive':''; ?>" onclick="window.location.href='uitloggen'"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php }
 
 			else {?>
         <div class="<?= ($activePage == 'login') ? 'mbactive':''; ?>" onclick="window.location.href='login'"><i class="fa fa-sign-in fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php } ?>
-      <div class="darkmodeSwitchMobile" style="font-size: 24px; background-color: var(--lightPrimaryColor) !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="darkmodeSwitchMobile" style="background-color: var(--lightPrimaryColor) !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
   </div>
 </div>
 

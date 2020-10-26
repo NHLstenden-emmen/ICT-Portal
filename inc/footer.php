@@ -41,7 +41,7 @@
 			else {?>
         <div class="<?= ($activePage == 'login') ? 'mbactive':''; ?>" onclick="window.location.href='login'"><i class="fa fa-sign-in fa-lg fa-fw" aria-hidden="true"></i></div>
 			<?php } ?>
-      <div class="darkmodeSwitchMobile" style="font-size: 24px; background-color: var(--lightPrimaryColor) !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
+      <div class="darkmodeSwitchMobile" style="background-color: var(--lightPrimaryColor) !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
   </div>
 </div>
 

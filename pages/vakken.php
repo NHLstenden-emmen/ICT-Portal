@@ -52,5 +52,5 @@
             </form>
         <?php      
     } ?>
-    </div>
+
 </main>

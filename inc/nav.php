@@ -25,7 +25,6 @@
 					<a href='klassenbeheer'>Klassenbeheer</a>
 					<hr />
 					<a href='uitloggen'>Uitloggen</a>
-					</form>
 				</div>
 			</div>";
  			}

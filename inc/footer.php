@@ -1,16 +1,17 @@
 <footer class="footer_desktop">
   <div class="bottom">
-        <p>2020 &copy; | NHL Stenden Emmen - ICT Portal</p>
-        <div class="footer_desktop-right">
-        <ul class="siteNav">
-          <li><a href="nieuws">Nieuws |</a></li>
-          <li><a href="vakken">Vakken |</a></li>
-          <li><a href="docenten">Docenten |</a></li>
-          <li><a href="contact">Contact |</a></li>
-          <li><a href="privacyPolicy">Privacy policy |</a></li>
-          <li><a href="termsAndConditions">Terms & Conditions</a></li>
-        </ul>
-  	</div>
+    <p>2020 &copy; | NHL Stenden Emmen - ICT Portal</p>
+    <div class="footer_desktop-right">
+      <ul class="siteNav">
+        <li><a href="nieuws">Nieuws |</a></li>
+        <li><a href="vakken">Vakken |</a></li>
+        <li><a href="docenten">Docenten |</a></li>
+        <li><a href="contact">Contact |</a></li>
+        <li><a href="privacyPolicy">Privacy policy |</a></li>
+        <li><a href="termsAndConditions">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
 </footer>
 
 <!-- Mobile Tabs -->

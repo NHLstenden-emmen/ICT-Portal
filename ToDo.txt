@@ -1,0 +1,75 @@
+ALLES
+
+    !!!Als je herlaad wordt de query nog een keer verzonden en wordt 
+    het vak nog een keer aangemaakt 
+        header("Location: vakken");
+    
+    In index staat nog code van de sidebar
+
+    Docent kan niet zich zelf verwijderen
+
+     1 docent kan al het nieuws aanpassen (zelfde verhaal voor vakken)
+        Is dit bewust
+        willen we dan niet dat zijn eigen berichten bovenaan staan
+
+    Eerste keer laden geeft errors omdat er nog geen cookie aanwezig is
+
+    Vakkenpagina
+        Willen we na het filteren op jaar op nog iets anders filteren? 
+            (waar wordt hier op gesorteerd)
+
+    Nieuwsbeheer 
+        Titel mischien wel zwart doen voor betere leesbaarheid
+        
+    Nieuws    
+        alt voor afbeeldingen
+        De 10 nieuwsberichten die er onder in het klein zichtbaar zijn 
+        zijn niet klikbaar
+
+    
+
+
+WEB
+    Navbar scrollt weg
+
+    navbar en footer wordt nogal hoog als de pagina smal wordt
+
+    banner afbeelding
+
+    Link belangrijke mededelingen en het icoontje
+
+    Nieuws pagina ziet er raar uit wat is daar de bedoeling
+
+    Aanwezigheid docenten table kopje andere kleur?
+
+    vakkenbeheer
+            Vakken met * zijn verplicht 
+        is mischien niet heel duidelijk omdat de pagina gaat over 
+        de creatie van vakken
+
+
+
+   
+
+MOBIEL
+    Logo docentenbeheer is een hondenpoot
+    logo vakkenbeheer is een leeg papier
+    logo nieuwsbeheer is een potlood            
+        bij deze zou ik het lege papier doen
+    logo beschikbaarheid is meerdere mensen     
+        bij deze zou ik een calender doen(eventueel met een potlood achtig iets)
+
+    Kunnen we er voor zorgen dat de navigatie balk niet terugschiet
+
+DATABASE
+    0 voor telefoon nummer
+
+Validator
+    <div> in <ul> in de navbar
+    = in an unquoted attribute value. Probable causes: Attributes running together or a URL query string in an unquoted attribute value.
+    ' in an unquoted attribute value. Probable causes: Attributes running together or a URL query string in an unquoted attribute value.
+
+
+
+Mooie code:
+    Geen <p> in tabel

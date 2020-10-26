@@ -113,7 +113,7 @@
         }
 
 
-        echo "</div>";
+        /*echo "</div>";
         
         echo"<div class='pageSidebarBlock'>";
 
@@ -122,7 +122,7 @@
         include 'inc/sidebar.php';
         echo "</div>"; //closes pageSidebarBlock
         */
-        echo "</div>"; //closes devider
+        //echo "</div>"; //closes devider
 
     include 'inc/footer.php';
 ?>

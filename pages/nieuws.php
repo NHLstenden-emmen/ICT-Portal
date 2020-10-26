@@ -30,21 +30,21 @@
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
                 echo "<div class='contentBlock' onclick="."window.location.href='nieuws?id={$nieuwsData["id"]}'>
                     <div class='contentBlock-side'></div>
-                    <div class='contentBlock-content' style='display: grid;grid-template-rows: 20% 70% 5% 5%;grid-template-columns: 70% 30%;'>";
+                    <div class='contentBlock-content'>";
                         if(!empty($nieuwsData['afbeelding'])){
-                            echo "<img style='grid-row: 2;grid-column: 2;border-radius: 50%;width: 10vw;margin-top: -1.5vw;height: 10vw;object-fit: cover;' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
+                            echo "<img id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
                         }
                     echo "
-                    <div class='contentBlock-title' style='grid-row: 1'>{$nieuwsData['titel']}</div>
-                        <div class='contentBlock-text-normal' style='grid-row: 2;grid-column: 1/2;margin-top: 2vw;'>{$nieuwsData['tekst']}</div>
-                        <div class='contentBlock-date' style='grid-row: 3;margin: 0;margin-left: 2vw;/* margin-top: 1vw; */'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
+                    <div class='contentBlock-title'>{$nieuwsData['titel']}</div>
+                        <div class='contentBlock-text-normal'>{$nieuwsData['tekst']}</div>
+                        <div class='contentBlock-date'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
                     </div>
                 </div>";
             } 
             
             echo "</div>";
 
-            //Lijst van laatste 5 nieuwsberichten
+            //Lijst van laatste 10 nieuwsberichten
             echo '<div class="subTitle">Alle nieuwsberichten</div>';
 
             $nieuwsResult10 = $DB->Get("SELECT 
@@ -132,12 +132,12 @@
                 if($nieuwsViewResult->num_rows == 1){
               echo "<div class='contentBlock-nohover'>
               <div class='contentBlock-side'></div>
-              <div class='contentBlock-content' style='display: grid;grid-template-rows:auto auto 40%;grid-template-columns: 70% 30%;'>
+              <div class='contentBlock-content'>
               <div class='contentBlock-title'>{$nieuwsViewData['titel']}<p class='contentBlock-date-view'>{$nieuwsViewData['datum']} | Geplaatst door: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p></div>
-                  <div class='contentBlock-text-normal' style='grid-row: 2;grid-column: 1/3;'>
+                  <div class='contentBlock-text-normal'>
                     {$nieuwsViewData['tekst']}";
                   if(!empty($nieuwsViewData['bijlage'])){
-                    echo "<form method='post'><input type='hidden' value='{$nieuwsViewData['id']}' name='nieuwsFileID'><button style='margin-top: 1vw;'type='submit' name='attachView' style='grid-row: 3;grid-column: 1/3;'>bijlage weergeven</button></form>";
+                    echo "<form method='post'><input type='hidden' value='{$nieuwsViewData['id']}' name='nieuwsFileID'><button id='button-Bijlage name='attachView' type='submit'>bijlage weergeven</button></form>";
                 }
                 echo "</div>
                 </div>

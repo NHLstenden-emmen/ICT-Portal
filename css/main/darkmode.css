@@ -1,0 +1,189 @@
+/* Navbar & Buttons */
+body.darkmode {
+	background-color: #151515;
+	color: var(--tekstColor);
+}
+
+body.darkmode > nav.navbar {
+	background-color: #151515;
+}
+
+body.darkmode > .navbar .navbar_items > ul li:hover {
+	background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%) center/15000%;
+}
+
+body.darkmode > .navbar .navbar_items ul > .divider {
+	background-color: #575a5a;
+}
+
+body.darkmode > .navbar .navbar_items ul > .darkmodeSwitch {
+	color: var(--lightPrimaryColor);
+}
+/* END NAVBAR */
+
+/*DARKMODE INPUT */
+
+input.darkmode, textarea.darkmode, select.darkmode, .selectMult.darkmode {
+	color: var(--tekstColor);
+	border-bottom: 2px solid var(--tekstColor);
+}
+
+input.darkmode:focus, textarea.darkmode:focus, select.darkmode:focus, .selectMult.darkmode:focus {
+	color: rgb(240, 240, 240);
+	border-color: var(--lightPrimaryColor);
+}
+
+input.darkmode::placeholder, textarea.darkmode::placeholder, select.darkmode::placeholder, .selectMult.darkmode::placeholder {
+	color: var(--tekstColor);
+}
+
+input.darkmode:focus::placeholder, textarea.darkmode:focus::placeholder, select.darkmode:focus::placeholder, .selectMult.darkmode:focus::placeholder {	
+	color: var(--tekstColor);
+}
+
+option.darkmode {
+	background-color: #3c3a3a;
+}
+
+.selectMult.darkmode {
+	padding: 0;
+}
+
+body.darkmode .subTitle {
+	color: var(--tekstColor);
+}
+/* Scrollsbars*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+/*BUTTONS */
+button.darkmode {
+	background-color: #2e3131;
+	border: none;
+	border-radius: 2px;
+	padding: 12px 18px;
+	font-size: 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+	color: var(--tekstColor);
+	outline: none;
+}
+
+button.darkmode:hover {
+	background-color: #575a5a;
+}
+
+button.darkmode.languageSwitch, button.darkmode.darkmodeSwitch {
+	padding: 48px 20px;
+	background-color: var(--dark);
+	border-radius: unset;
+}
+
+button.darkmode.languageSwitch:hover, button.darkmode.darkmodeSwitch:hover {
+	background: #575a5a radial-gradient(circle, transparent 1%, #575a5a 1%) center/15000%;
+	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
+}
+
+
+/*CONTENTBLOCKS*/
+body.darkmode
+	> main.content
+	> div.left_content
+	> div.contentBlock-grid
+	> div.contentBlock
+	> div.contentBlock-side {
+	background-color: var(--lightPrimaryColor);
+}
+
+body.darkmode
+	> main.content
+	> div.left_content
+	> div.contentBlock-grid
+	> div.contentBlock
+	> div.contentBlock-content {
+	background-color: #3c3a3a;
+	color: var(--tekstColor);
+}
+
+body.darkmode
+	> main.content
+	> div.left_content
+	> div.contentBlock-grid
+	> div.contentBlock
+	> div.contentBlock-content
+	> .contentBlock-text {
+	color: var(--tekstColor);
+}
+
+/*Login Contenblock */
+body.darkmode .contentBlock-side {
+	background-color: var(--lightPrimaryColor);
+}
+
+body.darkmode .contentBlock-content {
+	background-color: #3c3a3a;
+	color: var(--tekstColor);
+}
+
+body.darkmode .contentBlock-text, body.darkmode .contentBlock-text-normal {
+	color: var(--tekstColor);
+}
+
+body.darkmode .colorBlock {
+	background-color: #3c3c3cad !important;
+}
+
+/*FOOTER*/
+
+body.darkmode > div.footer-mobile > div.scrollmenu {
+	background-color: #2e3131 !important;
+}
+
+body.darkmode > div.footer-mobile > div.scrollmenu > div {
+	background-color: #2e3131 !important;
+	border-right: 1px solid #3c3a3a;
+}
+
+body.darkmode > footer.footer_desktop {
+	background-color: var(--lightPrimaryColor) !important;
+}
+
+/*DOCENTBLOK */
+body.darkmode .docentBlok-Icons a {
+  color: #318C91 !important;
+}
+
+/* Dropdown menu */
+
+body.darkmode .navDropdown:hover, body.darkmode .dropdown-content:hover {
+	background: #575a5a;
+}
+body.darkmode .dropdown-content, body.darkmode .dropdown-content:hover  {
+	background: #3c3a3a;
+}
+
+body.darkmode .dropdown-content a {
+	color: var(--tekstColor);
+}
+
+body.darkmode .dropdown-content a:hover {
+	background-color: #575a5a ;
+}

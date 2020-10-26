@@ -1,0 +1,21 @@
+/* NIEUWS LIJST */
+
+
+.dotIcon {
+	height: 2vw;
+	width: 2vw;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	margin: auto auto auto 0;
+}
+.dotTD { 
+	width: 5vw;
+}
+
+
+@media (min-width: 950px){
+	.contentBlock-grid{
+		grid-template-columns: auto auto;
+	}
+}

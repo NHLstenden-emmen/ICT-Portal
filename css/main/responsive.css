@@ -1,0 +1,102 @@
+@media (max-width: 950px) {
+	/* REPSONSIVE NAVBAR */
+	.navbar {
+		align-items: normal !;
+		height: auto;
+		flex-direction: column;
+		position: relative;
+	}
+
+	.navbar .navbar_items ul li {
+		display: none;
+	}
+
+	.navbar .navbar_items .divider {
+		display: none;
+	}
+
+	.navbar .navbar_items .darkmodeSwitch {
+		display: none;
+	}
+	.navbar ul li {
+		margin-bottom: 5px;
+	}
+
+	.navbar ul {
+		flex-direction: column;
+		text-align: center;
+	}
+	.navbar .logo {
+		padding: 2% 0% 2% 4%;
+	}
+
+	/*BANNER IMAGE RESPONSIVE */
+	.banner_image {
+		display: none;
+	}
+
+	.banner_content-left {
+		padding: 5% 0% 0% 4%;
+	}
+
+	.banner_content-left .bannerTitle {
+		font-size: 1.5em;
+		color: var(--tekstColor);
+	}
+
+	.banner_content-left .bannerSubTitle {
+		color: var(--tekstColor);
+	}
+
+	.banner_content-right {
+		display: none;
+		text-align: right;
+	}
+
+	.footer_desktop {
+		display: none;
+	}
+
+	main.content {
+		display: block;
+		/* min-height: 100vh; */
+		margin-bottom: 30vw;
+	}
+
+	.contentBlock-grid {
+		grid-template-columns: none;
+		grid-gap: unset;
+	}
+	.contentBlock-date-view {
+		font-size: 4vw;
+	}
+	.sideBar {
+		display: none;
+	}
+	.colorBlock {
+		/*display: none;*/
+	}
+
+	.loginWrapper {
+		grid-column: unset;
+	}
+
+	.pageContentBlock {
+		width: 100%;
+		margin-bottom: 5vh;
+	}
+
+	button.languageSwitch, button.darkmodeSwitch {
+		display: none;
+	}
+
+}
+
+@media (min-width: 950px) {
+	.footer-mobile > div.scrollmenu {
+		display: none;
+	}
+	.mobileDivider {
+		display: none;
+	}
+} 

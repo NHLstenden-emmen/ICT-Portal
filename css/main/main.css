@@ -113,7 +113,9 @@ a {
 .contentBlock input,
 .contentBlock-nohover input,
 .contentBlock textarea,
-.contentBlock-nohover textarea {
+.contentBlock-nohover textarea,
+.contentBlock select,
+.contentBlock-nohover select {
     width: 90%;
 }
 

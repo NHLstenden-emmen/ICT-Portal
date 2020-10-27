@@ -6,11 +6,11 @@
         $_COOKIE['lang'] = 'nl';
     }
 
-        if(!isset($_GET['all']) && !isset($_GET['id'])){
-            echo '<div class="subTitle">Laatste nieuwsberichten</div>
+        if(!isset($_POST['allNewsSumbit']) && !isset($_GET['all']) && !isset($_GET['id'])){ // standaard
+            echo '<div class="subTitle">'.$lang["NEWS_LASTNEWS"].'</div>
                      <div class = "contentBlock-grid">';
 
-             $nieuwsResult = $DB->Get("SELECT 
+            $nieuwsResult = $DB->Get("SELECT 
                     SUBSTRING(tekst_{$_COOKIE['lang']}, 1, 450) AS tekst,
                     nieuws_{$_COOKIE['lang']}_id AS id,
                     titel_{$_COOKIE['lang']} AS titel,
@@ -27,30 +27,31 @@
                     LIMIT 4");
 
             if($nieuwsResult->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"];
             }
 
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
                 echo "<div class='contentBlock' onclick="."window.location.href='nieuws?id={$nieuwsData["id"]}'>
                     <div class='contentBlock-side'></div>
-                    <div class='contentBlock-content' style='display: grid;grid-template-rows: 20% 70% 5% 5%;grid-template-columns: 70% 30%;'>";
+                    <div class='contentBlock-content'>";
                         if(!empty($nieuwsData['afbeelding'])){
-                            echo "<img style='grid-row: 2;grid-column: 2;border-radius: 50%;width: 10vw;margin-top: -1.5vw;height: 10vw;object-fit: cover;' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
+                            echo "<img alt={$lang['NEWS_IMAGE_ALT']} id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
                         }
                     echo "
-                    <div class='contentBlock-title' style='grid-row: 1'>{$nieuwsData['titel']}</div>
-                        <div class='contentBlock-text-normal' style='grid-row: 2;grid-column: 1/2;margin-top: 2vw;'>{$nieuwsData['tekst']}</div>
-                        <div class='contentBlock-date' style='grid-row: 3;margin: 0;margin-left: 2vw;/* margin-top: 1vw; */'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
+                    <div class='contentBlock-title'>{$nieuwsData['titel']}</div>
+                        <div id='nieuws-short' class='contentBlock-text-normal'>{$nieuwsData['tekst']}</div>
+                        <div class='contentBlock-date'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
                     </div>
                 </div>";
             } 
             
             echo "</div>";
 
-            //Lijst van laatste 5 nieuwsberichten
-            echo '<div class="subTitle">Alle nieuwsberichten</div>';
+            //Lijst van laatste 10 nieuwsberichten
+            echo '<div class="subTitle">'.$lang["NEWS_LASTNEWS"].'</div>';
 
             $nieuwsResult10 = $DB->Get("SELECT 
+                nieuws_{$_COOKIE['lang']}_id AS id,
                 titel_{$_COOKIE['lang']} AS titel,
                 datum
                 FROM nieuws_{$_COOKIE['lang']}
@@ -70,20 +71,21 @@
                             <span class="dotIcon"></span>
                         </td>
                         <td>
-                            <p>'.$nieuwsData10['titel'].'</p>
+                            <p><a href="nieuws?id='.$nieuwsData10['id'].'">'.$nieuwsData10['titel'].'</p>
                         </td>
                         <td class="time">
-                            <p>'.$nieuwsData10['datum'].'</p>
+                            <p>'.$nieuwsData10['datum'].'</a></p>
                         </td></tr>';
             }
             echo '</table>';
 
-            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">Lees alle artikelen</button></form>';
+            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">'.$lang["NEWS_ALL_NEWS"].'</button></form>';
         }
-        else if(isset($_GET['all'])  && !isset($_GET['id']) && $_GET['all'] == true){
+        else if(isset($_POST['allNewsSumbit']) && !isset($_GET['id']) || isset($_GET['all']) == true){   // alle artikelen
             echo '<div class="subTitle">Alle nieuwsberichten</div>';
 
             $nieuwsResultAll = $DB->Get("SELECT 
+                nieuws_{$_COOKIE['lang']}_id AS id,
                 titel_{$_COOKIE['lang']} AS titel,
                 datum
                 FROM nieuws_{$_COOKIE['lang']}
@@ -92,7 +94,7 @@
                 ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC");
 
             if($nieuwsResultAll->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"] . $langTitle .".";
             }
 
             echo '<table>';
@@ -102,16 +104,16 @@
                             <span class="dotIcon"></span>
                         </td>
                         <td>
-                            <p>'.$nieuwsDataAll['titel'].'</p>
+                            <p><a href="nieuws?id='.$nieuwsDataAll['id'].'">'.$nieuwsDataAll['titel'].'</p>
                         </td>
                         <td class="time">
-                            <p>'.$nieuwsDataAll['datum'].'</p>
+                            <p>'.$nieuwsDataAll['datum'].'</a></p>
                         </td></tr>';
             }
             echo '</table>';
-            echo "<button onclick="."window.location.href='nieuws'>terug</button>";
+            echo "<button onclick="."window.location.href='nieuws'>{$lang["NEWS_TERUG"]}</button>";
         }
-        else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id']) && intval($_GET['id'])){
+        else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id']) && intval($_GET['id'])){ // 1 artikel weergeven volledig scherm
             
                 $nieuwsViewResult = $DB->Get("SELECT 
                 nieuws_{$_COOKIE['lang']}_id AS id,
@@ -133,15 +135,29 @@
 
                 $nieuwsViewData = $nieuwsViewResult->fetch_assoc();
                 if($nieuwsViewResult->num_rows == 1){
-              echo "<div class='contentBlock-nohover'>
-              <div class='contentBlock-side'></div>
-              <div class='contentBlock-content' style='display: grid;grid-template-rows:auto auto 40%;grid-template-columns: 70% 30%;'>
-              <div class='contentBlock-title'>{$nieuwsViewData['titel']}<p class='contentBlock-date-view'>{$nieuwsViewData['datum']} | Geplaatst door: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p></div>
-                  <div class='contentBlock-text-normal' style='grid-row: 2;grid-column: 1/3;'>
-                    {$nieuwsViewData['tekst']}";
-                  if(!empty($nieuwsViewData['bijlage'])){
-                    echo "<form method='post'><input type='hidden' value='{$nieuwsViewData['id']}' name='nieuwsFileID'><button style='margin-top: 1vw;'type='submit' name='attachView' style='grid-row: 3;grid-column: 1/3;'>bijlage weergeven</button></form>";
-                }
+                echo "<div class='contentBlock-nohover'>
+                <div class='contentBlock-side'></div>
+                <div id='nieuwsWeergave'class='contentBlock-content'>";
+                    if(!empty($nieuwsViewData['afbeelding'])){
+                        echo "<img alt='nieuws afbeelding' id='image-Nieuws-View' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsViewData['afbeelding'])."' />
+                        <div class='contentBlock-title'>{$nieuwsViewData['titel']}</div>
+                    <div id='text-view'class='contentBlock-text-normal'>";
+                    }
+                    else {
+                        echo "
+                        <div class='contentBlock-title'>{$nieuwsViewData['titel']}</div>
+                        <div id='text-view' style='grid-column: 1/4;' class='contentBlock-text-normal'>";
+                    }
+                    echo"
+                        <p>{$nieuwsViewData['tekst']}</p>
+                    </div>
+                    <div class='contentBlock-date-view'>
+                        <p>{$nieuwsViewData['datum']} | {$lang["NEWS_GEPLAAST_DOOR"]}: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p>
+                    </div>";
+                    if(!empty($nieuwsViewData['bijlage'])){
+                        echo "<form id='bijlageForm' method='post'><input type='hidden' value='{$nieuwsViewData['id']}' name='nieuwsFileID'><button id='button-Bijlage' name='attachView' type='submit'>bijlage weergeven</button></form>";
+                    }
+                
                 echo "</div>
                 </div>
             </div>";

@@ -15,22 +15,22 @@
 			<div class='contentBlock-nohover'>
 				<div class='contentBlock-side'></div>
 				<div class='contentBlock-content'>
-					<p class='contentBlock-title'>Contact</p>
+					<p class='contentBlock-title'><?php echo $lang['CONTACT_CONTACT']; ?></p>
 					<div class='contentBlock-text-normal'>
 						<form method="post">
-							<label for="contactVoornaam">Voornaam</label><br>
-							<input type="text" name="contactVoornaam" placeholder="Voornaam" required/><br><br>
+							<label for="contactVoornaam"><?php echo $lang['CONTACT_VOORNAAM']; ?></label><br>
+							<input type="text" name="contactVoornaam" placeholder="<?php echo $lang['CONTACT_VOORNAAM']; ?>" required/><br><br>
 
-							<label for="contactAchternaam">Achternaam</label><br>
-							<input type="text" name="contactAchternaam" placeholder="Achternaam" required/><br><br>
+							<label for="contactAchternaam"><?php echo $lang['CONTACT_ACHTERNAAM']; ?></label><br>
+							<input type="text" name="contactAchternaam" placeholder="<?php echo $lang['CONTACT_ACHTERNAAM']; ?>" required/><br><br>
 
-							<label for="contactEmail">Emailadres</label><br>
-							<input type="text" name="contactEmail" placeholder="Emailadres" required/><br><br>
+							<label for="contactEmail"><?php echo $lang['CONTACT_EMAIL']; ?></label><br>
+							<input type="text" name="contactEmail" placeholder="<?php echo $lang['CONTACT_EMAIL']; ?>" required/><br><br>
 
-							<label for="contactMessage">Bericht</label><br>
-							<textarea name="contactMessage" placeholder="Type hier uw bericht" rows="4" cols="50" required></textarea><br>
+							<label for="contactMessage"><?php echo $lang['CONTACT_BERICHT']; ?></label><br>
+							<textarea name="contactMessage" placeholder="<?php echo $lang['CONTACT_BERICHT']; ?>" rows="4" cols="50" required></textarea><br>
 							
-							<button type="submit" id="submit" name="submitButton">Verstuur</button>
+							<button type="submit" id="submit" name="submitButton"><?php echo $lang['CONTACT_BERICHT']; ?></button>
 						</form>
 					</div>
 				</div>
@@ -41,9 +41,9 @@
 
 	<div class="pageSidebarBlock">
 		<div class="contactInfo">
-			<p><b>Telefoonnummer:</b> <a href="tel:0612312312">0612312312</a><br /> 
-			<b>Adresgegevens:</b> Van schaikweg 26<br>
-			<b>Emailadres:</b> <a href="mailto:studentinfo@nhlstenden.com">studentinfo@nhlstenden.com</a><br>
+			<p><b><?php echo $lang['CONTACT_TELL']; ?>:</b> <a href="tel:0612312312">0612312312</a><br /> 
+			<b><?php echo $lang['CONTACT_ADRES']; ?>:</b> Van schaikweg 26<br>
+			<b><?php echo $lang['CONTACT_EMAIL']; ?>:</b> <a href="mailto:studentinfo@nhlstenden.com">studentinfo@nhlstenden.com</a><br>
 			</p>
 		</div>
 

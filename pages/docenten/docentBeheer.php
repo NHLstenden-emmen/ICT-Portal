@@ -66,8 +66,7 @@
                                                 '{$_POST['docentInstagram']}',
                                                 '{$imgContent}'
                                                 )");
-
-                                            //$DB->Get("UPDATE docenten SET foto = '{$imgContent}' WHERE docent_id = '{$docentID}'");
+                                                header("Location: docentbeheer");
                                         }
                                     }
                                     else {
@@ -96,34 +95,34 @@
 
                                     $lastID = $DB->LastID();
                                     $DB->Get("INSERT INTO docenten_beschikbaarheid (docent_id) VALUES ('{$lastID}')");
-
+                                    header("Location: docentbeheer");
                                 }
                                 else {
-                                    echo "Nieuwe docent toevoegen mislukt: Wachtwoorden niet gelijk";
+                                    echo $lang['DOCENTBEHEER_ERRORLOG_WWG'];
                                 }
                             }
                             else {
-                                echo "Nieuwe docent toevoegen mislukt: Geen Wachtwoord ingevoerd.";
+                                echo $lang['DOCENTBEHEER_ERRORLOG_WWM'];
                             }
                         }
                         else {
-                            echo "Nieuwe docent toevoegen mislukt: Deze mail of gebruikersnaam wordt al gebruikt!";
+                            echo $lang['DOCENTBEHEER_ERRORLOG_MAIL'];
                         }
                     }
                 else {
-                        echo "Nieuwe docent toevoegen mislukt: Geen Gebruikersnaam ingevoerd.";
+                        echo $lang['DOCENTBEHEER_ERRORLOG_GB'];
                 }
             }
             else {
-                echo "Nieuwe docent toevoegen mislukt: Geen Email ingevoerd.";
+                echo $lang['DOCENTBEHEER_ERRORLOG_GMAIL'];
             }
         }
         else {
-            echo "Nieuwe docent toevoegen mislukt: Geen achternaam ingevoerd.";
+            echo $lang['DOCENTBEHEER_ERRORLOG_NA'];
         }
     }
     else {
-        echo "Nieuwe docent toevoegen mislukt: Geen voornaam ingevoerd.";
+        echo $lang['DOCENTBEHEER_ERRORLOG_NV'];
     }   
 }
 
@@ -131,7 +130,7 @@
 
         //Laat de weergave pagina zien
         if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete'])){
-            echo "<div class='contentBlock-title'>Docentenbeheer | Keuzemenu </div><div class='contentBlock-text-normal'>";
+            echo "<div class='contentBlock-title'>{$lang["DOCENTEN_BEHEER_KEUZEMENU"]} </div><div class='contentBlock-text-normal'>";
 
             $docentenResult = $DB->Get("SELECT *FROM docenten WHERE docent_id != '{$docentID}' ORDER BY docent_id ASC "); //Haalt alle docenten op
 
@@ -142,54 +141,64 @@
                     echo "<td><form method='post'><input type='hidden' value='{$docentenData['docent_id']}' name='verwijderID'><button type='submit' name='submitDelete'><i class='fa fa-trash' aria-hidden='true'></i></button></form></td>";
                 echo "</tr>";
             }
-            echo "</table><form method='post'><button type='submit' name='invoegenPage'>Invoegen</button></form>";
+            echo "</table><form method='post'><button type='submit' name='invoegenPage'>{$lang["NIEUWS_BEHEER_INVOEGEN"]}</button></form>";
 
         }
         //Laat de invoegen pagina zien
-        else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete'])){
-        echo "<div class='contentBlock-title'>Docentenbeheer | Toevoegen </div><div class='contentBlock-text-normal'>
+        else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete'])){ ?>
+        <div class='contentBlock-title'><?php echo $lang["DOCENTEN_BEHEER_ADD"]?> </div><div class='contentBlock-text-normal'>
         <img src='images/avatar_default.jpg' style='color: var(--tekstColor); display: block; border-radius: 50%; object-fit: cover; margin: 2vw; height: 30vw; width: 30vw; max-width: 65%;'>
             <form method='POST' enctype='multipart/form-data'> 
-                <label for='docentVoornaam'>Foto (standaardavatar)</label><br />
+                <label for='docentVoornaam'><?PHP echo  $lang["DOCENTEN_BEHEER_FOTO"]?></label><br />
                 <input type='file' name='docentFoto'><br />
                 <br />
-                <div class='subTitle'>Persoonlijke informatie</div><br />
-                <label for='docentVoornaam'>Voornaam*</label><br />
-                <input type='text' name='docentVoornaam' placeholder='Voornaam' required><br />
+                <div class='subTitle'><?PHP echo $lang["DOCENTEN_BEHEER_PF_INFO"]?></div><br />
+                <label for='docentVoornaam'><?PHP echo $lang["CONTACT_VOORNAAM"]?>*</label><br />
+                <input type='text' name='docentVoornaam' placeholder='<?PHP echo $lang["CONTACT_VOORNAAM"]?>' required><br />
                 
-                <label for='docentAchternaam'>Achternaam*</label><br />
-                <input type='text' name='docentAchternaam' placeholder='Achternaam' required><br />
+                <label for='docentAchternaam'><?PHP echo $lang["CONTACT_ACHTERNAAM"]?>*</label><br />
+                <input type='text' name='docentAchternaam' placeholder='<?PHP echo $lang["CONTACT_VOORNAAM"]?>' required><br />
                 
-                <label for='docentEmail'>Email*</label><br />
+                <label for='docentEmail'><?PHP echo $lang["CONTACT_EMAIL"]?>*</label><br />
                 <input type='text' name='docentEmail' placeholder='Docent@nhlstenden.com' required><br />
             
-                <label for='docentTelefoonnummer'>Telefoonnummer</label><br />
+                <label for='docentTelefoonnummer'><?PHP echo $lang["CONTACT_TELL"]?></label><br />
                 <input type='text' name='docentTelefoonnummer' placeholder='0612345678'><br />
                 
-                <label for='docentGebruikersnaam'>Gebruikersnaam*</label><br />
-                <input type='text' name='docentGebruikersnaam' placeholder='Gebruikersnaam' required><br />
+                <label for='docentGebruikersnaam'><?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>*</label><br />
+                <input type='text' name='docentGebruikersnaam' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>' required><br />
                 <br />
-                <div class='subTitle'>Socials</div><br />
-                <label for='docenttwitter'>Twitter</label><br />
+                <div class='subTitle'><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL"]?></div><br />
+                <label for='docenttwitter'>
+<?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"]?></label><br />
                 <input type='text' name='docentTwitter' placeholder='Twitter'><br />
                 
-                <label for='docentLinkedin'>Linkedin</label><br />
+                <label for='docentLinkedin'>
+<?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"]?></label><br />
                 <input type='text' name='docentLinkedin' placeholder='Linkedin'><br />
                 
-                <label for='docentInstagram'>Instagram</label><br />
+                <label for='docentInstagram'>
+<?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_INSTA"]?></label><br />
                 <input type='text' name='docentInstagram' placeholder='Instagram'><br />
                 <br />
-                <div class='subTitle'>Beveiliging</div><br />
-                <label for='docentWachtwoord'>Wachtwoord*</label><br />
-                <input type='password' name='docentWachtwoord' placeholder='Wachtwoord' required><br />
+                <div class='subTitle'>
+<?PHP echo $lang["DOCENTEN_BEHEER_BEVEILIGING"]?></div><br />
+                <label for='docentWachtwoord'>
+<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>*</label><br />
+                <input type='password' name='docentWachtwoord' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>' required><br />
 
-                <label for='docentWachtwoordHerhaal'>Wachtwoord herhalen*</label><br />
-                <input type='password' name='docentWachtwoordHerhaal' placeholder='Wachtwoord herhalen' required><br />
+                <label for='docentWachtwoordHerhaal'>
+<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>*</label><br />
+                <input type='password' name='docentWachtwoordHerhaal' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>' required><br />
 
-                <p>Vakken met een * zijn verplicht</p>
-                <button type='submit' name='submitInvoegen'>opslaan</button>
-                <button type='button' onclick="."window.location.href='docentbeheer'".">annuleren</button>
-            </form>";
+                <p>
+<?PHP echo $lang["DOCENTEN_BEHEER_VERPLICHT"]?></p>
+                <button type='submit' name='submitInvoegen'>
+<?PHP echo $lang["BESCHIKBAARHEID_SAVE"]?></button>
+                <button type='button' onclick="."window.location.href='docentbeheer'".">
+<?PHP echo $lang["DOCENTEN_BEHEER_ANNULEREN"]?></button>
+            </form>
+        <?PHP
     }
     else if(!isset($_POST['invoegenPage']) && isset($_POST['submitDelete']) && intval($_POST['verwijderID'])){
         $DB->Get("DELETE FROM docenten WHERE docent_id='{$_POST['verwijderID']}'");

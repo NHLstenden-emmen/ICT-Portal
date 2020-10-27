@@ -71,38 +71,34 @@
 <div class='contentBlock-nohover'>
     <div class='contentBlock-side'></div>
     <div class='contentBlock-content'>
-    <p class='contentBlock-title'>Beschikbaarheid bewerken</p>
+    <p class='contentBlock-title'><?PHP echo $lang["BESCHIKBAARHEID_EDIT"]?></p>
 
     <div class='contentBlock-text-normal'>
     
     <form method="POST"> 
 
-        <label for="beschikbaarheidMaandag_begin">Maandag</label><br />
+        <label for="beschikbaarheidMaandag_begin"><?PHP echo $lang["PRESENT_Monday"]?></label><br />
         <input type="time" value="<?= $beschikbaarheidOutput['Maandag'][0] ?>" name="beschikbaarheidMaandagBegin" style="width: 25%;">
         <input type="time" value="<?= $beschikbaarheidOutput['Maandag'][1] ?>" name="beschikbaarheidMaandagEind" style="width: 25%;"><br>
         
-        <label for="beschikbaarheidDinsdag">Dinsdag</label><br />
+        <label for="beschikbaarheidDinsdag"><?PHP echo $lang["PRESENT_Tuesday"]?></label><br />
         <input type="time" value="<?= $beschikbaarheidOutput['Dinsdag'][0] ?>" name="beschikbaarheidDinsdagBegin" style="width: 25%;">
         <input type="time" value="<?= $beschikbaarheidOutput['Dinsdag'][1] ?>" name="beschikbaarheidDinsdagEind" style="width: 25%;"><br />
 
-        <label for="beschikbaarheidWoensdag">Woensdag</label><br />
+        <label for="beschikbaarheidWoensdag"><?PHP echo $lang["PRESENT_Wednesday"]?></label><br />
         <input type="time" value="<?= $beschikbaarheidOutput['Woensdag'][0] ?>" name="beschikbaarheidWoensdagBegin" style="width: 25%;">
         <input type="time" value="<?= $beschikbaarheidOutput['Woensdag'][1] ?>" name="beschikbaarheidWoensdagEind" style="width: 25%;"><br />
 
-        <label for="beschikbaarheidDonderdag">Donderdag</label><br />
+        <label for="beschikbaarheidDonderdag"><?PHP echo $lang["PRESENT_Thursday"]?></label><br />
         <input type="time" value="<?= $beschikbaarheidOutput['Donderdag'][0] ?>" name="beschikbaarheidDonderdagBegin" style="width: 25%;">
         <input type="time" value="<?= $beschikbaarheidOutput['Donderdag'][1] ?>" name="beschikbaarheidDonderdagEind" style="width: 25%;"><br />
 
-        <label for="beschikbaarheidVrijdag">Vrijdag</label><br />
+        <label for="beschikbaarheidVrijdag"><?PHP echo $lang["PRESENT_Friday"]?></label><br />
         <input type="time" value="<?= $beschikbaarheidOutput['Vrijdag'][0] ?>" name="beschikbaarheidVrijdagBegin" style="width: 25%;">
         <input type="time" value="<?= $beschikbaarheidOutput['Vrijdag'][1] ?>" name="beschikbaarheidVrijdagEind" style="width: 25%;"><br />
 
-        <button type="submit" name="submitAction">opslaan</button>
+        <button type="submit" name="submitAction"><?PHP echo $lang["BESCHIKBAARHEID_SAVE"]?></button>
         
     </form>
-    
-<!--
-- standaard waarde in de database moet nog weg
--->
 </div></div></div>
 </main>

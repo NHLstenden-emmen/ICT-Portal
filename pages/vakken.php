@@ -19,20 +19,19 @@
         }
    
         //Jaarweergave via vakken
-        if(!isset($_POST['submitKlas-post']) && !isset($_POST['submitKlas-get']) && !isset($_POST['submitJaar']) && !isset($_GET['jaar'])){
-            echo '<div class="subTitle">Vakkenlijst</div>
-            <p>Selecteer hier een jaar om alle klassen van het betreffende jaar te tonen.</p>
+        if(!isset($_POST['submitKlas-post']) && !isset($_POST['submitKlas-get']) && !isset($_POST['submitJaar']) && !isset($_GET['jaar'])){?>
+            <div class="subTitle"><?php echo $lang['VAKKEN_VAKKENLIJST']; ?></div>
+            <p><?php echo $lang['VAKKEN_VAKKENLIJST_SUBTITLE']; ?></p>
             <form method="POST">
                 <select name="jaarSelectie">
-                    <option value="1">Jaar 1</option>
-                    <option value="2">Jaar 2</option>
-                    <option value="3">Jaar 3</option>
-                    <option value="4">Jaar 4</option>
+                    <option value="1"><?php echo $lang['NAV_JAAR']; ?> 1</option>
+                    <option value="2"><?php echo $lang['NAV_JAAR']; ?> 2</option>
+                    <option value="3"><?php echo $lang['NAV_JAAR']; ?> 3</option>
+                    <option value="4"><?php echo $lang['NAV_JAAR']; ?> 4</option>
                 </select>
-                <button type="submit" name="submitJaar">Klassen tonen</button>
-            </form>';
-            //Stap 1
-        } 
+                <button type="submit" name="submitJaar"><?php echo $lang['VAKKEN_KLASSEN']; ?></button>
+            </form>
+        <?PHP } 
         else if (isset($_POST['submitJaar']) || isset($_GET['jaar']) && !isset($_POST['submitKlas-post']) && !isset($_POST['submitKlas-get'])) {
             //Stap 2 (Waar GET begint)
             
@@ -43,10 +42,10 @@
             else if(isset($_GET['jaar'])){
                 $jaarSelectie = $_GET['jaar'];
                 $submitButton = 'get';
-            }
-            echo "<div class='subTitle'>Klassen | Jaar {$jaarSelectie}</div>
-            <p>Selecteer hier een klas alle vakken de betreffende klas te tonen.</p>";
-    
+            } ?>
+            <div class='subTitle'><?PHP echo $lang['VAKKEN_KLASSEN_JAAR'] ." ". $jaarSelectie ?></div>
+            <p><?PHP $lang['VAKKEN_SELECT_ALLCALSSES'] ?></p>
+            <?PHP
             $klasResult = $DB->Get("SELECT * FROM klassen WHERE jaar = '{$jaarSelectie}' ORDER BY periode ASC");
     
             if($klasResult->num_rows > 0){
@@ -57,7 +56,7 @@
                 echo "</select><button type='submit' name='submitKlas-{$submitButton}'>vakken weergeven</button></form>";
             }
             else {
-                echo "Dit jaar heeft geen klassen.";
+                echo "{$lang['VAKKEN_NOCALSSES']}";
             }
         } 
         else if (isset($_POST['submitKlas-post']) || isset($_POST['submitKlas-get'])){
@@ -79,11 +78,10 @@
 
 
                     if($vakkenView->num_rows > 0){
-                        echo '<div class="subTitle">Periode '.$i.'</div>';
+                        echo "<div class='subTitle'>{$lang['VAKKEN_PERIODE']} ".$i."</div>";
 
                         echo '<div class="contentBlock-grid">';
                         while($vakkenData = $vakkenView->fetch_assoc()){
-                            //print_R($vakkenData);
                                 echo "<div class='contentBlock'>
                                 <div class='contentBlock-side'></div>
                                 <div class='contentBlock-content'>
@@ -91,7 +89,7 @@
                                     <div class='contentBlock-text-normal'>
                                         <table>
                                             <tr>
-                                                <td><b>Vakdocent:</b></td>
+                                                <td><b>{$lang['VAKKEN_VAKDOCENT'] }:</b></td>
                                                 <td><a href='docent?docent={$vakkenData['docent_id']}'>{$vakkenData['voornaam']} {$vakkenData['achternaam']}</a></td>
                                             </tr>";
                                             if(!empty($vakkenData['moduleboek'])){

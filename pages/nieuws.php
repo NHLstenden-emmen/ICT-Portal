@@ -48,7 +48,7 @@
             echo "</div>";
 
             //Lijst van laatste 10 nieuwsberichten
-            echo '<div class="subTitle">Alle nieuwsberichten</div>';
+            echo '<div class="subTitle">'.$lang["NEWS_LASTNEWS"].'</div>';
 
             $nieuwsResult10 = $DB->Get("SELECT 
                 nieuws_{$_COOKIE['lang']}_id AS id,
@@ -94,7 +94,7 @@
                 ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC");
 
             if($nieuwsResultAll->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"] . $langTitle .".";
             }
 
             echo '<table>';
@@ -111,7 +111,7 @@
                         </td></tr>';
             }
             echo '</table>';
-            echo "<button onclick="."window.location.href='nieuws'>terug</button>";
+            echo "<button onclick="."window.location.href='nieuws'>{$lang["NEWS_TERUG"]}</button>";
         }
         else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id']) && intval($_GET['id'])){ // 1 artikel weergeven volledig scherm
             
@@ -152,7 +152,7 @@
                         <p>{$nieuwsViewData['tekst']}</p>
                     </div>
                     <div class='contentBlock-date-view'>
-                        <p>{$nieuwsViewData['datum']} | Geplaatst door: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p>
+                        <p>{$nieuwsViewData['datum']} | {$lang["NEWS_GEPLAAST_DOOR"]}: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p>
                     </div>";
                     if(!empty($nieuwsViewData['bijlage'])){
                         echo "<form id='bijlageForm' method='post'><input type='hidden' value='{$nieuwsViewData['id']}' name='nieuwsFileID'><button id='button-Bijlage' name='attachView' type='submit'>bijlage weergeven</button></form>";

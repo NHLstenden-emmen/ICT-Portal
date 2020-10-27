@@ -53,7 +53,7 @@
            
                     } 
                     else {
-                        echo "Fout bij uploaden {$langTitle} nieuws: Alleen jpg, png, jpeg en gif zijn toegestaan voor een afbeelding!";
+                        echo "{$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_START"]} {$langTitle} {$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END"]}";
                     }
                 }
  
@@ -127,7 +127,7 @@
            
                     } 
                     else {
-                        echo "Fout bij uploaden {$langTitle} nieuws: Alleen jpg, png, jpeg en gif zijn toegestaan voor een afbeelding!";
+                        echo "{$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_START"]} {$langTitle} {$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END"]}";
                     }
                 }
  
@@ -146,7 +146,7 @@
                         $attachContentAtt = "'".addslashes(file_get_contents($attachmentAtt))."'";
                     } 
                     else {
-                        echo "Fout bij uploaden {$langTitle} nieuws: Alleen pdf, doc, docx, jpg, png, jpeg en gif zijn toegestaan voor een bijlage!";
+                        echo "{$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_START"]} {$langTitle} {$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END"]}";
                     }
                 }
                     $DB->Get("INSERT INTO nieuws_{$_COOKIE['lang']} 
@@ -169,11 +169,11 @@
                     header("Location: nieuwsbeheer");
             }
             else {
-                echo "Fout bij uploaden {$langTitle} nieuws: Geen tekst ingevoerd";
+                echo "{$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_START"]} {$langTitle} {$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END_TEKST"]}";
             }
         }
         else {
-            echo "Fout bij uploaden {$langTitle} nieuws: Geen titel ingevoerd";
+            echo "{$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_START"]} {$langTitle} {$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END_TITLE"]}";
         }
     }
 
@@ -235,8 +235,8 @@
         if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['attachView']) && !isset($_POST['aanpassenPage'])){
             
     
-            echo '<div class="contentBlock-title">Nieuwsbeheer | Keuzemenu ('.$langTitle.')</div>
-            <div class="contentBlock-text-normal"><p><b>Pas de taal van de site aan om nieuwsberichten in te voeren in het Engels!</b></p>';
+            echo '<div class="contentBlock-title">'.$lang["NIEUWS_BEHEER_KEUZEMENU"].' ('.$langTitle.')</div>
+            <div class="contentBlock-text-normal"><p><b>'.$lang["NIEUWS_BEHEER_FOUTMELDING_ENGELS"].'</b></p>';
             
             $nieuwsResult = $DB->Get("SELECT 
                 nieuws.nieuws_id,
@@ -252,7 +252,7 @@
                 ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC");
 
             if($nieuwsResult->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang['NIEUWS_BEHEER_MISSING_NEWS'].' '. $langTitle;
             }
             
             echo "<table>";
@@ -275,13 +275,13 @@
                         <label for='nieuwsTitel'>Titel</label><br>
                         <input type='text' name='nieuwsTitel' placeholder='Titel' required /><br><br>
                         
-                        <label for='nieuwsTekst'>Nieuwsbericht</label><br>
+                        <label for='nieuwsTekst'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
                         <textarea name='nieuwsTekst' placeholder='Type hier uw nieuws bericht' rows='8' cols='50' required ></textarea><br>
                         
-                        <label for='nieuwsBijlage'>Bijlage</label><br>
+                        <label for='nieuwsBijlage'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
                         <input type='file' name='nieuwsBijlage' /><br><br>
 
-                        <label for='nieuwsAfbeelding'>Afbeelding</label><br>
+                        <label for='nieuwsAfbeelding'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
                         <input type='file' name='nieuwsAfbeelding' /><br><br>
                         <button type='submit' name='submitInvoegen'>Plaatsen</button>
                         <button type='button' onclick="."window.location.href='nieuwsbeheer'".">annuleren</button>
@@ -313,36 +313,36 @@
 
         $currentData = $currentResult->fetch_assoc();
 
-        echo "<div class='contentBlock-title'>Vakkenbeheer | Aanpassen ($langTitle)</div>
+        echo "<div class='contentBlock-title'>".$lang["NIEUWS_BEHEER_VAKKEN_AANPASSEN"]." ($langTitle)</div>
             <div class='contentBlock-text-normal'>
             <form method='post' enctype='multipart/form-data'>
-                <label for='nieuwsTitel'>Titel</label><br>
+                <label for='nieuwsTitel'>".$lang["NIEUWS_BEHEER_TITLE"]."</label><br>
                 <input value='{$currentData['titel']}' type='text' name='nieuwsTitel' placeholder='Titel' required /><br><br>
                 
-                <label for='nieuwsTekst'>Nieuwsbericht</label><br>
+                <label for='nieuwsTekst'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
                 <textarea  name='nieuwsTekst' placeholder='Type hier uw nieuws bericht' rows='8' cols='50' required >{$currentData['tekst']}</textarea><br>";
                 
                 if(empty($currentData['bijlage'])){
-                    echo "<label for='nieuwsBijlage'>Bijlage</label> <b>Momenteel niks geupload</b><br />";
+                    echo "<label for='nieuwsBijlage'>Bijlage</label> <b>".$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"]."</b><br />";
                 }
                 else {
                     echo "<label for='nieuwsBijlage'>Bijlage</label>
-                            <button type='submit' name='attachView' style='padding: 0.3vw;'>weergeven</button></label><br />";
+                            <button type='submit' name='attachView' style='padding: 0.3vw;'>".$lang["NIEUWS_BEHEER_WEERGEVEN"]."</button></label><br />";
                 }
                 echo "<input type='file' name='nieuwsBijlage' /><br><br>";
 
 
                 if(empty($currentData['afbeelding'])){
-                    echo "<label for='nieuwsAfbeelding'>Afbeelding</label> <b>Momenteel niks geupload</b><br />";
+                    echo "<label for='nieuwsAfbeelding'>Afbeelding</label> <b>".$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"]."</b><br />";
                 }
                 else {
                     echo "<label for='nieuwsAfbeelding'>Afbeelding</label>
-                            <button type='submit' name='imgView' style='padding: 0.3vw;'>weergeven</button></label><br />";
+                            <button type='submit' name='imgView' style='padding: 0.3vw;'>".$lang["NIEUWS_BEHEER_WEERGEVEN"]."</button></label><br />";
                 }
                 echo "
                 <input type='file' name='nieuwsAfbeelding' /><br /><br />";
            
-                echo "<label for='nieuwsDocent'>Docent*</label><br />
+                echo "<label for='nieuwsDocent'>".$lang["NIEUWS_BEHEER_DOCENT"]."*</label><br />
                         <select name='nieuwsDocent'>";
 
                 $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
@@ -357,8 +357,8 @@
                 }
                 echo "</select><br />
                 <input type='hidden' name='nieuwsFileID' value='{$currentData['nieuws_id']}'>
-                <button type='submit' name='aanpassenSubmit'>aanpassen</button>
-                <button type='button' onclick="."window.location.href='nieuwsbeheer'".">annuleren</button>
+                <button type='submit' name='aanpassenSubmit'>".$lang["NIEUWS_BEHEER_AANPASSEN"]."</button>
+                <button type='button' onclick="."window.location.href='nieuwsbeheer'".">".$lang["DOCENTEN_BEHEER_ANNULEREN"]."</button>
             </form>";
     }
     //Gebruik de verwijderen pagina en controleert of de ingevoegde value wel een integer is.

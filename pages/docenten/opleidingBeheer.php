@@ -25,7 +25,7 @@
     if(isset($_POST['submitInvoegen'])){
         if(isset($_POST['opleidingNaam'])){
             $DB->Get("INSERT INTO opleidingen (opleidingnaam) VALUES ('{$_POST['opleidingNaam']}')");
-            header("Location: opleidingBeheer");
+            header("Location: opleidingbeheer");
         }
     }
 
@@ -33,7 +33,7 @@
     if(isset($_POST['aanpassenSubmit'])){
         if(isset($_POST['opleidingNaam'])){
             $DB->Get("UPDATE opleidingen SET opleidingnaam = '{$_POST['opleidingNaam']}' WHERE opleiding_id = '{$_POST['opleidingID']}'");
-            header("Location: opleidingBeheer");
+            header("Location: opleidingbeheer");
         }
     }
         $docentID = intval($_COOKIE['userID']);

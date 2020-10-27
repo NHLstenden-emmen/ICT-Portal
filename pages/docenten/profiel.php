@@ -46,27 +46,27 @@ if($result->num_rows > 0){
 
                             }
                             else {
-                                echo "Wachtwoorden niet gelijk";
+                                echo $lang["PROFIEL_ERRORS_WWG"];
                             }
                         }
                         else {
-                            echo "Geen Wachtwoord ingevoerd.";
+                            echo $lang["PROFIEL_ERRORS_WWI"];
                         }
                     }
                     else {
-                        echo "Geen Gebruikersnaam ingevoerd.";
+                        echo $lang["PROFIEL_ERRORS_GB"];
                     }
                 }
                 else {
-                    echo "Geen Email ingevoerd.";
+                    echo $lang["PROFIEL_ERRORS_EM"];
                 }
             }
             else {
-                echo "Geen achternaam ingevoerd.";
+                echo $lang["PROFIEL_ERRORS_AI"];
             }
         }
         else {
-            echo "Geen voornaam ingevoerd.";
+            echo $lang["PROFIEL_ERRORS_VI"];
         }   
     }
 }
@@ -87,42 +87,42 @@ if($result->num_rows > 0){
         ?>
         <input type="file" name="docentFoto" style="width: 65%;"><br />
         <br />
-        <div class="subTitle">Persoonlijke informatie</div><br />
-        <label for="docentVoornaam">Voornaam*</label><br />
+        <div class="subTitle"><?PHP echo $lang["PROFIEL_INFO_PI"]?></div><br />
+        <label for="docentVoornaam"><?PHP echo $lang["CONTACT_VOORNAAM"]?>*</label><br />
         <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" placeholder="Voornaam" required><br />
         
-        <label for="docentAchternaam">Achternaam*</label><br />
+        <label for="docentAchternaam"><?PHP echo $lang["CONTACT_ACHTERNAAM"]?>*</label><br />
         <input type="text" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="Achternaam" required><br />
         
-        <label for="docentEmail">Email*</label><br />
+        <label for="docentEmail"><?PHP echo $lang["CONTACT_EMAIL"]?>*</label><br />
         <input type="text" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" required><br />
        
-        <label for="docentTelefoonnummer">Telefoonnummer</label><br />
+        <label for="docentTelefoonnummer"><?PHP echo $lang["CONTACT_TELL"]?></label><br />
         <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678"><br />
         
-        <label for="docentGebruikersnaam">Gebruikersnaam*</label><br />
+        <label for="docentGebruikersnaam"><?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>*</label><br />
         <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="Gebruikersnaam" required><br />
         <br />
-        <div class="subTitle">Socials</div><br />
-        <label for="docenttwitter">Twitter</label><br />
+        <div class="subTitle"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL"]?></div><br />
+        <label for="docenttwitter"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"]?></label><br />
         <input type="text" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitter"><br />
         
-        <label for="docentLinkedin">Linkedin</label><br />
+        <label for="docentLinkedin"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"]?></label><br />
         <input type="text" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin"><br />
         
-        <label for="docentInstagram">Instagram</label><br />
+        <label for="docentInstagram"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_INSTA"]?></label><br />
         <input type="text" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram"><br />
         <br />
-        <div class="subTitle">Beveiliging</div><br />
-        <label for="docentWachtwoord">Wachtwoord*</label><br />
+        <div class="subTitle"><?PHP echo $lang["DOCENTEN_BEHEER_BEVEILIGING"]?></div><br />
+        <label for="docentWachtwoord"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>*</label><br />
         <input type="password" name="docentWachtwoord" placeholder="Wachtwoord" required><br />
 
-        <label for="docentWachtwoordHerhaal">Wachtwoord herhalen*</label><br />
+        <label for="docentWachtwoordHerhaal"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?> herhalen*</label><br />
         <input type="password" name="docentWachtwoordHerhaal" placeholder="Wachtwoord herhalen" required><br />
 
 
-        <p>Invulvakken met een * zijn verplicht</p>
-        <button type="submit" name="submitAction">opslaan</button>
+        <p><?PHP echo $lang["DOCENTEN_BEHEER_VERPLICHT"]?></p>
+        <button type="submit" name="submitAction"><?PHP echo $lang["BESCHIKBAARHEID_SAVE"]?></button>
     </form>
     </div>
     </div>

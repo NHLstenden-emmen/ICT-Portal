@@ -56,7 +56,7 @@
                     }
                 }
                 
-            header("Location: vakkenBeheer");
+            header("Location: vakkenbeheer");
         }
         else {
             echo "Vaknaam is niet ingevuld.";
@@ -94,7 +94,7 @@
                 $insertResult = $DB->Get("INSERT INTO 
                                         vakken (vak, jaarlaag, periode)
                                         VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}')");//>vakken
-                header("Location: vakkenBeheer");
+                header("Location: vakkenbeheer");
             }
             else {
                 //Moduleboek toegevoegd
@@ -108,7 +108,7 @@
                     $insertResult = $DB->Get("INSERT INTO 
                                             vakken (vak, jaarlaag, periode, moduleboek)
                                             VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}')");//>vakken 
-                    header("Location: vakkenBeheer");   
+                    header("Location: vakkenbeheer");   
                 }
                 else {
                     echo "Je mag alleen een .pdf bestand uploaden.";
@@ -120,7 +120,7 @@
                 foreach ($_POST['vakKlas'] as $key => $klasID) {
                     $DB->Get("INSERT INTO klassen_vakken (klas_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                 }
-                header("Location: vakkenBeheer");
+                header("Location: vakkenbeheer");
         }
         else {
             echo "Vaknaam is niet ingevuld.";

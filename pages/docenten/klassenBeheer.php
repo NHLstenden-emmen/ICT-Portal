@@ -29,7 +29,7 @@
                                         periode = '{$_POST['klasPeriode']}', 
                                         opleiding_id = '{$_POST['klasOpleiding']}'
                                         WHERE klas_id = '{$_POST['klasEditID']}'");
-                                        header("Location: klassenBeheer");
+                                        header("Location: klassenbeheer");
                         }
                     } 
                 } 
@@ -45,7 +45,7 @@
                 if(isset($_POST['klasPeriode'])){
                     if(isset($_POST['klasOpleiding'])){
                         $DB->Get("INSERT INTO klassen (klas_naam, jaar, periode, opleiding_id) VALUES ('{$_POST['klasNaam']}', '{$_POST['klasJaarlaag']}', '{$_POST['klasPeriode']}', '{$_POST['klasOpleiding']}')");
-                        header("Location: klassenBeheer");
+                        header("Location: klassenbeheer");
                     } 
                 } 
             } 

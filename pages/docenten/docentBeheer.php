@@ -131,7 +131,7 @@
 
         //Laat de weergave pagina zien
         if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete'])){
-            echo "<div class='contentBlock-title'>Docentenbeheer | Keuzemenu </div><div class='contentBlock-text-normal'>";
+            echo "<div class='contentBlock-title'>{$lang["DOCENTEN_BEHEER_KEUZEMENU"]} </div><div class='contentBlock-text-normal'>";
 
             $docentenResult = $DB->Get("SELECT *FROM docenten WHERE docent_id != '{$docentID}' ORDER BY docent_id ASC "); //Haalt alle docenten op
 
@@ -147,7 +147,7 @@
         }
         //Laat de invoegen pagina zien
         else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete'])){ ?>
-        <div class='contentBlock-title'><?php $lang["DOCENTEN_BEHEER_ADD"]?> </div><div class='contentBlock-text-normal'>
+        <div class='contentBlock-title'><?php echo $lang["DOCENTEN_BEHEER_ADD"]?> </div><div class='contentBlock-text-normal'>
         <img src='images/avatar_default.jpg' style='color: var(--tekstColor); display: block; border-radius: 50%; object-fit: cover; margin: 2vw; height: 30vw; width: 30vw; max-width: 65%;'>
             <form method='POST' enctype='multipart/form-data'> 
                 <label for='docentVoornaam'><?PHP $lang["DOCENTEN_BEHEER_FOTO"]?></label><br />
@@ -197,7 +197,7 @@
                 <button type='submit' name='submitInvoegen'>
 <?PHP $lang["BESCHIKBAARHEID_SAVE"]?></button>
                 <button type='button' onclick="."window.location.href='docentbeheer'".">
-<?PHP $lang["DOCENTEN_BEHEER_WACHTWOORD"]?></button>
+<?PHP $lang["DOCENTEN_BEHEER_ANNULEREN"]?></button>
             </form>
         <?PHP
     }

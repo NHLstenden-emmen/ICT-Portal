@@ -91,20 +91,49 @@ $lang["BESCHIKBAARHEID_SAVE"] = 'opslaan';
 
 //Docenten Beheer
 $lang["DOCENTEN_BEHEER_ADD"] = 'Docentenbeheer | Toevoegen';
+$lang["DOCENTEN_BEHEER_KEUZEMENU"] = 'Docentenbeheer | Keuzemenu';
 $lang["DOCENTEN_BEHEER_FOTO"] = 'Foto (standaardavatar)';
 $lang["DOCENTEN_BEHEER_PF_INFO"] = 'Persoonlijke informatie';
 $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"] = 'Gebruikersnaam';
 $lang["DOCENTEN_BEHEER_SOCIAL"] = 'Socials';
-$lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"] = 'Socials';
-$lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"] = 'Socials';
-$lang["DOCENTEN_BEHEER_SOCIAL_INSTA"] = 'Socials';
+$lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"] = 'twitter';
+$lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"] = 'linkedin';
+$lang["DOCENTEN_BEHEER_SOCIAL_INSTA"] = 'instagram';
 $lang["DOCENTEN_BEHEER_BEVEILIGING"] = 'Beveiliging';
 $lang["DOCENTEN_BEHEER_WACHTWOORD"] = 'Wachtwoord';
 $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"] = 'Wachtwoord herhalen';
 $lang["DOCENTEN_BEHEER_VERPLICHT"] = 'Invulvakken met een * zijn verplicht';
-$lang["DOCENTEN_BEHEER_WACHTWOORD"] = 'annuleren';
+$lang["DOCENTEN_BEHEER_ANNULEREN"] = 'annuleren';
 
+//nieuws beheer
+$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_START"] = 'Fout bij uploaden';
+$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END"] = 'nieuws: Alleen jpg, png, jpeg en gif zijn toegestaan voor een afbeelding!';
+$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END_TEKST"] = 'nieuws: Geen tekst ingevoerd';
+$lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END_TITLE"] = 'nieuws: Geen titel ingevoerd';
+$lang["NIEUWS_BEHEER_KEUZEMENU"] = 'Nieuwsbeheer | Keuzemenu';
+$lang["NIEUWS_BEHEER_FOUTMELDING_ENGELS"] = 'pas de taal van de site aan om nieuwsberichten in te voeren in het Engels!';
+$lang["NIEUWS_BEHEER_MISSING_NEWS"] = 'Er zijn nog geen nieuwsberichten geplaatst in het ';
+$lang["NIEUWS_BEHEER_NIEUWSBERICHT"] = 'Nieuwsbericht';
+$lang["NIEUWS_BEHEER_BIJLAGE"] = 'Bijlage';
+$lang["NIEUWS_BEHEER_AFBEELDING"] = 'Afbeelding';
+$lang["NIEUWS_BEHEER_TITLE"] = 'Titel';
+$lang["NIEUWS_BEHEER_VAKKEN_AANPASSEN"] = 'Vakkenbeheer | Aanpassen';
+$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"] = 'Momenteel niks geupload';
+$lang["NIEUWS_BEHEER_WEERGEVEN"] = 'weergeven';
+$lang["NIEUWS_BEHEER_DOCENT"] = 'Docent';
+$lang["NIEUWS_BEHEER_AANPASSEN"] = 'aanpassen';
+
+//profiel
+$lang["PROFIEL_ERRORS_WWG"] = 'Wachtwoorden niet gelijk.';
+$lang["PROFIEL_ERRORS_WWI"] = 'Geen Wachtwoord ingevoerd.';
+$lang["PROFIEL_ERRORS_GB"] = 'Geen Gebruikersnaam ingevoerd.';
+$lang["PROFIEL_ERRORS_EM"] = 'Geen Email ingevoerd.';
+$lang["PROFIEL_ERRORS_AI"] = 'Geen achternaam ingevoerd.';
+$lang["PROFIEL_ERRORS_VI"] = 'Geen voornaam ingevoerd.';
+$lang["PROFIEL_INFO_PI"] = 'Persoonlijke informatie';
 
 //extra
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
+$lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is allen voor docenten.';
+
 ?>

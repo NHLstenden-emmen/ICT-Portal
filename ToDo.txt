@@ -5,12 +5,6 @@ ALLES
         header("Location: vakken"); volgens mij allemaal gedaan. (nog even een keer checken aan het eind) 
     DONE */
 
-    Docent kan niet zich zelf verwijderen > bewust
-
-     1 docent kan al het nieuws aanpassen (zelfde verhaal voor vakken) > Bewust
-        Is dit bewust
-        willen we dan niet dat zijn eigen berichten bovenaan staan > Te ingewikkeld om nog te doen
-
     Contact
     Is iets kapot qua display    
 

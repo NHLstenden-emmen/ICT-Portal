@@ -27,8 +27,8 @@ a {
     width: 100%;
     padding: 2vh 6vw 0vh 6vw;
 }
-.pageSidebarBlock {
-    float: left;
+.contactsidebar {
+    float: right;
     width: 20%;
     padding: 1vw;
 }

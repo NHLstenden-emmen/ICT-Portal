@@ -16,33 +16,75 @@
 
 <!-- Mobile Tabs -->
 <div class="footer-mobile">
-  <div class="scrollmenu">
-    			
-  <?php if(empty($_COOKIE['lang'])){
-					//echo "<form method='post'><button type='submit' value='en' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> EN</button></form>";
-				}
-				else if(!empty($_COOKIE['lang']) && $_COOKIE['lang'] == 'en'){
-					//echo "<form method='post'><button type='submit' value='nl' class='languageSwitch'><i class='fa fa-language fa-lg fa-fw' aria-hidden='true'></i> NL</button></form>";
-				}
-  ?>
+  <style>
+  .container {
+    width: 100%;
+    padding: 5vw;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    overflow-x: auto;
+    background: red;
+  }
+  .item {
+    grid-row: 1;
+    min-width: 20vw;  
+  }
+  .dropbtn1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
 
-    <div class="<?= ($activePage == 'nieuws') ? 'mbactive':''; ?>" onclick="window.location.href='nieuws'"><i class="fa fa-newspaper-o fa-lg fa-fw" aria-hidden="true"></i></div>
-    <div class="<?= ($activePage == 'vakken') ? 'mbactive':''; ?>" onclick="window.location.href='vakken'"><i class="fa fa-book fa-lg fa-fw" aria-hidden="true"></i></div>
-    <div class="<?= ($activePage == 'docenten') ? 'mbactive':''; ?>" onclick="window.location.href='docenten'"><i class="fa fa-address-book fa-lg fa-fw" aria-hidden="true"></i></div>
-    <div class="<?= ($activePage == 'contact') ? 'mbactive':''; ?>" onclick="window.location.href='contact'"><i class="fa fa-envelope-o fa-lg fa-fw" aria-hidden="true"></i></div>
-    <?php if($Core->AuthCheck()){?>
-      <div class="<?= ($activePage == 'docentbeheer') ? 'mbactive':''; ?>" onclick="window.location.href='docentbeheer'"><i class="fa fa-paw fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'vakkenbeheer') ? 'mbactive':''; ?>" onclick="window.location.href='vakkenbeheer'"><i class="fa fa-file-o fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'nieuwsbeheer') ? 'mbactive':''; ?>" onclick="window.location.href='nieuwsbeheer'"><i class="fa fa-pencil fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'profiel-bewerken') ? 'mbactive':''; ?>" onclick="window.location.href='profiel-bewerken'"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'beschikbaarheid') ? 'mbactive':''; ?>" onclick="window.location.href='beschikbaarheid'"><i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i></div>
-      <div class="<?= ($activePage == 'logout') ? 'mbactive':''; ?>" onclick="window.location.href='uitloggen'"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i></div>
-			<?php }
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
 
-			else {?>
-        <div class="<?= ($activePage == 'login') ? 'mbactive':''; ?>" onclick="window.location.href='login'"><i class="fa fa-sign-in fa-lg fa-fw" aria-hidden="true"></i></div>
-			<?php } ?>
-      <div class="darkmodeSwitchMobile" style="background-color: var(--lightPrimaryColor) !important"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></div>
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #f1f1f1}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    top: 0;
+}
+
+.dropdown1:hover .dropbtn1 {
+    background-color: #3e8e41;
+}
+</style>
+
+<div class='container'>
+    <p class="item">info</p>
+    <p class="item">news</p>
+    <p class="item">banaan</p>
+    <p class="item">appel</p>
+    <p class="item">thee</p>
+    <p class="item">koffie</p>
+    <p class="item">meer</p>
+    <p class="item">zee</p>
+    <div class="dropdown1 item">
+      <button class="dropbtn1">Dropdown</button>
+    </div>
   </div>
 </div>
 

@@ -1,0 +1,359 @@
+<style>
+    table {
+        width: 100%;
+    }
+    td:nth-child(1){
+        width: 70%;
+    }
+    td:nth-child(2){
+        width: 8%;
+    }
+</style>
+<main class="content">
+
+<div class='contentBlock-nohover'>
+    <div class='contentBlock-side'></div>
+    <div class='contentBlock-content'>
+
+
+<?php 
+    if(isset($_POST['aanpassenSubmit'])){
+        if(isset($_POST['vakNaam'])){
+            $vakNaam = $_POST['vakNaam'];
+            $vakJaarlaag = $_POST['vakJaarlaag'];
+            $vakPeriode = $_POST['vakPeriode'];
+            $vakDocent = $_POST['vakDocent'];
+            $vakID = $_POST['boekVakID'];
+            $vakTeams = $_POST['vakTeams'];
+            $vakBlackboard = $_POST['vakBlackboard'];
+
+            if(empty($_FILES["vakBoek"]["name"])){
+                //Geen nieuw moduleboek
+                $DB->Get("UPDATE vakken SET vak = '{$vakNaam}', jaarlaag = '{$vakJaarlaag}', periode = '{$vakPeriode}', teams = '{$vakTeams}', blackboard = '{$vakBlackboard}'  WHERE vak_id = '{$vakID}'");
+            }
+            else {
+                //Moduleboek toegevoegd
+                $fileName = basename($_FILES["vakBoek"]["name"]); 
+                $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+                
+                if($fileType == 'pdf'){ 
+                    $pdf = $_FILES['vakBoek']['tmp_name']; 
+                    $pdfContent = addslashes(file_get_contents($pdf)); 
+                    $DB->Get("UPDATE vakken SET vak = '{$vakNaam}', jaarlaag = '{$vakJaarlaag}', periode = '{$vakPeriode}', moduleboek = '{$pdfContent}', teams = '{$vakTeams}', blackboard = '{$vakBlackboard}' WHERE vak_id = '{$vakID}'");
+                }
+                else {
+                    echo "Je mag alleen een .pdf bestand uploaden.";
+                } 
+            }
+
+                $DB->Get("UPDATE docenten_vakken SET docent_id = '{$vakDocent}', vak_id = '{$vakID}'");
+
+                if(isset($_POST['vakKlas'])){
+                    // verwijder alle klassen die het vak hadden
+                        $DB->Get("DELETE FROM opleiding_vakken WHERE opleiding_id='{$vakID}'");
+                    foreach ($_POST['vakKlas'] as $key => $klasID) {
+                        // voeg alle klassen toe die zijn ingevuld
+                        $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
+                    }
+                }
+                
+            header("Location: vakkenbeheer");
+        }
+        else {
+            echo "Vaknaam is niet ingevuld.";
+        }
+       
+    }
+
+
+    //Moduleboek downloaden
+    if(isset($_POST['boekView'])){
+        if(isset($_POST['boekVakID'])){
+
+            //Gegevens uit database halen
+            $downloadModuleboek = $DB->Get("SELECT * FROM vakken WHERE vak_id ='{$_POST['boekVakID']}'");
+            $moduleboekData = $downloadModuleboek->fetch_assoc();
+
+            $fileName = $moduleboekData['vak'].' '.$moduleboekData['jaarlaag'].'-'.$moduleboekData['periode'].' - moduleboek.pdf';
+
+            echo $Core->downloadFile($moduleboekData['moduleboek'], $fileName);
+        }
+    }
+
+    //Invoegen
+    if(isset($_POST['submitInvoegen'])){
+        if(isset($_POST['vakNaam'])){
+            
+            $vakNaam = $_POST['vakNaam'];
+            $vakJaarlaag = $_POST['vakJaarlaag'];
+            $vakPeriode = $_POST['vakPeriode'];
+            $vakDocent = $_POST['vakDocent'];
+            $vakTeams = $_POST['vakTeams'];
+            $vakBlackboard = $_POST['vakBlackboard'];
+
+            if(empty($_FILES["vakBoek"]["name"])){
+                //Geen moduleboek
+                
+                $insertResult = $DB->Get("INSERT INTO 
+                                        vakken (vak, jaarlaag, periode, teams, blackboard)
+                                        VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$vakTeams}', '{$vakBlackboard}')");//>vakken
+                header("Location: vakkenbeheer");
+            }
+            else {
+                //Moduleboek toegevoegd
+                $fileName = basename($_FILES["vakBoek"]["name"]); 
+                $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+                
+                if($fileType == 'pdf'){ 
+                    $pdf = $_FILES['vakBoek']['tmp_name']; 
+                    $pdfContent = addslashes(file_get_contents($pdf)); 
+                    
+                    $insertResult = $DB->Get("INSERT INTO 
+                                            vakken (vak, jaarlaag, periode, moduleboek, teams, blackboard)
+                                            VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}', '{$vakTeams}', '{$vakBlackboard}')");//>vakken 
+                    header("Location: vakkenbeheer");   
+                }
+                else {
+                    echo "Je mag alleen een .pdf bestand uploaden.";
+                } 
+            }
+                $vakID = $DB->LastID();
+                $DB->Get("INSERT INTO docenten_vakken (docent_id, vak_id) VALUES ('{$vakDocent}','{$vakID}')");
+
+                foreach ($_POST['vakOpleidingen'] as $key => $klasID) {
+                    $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
+                }
+                header("Location: vakkenbeheer");
+        }
+        else {
+            echo "Vaknaam is niet ingevuld.";
+        }
+    }
+
+
+
+        $docentID = intval($_COOKIE['userID']);
+
+        //Laat de weergave pagina zien
+        if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage'])){
+            echo "<div class='contentBlock-title'>Vakkenbeheer | Keuzemenu </div><div class='contentBlock-text-normal'>";
+            //lijst met vakken met optie om ze aan te passen. (verwijderen)
+            //knop voor nieuw vak
+
+            $vakkenResult = $DB->Get("	SELECT vakken.vak_id, vakken.vak, vakken.jaarlaag, vakken.periode 
+            FROM docenten_vakken INNER JOIN vakken 
+            ON docenten_vakken.vak_id = vakken.vak_id 
+            WHERE docent_id = '{$docentID}'
+            ORDER BY vakken.jaarlaag ASC, vakken.periode ASC"); //Haalt alle vakken van de ID docent op.
+
+            echo "<table>";
+            while($vakkenData = $vakkenResult->fetch_assoc()){
+                echo "<tr>";
+                    echo "<td>{$vakkenData['vak']}</td>";
+                    echo "<td>Jaar {$vakkenData['jaarlaag']}</td>";
+                    echo "<td>Periode {$vakkenData['periode']}</td>";
+                    echo "<td><form method='post'><input type='hidden' value='{$vakkenData['vak_id']}' name='aanpassenID'><button type='submit' name='aanpassenPage'><i class='fa fa-pencil' aria-hidden='true'></i></button></form></td>";
+                    echo "<td><form method='post'><input type='hidden' value='{$vakkenData['vak_id']}' name='verwijderID'><button type='submit' name='submitDelete'><i class='fa fa-trash' aria-hidden='true'></i></button></form></td>";
+                echo "</tr>";
+            }
+            echo "</table><form method='post'><button type='submit' name='invoegenPage'>Invoegen</button></form>";
+
+        }
+        //Laat de invoegen pagina zien
+        else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage'])){
+                echo '<div class="contentBlock-title">Vakkenbeheer | Invoegen</div>
+                        <div class="contentBlock-text-normal">
+                        <form method="POST" enctype="multipart/form-data"> 
+                            <div class="subTitle">Vakinformatie</div>
+                            
+                            <label for="vakNaam">Vak*</label><br />
+                            <input type="text" name="vakNaam" placeholder="Vaknaam" required><br />
+                            
+
+                            <label for="vakTeams">Microsoft Teams</label><br />
+                            <input type="text" name="vakTeams" placeholder="Teamcode" ><br />
+                            
+                            <label for="vakBlackboard">Blackboardcourse</label><br />
+                            <input type="text" name="vakBlackboard" placeholder="Link naar blackboardcourse" ><br />
+                            
+                            <label for="vakJaarlaag">Jaarlaag*</label><br />
+                            <select name="vakJaarlaag">
+                                <option value="1">Jaar 1</option>
+                                <option value="2">Jaar 2</option>
+                                <option value="3">Jaar 3</option>
+                                <option value="4">Jaar 4</option>
+                            </select><br />
+
+                            <label for="vakPeriode">Periode*</label><br />
+                            <select name="vakPeriode">
+                                <option value="1">Periode 1</option>
+                                <option value="2">Periode 2</option>
+                                <option value="3">Periode 3</option>
+                                <option value="4">Periode 4</option>
+                            </select><br />
+                            <div class="subTitle">Klassen</div>';
+                    
+                    $opleidingResult = $DB->Get("SELECT * FROM opleidingen");
+
+                    echo "<label for='vakPeriode'>Opleidingen*</label><br />
+                            <select class='selectMult' name='vakOpleidingen[]' multiple style='width: 65%;'>";
+                    while($opleidingData = $opleidingResult->fetch_assoc()){
+                        echo "<option value='{$opleidingData['opleiding_id']}'>{$opleidingData['opleiding_naam']}</option>";
+                    }
+                   
+                    echo '</select><br />';
+                    echo '<div class="subTitle">Docent(en)</div>';
+ 
+                    $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
+            
+                    echo "<label for='vakDocent'>Docent*</label><br />
+                            <select name='vakDocent'>";
+
+                    while($docentData = $docentResult->fetch_assoc()){
+                        echo "<option value='{$docentData['docent_id']}'>{$docentData['voornaam']} {$docentData['achternaam']}</option>";
+                    }
+                    
+                    echo "</select><br />        
+                    <div class='subTitle'>Bestanden</div>
+                        <label for='vakBoek'>Moduleboek (.pdf)</label><br />
+                        <input type='file' name='vakBoek' style='width: 65%;'><br />
+                        <p>Invulvakken met een * zijn verplicht</p>
+                        <button type='submit' name='submitInvoegen'>opslaan</button>
+                        <button type='button' onclick="."window.location.href='vakkenbeheer'".">annuleren</button>
+                    </form>";
+    }
+    //Laat de aanpassen pagina zien
+    else if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && isset($_POST['aanpassenPage']) && !isset($_POST['boekView']) && intval($_POST['aanpassenID'])){
+
+        //Haal huidige data op
+        $currentResult = $DB->Get("SELECT vakken.vak_id, vakken.vak, vakken.jaarlaag, vakken.periode, 
+                                        vakken.teams, vakken.blackboard,
+                                        docenten.voornaam, docenten.achternaam, docenten_vakken.docent_id,
+                                    vakken.moduleboek
+                                FROM vakken 
+                                INNER JOIN docenten_vakken ON vakken.vak_id  = docenten_vakken.vak_id
+                                INNER JOIN docenten ON docenten_vakken.docent_id = docenten.docent_id
+                                WHERE vakken.vak_id = '{$_POST['aanpassenID']}'
+                                LIMIT 1");
+
+        $currentData = $currentResult->fetch_assoc();
+
+    echo '<div class="contentBlock-title">Vakkenbeheer | Bewerken</div>
+            <div class="contentBlock-text-normal">
+            <form method="POST" enctype="multipart/form-data"> 
+            <div class="subTitle">Vakinformatie</div>
+            
+            <label for="vakNaam">Vak*</label><br />
+            <input value="'.$currentData['vak'].'" type="text" name="vakNaam" placeholder="Vaknaam" style="width: 65%;" required><br />
+            
+
+            <label for="vakTeams">Microsoft Teams</label><br />
+            <input value="'.$currentData['teams'].'" type="text" name="vakTeams" placeholder="Teamcode" ><br />
+            
+            <label for="vakBlackboard">Blackboardcourse</label><br />
+            <input value="'.$currentData['blackboard'].'" type="text" name="vakBlackboard" placeholder="Link naar blackboardcourse" ><br />
+            
+            <label for="vakJaarlaag">Jaarlaag*</label><br />
+            <select name="vakJaarlaag" style="width: 65%;">';
+
+                for ($i=1; $i <= 4; $i++) { 
+                    if($i == $currentData['jaarlaag']){
+                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>Jaar '.$currentData['jaarlaag'].' (geselecteerd)</option>';
+                    }
+                    else if($i != $currentData['jaarlaag']){
+                        echo '<option value="'.$i.'">Jaar '.$i.'</option>';
+                    }
+                }
+
+            echo '</select><br />
+            <label for="vakPeriode">Periode*</label><br />
+            <select name="vakPeriode"   >';
+
+            for ($i=1; $i <= 4; $i++) { 
+                if($i == $currentData['periode']){
+                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>Periode '.$currentData['periode'].' (geselecteerd)</option>';
+                }
+                else if($i != $currentData['periode']){
+                    echo '<option value="'.$i.'">Periode '.$i.'</option>';
+                }
+            }
+
+            echo '</select><br />';
+                    
+            
+               
+            $klassen_vakkenResult = $DB->Get("SELECT opleiding_vakken.opleiding_id, opleidingen.opleiding_naam FROM opleiding_vakken
+                                        INNER JOIN opleidingen 
+                                        ON opleiding_vakken.opleiding_id = opleidingen.opleiding_id
+                                        WHERE opleiding_vakken.vak_id = '{$currentData['vak_id']}'");
+            
+            $klassenResult = $DB->Get("SELECT * FROM opleidingen");
+
+            echo "<label for='vakPeriode'>Opleiding* (Selecteer meerdere met control.)</label><br />
+                    <select class='selectMult' name='vakKlas[]' multiple>";
+
+
+            $klassenVakData = $klassen_vakkenResult->fetch_assoc();
+            while($klassenData = $klassenResult->fetch_assoc()){
+                if(@in_array($klassenData['opleiding_id'], $klassenVakData) && $klassenVakData != NULL){
+                    //selected
+                    $klassenVakData = $klassen_vakkenResult->fetch_assoc();
+                    echo "<option class='optionSelected' value='{$klassenData['opleiding_id']}' selected >{$klassenData['opleiding_naam']}</option>";
+                }
+                else{
+                    //unselected
+                    echo "<option value='{$klassenData['opleiding_id']}'>{$klassenData['opleiding_naam']}</option>";
+                }
+            }
+           
+            echo '</select><br />
+            <div class="subTitle">Docent(en)</div>';
+ 
+            $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
+           
+            echo "<label for='vakDocent'>Docent*</label><br />
+                    <select name='vakDocent'>";
+            while($docentData = $docentResult->fetch_assoc()){
+                if($docentData['docent_id'] == $currentData['docent_id']){
+                    echo "<option class='optionSelected' value='{$currentData['docent_id']}' selected>{$currentData['voornaam']} {$currentData ['achternaam']} (geselecteerd)</option>";
+                }
+                else {
+                    echo "<option value='{$docentData['docent_id']}'>{$docentData['voornaam']} {$docentData['achternaam']}</option>";
+                }
+            }
+            echo "</select><br />
+            <div class='subTitle'>Bestanden</div>";
+                if(empty($currentData['moduleboek'])){
+                    echo "<label for='vakBoek'>Moduleboek (.pdf)</label> <b>Momenteel niks geupload</b><br />";
+                }
+                else {
+                    echo "<label for='vakBoek'>Moduleboek (.pdf) 
+                <button type='submit' name='boekView'>weergeven</button></label><br />";
+                }
+
+                echo "
+                <input type='file' name='vakBoek' style='width: 65%;'><br />
+                <p>Vakken met een * zijn verplicht</p>
+                <input type='hidden' name='boekVakID' value='{$currentData['vak_id']}'>
+                <button type='submit' name='aanpassenSubmit'>opslaan</button>
+                <button type='button' onclick="."window.location.href='vakkenbeheer'".">annuleren</button>
+            </form>
+        <br />";
+
+    }
+    //Gebruik de verwijderen pagina en controleert of de ingevoegde value wel een integer is.
+    else if(!isset($_POST['invoegenPage']) && isset($_POST['submitDelete']) && !isset($_POST['aanpassenPage']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage']) && intval($_POST['verwijderID'])){
+        $DB->Get("DELETE FROM vakken WHERE vak_id='{$_POST['verwijderID']}'");
+        header('location: vakkenbeheer');
+    }
+    else if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['aanpassenPage']) && !isset($_POST['boekView']) && intval($_POST['verwijderID'])){
+        $DB->Get("DELETE FROM vakken WHERE vak_id='{$_POST['verwijderID']}'");
+        header('location: vakkenbeheer');
+    }
+    ?>
+    </div>
+             
+			</div>
+		</div>
+    </div>
+</main> 

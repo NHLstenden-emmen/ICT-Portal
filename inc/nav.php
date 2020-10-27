@@ -29,7 +29,7 @@
  			}
 		
 			else { 
-				echo "<div class='topli ".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>{$lang['NAV_LOGIN']}</div>";
+				echo "<a class='topli ".(($activePage == "login") ?  "active":"")."' href='login'>{$lang['NAV_LOGIN']}</a>";
 			 } 
 			 
 			?>

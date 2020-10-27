@@ -7,7 +7,7 @@
     }
 
         if(!isset($_POST['allNewsSumbit']) && !isset($_GET['all']) && !isset($_GET['id'])){ // standaard
-            echo '<div class="subTitle">Laatste nieuwsberichten</div>
+            echo '<div class="subTitle">'.$lang["NEWS_LASTNEWS"].'</div>
                      <div class = "contentBlock-grid">';
 
             $nieuwsResult = $DB->Get("SELECT 
@@ -27,7 +27,7 @@
                     LIMIT 4");
 
             if($nieuwsResult->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"];
             }
 
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
@@ -35,7 +35,7 @@
                     <div class='contentBlock-side'></div>
                     <div class='contentBlock-content'>";
                         if(!empty($nieuwsData['afbeelding'])){
-                            echo "<img alt='nieuws afbeelding' id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
+                            echo "<img alt={$lang['NEWS_IMAGE_ALT']} id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
                         }
                     echo "
                     <div class='contentBlock-title'>{$nieuwsData['titel']}</div>

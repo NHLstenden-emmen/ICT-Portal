@@ -15,9 +15,9 @@ $lang = array();
 
 // nav info
 $lang['NAV_NIEUWS'] = 'Nieuws';
-$lang['NAV_VAKKEN'] = 'vakken';
-$lang['NAV_DOCENTEN'] = 'docenten';
-$lang['NAV_CONTACT'] = 'contact';
+$lang['NAV_VAKKEN'] = 'Vakken';
+$lang['NAV_DOCENTEN'] = 'Docenten';
+$lang['NAV_CONTACT'] = 'Contact';
 $lang['NAV_BELANGRIJKE_MELDINGEN'] = 'Belangrijke mededelingen';
 $lang['NAV_AANWEZIGHEID'] = 'Aanwezigheid';
 $lang['NAV_PRIVACY_POLICY'] = 'Privacy policy';
@@ -31,13 +31,13 @@ $lang['NAV_NIEUWS_OVERVIEUW'] = 'Nieuwsbeheer';
 $lang['NAV_VAKKENBEHEER'] = 'Vakkenbeheer';
 $lang['NAV_DOCENTENBEHEER'] = 'Docentbeheer';
 $lang['NAV_OPLEIDINGBEHEER'] = 'Opleidingbeheer';
-$lang['NAV_UITLOGGEN'] = 'Uitloggen';
-$lang['NAV_LOGIN'] = 'Login';
+$lang['NAV_UITLOGGEN'] = 'Afmelden';
+$lang['NAV_LOGIN'] = 'Aanmelden';
 
 
 // aanwezigen / docent
 $lang['PRESENT_TITLE'] = 'Aanwezigen.';
-$lang['PRESENT_BESCHIKBAARHEID'] = 'Beschikbaarheid.';
+$lang['PRESENT_BESCHIKBAARHEID'] = 'Beschikbaarheid.';// waar wordt deze gebruikt
 $lang['PRESENT_Teachers_Name'] = 'Docenten Naam';
 $lang['PRESENT_Monday'] = 'Maandag';
 $lang['PRESENT_Tuesday'] = 'Dinsdag';
@@ -84,6 +84,7 @@ $lang["NEWS_GEEN_ALL_NEWS"] = 'Alle nieuwsberichten';
 $lang["NEWS_GEPLAAST_DOOR"] = 'Geplaatst door';
 $lang["NEWS_TERUG"] = 'terug';
 $lang["NEWS_GEENNIEUWS_BERICHTEN"] = 'Er zijn nog geen nieuwsberichten geplaatst in het';
+$lang["NEWS_IMAGE_ALT"] = "Niews afbeelding";
 
 //Docenten
 $lang["BESCHIKBAARHEID_EDIT"] = 'Beschikbaarheid bewerken';
@@ -118,10 +119,10 @@ $lang["NIEUWS_BEHEER_BIJLAGE"] = 'Bijlage';
 $lang["NIEUWS_BEHEER_AFBEELDING"] = 'Afbeelding';
 $lang["NIEUWS_BEHEER_TITLE"] = 'Titel';
 $lang["NIEUWS_BEHEER_VAKKEN_AANPASSEN"] = 'Vakkenbeheer | Aanpassen';
-$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"] = 'Momenteel niks geupload';
-$lang["NIEUWS_BEHEER_WEERGEVEN"] = 'weergeven';
+$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"] = 'Geen bijlage';
+$lang["NIEUWS_BEHEER_WEERGEVEN"] = 'Weergeven';
 $lang["NIEUWS_BEHEER_DOCENT"] = 'Docent';
-$lang["NIEUWS_BEHEER_AANPASSEN"] = 'aanpassen';
+$lang["NIEUWS_BEHEER_AANPASSEN"] = 'Aanpassen';
 
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Wachtwoorden niet gelijk.';
@@ -134,6 +135,6 @@ $lang["PROFIEL_INFO_PI"] = 'Persoonlijke informatie';
 
 //extra
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
-$lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is allen voor docenten.';
+$lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is alleen voor docenten.';
 
 ?>

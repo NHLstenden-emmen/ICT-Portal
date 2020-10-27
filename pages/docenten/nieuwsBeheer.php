@@ -278,10 +278,10 @@
                         <label for='nieuwsTekst'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
                         <textarea name='nieuwsTekst' placeholder='Type hier uw nieuws bericht' rows='8' cols='50' required ></textarea><br>
                         
-                        <label for='nieuwsBijlage'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
+                        <label for='nieuwsBijlage'>".$lang["NIEUWS_BEHEER_BIJLAGE"]."</label><br>
                         <input type='file' name='nieuwsBijlage' /><br><br>
 
-                        <label for='nieuwsAfbeelding'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
+                        <label for='nieuwsAfbeelding'>".$lang["NIEUWS_BEHEER_AFBEELDING"]."</label><br>
                         <input type='file' name='nieuwsAfbeelding' /><br><br>
                         <button type='submit' name='submitInvoegen'>Plaatsen</button>
                         <button type='button' onclick="."window.location.href='nieuwsbeheer'".">annuleren</button>

@@ -166,7 +166,7 @@
                     {$attachContentAtt},
                     {$fileTypeAttDB}
                     )");
-                    header("Location: nieuwsbeheer");
+                   // header("Location: nieuwsbeheer");
             }
             else {
                 echo "Fout bij uploaden {$langTitle} nieuws: Geen tekst ingevoerd";

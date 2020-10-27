@@ -67,7 +67,7 @@ th {
 						<td>
 							<?php
 								if($beschikbaarheidOutput['Maandag'][0] == '') {
-									echo "{$lang['DOCETNEN_VRIJ']}";
+									echo $lang['DOCETNEN_VRIJ'];
 								} else {
 									echo $beschikbaarheidOutput['Maandag'][0]." - ".$beschikbaarheidOutput['Maandag'][1]; 
 								}

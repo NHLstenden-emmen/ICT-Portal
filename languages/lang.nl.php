@@ -163,4 +163,19 @@ $lang["VAKKEN_BEHEER_ANNULEREN"] = "Annuleren";
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
 $lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is alleen voor docenten.';
 
+//opleidingbeheer
+$lang['OPLEIDINGBEHEER_INVOEG_TITLE'] = 'Opleidingbeheer | Invoegen';
+$lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'] = 'Opleidingbeheer | Bewerken';
+$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'] = 'Opleidingnaam';
+$lang['OPLEIDINGBEHEER_OPLEIDING'] = 'Opleiding';
+$lang['OPLEIDINGBEHEER_JAARLAAG'] = 'Jaarlaag';
+
+//docentbeheer
+$lang['DOCENTBEHEER_ERRORLOG_WWG'] = 'Nieuwe docent toevoegen mislukt: Wachtwoorden niet gelijk';
+$lang['DOCENTBEHEER_ERRORLOG_WWM'] = 'Nieuwe docent toevoegen mislukt: Geen Wachtwoord ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_MAIL'] = 'Nieuwe docent toevoegen mislukt: Deze mail of gebruikersnaam wordt al gebruikt!';
+$lang['DOCENTBEHEER_ERRORLOG_GB'] = 'Nieuwe docent toevoegen mislukt: Geen Gebruikersnaam ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_GMAIL'] = 'Nieuwe docent toevoegen mislukt: Geen Email ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_NA'] = 'Nieuwe docent toevoegen mislukt: Geen achternaam ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_NV'] = 'Nieuwe docent toevoegen mislukt: Geen voornaam ingevoerd.';
 ?>

@@ -162,5 +162,21 @@ $lang["VAKKEN_BEHEER_ANNULEREN"] = "Cancel";
 $lang['404_PAGE_DESC'] = 'Click here to go back to the home page';
 $lang['NOTLOGEDIN_TITLE'] = 'This page is solely for teachers.';
  
+//opleidingbeheer
+$lang['OPLEIDINGBEHEER_INVOEG_TITLE'] = 'Training management | Insert';
+$lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'] = 'Training management | edit';
+$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'] = 'Education name';
+$lang['OPLEIDINGBEHEER_OPLEIDING'] = 'Education';
+$lang['OPLEIDINGBEHEER_JAARLAAG'] = 'Annual layer';
+
+//docentbeheer
+$lang['DOCENTBEHEER_ERRORLOG_WWG'] = 'Failed to add new teacher: Passwords not equal';
+$lang['DOCENTBEHEER_ERRORLOG_WWM'] = 'Failed to add new teacher: No Password entered.';
+$lang['DOCENTBEHEER_ERRORLOG_MAIL'] = 'Failed to add new teacher: This email or username is already used!';
+$lang['DOCENTBEHEER_ERRORLOG_GB'] = 'Failed to add new teacher: No Username entered.';
+$lang['DOCENTBEHEER_ERRORLOG_GMAIL'] = 'Failed to add new teacher: No Email entered.';
+$lang['DOCENTBEHEER_ERRORLOG_NA'] = 'Failed to add new teacher: No last name entered.';
+$lang['DOCENTBEHEER_ERRORLOG_NV'] = 'Failed to add new teacher: No first name entered.';
+
 ?>
 

@@ -25,6 +25,10 @@ ALLES
 
     nog styling in nieuwsbeheer.php
 
+    sociale media bij contact erbij
+
+    
+
 WEB
 
     navbar en footer wordt nogal hoog als de pagina smal wordt
@@ -34,6 +38,8 @@ WEB
     icoontje belangrijke mededelingen 
 
     Aanwezigheid docenten table kopje andere kleur?
+
+    Sociale media in footer
 
 MOBIEL
     Logo docentenbeheer is een hondenpoot

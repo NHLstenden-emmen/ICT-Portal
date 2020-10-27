@@ -45,7 +45,7 @@ $lang['PRESENT_Wednesday'] = 'Woensdag';
 $lang['PRESENT_Thursday'] = 'Donderdag';
 $lang['PRESENT_Friday'] = 'Vrijdag';
 $lang['GEEN_BESCHIKBARE_DOCENTEN'] = 'Er zijn geen docenten aanwezig';
-$lang['DOCENTEN_VRIJ'] = 'Vrij';
+$lang['DOCENTEN_VRIJ'] = 'Niet aanwezig';
 $lang['GEEN_DOCENT_NAAM'] = 'Geen naam gevonden';
 $lang['GEEN_DOCENT_VAKKEN'] = 'Vakken';
 $lang['GEEN_DOCENT_NONEXISTENT'] = 'Deze docent bestaat niet.';
@@ -144,7 +144,7 @@ $lang["VAKKEN_BEHEER_KEUZEMENU"] = 'Vakkenbeheer | Keuzemenu';
 $lang["VAKKEN_BEHEER_INVOEGEN"] = 'Vakkenbeheer | Invoegen';
 $lang["VAKKEN_BEHEER_INFORMATIE"] = 'Vakinformatie';
 $lang["VAKKEN_BEHEER_VAKNAAM"] = 'Vaknaam';
-$lang["VAKKEN_BEHEER_JAARLAAG"] = 'Jaarlaag';
+$lang["VAKKEN_BEHEER_JAARLAAG"] = 'Jaargang';
 $lang["VAKKEN_BEHEER_PERIODE"] = 'Periode';
 $lang["VAKKEN_BEHEER_KLASSEN"] = 'Klassen';
 $lang["VAKKEN_BEHEER_DOCENTEN"] = 'Docent(en)';
@@ -158,6 +158,8 @@ $lang["VAKKEN_BEHEER_WEERGEVEN"] = "Weergeven";
 $lang["VAKKEN_BEHEER_VERPLICHT"] = "Invulvakken met een * zijn verplicht";
 $lang["VAKKEN_BEHEER_OPSLAAN"] = "Opslaan";
 $lang["VAKKEN_BEHEER_ANNULEREN"] = "Annuleren";
+$lang["VAKKEN_BEHEER_GEEN"] = "Annuleren";
+$lang["VAKKEN_BEHEER_GEEN"] = "Annuleren";
 
 //extra
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
@@ -168,7 +170,7 @@ $lang['OPLEIDINGBEHEER_INVOEG_TITLE'] = 'Opleidingbeheer | Invoegen';
 $lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'] = 'Opleidingbeheer | Bewerken';
 $lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'] = 'Opleidingnaam';
 $lang['OPLEIDINGBEHEER_OPLEIDING'] = 'Opleiding';
-$lang['OPLEIDINGBEHEER_JAARLAAG'] = 'Jaarlaag';
+$lang['OPLEIDINGBEHEER_JAARLAAG'] = 'Jaargang';
 
 //docentbeheer
 $lang['DOCENTBEHEER_ERRORLOG_WWG'] = 'Nieuwe docent toevoegen mislukt: Wachtwoorden niet gelijk';

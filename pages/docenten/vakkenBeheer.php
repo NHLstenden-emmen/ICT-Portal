@@ -250,7 +250,7 @@
 
                 for ($i=1; $i <= 4; $i++) { 
                     if($i == $currentData['jaarlaag']){
-                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>'.$lang["VAKKEN_BEHEER_JAAR"].$currentData['jaarlaag'].' (geselecteerd)</option>';
+                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>'.$lang["VAKKEN_BEHEER_JAAR"].$currentData['jaarlaag'].$lang["VAKKEN_BEHEER_GESELECTEERD"].'</option>';
                     }
                     else if($i != $currentData['jaarlaag']){
                         echo '<option value="'.$i.'">'.$lang["VAKKEN_BEHEER_JAAR"].$i.'</option>';
@@ -263,7 +263,7 @@
 
             for ($i=1; $i <= 4; $i++) { 
                 if($i == $currentData['periode']){
-                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>'.$lang["VAKKEN_BEHEER_PERIODE"].$currentData['periode'].' (geselecteerd)</option>';
+                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>'.$lang["VAKKEN_BEHEER_PERIODE"].$currentData['periode'].$lang["VAKKEN_BEHEER_GESELECTEERD"].'</option>';
                 }
                 else if($i != $currentData['periode']){
                     echo '<option value="'.$i.'">'.$lang["VAKKEN_BEHEER_PERIODE"].$i.'</option>';

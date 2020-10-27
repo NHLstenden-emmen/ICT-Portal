@@ -7,7 +7,7 @@
 		position: relative;
 	}
 
-	.navbar .navbar_items ul li {
+	.navbar .navbar_items .topul .topli {
 		display: none;
 	}
 
@@ -18,7 +18,7 @@
 	.navbar .navbar_items .darkmodeSwitch {
 		display: none;
 	}
-	.navbar ul li {
+	.navbar .topul .topli {
 		margin-bottom: 5px;
 	}
 
@@ -86,10 +86,10 @@
 		margin-bottom: 5vh;
 	}
 
-	button.languageSwitch, button.darkmodeSwitch {
+	button.languageSwitch,
+	button.darkmodeSwitch {
 		display: none;
 	}
-
 }
 
 @media (min-width: 950px) {
@@ -99,4 +99,4 @@
 	.mobileDivider {
 		display: none;
 	}
-} 
+}

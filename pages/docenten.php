@@ -3,7 +3,7 @@
     <div class = "contentBlock-grid">
     <?php $result = $DB->Get("SELECT * FROM docenten");
     while($docentData = $result->fetch_assoc()){
-        echo "<div class='contentBlock' onclick="."window.location.href='docent?docent={$docentData["docent_id"]}'>
+        echo "<a class='contentBlock' href='docent?docent={$docentData["docent_id"]}'>
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>";
                 if(!empty($docentData['foto'])){
@@ -14,7 +14,7 @@
                 echo "<div class='docentBlok-voornaam'>{$docentData['voornaam']}</div>
                 <div class='docentBlok-achternaam'>{$docentData['achternaam']}</div>
             </div>
-        </div>";
+        </a>";
     } ?>
     </div>
 </main>

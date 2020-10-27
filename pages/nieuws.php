@@ -31,7 +31,7 @@
             }
 
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
-                echo "<div class='contentBlock' onclick="."window.location.href='nieuws?id={$nieuwsData["id"]}'>
+                echo "<a class='contentBlock' href='nieuws?id={$nieuwsData["id"]}'>
                     <div class='contentBlock-side'></div>
                     <div class='contentBlock-content'>";
                         if(!empty($nieuwsData['afbeelding'])){
@@ -39,10 +39,10 @@
                         }
                     echo "
                     <div class='contentBlock-title'>{$nieuwsData['titel']}</div>
-                        <div id='nieuws-short' class='contentBlock-text-normal'>{$nieuwsData['tekst']}</div>
+                        <div class='contentBlock-text-normal nieuws-short'>{$nieuwsData['tekst']}</div>
                         <div class='contentBlock-date'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
                     </div>
-                </div>";
+                </a>";
             } 
             
             echo "</div>";

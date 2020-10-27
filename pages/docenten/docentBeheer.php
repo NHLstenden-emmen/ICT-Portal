@@ -1,11 +1,11 @@
 <style>
-    table {
+    table.beheer {
         width: 100%;
     }
-    td:nth-child(1){
+    table.beheer td:nth-child(1){
         width: 90%;
     }
-    td:nth-child(2){
+    table.beheer td:nth-child(2){
         width: 5%;
     }
     input {
@@ -134,7 +134,7 @@
 
             $docentenResult = $DB->Get("SELECT *FROM docenten WHERE docent_id != '{$docentID}' ORDER BY docent_id ASC "); //Haalt alle docenten op
 
-            echo "<table>";
+            echo "<table class='beheer'>";
             while($docentenData = $docentenResult->fetch_assoc()){
                 echo "<tr>";
                     echo "<td>{$docentenData['voornaam']} {$docentenData['achternaam']}</td>";

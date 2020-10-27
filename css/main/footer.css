@@ -7,7 +7,7 @@ div.scrollmenu {
 	overflow: auto;
 	color: var(--tekstColor);
 }
-
+/*
 div.scrollmenu .mobileTab {
 	font-size: 4vh;
 	background-color: #4ac4b3;
@@ -18,10 +18,9 @@ div.scrollmenu .mobileTab {
 	padding: 5vw;
 	text-decoration: none;
 }
-
+*/
 .footer-mobile {
 	width: 100%;
-	z-index: 15;
 	position: fixed;
 	bottom: 0;
 }

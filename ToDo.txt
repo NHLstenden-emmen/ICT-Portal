@@ -2,7 +2,6 @@ ALLES
     404 
     Responsive
 
-
     Docent beschikbaarheid haalt dagen uit de database moet aangepast voor 2 talig
 
     nog styling in nieuwsbeheer.php

@@ -77,13 +77,17 @@
 				<div class="weahterIcon"><i class='wi wi-owm-<?= $Core->weatherData()->weather[0]->id ?>'></i></div>
 					<?php 
 						//tempratuur in 2 getallen
-					
-						if(strlen($Core->weatherData()->main->temp) == 5){
-							echo '<div class="weatherTemp">'.substr($Core->weatherData()->main->temp, 0, 2).'</div>';
+						$weatherTemp = explode(".", "-3.3");
+
+						 if(strlen($weatherTemp['0']) == 2  && strpos($weatherTemp[0], '-') !== true){
+							echo '<div class="weatherTemp">'.$weatherTemp['0'].'</div>';
 						}
 						//tempratuur in 1 getal
-						else if(strlen($Core->weatherData()->main->temp) == 4){
-							echo '<div class="weatherTemp" style="margin-left: 3vw;">'.substr($Core->weatherData()->main->temp, 0, 1).'</div>';
+						else if(strlen($weatherTemp['0']) == 1){
+							echo '<div class="weatherTemp" style="margin-left: 3vw;">'.$weatherTemp['0'].'</div>';
+						}
+						else if(strlen($weatherTemp['0']) == 2 && strpos($weatherTemp[0], '-') !== false){
+							echo '<div class="weatherTemp" style="margin-left: 2vw;">'.$weatherTemp['0'].'</div>';
 						}
 						?>
 

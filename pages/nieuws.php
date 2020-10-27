@@ -1,5 +1,5 @@
 
-    <main class="content">
+    <main class="content" onclick="">
 
     <?php 
     if(empty($_COOKIE)){

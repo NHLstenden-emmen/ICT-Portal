@@ -93,7 +93,7 @@
 }
 
 @media (min-width: 950px) {
-	.footer-mobile > div.scrollmenu {
+	.footer-mobile {
 		display: none;
 	}
 	.mobileDivider {

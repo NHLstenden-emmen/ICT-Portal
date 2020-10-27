@@ -235,7 +235,7 @@
         if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['attachView']) && !isset($_POST['aanpassenPage'])){
             
     
-            echo '<div class="contentBlock-title">'.$lang["NIEUWS_BEHEER_KEUZEMENU"].' ('.$langTitle.')</div>
+            echo '<div class="contentBlock-title">'.$lang["NIEUWS_BEHEER_KEUZEMENU"].'</div>
             <div class="contentBlock-text-normal"><p><b>'.$lang["NIEUWS_BEHEER_FOUTMELDING_ENGELS"].'</b></p>';
             
             $nieuwsResult = $DB->Get("SELECT 
@@ -258,13 +258,13 @@
             echo "<table>";
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
                 echo "<tr>";
-                    echo "<td>{$nieuwsData['titel']} (gepost door: {$nieuwsData['voornaam']} {$nieuwsData['achternaam']})</td>";
+                    echo "<td>{$nieuwsData['titel']} ({$lang["NIEUWS_BEHEER_POSTER"]}: {$nieuwsData['voornaam']} {$nieuwsData['achternaam']})</td>";
                     echo "<td>{$nieuwsData['datum']}</td>";
                     echo "<td><form method='post'><input type='hidden' value='{$nieuwsData['nieuws_id']}' name='aanpassenID'><button type='submit' name='aanpassenPage'><i class='fa fa-pencil' aria-hidden='true'></i></button></form></td>";
                     echo "<td><form method='post'><input type='hidden' value='{$nieuwsData['nieuws_id']}' name='verwijderID'><button type='submit' name='submitDelete'><i class='fa fa-trash' aria-hidden='true'></i></button></form></td>";
                 echo "</tr>";
             }
-            echo "</table><form method='post'><button type='submit' name='invoegenPage'>Invoegen</button></form>";
+            echo "</table><form method='post'><button type='submit' name='invoegenPage'>{$lang["NIEUWS_BEHEER_INVOEGEN"]}</button></form>";
 
         }
         //Laat de invoegen pagina zien

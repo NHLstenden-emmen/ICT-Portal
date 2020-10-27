@@ -43,7 +43,7 @@
 						
 						$beschikbaarheidOutput = $key.": ";
 						if (empty($value)) {
-							$beschikbaarheidOutput.= "{$lang['DOCETNEN_VRIJ']}<br /> ";
+							$beschikbaarheidOutput.= "{$lang['DOCENTEN_VRIJ']}<br /> ";
 						} else {
 							$beschikbaarheidOutput.= $value. "<br /> ";
 						}

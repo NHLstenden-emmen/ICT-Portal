@@ -19,6 +19,12 @@ ALLES
     Responsive
 
 
+    Docent beschikbaarheid haalt dagen uit de database moet aangepast voor 2 talig
+
+    Contact moet css aangepast
+
+    nog styling in nieuwsbeheer.php
+
 WEB
 
     navbar en footer wordt nogal hoog als de pagina smal wordt

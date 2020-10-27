@@ -19,16 +19,16 @@
 					<div class='contentBlock-text-normal'>
 						<form method="post">
 							<label for="contactVoornaam"><?php echo $lang['CONTACT_VOORNAAM']; ?></label><br>
-							<input type="text" name="contactVoornaam" placeholder="Voornaam" required/><br><br>
+							<input type="text" name="contactVoornaam" placeholder="<?php echo $lang['CONTACT_VOORNAAM']; ?>" required/><br><br>
 
 							<label for="contactAchternaam"><?php echo $lang['CONTACT_ACHTERNAAM']; ?></label><br>
-							<input type="text" name="contactAchternaam" placeholder="Achternaam" required/><br><br>
+							<input type="text" name="contactAchternaam" placeholder="<?php echo $lang['CONTACT_ACHTERNAAM']; ?>" required/><br><br>
 
 							<label for="contactEmail"><?php echo $lang['CONTACT_EMAIL']; ?></label><br>
-							<input type="text" name="contactEmail" placeholder="Emailadres" required/><br><br>
+							<input type="text" name="contactEmail" placeholder="<?php echo $lang['CONTACT_EMAIL']; ?>" required/><br><br>
 
 							<label for="contactMessage"><?php echo $lang['CONTACT_BERICHT']; ?></label><br>
-							<textarea name="contactMessage" placeholder="Type hier uw bericht" rows="4" cols="50" required></textarea><br>
+							<textarea name="contactMessage" placeholder="<?php echo $lang['CONTACT_BERICHT']; ?>" rows="4" cols="50" required></textarea><br>
 							
 							<button type="submit" id="submit" name="submitButton"><?php echo $lang['CONTACT_BERICHT']; ?></button>
 						</form>

@@ -36,8 +36,8 @@ $lang['NAV_LOGIN'] = 'Aanmelden';
 
 
 // aanwezigen / docent
-$lang['PRESENT_TITLE'] = 'Aanwezigen.';
-$lang['PRESENT_BESCHIKBAARHEID'] = 'Beschikbaarheid.';// waar wordt deze gebruikt
+$lang['PRESENT_TITLE'] = 'Aanwezigen';
+$lang['PRESENT_BESCHIKBAARHEID'] = 'Beschikbaarheid';// waar wordt deze gebruikt
 $lang['PRESENT_Teachers_Name'] = 'Docenten Naam';
 $lang['PRESENT_Monday'] = 'Maandag';
 $lang['PRESENT_Tuesday'] = 'Dinsdag';
@@ -45,12 +45,12 @@ $lang['PRESENT_Wednesday'] = 'Woensdag';
 $lang['PRESENT_Thursday'] = 'Donderdag';
 $lang['PRESENT_Friday'] = 'Vrijdag';
 $lang['GEEN_BESCHIKBARE_DOCENTEN'] = 'Er zijn geen docenten aanwezig';
-$lang['DOCETNEN_VRIJ'] = 'Vrij';
+$lang['DOCENTEN_VRIJ'] = 'Vrij';
 $lang['GEEN_DOCENT_NAAM'] = 'Geen naam gevonden';
 $lang['GEEN_DOCENT_VAKKEN'] = 'Vakken';
 $lang['GEEN_DOCENT_NONEXISTENT'] = 'Deze docent bestaat niet.';
 $lang['GEEN_DOCENT_GEEN_VAKKEN'] = 'Deze docent geeft (nog) geen vakken.';
-$lang['GEEN_DOCENT_LIST'] = 'Docentenlijst';
+$lang['DOCENT_LIST'] = 'Docentenlijst';
 
 // login
 $lang['GEEN_GEBRUIKERSNAAM'] = 'Gebruikersnaam';
@@ -80,11 +80,11 @@ $lang['CONTACT_EMAIL'] = 'Emailadres';
 
 //nieuws
 $lang["NEWS_LASTNEWS"] = 'Laatste nieuwsberichten';
-$lang["NEWS_GEEN_ALL_NEWS"] = 'Alle nieuwsberichten';
+$lang["NEWS_ALL_NEWS"] = 'Alle nieuwsberichten';
 $lang["NEWS_GEPLAAST_DOOR"] = 'Geplaatst door';
 $lang["NEWS_TERUG"] = 'terug';
 $lang["NEWS_GEENNIEUWS_BERICHTEN"] = 'Er zijn nog geen nieuwsberichten geplaatst in het';
-$lang["NEWS_IMAGE_ALT"] = "Niews afbeelding";
+$lang["NEWS_IMAGE_ALT"] = "Nieuws afbeelding";
 
 //Docenten
 $lang["BESCHIKBAARHEID_EDIT"] = 'Beschikbaarheid bewerken';
@@ -123,6 +123,8 @@ $lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"] = 'Geen bijlage';
 $lang["NIEUWS_BEHEER_WEERGEVEN"] = 'Weergeven';
 $lang["NIEUWS_BEHEER_DOCENT"] = 'Docent';
 $lang["NIEUWS_BEHEER_AANPASSEN"] = 'Aanpassen';
+$lang["NIEUWS_BEHEER_POSTER"] = "gepost door";
+$lang["NIEUWS_BEHEER_INVOEGEN"] = 'Invoegen';
 
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Wachtwoorden niet gelijk.';
@@ -132,7 +134,7 @@ $lang["PROFIEL_ERRORS_EM"] = 'Geen Email ingevoerd.';
 $lang["PROFIEL_ERRORS_AI"] = 'Geen achternaam ingevoerd.';
 $lang["PROFIEL_ERRORS_VI"] = 'Geen voornaam ingevoerd.';
 $lang["PROFIEL_INFO_PI"] = 'Persoonlijke informatie';
-
+$lang["PROFIEL_INFO_FOTO"] = "Foto van de docent";
 //extra
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
 $lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is alleen voor docenten.';

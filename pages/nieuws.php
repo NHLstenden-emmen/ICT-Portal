@@ -79,7 +79,7 @@
             }
             echo '</table>';
 
-            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">Lees alle artikelen</button></form>';
+            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">'.$lang["NEWS_ALL_NEWS"].'</button></form>';
         }
         else if(isset($_POST['allNewsSumbit']) && !isset($_GET['id']) || isset($_GET['all']) == true){   // alle artikelen
             echo '<div class="subTitle">Alle nieuwsberichten</div>';

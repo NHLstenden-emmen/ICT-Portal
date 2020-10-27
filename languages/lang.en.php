@@ -26,7 +26,7 @@ $lang['NAV_JAAR'] = 'Grade';
  
 // nav teachers
 $lang['NAV_PF_EDIT'] = 'Edit my profile';
-$lang['NAV_MY_BESCHIKBAARHEID'] = 'Edit My precense';//My availability
+$lang['NAV_MY_BESCHIKBAARHEID'] = 'Edit availability';//My availability
 $lang['NAV_NIEUWS_OVERVIEUW'] = 'News management';
 $lang['NAV_VAKKENBEHEER'] = 'Subject management';
 $lang['NAV_DOCENTENBEHEER'] = 'Teacher management';
@@ -36,8 +36,8 @@ $lang['NAV_LOGIN'] = 'Sign in';
  
  
 // aanwezigen / teacher
-$lang['PRESENT_TITLE'] = 'Precense.';//Availability
-//$lang['PRESENT_BESCHIKBAARHEID'] = 'Beschikbaarheid.';//waar wordt this gebruikt
+$lang['PRESENT_TITLE'] = 'Precense';//Availability
+$lang['PRESENT_BESCHIKBAARHEID'] = 'Precense';//waar wordt this gebruikt
 $lang['PRESENT_Teachers_Name'] = 'Teachers Name';
 $lang['PRESENT_Monday'] = 'Monday';
 $lang['PRESENT_Tuesday'] = 'Tuesday';
@@ -45,12 +45,12 @@ $lang['PRESENT_Wednesday'] = 'Wednesday';
 $lang['PRESENT_Thursday'] = 'Thursday';
 $lang['PRESENT_Friday'] = 'Friday';
 $lang['GEEN_BESCHIKBARE_DOCENTEN'] = 'There are no teachers present';
-$lang['DOCETNEN_VRIJ'] = 'Vacant';
+$lang['DOCENTEN_VRIJ'] = 'Vacant';
 $lang['GEEN_DOCENT_NAAM'] = 'No name found';
 $lang['GEEN_DOCENT_VAKKEN'] = 'Subjects';
 $lang['GEEN_DOCENT_NONEXISTENT'] = "This teacher doesn't exists.";
 $lang['GEEN_DOCENT_GEEN_VAKKEN'] = "This teacher doesn't teach any subjects (yet).";
-$lang['GEEN_DOCENT_LIST'] = 'Teacherslist';
+$lang['DOCENT_LIST'] = 'Teachers list';
  
 // login
 $lang['GEEN_GEBRUIKERSNAAM'] = 'User name';
@@ -60,7 +60,7 @@ $lang['GEEN_INLOGGEN'] = 'Sign in';
 //subjects
 $lang['VAKKEN_KLASSEN_JAAR'] = 'Subjects | Grade';
 $lang['VAKKEN_PERIODE'] = 'Period';
-$lang['VAKKEN_VAKKENLIJST'] = 'Subjectslist';
+$lang['VAKKEN_VAKKENLIJST'] = 'Subjects list';
 $lang['VAKKEN_VAKKENLIJST_SUBTITLE'] = 'Select a grade to show all classes of that grade.';
 $lang['VAKKEN_KLASSEN'] = 'Show subjects';
 $lang['VAKKEN_VAKDOCENT'] = 'Subject teacher';
@@ -80,14 +80,14 @@ $lang['CONTACT_EMAIL'] = 'E-mail address';
  
 //nieuws
 $lang["NEWS_LASTNEWS"] = 'Latest news articles';
-$lang["NEWS_GEEN_ALL_NEWS"] = 'All news articles';
+$lang["NEWS_ALL_NEWS"] = 'All news articles';
 $lang["NEWS_GEPLAAST_DOOR"] = 'Written by';
 $lang["NEWS_TERUG"] = 'Back';
 $lang["NEWS_GEENNIEUWS_BERICHTEN"] = "There aren't any news articles yet.";
 $lang["NEWS_IMAGE_ALT"] = "News image";
 
 //Teachers
-$lang["BESCHIKBAARHEID_EDIT"] = 'Edit Availability';
+$lang["BESCHIKBAARHEID_EDIT"] = 'Edit availability';
 $lang["BESCHIKBAARHEID_SAVE"] = 'Save';
  
 //Teachers Beheer
@@ -112,7 +112,7 @@ $lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END"] = 'News: only jpg, png, jpeg and gif ar
 $lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END_TEKST"] = 'News: No text set';
 $lang["NIEUWS_BEHEER_FOUT_UPLOADEN_END_TITLE"] = 'News: No title set';
 $lang["NIEUWS_BEHEER_KEUZEMENU"] = 'Nieuws management | Selection menu';
-$lang["NIEUWS_BEHEER_FOUTMELDING_ENGELS"] = 'Change the language of the site to enter engelih news articles!';
+$lang["NIEUWS_BEHEER_FOUTMELDING_ENGELS"] = 'Change the language of the site to enter dutch news articles!';
 $lang["NIEUWS_BEHEER_MISSING_NEWS"] = "There aren't any news articles yet.";
 $lang["NIEUWS_BEHEER_NIEUWSBERICHT"] = 'News article';
 $lang["NIEUWS_BEHEER_BIJLAGE"] = 'Attachment';
@@ -123,7 +123,10 @@ $lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"] = 'No attachment';
 $lang["NIEUWS_BEHEER_WEERGEVEN"] = 'View';
 $lang["NIEUWS_BEHEER_DOCENT"] = 'Teacher';
 $lang["NIEUWS_BEHEER_AANPASSEN"] = 'Change';
- 
+$lang["NIEUWS_BEHEER_POSTER"] = 'posted by';
+$lang["NIEUWS_BEHEER_INVOEGEN"] = 'Insert';
+
+
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Passwords differ.';
 $lang["PROFIEL_ERRORS_WWI"] = 'No Password set.';
@@ -132,6 +135,7 @@ $lang["PROFIEL_ERRORS_EM"] = 'No Email set.';
 $lang["PROFIEL_ERRORS_AI"] = 'No last name set.';
 $lang["PROFIEL_ERRORS_VI"] = 'No first name set.';
 $lang["PROFIEL_INFO_PI"] = 'Personal information';
+$lang["PROFIEL_INFO_FOTO"] = 'Picture of the teacher';
  
 //extra
 $lang['404_PAGE_DESC'] = 'Click here to go back to the home page';

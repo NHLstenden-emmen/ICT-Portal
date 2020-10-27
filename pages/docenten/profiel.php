@@ -80,19 +80,19 @@ if($result->num_rows > 0){
     <form method="POST" enctype="multipart/form-data"> 
         <?php 
         if(!empty($docentData['foto'])){
-            echo '<img class="bewerkenFoto" style="max-width: 65%;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docentData['foto']).'" alt="foto van '.$docentData['voornaam'].'>" /><br />';
+            echo '<img alt="'.$lang["PROFIEL_INFO_FOTO"].'"class="bewerkenFoto" style="max-width: 65%;" src="data:image/jpg;charset=utf8;base64,'.base64_encode($docentData['foto']).'" alt="foto van '.$docentData['voornaam'].'>" /><br />';
         } else {
-            echo '<label for="docentFoto">Foto</label><br />';
+            echo '<label for="docentFoto">'.$lang["PROFIEL_INFO_FOTO"].'</label><br />';
         }
         ?>
         <input type="file" name="docentFoto" style="width: 65%;"><br />
         <br />
         <div class="subTitle"><?PHP echo $lang["PROFIEL_INFO_PI"]?></div><br />
         <label for="docentVoornaam"><?PHP echo $lang["CONTACT_VOORNAAM"]?>*</label><br />
-        <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" placeholder="Voornaam" required><br />
+        <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" placeholder="<?PHP echo $lang["CONTACT_VOORNAAM"]?>" required><br />
         
         <label for="docentAchternaam"><?PHP echo $lang["CONTACT_ACHTERNAAM"]?>*</label><br />
-        <input type="text" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="Achternaam" required><br />
+        <input type="text" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="<?PHP echo $lang["CONTACT_ACHTERNAAM"]?>" required><br />
         
         <label for="docentEmail"><?PHP echo $lang["CONTACT_EMAIL"]?>*</label><br />
         <input type="text" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" required><br />
@@ -101,7 +101,7 @@ if($result->num_rows > 0){
         <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678"><br />
         
         <label for="docentGebruikersnaam"><?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>*</label><br />
-        <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="Gebruikersnaam" required><br />
+        <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>" required><br />
         <br />
         <div class="subTitle"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL"]?></div><br />
         <label for="docenttwitter"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"]?></label><br />
@@ -115,10 +115,10 @@ if($result->num_rows > 0){
         <br />
         <div class="subTitle"><?PHP echo $lang["DOCENTEN_BEHEER_BEVEILIGING"]?></div><br />
         <label for="docentWachtwoord"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>*</label><br />
-        <input type="password" name="docentWachtwoord" placeholder="Wachtwoord" required><br />
+        <input type="password" name="docentWachtwoord" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>" required><br />
 
-        <label for="docentWachtwoordHerhaal"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?> herhalen*</label><br />
-        <input type="password" name="docentWachtwoordHerhaal" placeholder="Wachtwoord herhalen" required><br />
+        <label for="docentWachtwoordHerhaal"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?> *</label><br />
+        <input type="password" name="docentWachtwoordHerhaal" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>" required><br />
 
 
         <p><?PHP echo $lang["DOCENTEN_BEHEER_VERPLICHT"]?></p>

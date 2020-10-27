@@ -1,5 +1,5 @@
 <main class="content">
-    <div class="subTitle"><?php echo $lang['GEEN_DOCENT_LIST']; ?></div>
+    <div class="subTitle"><?php echo $lang['DOCENT_LIST']; ?></div>
     <div class = "contentBlock-grid">
     <?php $result = $DB->Get("SELECT * FROM docenten");
     while($docentData = $result->fetch_assoc()){

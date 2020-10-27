@@ -125,7 +125,9 @@ $lang["NIEUWS_BEHEER_DOCENT"] = 'Teacher';
 $lang["NIEUWS_BEHEER_AANPASSEN"] = 'Change';
 $lang["NIEUWS_BEHEER_POSTER"] = 'posted by';
 $lang["NIEUWS_BEHEER_INVOEGEN"] = 'Insert';
-
+$lang["NIEUWS_BEHEER_INVOEGEN_TITEL"] = "Nieuws management | Insert ";
+$lang["NIEUWS_BEHEER_PLAATSEN"] = 'Submit';
+$lang["NIEUWS_BEHEER_ANNULEREN"] = 'Cancel';
 
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Passwords differ.';
@@ -137,6 +139,25 @@ $lang["PROFIEL_ERRORS_VI"] = 'No first name set.';
 $lang["PROFIEL_INFO_PI"] = 'Personal information';
 $lang["PROFIEL_INFO_FOTO"] = 'Picture of the teacher';
  
+//Vakkenbeheer
+$lang["VAKKEN_BEHEER_KEUZEMENU"] = 'Subject management | Selection menu';
+$lang["VAKKEN_BEHEER_INVOEGEN"] = 'Subject management | Insert';
+$lang["VAKKEN_BEHEER_INFORMATIE"] = 'Subject information';
+$lang["VAKKEN_BEHEER_VAKNAAM"] = 'Subject name';
+$lang["VAKKEN_BEHEER_JAARLAAG"] = 'Grade';
+$lang["VAKKEN_BEHEER_PERIODE"] = 'Period';
+$lang["VAKKEN_BEHEER_KLASSEN"] = 'Class';
+$lang["VAKKEN_BEHEER_DOCENTEN"] = 'Teacher(s)';
+$lang["VAKKEN_BEHEER_BESTANDEN"] = 'Files';
+$lang["VAKKEN_BEHEER_MODULEBOEK"] = 'module book';
+$lang["VAKKEN_BEHEER_BEWERKEN"] = 'Subject management | Change';
+$lang["VAKKEN_BEHEER_JAAR"] = "Grade";
+$lang["VAKKEN_BEHEER_MEERDERE"] = "Select multiple with CTRL";
+$lang["VAKKEN_BEHEER_GESELECTEERD"] = "Selected";
+$lang["VAKKEN_BEHEER_WEERGEVEN"] = "View";
+$lang["VAKKEN_BEHEER_VERPLICHT"] = "The boxes with a * are required";
+$lang["VAKKEN_BEHEER_OPSLAAN"] = "Save";
+$lang["VAKKEN_BEHEER_ANNULEREN"] = "Cancel";
 //extra
 $lang['404_PAGE_DESC'] = 'Click here to go back to the home page';
 $lang['NOTLOGEDIN_TITLE'] = 'This page is solely for teachers.';

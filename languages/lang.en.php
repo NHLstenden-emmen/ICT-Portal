@@ -45,7 +45,7 @@ $lang['PRESENT_Wednesday'] = 'Wednesday';
 $lang['PRESENT_Thursday'] = 'Thursday';
 $lang['PRESENT_Friday'] = 'Friday';
 $lang['GEEN_BESCHIKBARE_DOCENTEN'] = 'There are no teachers present';
-$lang['DOCENTEN_VRIJ'] = 'Vacant';
+$lang['DOCENTEN_VRIJ'] = 'free';
 $lang['GEEN_DOCENT_NAAM'] = 'No name found';
 $lang['GEEN_DOCENT_VAKKEN'] = 'Subjects';
 $lang['GEEN_DOCENT_NONEXISTENT'] = "This teacher doesn't exists.";
@@ -125,7 +125,9 @@ $lang["NIEUWS_BEHEER_DOCENT"] = 'Teacher';
 $lang["NIEUWS_BEHEER_AANPASSEN"] = 'Change';
 $lang["NIEUWS_BEHEER_POSTER"] = 'posted by';
 $lang["NIEUWS_BEHEER_INVOEGEN"] = 'Insert';
-
+$lang["NIEUWS_BEHEER_INVOEGEN_TITEL"] = "Nieuws management | Insert ";
+$lang["NIEUWS_BEHEER_PLAATSEN"] = 'Submit';
+$lang["NIEUWS_BEHEER_ANNULEREN"] = 'Cancel';
 
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Passwords differ.';
@@ -137,9 +139,44 @@ $lang["PROFIEL_ERRORS_VI"] = 'No first name set.';
 $lang["PROFIEL_INFO_PI"] = 'Personal information';
 $lang["PROFIEL_INFO_FOTO"] = 'Picture of the teacher';
  
+//Vakkenbeheer
+$lang["VAKKEN_BEHEER_KEUZEMENU"] = 'Subject management | Selection menu';
+$lang["VAKKEN_BEHEER_INVOEGEN"] = 'Subject management | Insert';
+$lang["VAKKEN_BEHEER_INFORMATIE"] = 'Subject information';
+$lang["VAKKEN_BEHEER_VAKNAAM"] = 'Subject name';
+$lang["VAKKEN_BEHEER_JAARLAAG"] = 'Grade';
+$lang["VAKKEN_BEHEER_PERIODE"] = 'Period';
+$lang["VAKKEN_BEHEER_KLASSEN"] = 'Class';
+$lang["VAKKEN_BEHEER_DOCENTEN"] = 'Teacher(s)';
+$lang["VAKKEN_BEHEER_BESTANDEN"] = 'Files';
+$lang["VAKKEN_BEHEER_MODULEBOEK"] = 'module book';
+$lang["VAKKEN_BEHEER_BEWERKEN"] = 'Subject management | Change';
+$lang["VAKKEN_BEHEER_JAAR"] = "Grade";
+$lang["VAKKEN_BEHEER_MEERDERE"] = "Select multiple with CTRL";
+$lang["VAKKEN_BEHEER_GESELECTEERD"] = "Selected";
+$lang["VAKKEN_BEHEER_WEERGEVEN"] = "View";
+$lang["VAKKEN_BEHEER_VERPLICHT"] = "The boxes with a * are required";
+$lang["VAKKEN_BEHEER_OPSLAAN"] = "Save";
+$lang["VAKKEN_BEHEER_ANNULEREN"] = "Cancel";
 //extra
 $lang['404_PAGE_DESC'] = 'Click here to go back to the home page';
 $lang['NOTLOGEDIN_TITLE'] = 'This page is solely for teachers.';
  
+//opleidingbeheer
+$lang['OPLEIDINGBEHEER_INVOEG_TITLE'] = 'Training management | Insert';
+$lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'] = 'Training management | edit';
+$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'] = 'Education name';
+$lang['OPLEIDINGBEHEER_OPLEIDING'] = 'Education';
+$lang['OPLEIDINGBEHEER_JAARLAAG'] = 'Annual layer';
+
+//docentbeheer
+$lang['DOCENTBEHEER_ERRORLOG_WWG'] = 'Failed to add new teacher: Passwords not equal';
+$lang['DOCENTBEHEER_ERRORLOG_WWM'] = 'Failed to add new teacher: No Password entered.';
+$lang['DOCENTBEHEER_ERRORLOG_MAIL'] = 'Failed to add new teacher: This email or username is already used!';
+$lang['DOCENTBEHEER_ERRORLOG_GB'] = 'Failed to add new teacher: No Username entered.';
+$lang['DOCENTBEHEER_ERRORLOG_GMAIL'] = 'Failed to add new teacher: No Email entered.';
+$lang['DOCENTBEHEER_ERRORLOG_NA'] = 'Failed to add new teacher: No last name entered.';
+$lang['DOCENTBEHEER_ERRORLOG_NV'] = 'Failed to add new teacher: No first name entered.';
+
 ?>
 

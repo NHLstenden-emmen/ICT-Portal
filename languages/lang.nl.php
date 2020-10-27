@@ -125,6 +125,9 @@ $lang["NIEUWS_BEHEER_DOCENT"] = 'Docent';
 $lang["NIEUWS_BEHEER_AANPASSEN"] = 'Aanpassen';
 $lang["NIEUWS_BEHEER_POSTER"] = "gepost door";
 $lang["NIEUWS_BEHEER_INVOEGEN"] = 'Invoegen';
+$lang["NIEUWS_BEHEER_INVOEGEN_TITEL"] = "Nieuws management | Invoegen ";
+$lang["NIEUWS_BEHEER_PLAATSEN"] = 'Plaatsen';
+$lang["NIEUWS_BEHEER_ANNULEREN"] = 'Annuleren';
 
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Wachtwoorden niet gelijk.';
@@ -135,8 +138,44 @@ $lang["PROFIEL_ERRORS_AI"] = 'Geen achternaam ingevoerd.';
 $lang["PROFIEL_ERRORS_VI"] = 'Geen voornaam ingevoerd.';
 $lang["PROFIEL_INFO_PI"] = 'Persoonlijke informatie';
 $lang["PROFIEL_INFO_FOTO"] = "Foto van de docent";
+
+//Vakkenbeheer
+$lang["VAKKEN_BEHEER_KEUZEMENU"] = 'Vakkenbeheer | Keuzemenu';
+$lang["VAKKEN_BEHEER_INVOEGEN"] = 'Vakkenbeheer | Invoegen';
+$lang["VAKKEN_BEHEER_INFORMATIE"] = 'Vakinformatie';
+$lang["VAKKEN_BEHEER_VAKNAAM"] = 'Vaknaam';
+$lang["VAKKEN_BEHEER_JAARLAAG"] = 'Jaarlaag';
+$lang["VAKKEN_BEHEER_PERIODE"] = 'Periode';
+$lang["VAKKEN_BEHEER_KLASSEN"] = 'Klassen';
+$lang["VAKKEN_BEHEER_DOCENTEN"] = 'Docent(en)';
+$lang["VAKKEN_BEHEER_BESTANDEN"] = 'Bestanden';
+$lang["VAKKEN_BEHEER_MODULEBOEK"] = 'Moduleboek';
+$lang["VAKKEN_BEHEER_BEWERKEN"] = 'Vakkenbeheer | Bewerken';
+$lang["VAKKEN_BEHEER_JAAR"] = "Jaar";
+$lang["VAKKEN_BEHEER_MEERDERE"] = "Selecteer meerdere met CTRL";
+$lang["VAKKEN_BEHEER_GESELECTEERD"] = "Geselecteerd";
+$lang["VAKKEN_BEHEER_WEERGEVEN"] = "Weergeven";
+$lang["VAKKEN_BEHEER_VERPLICHT"] = "Invulvakken met een * zijn verplicht";
+$lang["VAKKEN_BEHEER_OPSLAAN"] = "Opslaan";
+$lang["VAKKEN_BEHEER_ANNULEREN"] = "Annuleren";
+
 //extra
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
 $lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is alleen voor docenten.';
 
+//opleidingbeheer
+$lang['OPLEIDINGBEHEER_INVOEG_TITLE'] = 'Opleidingbeheer | Invoegen';
+$lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'] = 'Opleidingbeheer | Bewerken';
+$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'] = 'Opleidingnaam';
+$lang['OPLEIDINGBEHEER_OPLEIDING'] = 'Opleiding';
+$lang['OPLEIDINGBEHEER_JAARLAAG'] = 'Jaarlaag';
+
+//docentbeheer
+$lang['DOCENTBEHEER_ERRORLOG_WWG'] = 'Nieuwe docent toevoegen mislukt: Wachtwoorden niet gelijk';
+$lang['DOCENTBEHEER_ERRORLOG_WWM'] = 'Nieuwe docent toevoegen mislukt: Geen Wachtwoord ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_MAIL'] = 'Nieuwe docent toevoegen mislukt: Deze mail of gebruikersnaam wordt al gebruikt!';
+$lang['DOCENTBEHEER_ERRORLOG_GB'] = 'Nieuwe docent toevoegen mislukt: Geen Gebruikersnaam ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_GMAIL'] = 'Nieuwe docent toevoegen mislukt: Geen Email ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_NA'] = 'Nieuwe docent toevoegen mislukt: Geen achternaam ingevoerd.';
+$lang['DOCENTBEHEER_ERRORLOG_NV'] = 'Nieuwe docent toevoegen mislukt: Geen voornaam ingevoerd.';
 ?>

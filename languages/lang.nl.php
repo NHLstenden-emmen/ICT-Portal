@@ -125,6 +125,9 @@ $lang["NIEUWS_BEHEER_DOCENT"] = 'Docent';
 $lang["NIEUWS_BEHEER_AANPASSEN"] = 'Aanpassen';
 $lang["NIEUWS_BEHEER_POSTER"] = "gepost door";
 $lang["NIEUWS_BEHEER_INVOEGEN"] = 'Invoegen';
+$lang["NIEUWS_BEHEER_INVOEGEN_TITEL"] = "Nieuws management | Invoegen ";
+$lang["NIEUWS_BEHEER_PLAATSEN"] = 'Plaatsen';
+$lang["NIEUWS_BEHEER_ANNULEREN"] = 'Annuleren';
 
 //profiel
 $lang["PROFIEL_ERRORS_WWG"] = 'Wachtwoorden niet gelijk.';
@@ -135,6 +138,27 @@ $lang["PROFIEL_ERRORS_AI"] = 'Geen achternaam ingevoerd.';
 $lang["PROFIEL_ERRORS_VI"] = 'Geen voornaam ingevoerd.';
 $lang["PROFIEL_INFO_PI"] = 'Persoonlijke informatie';
 $lang["PROFIEL_INFO_FOTO"] = "Foto van de docent";
+
+//Vakkenbeheer
+$lang["VAKKEN_BEHEER_KEUZEMENU"] = 'Vakkenbeheer | Keuzemenu';
+$lang["VAKKEN_BEHEER_INVOEGEN"] = 'Vakkenbeheer | Invoegen';
+$lang["VAKKEN_BEHEER_INFORMATIE"] = 'Vakinformatie';
+$lang["VAKKEN_BEHEER_VAKNAAM"] = 'Vaknaam';
+$lang["VAKKEN_BEHEER_JAARLAAG"] = 'Jaarlaag';
+$lang["VAKKEN_BEHEER_PERIODE"] = 'Periode';
+$lang["VAKKEN_BEHEER_KLASSEN"] = 'Klassen';
+$lang["VAKKEN_BEHEER_DOCENTEN"] = 'Docent(en)';
+$lang["VAKKEN_BEHEER_BESTANDEN"] = 'Bestanden';
+$lang["VAKKEN_BEHEER_MODULEBOEK"] = 'Moduleboek';
+$lang["VAKKEN_BEHEER_BEWERKEN"] = 'Vakkenbeheer | Bewerken';
+$lang["VAKKEN_BEHEER_JAAR"] = "Jaar";
+$lang["VAKKEN_BEHEER_MEERDERE"] = "Selecteer meerdere met CTRL";
+$lang["VAKKEN_BEHEER_GESELECTEERD"] = "Geselecteerd";
+$lang["VAKKEN_BEHEER_WEERGEVEN"] = "Weergeven";
+$lang["VAKKEN_BEHEER_VERPLICHT"] = "Invulvakken met een * zijn verplicht";
+$lang["VAKKEN_BEHEER_OPSLAAN"] = "Opslaan";
+$lang["VAKKEN_BEHEER_ANNULEREN"] = "Annuleren";
+
 //extra
 $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
 $lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is alleen voor docenten.';

@@ -269,22 +269,22 @@
         }
         //Laat de invoegen pagina zien
         else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['boekView']) && !isset($_POST['aanpassenPage'])){
-                echo "<div class='contentBlock-title'>Nieuwsbeheer | Invoegen ($langTitle)</div>
+                echo "<div class='contentBlock-title'>Nieuwsbeheer | Invoegen </div>
                 <div class='contentBlock-text-normal'>
                 <form method='post' enctype='multipart/form-data'>
-                        <label for='nieuwsTitel'>Titel</label><br>
-                        <input type='text' name='nieuwsTitel' placeholder='Titel' required /><br><br>
+                        <label for='nieuwsTitel'>{$lang["NIEUWS_BEHEER_TITLE"]}</label><br>
+                        <input type='text' name='nieuwsTitel' placeholder='{$lang["NIEUWS_BEHEER_TITLE"]}' required /><br><br>
                         
                         <label for='nieuwsTekst'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
-                        <textarea name='nieuwsTekst' placeholder='Type hier uw nieuws bericht' rows='8' cols='50' required ></textarea><br>
+                        <textarea name='nieuwsTekst' placeholder='".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."' rows='8' cols='50' required ></textarea><br>
                         
                         <label for='nieuwsBijlage'>".$lang["NIEUWS_BEHEER_BIJLAGE"]."</label><br>
                         <input type='file' name='nieuwsBijlage' /><br><br>
 
                         <label for='nieuwsAfbeelding'>".$lang["NIEUWS_BEHEER_AFBEELDING"]."</label><br>
                         <input type='file' name='nieuwsAfbeelding' /><br><br>
-                        <button type='submit' name='submitInvoegen'>Plaatsen</button>
-                        <button type='button' onclick="."window.location.href='nieuwsbeheer'".">annuleren</button>
+                        <button type='submit' name='submitInvoegen'>{$lang[NIEUWS_BEHEER_PLAATSEN]}</button>
+                        <button type='button' onclick="."window.location.href='nieuwsbeheer'".">{$lang["NIEUWS_BEHEER_ANNULEREN"]}</button>
                     </form>";
     }
     //Laat de aanpassen pagina zien
@@ -317,26 +317,26 @@
             <div class='contentBlock-text-normal'>
             <form method='post' enctype='multipart/form-data'>
                 <label for='nieuwsTitel'>".$lang["NIEUWS_BEHEER_TITLE"]."</label><br>
-                <input value='{$currentData['titel']}' type='text' name='nieuwsTitel' placeholder='Titel' required /><br><br>
+                <input value='{$currentData['titel']}' type='text' name='nieuwsTitel' placeholder='".$lang["NIEUWS_BEHEER_TITLE"]."' required /><br><br>
                 
                 <label for='nieuwsTekst'>".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."</label><br>
-                <textarea  name='nieuwsTekst' placeholder='Type hier uw nieuws bericht' rows='8' cols='50' required >{$currentData['tekst']}</textarea><br>";
+                <textarea  name='nieuwsTekst' placeholder='".$lang["NIEUWS_BEHEER_NIEUWSBERICHT"]."' rows='8' cols='50' required >{$currentData['tekst']}</textarea><br>";
                 
                 if(empty($currentData['bijlage'])){
-                    echo "<label for='nieuwsBijlage'>Bijlage</label> <b>".$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"]."</b><br />";
+                    echo "<label for='nieuwsBijlage'>{$lang["NIEUWS_BEHEER_BIJLAGE"]}</label> <b>".$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"]."</b><br />";
                 }
                 else {
-                    echo "<label for='nieuwsBijlage'>Bijlage</label>
+                    echo "<label for='nieuwsBijlage'>{$lang["NIEUWS_BEHEER_BIJLAGE"]}</label>
                             <button type='submit' name='attachView' style='padding: 0.3vw;'>".$lang["NIEUWS_BEHEER_WEERGEVEN"]."</button></label><br />";
                 }
                 echo "<input type='file' name='nieuwsBijlage' /><br><br>";
 
 
                 if(empty($currentData['afbeelding'])){
-                    echo "<label for='nieuwsAfbeelding'>Afbeelding</label> <b>".$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"]."</b><br />";
+                    echo "<label for='nieuwsAfbeelding'>{$lang["NIEUWS_BEHEER_AFBEELDING"]}</label> <b>".$lang["NIEUWS_BEHEER_NIKS_GEUPLOAD"]."</b><br />";
                 }
                 else {
-                    echo "<label for='nieuwsAfbeelding'>Afbeelding</label>
+                    echo "<label for='nieuwsAfbeelding'>{$lang["NIEUWS_BEHEER_AFBEELDING"]}</label>
                             <button type='submit' name='imgView' style='padding: 0.3vw;'>".$lang["NIEUWS_BEHEER_WEERGEVEN"]."</button></label><br />";
                 }
                 echo "

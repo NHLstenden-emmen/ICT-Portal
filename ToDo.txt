@@ -1,33 +1,24 @@
 ALLES
-    /*
-    Als je herlaad wordt de query nog een keer verzonden en wordt 
-    het vak nog een keer aangemaakt 
-        header("Location: vakken"); volgens mij allemaal gedaan. (nog even een keer checken aan het eind) 
-    DONE */
-
-    Contact
-    Is iets kapot qua display    
-
-
     404 
     Responsive
 
 
     Docent beschikbaarheid haalt dagen uit de database moet aangepast voor 2 talig
 
-    Contact moet css aangepast
-
     nog styling in nieuwsbeheer.php
+
+    standaard Tabellen css ligt and dark mode
+
+    Sign out werkt niet
+
+    Ik weet niet wat de reden is maar als ik de site op telefoon open krijg ik geen 404 waarschuwingen maar een docenten waarschuwing
 
 WEB
 
     navbar en footer wordt nogal hoog als de pagina smal wordt
 
-    banner afbeelding
-
     icoontje belangrijke mededelingen 
 
-    Aanwezigheid docenten table kopje andere kleur?
 
 MOBIEL
     Logo docentenbeheer is een hondenpoot
@@ -39,13 +30,3 @@ MOBIEL
 
     Kunnen we er voor zorgen dat de navigatie balk niet terugschiet
 
-Validator
-    afbeeldingen missen alt=""
-    <div> in <ul> in de navbar
-    = in an unquoted attribute value. Probable causes: Attributes running together or a URL query string in an unquoted attribute value.
-    ' in an unquoted attribute value. Probable causes: Attributes running together or a URL query string in an unquoted attribute value.
-
-
-
-Mooie code:
-    Geen <p> in tabel

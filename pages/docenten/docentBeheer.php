@@ -1,21 +1,6 @@
-<style>
-    table {
-        width: 100%;
-    }
-    td:nth-child(1){
-        width: 90%;
-    }
-    td:nth-child(2){
-        width: 5%;
-    }
-    input {
-        width: 65%;
-    }
-</style>
-
 <main class="content">
 
-<div class='contentBlock-nohover'>
+<div class='contentBlock-nohover docentenbeheer'>
 		<div class='contentBlock-side'></div>
 		<div class='contentBlock-content'>
 
@@ -205,9 +190,7 @@
         header('location: docentbeheer');
     }
     ?>
-    </div>
-             
-			</div>
-		</div>
+            </div>
+        </div>
     </div>
 </main> 

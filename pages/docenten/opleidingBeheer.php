@@ -1,17 +1,6 @@
-<style>
-    table {
-        width: 100%;
-    }
-    td:nth-child(1){
-        width: 70%;
-    }
-    td:nth-child(2){
-        width: 8%;
-    }
-</style>
 <main class="content">
 
-<div class='contentBlock-nohover'>
+<div class='contentBlock-nohover opleidingenbeheer'>
 	<div class='contentBlock-side'></div>
 		<div class='contentBlock-content'>
 
@@ -174,8 +163,6 @@
         header('location: opleidingbeheer');
     }
     ?>
-    </div>
-             
 			</div>
 		</div>
     </div>

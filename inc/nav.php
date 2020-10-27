@@ -3,17 +3,17 @@
 		<a href="nieuws" class="logo"><img src="images/default_logo_white.png" alt="ICT Portal" style="width: 100px;"></a>
 	</div>
 	<div class="navbar_items">
-		<ul>
-			<li class="<?= ($activePage == 'nieuws') ? 'active':''; ?>" onclick="window.location.href='nieuws'"><?php echo $lang['NAV_NIEUWS']; ?></li>
-			<li class="<?= ($activePage == 'vakken') ? 'active':''; ?>" onclick="window.location.href='vakken'"><?php echo $lang['NAV_VAKKEN']; ?></li>
-			<li class="<?= ($activePage == 'docenten') ? 'active':''; ?>" onclick="window.location.href='docenten'"><?php echo $lang['NAV_DOCENTEN']; ?></li>
-			<li class="<?= ($activePage == 'contact') ? 'active':''; ?>" onclick="window.location.href='contact'"><?php echo $lang['NAV_CONTACT']; ?></li>
+		<div class="topul">
+			<a class="topli <?= ($activePage == 'nieuws') ? 'active':''; ?>" href='nieuws'><?php echo $lang['NAV_NIEUWS']; ?></a>
+			<a class="topli <?= ($activePage == 'vakken') ? 'active':''; ?>" href='vakken'><?php echo $lang['NAV_VAKKEN']; ?></a>
+			<a class="topli <?= ($activePage == 'docenten') ? 'active':''; ?>" href='docenten'><?php echo $lang['NAV_DOCENTEN']; ?></a>
+			<a class="topli <?= ($activePage == 'contact') ? 'active':''; ?>" href='contact'><?php echo $lang['NAV_CONTACT']; ?></a>
 			<?php if($Core->AuthCheck()) { 
 				
 				echo "<div class='navDropdown'>
-				<li class='dropbtn' style='text-transform: none;' onclick="."window.location.href='docent?docent={$_COOKIE["userID"]}'>
+				<a class='topli dropbtn' style='text-transform: none;' href='docent?docent={$_COOKIE["userID"]}'>
 					<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong>{$_COOKIE['fullUser']}</strong>
-				</li>
+				</a>
 				<div class='dropdown-content'>
 					<a href='profiel-bewerken'>{$lang['NAV_PF_EDIT']}</a>
 					<a href='beschikbaarheid'>{$lang['NAV_MY_BESCHIKBAARHEID']}</a>
@@ -29,7 +29,7 @@
  			}
 		
 			else { 
-				echo "<li class='".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>{$lang['NAV_LOGIN']}</li>";
+				echo "<div class='topli ".(($activePage == "login") ?  "active":"")."' onclick="."window.location.href='login'>{$lang['NAV_LOGIN']}</div>";
 			 } 
 			 
 			?>
@@ -62,7 +62,7 @@
 					</form>";
 				}
 				?>
-		</ul>
+		</div>
 	</div>
 </nav>
     

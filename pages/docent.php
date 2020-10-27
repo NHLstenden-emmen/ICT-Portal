@@ -72,7 +72,7 @@
 
 				echo "</i></p>
 
-				<hr class='mobileDivider'></hr>		
+				<hr class='mobileDivider'>
 				<div class='docentBlok-Icons'>";
 
 					if (!empty($docent['telefoonnummer'])) {

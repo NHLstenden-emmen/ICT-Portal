@@ -1,8 +1,3 @@
-<style>
-.contentBlock-grid {
-    grid-template-columns: unset;
-}
-</style>
 <main class="content">
     <?php
         if(isset($_POST['moduleboekSubmit'])){
@@ -117,5 +112,4 @@
 
 
     ?>
-    </div>
 </main>

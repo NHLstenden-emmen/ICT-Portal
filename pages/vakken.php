@@ -24,10 +24,10 @@
             <p>Selecteer hier een jaar om alle klassen van het betreffende jaar te tonen.</p>
             <form method="POST">
                 <select name="jaarSelectie">
-                    <option value="1">Jaar 1</option>
-                    <option value="2">Jaar 2</option>
-                    <option value="3">Jaar 3</option>
-                    <option value="4">Jaar 4</option>
+                    <option value="1"><?php echo $lang['NAV_JAAR']; ?> 1</option>
+                    <option value="2"><?php echo $lang['NAV_JAAR']; ?> 2</option>
+                    <option value="3"><?php echo $lang['NAV_JAAR']; ?> 3</option>
+                    <option value="4"><?php echo $lang['NAV_JAAR']; ?> 4</option>
                 </select>
                 <button type="submit" name="submitJaar">Klassen tonen</button>
             </form>';
@@ -43,9 +43,10 @@
             else if(isset($_GET['jaar'])){
                 $jaarSelectie = $_GET['jaar'];
                 $submitButton = 'get';
-            }
-            echo "<div class='subTitle'>Opleidingen | Jaar {$jaarSelectie}</div>
-            <p>Selecteer hier een klas alle vakken de betreffende klas te tonen.</p>";
+            }?>
+            <div class='subTitle'><?PHP echo $lang['VAKKEN_KLASSEN_JAAR'] ." ". $jaarSelectie ?></div>
+            <p><?PHP $lang['VAKKEN_SELECT_ALLCALSSES'] ?></p>
+            <?PHP
     
             $opleidingResult = $DB->Get("SELECT * FROM opleidingen WHERE jaar = '{$jaarSelectie}' ORDER BY periode ASC");
     
@@ -57,7 +58,7 @@
                 echo "</select><button type='submit' name='submitOpleiding-{$submitButton}'>vakken weergeven</button></form>";
             }
             else {
-                echo "Dit jaar heeft geen klassen.";
+                echo "{$lang['VAKKEN_NOCALSSES']}";
             }
         } 
         else if (isset($_POST['submitOpleiding-post']) || isset($_POST['submitOpleiding-get'])){
@@ -76,11 +77,10 @@
                     WHERE opleiding_vakken.opleiding_id = '{$_POST['opleidingSelectie']}' AND vakken.periode = '{$i}'");
 
                     if($vakkenView->num_rows > 0){
-                        echo '<div class="subTitle">Periode '.$i.'</div>';
+                        echo "<div class='subTitle'>{$lang['VAKKEN_PERIODE']} ".$i."</div>";
 
                         echo '<div class="contentBlock-grid">';
                         while($vakkenData = $vakkenView->fetch_assoc()){
-                            //print_R($vakkenData);
                                 echo "<div class='contentBlock'>
                                 <div class='contentBlock-side'></div>
                                 <div class='contentBlock-content'>
@@ -88,7 +88,7 @@
                                     <div class='contentBlock-text-normal'>
                                         <table>
                                             <tr>
-                                                <td><b>Vakdocent:</b></td>
+                                                <td><b>{$lang['VAKKEN_VAKDOCENT'] }:</b></td>
                                                 <td><a href='docent?docent={$vakkenData['docent_id']}'>{$vakkenData['voornaam']} {$vakkenData['achternaam']}</a></td>
                                             </tr>";
 

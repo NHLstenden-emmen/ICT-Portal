@@ -7,7 +7,7 @@
     }
 
         if(!isset($_POST['allNewsSumbit']) && !isset($_GET['all']) && !isset($_GET['id'])){ // standaard
-            echo '<div class="subTitle">Laatste nieuwsberichten</div>
+            echo '<div class="subTitle">'.$lang["NEWS_LASTNEWS"].'</div>
                      <div class = "contentBlock-grid">';
 
             $nieuwsResult = $DB->Get("SELECT 
@@ -27,7 +27,7 @@
                     LIMIT 4");
 
             if($nieuwsResult->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"];
             }
 
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
@@ -35,7 +35,7 @@
                     <div class='contentBlock-side'></div>
                     <div class='contentBlock-content'>";
                         if(!empty($nieuwsData['afbeelding'])){
-                            echo "<img alt='nieuws afbeelding' id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
+                            echo "<img alt={$lang['NEWS_IMAGE_ALT']} id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
                         }
                     echo "
                     <div class='contentBlock-title'>{$nieuwsData['titel']}</div>
@@ -48,7 +48,7 @@
             echo "</div>";
 
             //Lijst van laatste 10 nieuwsberichten
-            echo '<div class="subTitle">Alle nieuwsberichten</div>';
+            echo '<div class="subTitle">'.$lang["NEWS_LASTNEWS"].'</div>';
 
             $nieuwsResult10 = $DB->Get("SELECT 
                 nieuws_{$_COOKIE['lang']}_id AS id,
@@ -79,7 +79,7 @@
             }
             echo '</table>';
 
-            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">Lees alle artikelen</button></form>';
+            echo '<br /><form method="post"><button type="submit" name="allNewsSumbit">'.$lang["NEWS_ALL_NEWS"].'</button></form>';
         }
         else if(isset($_POST['allNewsSumbit']) && !isset($_GET['id']) || isset($_GET['all']) == true){   // alle artikelen
             echo '<div class="subTitle">Alle nieuwsberichten</div>';
@@ -94,7 +94,7 @@
                 ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC");
 
             if($nieuwsResultAll->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"] . $langTitle .".";
             }
 
             echo '<table>';
@@ -111,7 +111,7 @@
                         </td></tr>';
             }
             echo '</table>';
-            echo "<button onclick="."window.location.href='nieuws'>terug</button>";
+            echo "<button onclick="."window.location.href='nieuws'>{$lang["NEWS_TERUG"]}</button>";
         }
         else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id']) && intval($_GET['id'])){ // 1 artikel weergeven volledig scherm
             
@@ -152,7 +152,7 @@
                         <p>{$nieuwsViewData['tekst']}</p>
                     </div>
                     <div class='contentBlock-date-view'>
-                        <p>{$nieuwsViewData['datum']} | Geplaatst door: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p>
+                        <p>{$nieuwsViewData['datum']} | {$lang["NEWS_GEPLAAST_DOOR"]}: {$nieuwsViewData['voornaam']} {$nieuwsViewData['achternaam']}</p>
                     </div>";
                     if(!empty($nieuwsViewData['bijlage'])){
                         echo "<form id='bijlageForm' method='post'><input type='hidden' value='{$nieuwsViewData['id']}' name='nieuwsFileID'><button id='button-Bijlage' name='attachView' type='submit'>bijlage weergeven</button></form>";

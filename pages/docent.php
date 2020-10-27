@@ -36,14 +36,14 @@
 					$beschikbaarheidData = $beschikbaarheidResult->fetch_assoc();
 					//Beschikbaarheid
 					echo "<p class='docentBlok-beschikbaarheid'>
-							<b>Beschikbaarheid</b><i><br />";
+							<b>{$lang['PRESENT_BESCHIKBAARHEID']}</b><i><br />";
 
 
 					foreach ($beschikbaarheidData as $key => $value) {
 						
 						$beschikbaarheidOutput = $key.": ";
 						if (empty($value)) {
-							$beschikbaarheidOutput.= "Vrij<br /> ";
+							$beschikbaarheidOutput.= "{$lang['DOCENTEN_VRIJ']}<br /> ";
 						} else {
 							$beschikbaarheidOutput.= $value. "<br /> ";
 						}
@@ -53,7 +53,7 @@
 
 					print_r($beschikbaarheidResult->fetch_assoc());
 					echo "</i></p>";
-				echo "<p class='docentBlok-vakken'><b>Vakken</b><br /><i>";
+				echo "<p class='docentBlok-vakken'><b>{$lang['GEEN_DOCENT_VAKKEN']}</b><br /><i>";
 						
 				$vakkenResult = $DB->Get("	SELECT vakken.vak, vakken.jaarlaag, vakken.periode 
 											FROM docenten_vakken INNER JOIN vakken 
@@ -67,7 +67,7 @@
 					}
 				}
 				else {
-					echo "Deze docent geeft (nog) geen vakken.";
+					echo "{$lang['GEEN_DOCENT_GEEN_VAKKEN']}";
 				}
 
 				echo "</i></p>
@@ -101,7 +101,7 @@
 		</div>";
 	}
 	else {
-		echo "<h1>Deze docent bestaat niet.</h1>";
+		echo "<h1>{$lang['GEEN_DOCENT_NONEXISTENT']}</h1>";
 		//404
 	}
 ?>

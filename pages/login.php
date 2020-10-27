@@ -41,17 +41,17 @@
 		<div class='contentBlock-side' style="width: 100%;"></div>
 		<div class='contentBlock-content' style="width: 100%;">
 			<div class='contentBlock-title'>
-				Inloggen
+			<?php echo $lang['GEEN_INLOGGEN']; ?>
 			</div>
 			<div class='contentBlock-text-normal'>
 				<form method="POST"> 
-					<label for="gebruikersnaam">Gebruikersnaam</label><br>
+					<label for="gebruikersnaam"><?php echo $lang['GEEN_GEBRUIKERSNAAM']; ?></label><br>
 					<input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required> <br>
 					<br>
-					<label for="wachtwoord">Wachtwoord</label><br>
+					<label for="wachtwoord"><?php echo $lang['GEEN_WACHTWOORD']; ?></label><br>
 					<input type="password" name="wachtwoord" placeholder="*********" required><br><br>
 
-					<button type="submit" name="submitButton">Inloggen</button>
+					<button type="submit" name="submitButton"><?php echo $lang['GEEN_INLOGGEN']; ?></button>
 				</form>
 			</div>
 		</div>

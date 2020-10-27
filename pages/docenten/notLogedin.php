@@ -1,4 +1,4 @@
 <main class="content">
-    <h2>Deze pagina is allen voor docenten.</h2>
-    <p><a href="login">Login in</a></p> 
+    <h2><?php echo $lang['NOTLOGEDIN_TITLE']; ?></h2>
+    <p><a href="login"><?php echo $lang['NAV_LOGIN']; ?></a></p> 
 </main>

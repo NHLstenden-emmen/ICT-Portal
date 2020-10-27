@@ -45,18 +45,17 @@
                     echo "Je mag alleen een .pdf bestand uploaden.";
                 } 
             }
-
-                $DB->Get("UPDATE docenten_vakken SET docent_id = '{$vakDocent}', vak_id = '{$vakID}'");
+                $DB->Get("DELETE FROM docenten_vakken WHERE vak_id = '{$vakID}'");
+                $DB->Get("INSERT INTO docenten_vakken (docent_id, vak_id) VALUES('{$vakDocent}', '{$vakID}')");
 
                 if(isset($_POST['vakKlas'])){
                     // verwijder alle klassen die het vak hadden
-                        $DB->Get("DELETE FROM opleiding_vakken WHERE opleiding_id='{$vakID}'");
+                        $DB->Get("DELETE FROM opleiding_vakken WHERE vak_id='{$vakID}'");
                     foreach ($_POST['vakKlas'] as $key => $klasID) {
                         // voeg alle klassen toe die zijn ingevuld
                         $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                     }
                 }
-                
             header("Location: vakkenbeheer");
         }
         else {
@@ -83,8 +82,9 @@
     //Invoegen
     if(isset($_POST['submitInvoegen'])){
         if(isset($_POST['vakNaam'])){
-            
-            $vakNaam = $_POST['vakNaam'];
+            if(isset($_POST['vakOpleidingen'])){
+
+                $vakNaam = $_POST['vakNaam'];
             $vakJaarlaag = $_POST['vakJaarlaag'];
             $vakPeriode = $_POST['vakPeriode'];
             $vakDocent = $_POST['vakDocent'];
@@ -94,10 +94,9 @@
             if(empty($_FILES["vakBoek"]["name"])){
                 //Geen moduleboek
                 
-                $insertResult = $DB->Get("INSERT INTO 
+                $DB->Get("INSERT INTO 
                                         vakken (vak, jaarlaag, periode, teams, blackboard)
                                         VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$vakTeams}', '{$vakBlackboard}')");//>vakken
-                header("Location: vakkenbeheer");
             }
             else {
                 //Moduleboek toegevoegd
@@ -108,10 +107,9 @@
                     $pdf = $_FILES['vakBoek']['tmp_name']; 
                     $pdfContent = addslashes(file_get_contents($pdf)); 
                     
-                    $insertResult = $DB->Get("INSERT INTO 
+                    $DB->Get("INSERT INTO 
                                             vakken (vak, jaarlaag, periode, moduleboek, teams, blackboard)
                                             VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}', '{$vakTeams}', '{$vakBlackboard}')");//>vakken 
-                    header("Location: vakkenbeheer");   
                 }
                 else {
                     echo "Je mag alleen een .pdf bestand uploaden.";
@@ -124,6 +122,10 @@
                     $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                 }
                 header("Location: vakkenbeheer");
+            }
+            else {
+                echo "Geen opleiding geselecteerd.";
+            }
         }
         else {
             echo "Vaknaam is niet ingevuld.";
@@ -143,7 +145,6 @@
             $vakkenResult = $DB->Get("	SELECT vakken.vak_id, vakken.vak, vakken.jaarlaag, vakken.periode 
             FROM docenten_vakken INNER JOIN vakken 
             ON docenten_vakken.vak_id = vakken.vak_id 
-            WHERE docent_id = '{$docentID}'
             ORDER BY vakken.jaarlaag ASC, vakken.periode ASC"); //Haalt alle vakken van de ID docent op.
 
             echo "<table>";

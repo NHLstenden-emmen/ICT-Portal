@@ -105,7 +105,12 @@ class Core
 		switch ($pageTitle) {
 			case 'nieuws':
 				$bijgewerktTime = $DB->Get("SELECT datum FROM nieuws ORDER BY datum DESC");
-				$pageSubtitle = 'Laatst bijgewerkt: <br />'.$bijgewerktTime->fetch_assoc()['datum'];
+				if($bijgewerktTime->num_rows > 0){
+					$pageSubtitle = 'Laatst bijgewerkt: <br />'.$bijgewerktTime->fetch_assoc()['datum'];
+				}
+				else {
+					$pageSubtitle = 'Geen laatste bijwerking gevonden';
+				}
                 break;
             case 'vakken':
                 $pageSubtitle = "Bekijk op deze pagina alle vakken. Door een vak te selecteren kom je alles te weten.";

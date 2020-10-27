@@ -101,9 +101,6 @@
             case 'opleidingbeheer':
                 include 'pages/docenten/opleidingBeheer.php';
                 break;
-            case 'klassenbeheer':
-                include 'pages/docenten/klassenBeheer.php';
-                break;
             // disclaimers
             case 'privacyPolicy':
                 include 'pages/privacyPolicy.php';

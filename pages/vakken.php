@@ -19,9 +19,9 @@
         }
    
         //Jaarweergave via vakken
-        if(!isset($_POST['submitKlas-post']) && !isset($_POST['submitKlas-get']) && !isset($_POST['submitJaar']) && !isset($_GET['jaar'])){?>
-            <div class="subTitle"><?php echo $lang['VAKKEN_VAKKENLIJST']; ?></div>
-            <p><?php echo $lang['VAKKEN_VAKKENLIJST_SUBTITLE']; ?></p>
+        if(!isset($_POST['submitOpleiding-post']) && !isset($_POST['submitOpleiding-get']) && !isset($_POST['submitJaar']) && !isset($_GET['jaar'])){
+            echo '<div class="subTitle">Vakkenlijst</div>
+            <p>Selecteer hier een jaar om alle klassen van het betreffende jaar te tonen.</p>
             <form method="POST">
                 <select name="jaarSelectie">
                     <option value="1"><?php echo $lang['NAV_JAAR']; ?> 1</option>
@@ -29,10 +29,11 @@
                     <option value="3"><?php echo $lang['NAV_JAAR']; ?> 3</option>
                     <option value="4"><?php echo $lang['NAV_JAAR']; ?> 4</option>
                 </select>
-                <button type="submit" name="submitJaar"><?php echo $lang['VAKKEN_KLASSEN']; ?></button>
-            </form>
-        <?PHP } 
-        else if (isset($_POST['submitJaar']) || isset($_GET['jaar']) && !isset($_POST['submitKlas-post']) && !isset($_POST['submitKlas-get'])) {
+                <button type="submit" name="submitJaar">Klassen tonen</button>
+            </form>';
+            //Stap 1
+        } 
+        else if (isset($_POST['submitJaar']) || isset($_GET['jaar']) && !isset($_POST['submitOpleiding-post']) && !isset($_POST['submitOpleiding-get'])) {
             //Stap 2 (Waar GET begint)
             
             if(isset($_POST['jaarSelectie'])){
@@ -42,40 +43,38 @@
             else if(isset($_GET['jaar'])){
                 $jaarSelectie = $_GET['jaar'];
                 $submitButton = 'get';
-            } ?>
+            }?>
             <div class='subTitle'><?PHP echo $lang['VAKKEN_KLASSEN_JAAR'] ." ". $jaarSelectie ?></div>
             <p><?PHP $lang['VAKKEN_SELECT_ALLCALSSES'] ?></p>
             <?PHP
-            $klasResult = $DB->Get("SELECT * FROM klassen WHERE jaar = '{$jaarSelectie}' ORDER BY periode ASC");
     
-            if($klasResult->num_rows > 0){
-                echo "<form method='post'><select name='klasSelectie'>";
-                while($klasData = $klasResult->fetch_assoc()){
-                    echo "<option value='{$klasData['klas_id']}'>{$klasData['klas_naam']}</option>";
+            $opleidingResult = $DB->Get("SELECT * FROM opleidingen WHERE jaar = '{$jaarSelectie}' ORDER BY periode ASC");
+    
+            if($opleidingResult->num_rows > 0){
+                echo "<form method='post'><select name='opleidingSelectie'>";
+                while($opleidingData = $opleidingResult->fetch_assoc()){
+                    echo "<option value='{$opleidingData['opleiding_id']}'>{$opleidingData['opleiding_naam']}</option>";
                 }
-                echo "</select><button type='submit' name='submitKlas-{$submitButton}'>vakken weergeven</button></form>";
+                echo "</select><button type='submit' name='submitOpleiding-{$submitButton}'>vakken weergeven</button></form>";
             }
             else {
                 echo "{$lang['VAKKEN_NOCALSSES']}";
             }
         } 
-        else if (isset($_POST['submitKlas-post']) || isset($_POST['submitKlas-get'])){
+        else if (isset($_POST['submitOpleiding-post']) || isset($_POST['submitOpleiding-get'])){
         //Vakken
 
                 for ($i=1; $i <= 4; $i++) { 
                         
                     $vakkenView = $DB->Get("SELECT *
-                    FROM klassen_vakken
-                    INNER JOIN klassen
-                    ON klassen_vakken.klas_id = klassen.klas_id
+                    FROM opleiding_vakken
                     INNER JOIN vakken
-                    ON klassen_vakken.vak_id = vakken.vak_id
+                    ON opleiding_vakken.vak_id = vakken.vak_id
                     INNER JOIN docenten_vakken 
-                    ON klassen_vakken.vak_id = docenten_vakken.vak_id
+                    ON opleiding_vakken.vak_id = docenten_vakken.vak_id
                     INNER JOIN docenten
                     ON docenten_vakken.docent_id = docenten.docent_id
-                    WHERE klassen_vakken.klas_id = '{$_POST['klasSelectie']}' AND vakken.periode = '{$i}'");
-
+                    WHERE opleiding_vakken.opleiding_id = '{$_POST['opleidingSelectie']}' AND vakken.periode = '{$i}'");
 
                     if($vakkenView->num_rows > 0){
                         echo "<div class='subTitle'>{$lang['VAKKEN_PERIODE']} ".$i."</div>";
@@ -92,6 +91,13 @@
                                                 <td><b>{$lang['VAKKEN_VAKDOCENT'] }:</b></td>
                                                 <td><a href='docent?docent={$vakkenData['docent_id']}'>{$vakkenData['voornaam']} {$vakkenData['achternaam']}</a></td>
                                             </tr>";
+
+                                            if(!empty($vakkenData['blackboard'])){
+                                                echo "<tr><td><b>Blackboard:</b></td><td><a href='{$vakkenData['blackboard']}'>Klik hier</a></td></tr>";
+                                            }
+                                            if(!empty($vakkenData['teams'])){
+                                                echo "<tr><td><b>Microsoft Teamscode:</b></td><td>{$vakkenData['teams']}</td></td></tr>";
+                                            }
                                             if(!empty($vakkenData['moduleboek'])){
                                                 echo "<tr><td><form method='post'><input type='hidden' name='moduleboekID' value='{$vakkenData['vak_id']}'><button type='submit' name='moduleboekSubmit'>Moduleboek</button></form></td></tr>";
                                             }

@@ -45,18 +45,17 @@
                     echo "Je mag alleen een .pdf bestand uploaden.";
                 } 
             }
-
-                $DB->Get("UPDATE docenten_vakken SET docent_id = '{$vakDocent}', vak_id = '{$vakID}'");
+                $DB->Get("DELETE FROM docenten_vakken WHERE vak_id = '{$vakID}'");
+                $DB->Get("INSERT INTO docenten_vakken (docent_id, vak_id) VALUES('{$vakDocent}', '{$vakID}')");
 
                 if(isset($_POST['vakKlas'])){
                     // verwijder alle klassen die het vak hadden
-                        $DB->Get("DELETE FROM opleiding_vakken WHERE opleiding_id='{$vakID}'");
+                        $DB->Get("DELETE FROM opleiding_vakken WHERE vak_id='{$vakID}'");
                     foreach ($_POST['vakKlas'] as $key => $klasID) {
                         // voeg alle klassen toe die zijn ingevuld
                         $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                     }
                 }
-                
             header("Location: vakkenbeheer");
         }
         else {
@@ -122,7 +121,7 @@
                 foreach ($_POST['vakOpleidingen'] as $key => $klasID) {
                     $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                 }
-                //header("Location: vakkenbeheer");
+                header("Location: vakkenbeheer");
             }
             else {
                 echo "Geen opleiding geselecteerd.";
@@ -146,7 +145,6 @@
             $vakkenResult = $DB->Get("	SELECT vakken.vak_id, vakken.vak, vakken.jaarlaag, vakken.periode 
             FROM docenten_vakken INNER JOIN vakken 
             ON docenten_vakken.vak_id = vakken.vak_id 
-            WHERE docent_id = '{$docentID}'
             ORDER BY vakken.jaarlaag ASC, vakken.periode ASC"); //Haalt alle vakken van de ID docent op.
 
             echo "<table>";

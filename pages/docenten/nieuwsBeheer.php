@@ -99,7 +99,7 @@
         if(!empty($_POST['nieuwsTitel'])){
             if(!empty($_POST['nieuwsTekst'])){
 
-                $DB->Get("INSERT INTO nieuws (docent_id) VALUES ('{$docentID}')");
+                $DB->Get("INSERT INTO nieuws (docent_id, datum) VALUES ('{$docentID}', CURRENT_TIMESTAMP)");
            
                 $LastID = $DB->LastID();
 

@@ -111,7 +111,7 @@ INSERT INTO `docenten_vakken` (`docent_id`, `vak_id`) VALUES
 CREATE TABLE `nieuws` (
   `nieuws_id` int(11) NOT NULL,
   `docent_id` int(11) DEFAULT NULL,
-  `datum` datetime NOT NULL DEFAULT current_timestamp()
+  `datum` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

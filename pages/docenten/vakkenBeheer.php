@@ -83,8 +83,9 @@
     //Invoegen
     if(isset($_POST['submitInvoegen'])){
         if(isset($_POST['vakNaam'])){
-            
-            $vakNaam = $_POST['vakNaam'];
+            if(isset($_POST['vakOpleidingen'])){
+
+                $vakNaam = $_POST['vakNaam'];
             $vakJaarlaag = $_POST['vakJaarlaag'];
             $vakPeriode = $_POST['vakPeriode'];
             $vakDocent = $_POST['vakDocent'];
@@ -94,10 +95,9 @@
             if(empty($_FILES["vakBoek"]["name"])){
                 //Geen moduleboek
                 
-                $insertResult = $DB->Get("INSERT INTO 
+                $DB->Get("INSERT INTO 
                                         vakken (vak, jaarlaag, periode, teams, blackboard)
                                         VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$vakTeams}', '{$vakBlackboard}')");//>vakken
-                header("Location: vakkenbeheer");
             }
             else {
                 //Moduleboek toegevoegd
@@ -108,10 +108,9 @@
                     $pdf = $_FILES['vakBoek']['tmp_name']; 
                     $pdfContent = addslashes(file_get_contents($pdf)); 
                     
-                    $insertResult = $DB->Get("INSERT INTO 
+                    $DB->Get("INSERT INTO 
                                             vakken (vak, jaarlaag, periode, moduleboek, teams, blackboard)
                                             VALUES ('{$vakNaam}', '{$vakJaarlaag}', '{$vakPeriode}', '{$pdfContent}', '{$vakTeams}', '{$vakBlackboard}')");//>vakken 
-                    header("Location: vakkenbeheer");   
                 }
                 else {
                     echo "Je mag alleen een .pdf bestand uploaden.";
@@ -123,7 +122,11 @@
                 foreach ($_POST['vakOpleidingen'] as $key => $klasID) {
                     $DB->Get("INSERT INTO opleiding_vakken (opleiding_id, vak_id) VALUES ('{$klasID}','{$vakID}')");
                 }
-                header("Location: vakkenbeheer");
+                //header("Location: vakkenbeheer");
+            }
+            else {
+                echo "Geen opleiding geselecteerd.";
+            }
         }
         else {
             echo "Vaknaam is niet ingevuld.";

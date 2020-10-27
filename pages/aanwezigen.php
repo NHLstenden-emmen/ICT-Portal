@@ -67,7 +67,7 @@ th {
 						<td>
 							<?php
 								if($beschikbaarheidOutput['Maandag'][0] == '') {
-									echo $lang['DOCETNEN_VRIJ'];
+									echo $lang['DOCENTEN_VRIJ'];
 								} else {
 									echo $beschikbaarheidOutput['Maandag'][0]." - ".$beschikbaarheidOutput['Maandag'][1]; 
 								}
@@ -76,7 +76,7 @@ th {
 						<td>
 							<?php
 								if($beschikbaarheidOutput['Dinsdag'][0] == '') {
-									echo "{$lang['DOCETNEN_VRIJ']}";
+									echo "{$lang['DOCENTEN_VRIJ']}";
 								} else {
 									echo $beschikbaarheidOutput['Dinsdag'][0]." - ".$beschikbaarheidOutput['Dinsdag'][1]; 
 								}
@@ -85,7 +85,7 @@ th {
 						<td>
 							<?php
 								if($beschikbaarheidOutput['Woensdag'][0] == '') {
-									echo "{$lang['DOCETNEN_VRIJ']}";
+									echo "{$lang['DOCENTEN_VRIJ']}";
 								} else {
 									echo $beschikbaarheidOutput['Woensdag'][0]." - ".$beschikbaarheidOutput['Woensdag'][1]; 
 								}
@@ -94,7 +94,7 @@ th {
 						<td>
 							<?php
 								if($beschikbaarheidOutput['Donderdag'][0] == '') {
-									echo "{$lang['DOCETNEN_VRIJ']}";
+									echo "{$lang['DOCENTEN_VRIJ']}";
 								} else {
 									echo $beschikbaarheidOutput['Donderdag'][0]." - ".$beschikbaarheidOutput['Donderdag'][1]; 
 								}
@@ -103,7 +103,7 @@ th {
 						<td>
 							<?php
 								if($beschikbaarheidOutput['Vrijdag'][0] == '') {
-									echo "{$lang['DOCETNEN_VRIJ']}";
+									echo "{$lang['DOCENTEN_VRIJ']}";
 								} else {
 									echo $beschikbaarheidOutput['Vrijdag'][0]." - ".$beschikbaarheidOutput['Vrijdag'][1]; 
 								}

@@ -70,45 +70,45 @@
             while($klassenData = $klassenResult->fetch_assoc()){
                 echo "<tr>";
                     echo "<td>{$klassenData['opleiding_naam']}</td>";
-                    echo "<td>Jaar: {$klassenData['jaar']}</td>";
-                    echo "<td>Periode: {$klassenData['periode']}</td>";
+                    echo "<td>{$lang['NAV_JAAR']}: {$klassenData['jaar']}</td>";
+                    echo "<td>{$lang['VAKKEN_PERIODE']}: {$klassenData['periode']}</td>";
                     echo "<td><form method='post'><input type='hidden' value='{$klassenData['opleiding_id']}' name='aanpassenID'><button type='submit' name='aanpassenPage'><i class='fa fa-pencil' aria-hidden='true'></i></button></form></td>";
                     echo "<td><form method='post'><input type='hidden' value='{$klassenData['opleiding_id']}' name='verwijderID'><button type='submit' name='submitDelete'><i class='fa fa-trash' aria-hidden='true'></i></button></form></td>";
                 echo "</tr>";
             }
-            echo "</table><form method='post'><button type='submit' name='invoegenPage'>Invoegen</button></form>";
+            echo "</table><form method='post'><button type='submit' name='invoegenPage'>{$lang["NIEUWS_BEHEER_INVOEGEN"]}</button></form>";
 
         }
         //Laat de invoegen pagina zien
         else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['aanpassenPage'])){
-                echo '<div class="contentBlock-title">Opleidingbeheer | Invoegen</div>
+                echo '<div class="contentBlock-title">'.$lang['OPLEIDINGBEHEER_INVOEG_TITLE'] .'</div>
                         <div class="contentBlock-text-normal">
                         <form method="POST" enctype="multipart/form-data"> 
                             
-                            <label for="opleidingNaam">Opleidingnaam*</label><br />
-                            <input type="text" name="opleidingNaam" placeholder="Opleidingnaam" required><br />
+                            <label for="opleidingNaam">'.$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'].'*</label><br />
+                            <input type="text" name="opleidingNaam" placeholder="'.$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'].'" required><br />
                             
-                            <label for="opleidingJaarlaag">Jaarlaag*</label><br />
+                            <label for="opleidingJaarlaag">'.$lang['OPLEIDINGBEHEER_JAARLAAG'].'*</label><br />
                             <select name="opleidingJaarlaag">
-                                <option value="1">Jaar 1</option>
-                                <option value="2">Jaar 2</option>
-                                <option value="3">Jaar 3</option>
-                                <option value="4">Jaar 4</option>
+                                <option value="1">'.$lang['NAV_JAAR'].' 1</option>
+                                <option value="2">'.$lang['NAV_JAAR'].' 2</option>
+                                <option value="3">'.$lang['NAV_JAAR'].' 3</option>
+                                <option value="4">'.$lang['NAV_JAAR'].' 4</option>
                             </select><br />
 
-                            <label for="opleidingPeriode">Periode*</label><br />
+                            <label for="opleidingPeriode">'.$lang['VAKKEN_PERIODE'].'*</label><br />
                             <select name="opleidingPeriode">
-                                <option value="1">Periode 1</option>
-                                <option value="2">Periode 2</option>
-                                <option value="3">Periode 3</option>
-                                <option value="4">Periode 4</option>
+                                <option value="1">'.$lang['VAKKEN_PERIODE'].' 1</option>
+                                <option value="2">'.$lang['VAKKEN_PERIODE'].' 2</option>
+                                <option value="3">'.$lang['VAKKEN_PERIODE'].' 3</option>
+                                <option value="4">'.$lang['VAKKEN_PERIODE'].' 4</option>
                             </select><br />';
                     
                     
                         echo "<br />
-                        <p>Invulvakken met een * zijn verplicht</p>
-                        <button type='submit' name='submitInvoegen'>opslaan</button>
-                        <button type='button' onclick="."window.location.href='opleidingbeheer'".">annuleren</button>
+                        <p>{$lang["DOCENTEN_BEHEER_VERPLICHT"]}</p>
+                        <button type='submit' name='submitInvoegen'>{$lang["BESCHIKBAARHEID_SAVE"]}</button>
+                        <button type='button' onclick="."window.location.href='opleidingbeheer'".">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
                     </form>";
     }
     //Laat de aanpassen pagina zien
@@ -125,36 +125,36 @@
 
         $currentData = $currentResult->fetch_assoc();
 
-    echo '<div class="contentBlock-title">Opleidingbeheer | Bewerken</div>
+    echo '<div class="contentBlock-title">'.$lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'].'</div>
             <div class="contentBlock-text-normal">
             <form method="POST" enctype="multipart/form-data"> 
                             
-            <label for="opleidingNaam">Opleiding*</label><br />
-            <input type="text" name="opleidingNaam" placeholder="Opleiding" value="'.$currentData['opleiding_naam'].'" required><br />
+            <label for="opleidingNaam">'.$lang['OPLEIDINGBEHEER_OPLEIDING'].'*</label><br />
+            <input type="text" name="opleidingNaam" placeholder="'.$lang['OPLEIDINGBEHEER_OPLEIDING'].'" value="'.$currentData['opleiding_naam'].'" required><br />
             
-            <label for="opleidingJaarlaag">Jaarlaag*</label><br />
+            <label for="opleidingJaarlaag">'.$lang['OPLEIDINGBEHEER_JAARLAAG'].'*</label><br />
             <select name="opleidingJaarlaag">';
 
                 for ($i=1; $i <= 4; $i++) { 
                     if($i == $currentData['jaarlaag']){
-                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>Jaar '.$currentData['jaarlaag'].' (geselecteerd)</option>';
+                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>'.$lang['NAV_JAAR'].' '.$currentData['jaarlaag'].' (geselecteerd)</option>';
                     }
                     else if($i != $currentData['jaarlaag']){
-                        echo '<option value="'.$i.'">Jaar '.$i.'</option>';
+                        echo '<option value="'.$i.'">'.$lang['NAV_JAAR'].' '.$i.'</option>';
                     }
                 }
 
             echo '</select><br />
 
-            <label for="opleidingPeriode">Periode*</label><br />
+            <label for="opleidingPeriode">'.$lang['VAKKEN_PERIODE'].'*</label><br />
             <select name="opleidingPeriode">';
                
             for ($i=1; $i <= 4; $i++) { 
                 if($i == $currentData['periode']){
-                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>Periode '.$currentData['periode'].' (geselecteerd)</option>';
+                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>'.$lang['VAKKEN_PERIODE'].' '.$currentData['periode'].' (geselecteerd)</option>';
                 }
                 else if($i != $currentData['periode']){
-                    echo '<option value="'.$i.'">Periode '.$i.'</option>';
+                    echo '<option value="'.$i.'">'.$lang['VAKKEN_PERIODE'].' '.$i.'</option>';
                 }
             }
 
@@ -162,8 +162,8 @@
                     
 
             echo "<input type='hidden' name='opleidingEditID' value='{$currentData['opleiding_id']}'>
-                <button type='submit' name='aanpassenSubmit'>opslaan</button>
-                <button type='button' onclick="."window.location.href='opleidingbeheer'".">annuleren</button>
+                <button type='submit' name='aanpassenSubmit'>{$lang["BESCHIKBAARHEID_SAVE"]}</button>
+                <button type='button' onclick="."window.location.href='opleidingbeheer'".">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
             </form>
         <br />";
 

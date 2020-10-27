@@ -20,7 +20,7 @@
    
         //Jaarweergave via vakken
         if(!isset($_POST['submitOpleiding-post']) && !isset($_POST['submitOpleiding-get']) && !isset($_POST['submitJaar']) && !isset($_GET['jaar'])){
-            echo '<div class="subTitle">Vakkenlijst</div>
+            ?><div class="subTitle">Vakkenlijst</div>
             <p>Selecteer hier een jaar om alle klassen van het betreffende jaar te tonen.</p>
             <form method="POST">
                 <select name="jaarSelectie">
@@ -30,7 +30,7 @@
                     <option value="4"><?php echo $lang['NAV_JAAR']; ?> 4</option>
                 </select>
                 <button type="submit" name="submitJaar">Klassen tonen</button>
-            </form>';
+            </form><?php
             //Stap 1
         } 
         else if (isset($_POST['submitJaar']) || isset($_GET['jaar']) && !isset($_POST['submitOpleiding-post']) && !isset($_POST['submitOpleiding-get'])) {
@@ -45,7 +45,7 @@
                 $submitButton = 'get';
             }?>
             <div class='subTitle'><?PHP echo $lang['VAKKEN_KLASSEN_JAAR'] ." ". $jaarSelectie ?></div>
-            <p><?PHP $lang['VAKKEN_SELECT_ALLCALSSES'] ?></p>
+            <p><?PHP echo $lang['VAKKEN_SELECT_ALLCALSSES'] ?></p>
             <?PHP
     
             $opleidingResult = $DB->Get("SELECT * FROM opleidingen WHERE jaar = '{$jaarSelectie}' ORDER BY periode ASC");

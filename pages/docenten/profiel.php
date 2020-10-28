@@ -89,36 +89,36 @@ if($result->num_rows > 0){
         <br />
         <div class="subTitle"><?PHP echo $lang["PROFIEL_INFO_PI"]?></div><br />
         <label for="docentVoornaam"><?PHP echo $lang["CONTACT_VOORNAAM"]?>*</label><br />
-        <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" placeholder="<?PHP echo $lang["CONTACT_VOORNAAM"]?>" required><br />
+        <input type="text" value="<?= $docentData['voornaam'] ?>" name="docentVoornaam" id="docentVoornaam" placeholder="<?PHP echo $lang["CONTACT_VOORNAAM"]?>" required><br />
         
         <label for="docentAchternaam"><?PHP echo $lang["CONTACT_ACHTERNAAM"]?>*</label><br />
-        <input type="text" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="<?PHP echo $lang["CONTACT_ACHTERNAAM"]?>" required><br />
+        <input type="text" id="docentAchternaam" value="<?= $docentData['achternaam'] ?>" name="docentAchternaam" placeholder="<?PHP echo $lang["CONTACT_ACHTERNAAM"]?>" required><br />
         
         <label for="docentEmail"><?PHP echo $lang["CONTACT_EMAIL"]?>*</label><br />
-        <input type="text" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" required><br />
+        <input type="text" id="docentEmail" value="<?= $docentData['email'] ?>" name="docentEmail" placeholder="Docent@nhlstenden.com" required><br />
        
         <label for="docentTelefoonnummer"><?PHP echo $lang["CONTACT_TELL"]?></label><br />
-        <input type="text" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678"><br />
+        <input type="text" id="docentTelefoonnummer" value="<?= $docentData['telefoonnummer'] ?>" name="docentTelefoonnummer" placeholder="0612345678"><br />
         
         <label for="docentGebruikersnaam"><?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>*</label><br />
-        <input type="text" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>" required><br />
+        <input type="text" id="docentGebruikersnaam" value="<?= $docentData['gebruikersnaam'] ?>" name="docentGebruikersnaam" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>" required><br />
         <br />
         <div class="subTitle"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL"]?></div><br />
         <label for="docenttwitter"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"]?></label><br />
-        <input type="text" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitter"><br />
+        <input type="text" id="docenttwitter" value="<?= $docentData['twitter'] ?>" name="docentTwitter" placeholder="Twitter"><br />
         
         <label for="docentLinkedin"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"]?></label><br />
-        <input type="text" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin"><br />
+        <input type="text" id="docentLinkedin" value="<?= $docentData['linkedin'] ?>" name="docentLinkedin" placeholder="Linkedin"><br />
         
         <label for="docentInstagram"><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_INSTA"]?></label><br />
-        <input type="text" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram"><br />
+        <input type="text" id="docentInstagram" value="<?= $docentData['instagram'] ?>" name="docentInstagram" placeholder="Instagram"><br />
         <br />
         <div class="subTitle"><?PHP echo $lang["DOCENTEN_BEHEER_BEVEILIGING"]?></div><br />
         <label for="docentWachtwoord"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>*</label><br />
-        <input type="password" name="docentWachtwoord" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>" required><br />
+        <input type="password" id="docentWachtwoord" name="docentWachtwoord" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>" required><br />
 
         <label for="docentWachtwoordHerhaal"><?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?> *</label><br />
-        <input type="password" name="docentWachtwoordHerhaal" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>" required><br />
+        <input type="password" id="docentWachtwoordHerhaal" name="docentWachtwoordHerhaal" placeholder="<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>" required><br />
 
 
         <p><?PHP echo $lang["DOCENTEN_BEHEER_VERPLICHT"]?></p>

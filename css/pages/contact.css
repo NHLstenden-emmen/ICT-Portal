@@ -7,28 +7,24 @@
 
 .kaartSchool {
     width: 100%;
+    padding:1vw;
 }
 
-a {
-    text-decoration: none;
-    color: var(--lightPrimaryColor);
-}
-
-.devider {
-    display: inline-block;
-    width: 100%;
-}
-.content {
+main.content {
+    padding: 0;
     float: left;
     width: 80%;
 }
 .contactsidebar {
     float: left;
     width: 20%;
-    padding: 1vw;
+    padding: none;
 }
-@media (max-width: 950px) {
-    .pageSidebarBlock {
-        width: 100vw;
-    }
+
+.devider {
+	display: inline-block;
+	width: 100%;
+}
+iframe {
+    border: none;
 }

@@ -16,9 +16,10 @@
     $Core = new Core();
 
     ob_start();
+    
+    include 'languages/selector.php';
 
     include 'inc/header.php';
-    include 'languages/selector.php';
 
 
     $pageSubtitleText = $Core->subTitleText($pageTitle);
@@ -40,7 +41,8 @@
         }
     }
 
-    if(empty($_COOKIE)){
+    if(empty($_COOKIE['lang'])){
+        $_COOKIE['lang'] = 'nl';
         $langTitle = 'Nederlands';
     } else if($_COOKIE['lang'] == 'nl'){
         $langTitle = 'Nederlands';
@@ -51,7 +53,10 @@
         $langTitle = 'Nederlands';
     }
 
+ 
+
     $pageSubtitleText = $Core->subTitleText($pageTitle);
+
     include 'inc/nav.php';
 
     // if user is signed in
@@ -141,7 +146,13 @@
                 include 'pages/uitloggen.php';
                 break;
             /* Docent pagina's */
-            case 'nieuwsbeheer' || 'profiel-bewerken' || 'klassenbeheer' || 'opleidingbeheer' || 'docentbeheer' || 'beschikbaarheid' || 'vakkenbeheer':
+            case 'nieuwsbeheer': 
+            case 'profiel-bewerken':
+            case 'klassenbeheer':
+            case 'opleidingbeheer': 
+            case 'docentbeheer': 
+            case 'beschikbaarheid': 
+            case 'vakkenbeheer':
                 include 'pages/docenten/notLogedin.php';
                 break;
             // disclaimers

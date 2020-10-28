@@ -1,14 +1,3 @@
-<style>
-    table {
-        width: 100%;
-    }
-    td:nth-child(1){
-        width: 70%;
-    }
-    td:nth-child(2){
-        width: 8%;
-    }
-</style>
 <main class="content">
 
 <div class='contentBlock-nohover'>
@@ -52,7 +41,7 @@
 
         //Laat de weergave pagina zien
         if(!isset($_POST['invoegenPage']) && !isset($_POST['submitDelete']) && !isset($_POST['aanpassenPage'])){
-            echo "<div class='contentBlock-title'>Opleidingen | Keuzemenu </div><div class='contentBlock-text-normal'>";
+            echo "<div class='contentBlock-title'>".$lang['OPLEIDINGBEHEER_SELECTION_TITLE']."</div><div class='contentBlock-text-normal'>";
             //lijst met vakken met optie om ze aan te passen. (verwijderen)
             //knop voor nieuw vak
 
@@ -66,7 +55,7 @@
                 FROM opleidingen
                 ORDER BY jaar ASC, periode ASC"); //Haalt alle vakken van de ID docent op.
 
-            echo "<table>";
+            echo "<table class='beheerTabel'>";
             while($klassenData = $klassenResult->fetch_assoc()){
                 echo "<tr>";
                     echo "<td>{$klassenData['opleiding_naam']}</td>";
@@ -86,10 +75,10 @@
                         <form method="POST" enctype="multipart/form-data"> 
                             
                             <label for="opleidingNaam">'.$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'].'*</label><br />
-                            <input type="text" name="opleidingNaam" placeholder="'.$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'].'" required><br />
+                            <input type="text" id="opleidingNaam" name="opleidingNaam" placeholder="'.$lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'].'" required><br />
                             
                             <label for="opleidingJaarlaag">'.$lang['OPLEIDINGBEHEER_JAARLAAG'].'*</label><br />
-                            <select name="opleidingJaarlaag">
+                            <select name="opleidingJaarlaag" id="opleidingJaarlaag">
                                 <option value="1">'.$lang['NAV_JAAR'].' 1</option>
                                 <option value="2">'.$lang['NAV_JAAR'].' 2</option>
                                 <option value="3">'.$lang['NAV_JAAR'].' 3</option>
@@ -97,7 +86,7 @@
                             </select><br />
 
                             <label for="opleidingPeriode">'.$lang['VAKKEN_PERIODE'].'*</label><br />
-                            <select name="opleidingPeriode">
+                            <select name="opleidingPeriode" id="opleidingPeriode">
                                 <option value="1">'.$lang['VAKKEN_PERIODE'].' 1</option>
                                 <option value="2">'.$lang['VAKKEN_PERIODE'].' 2</option>
                                 <option value="3">'.$lang['VAKKEN_PERIODE'].' 3</option>
@@ -108,7 +97,7 @@
                         echo "<br />
                         <p>{$lang["DOCENTEN_BEHEER_VERPLICHT"]}</p>
                         <button type='submit' name='submitInvoegen'>{$lang["BESCHIKBAARHEID_SAVE"]}</button>
-                        <button type='button' onclick="."window.location.href='opleidingbeheer'".">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
+                        <button type='button' onclick=".'"'."window.location.href='opleidingbeheer'".'"'.">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
                     </form>";
     }
     //Laat de aanpassen pagina zien
@@ -130,10 +119,10 @@
             <form method="POST" enctype="multipart/form-data"> 
                             
             <label for="opleidingNaam">'.$lang['OPLEIDINGBEHEER_OPLEIDING'].'*</label><br />
-            <input type="text" name="opleidingNaam" placeholder="'.$lang['OPLEIDINGBEHEER_OPLEIDING'].'" value="'.$currentData['opleiding_naam'].'" required><br />
+            <input type="text" name="opleidingNaam" id="opleidingNaam" placeholder="'.$lang['OPLEIDINGBEHEER_OPLEIDING'].'" value="'.$currentData['opleiding_naam'].'" required><br />
             
             <label for="opleidingJaarlaag">'.$lang['OPLEIDINGBEHEER_JAARLAAG'].'*</label><br />
-            <select name="opleidingJaarlaag">';
+            <select name="opleidingJaarlaag" id="opleidingJaarlaag">';
 
                 for ($i=1; $i <= 4; $i++) { 
                     if($i == $currentData['jaarlaag']){
@@ -147,7 +136,7 @@
             echo '</select><br />
 
             <label for="opleidingPeriode">'.$lang['VAKKEN_PERIODE'].'*</label><br />
-            <select name="opleidingPeriode">';
+            <select name="opleidingPeriode" id="opleidingPeriode">';
                
             for ($i=1; $i <= 4; $i++) { 
                 if($i == $currentData['periode']){
@@ -163,7 +152,7 @@
 
             echo "<input type='hidden' name='opleidingEditID' value='{$currentData['opleiding_id']}'>
                 <button type='submit' name='aanpassenSubmit'>{$lang["BESCHIKBAARHEID_SAVE"]}</button>
-                <button type='button' onclick="."window.location.href='opleidingbeheer'".">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
+                <button type='button' onclick=".'"'."window.location.href='opleidingbeheer'".'"'.">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
             </form>
         <br />";
 
@@ -178,5 +167,4 @@
              
 			</div>
 		</div>
-    </div>
 </main> 

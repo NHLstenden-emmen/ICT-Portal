@@ -1,7 +1,3 @@
-.pageContentBlock {
-    width: 70%;
-}
-
 .contactInfo {
     text-align: center;
     color: var(--primaryColor);
@@ -11,29 +7,24 @@
 
 .kaartSchool {
     width: 100%;
+    padding:1vw;
 }
 
-a {
-    text-decoration: none;
-    color: var(--lightPrimaryColor);
+main.content {
+    padding: 0;
+    float: left;
+    width: 80%;
+}
+.contactsidebar {
+    float: left;
+    width: 20%;
+    padding: none;
 }
 
 .devider {
-    display: inline-block;
-    width: 100%;
+	display: inline-block;
+	width: 100%;
 }
-.pageContentBlock {
-    float: left;
-    width: 100%;
-    padding: 2vh 6vw 0vh 6vw;
-}
-.pageSidebarBlock {
-    float: left;
-    width: 20%;
-    padding: 1vw;
-}
-@media (max-width: 950px) {
-    .pageSidebarBlock {
-        width: 100vw;
-    }
+iframe {
+    border: none;
 }

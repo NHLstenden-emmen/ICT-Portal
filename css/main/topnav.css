@@ -1,4 +1,5 @@
 /* Navigation bar */
+
 .navbar {
 	transition: 0.3s;
 	background-color: #4ac4b3;
@@ -10,55 +11,8 @@
 	z-index: 2;
 }
 
-.navbar .logo {
-	padding: 0% 0% 0% 10%;
-}
-.navbar .navbar_items > .topul {
-	margin: 0;
-}
-.navbar .navbar_items > .topul .topli {
-	transition: 0.3s;
-}
-
-.navbar .navbar_items > .topul .topli:hover {
-	background: var(--lightPrimaryColor)
-		radial-gradient(circle, transparent 1%, var(--lightPrimaryColor) 1%)
-		center/15000%;
-	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
-}
-
-.navbar .navbar_items > .topul .topli.active {
-	box-shadow: inset 0 -5px 0 0 var(--tekstColor);
-}
-.navbar .navbar_items .topul {
-	display: flex;
-}
-
-.navbar .navbar_items .topul .topli {
-	color: var(--tekstColor);
-	padding: 48px 35px 48px 35px;
-}
-
-.navbar .navbar_items .topul > .divider {
-	transition: 0.3s;
-	width: 2px;
-	margin: 20px 10px 10px 10px;
-	background-color: var(--tekstColor);
-}
-
-.navbar .navbar_items .topul > .darkmodeSwitch {
-	padding: 48px 20px;
-	color: var(--tekstColor);
-}
-
-button.languageSwitch,
-button.darkmodeSwitch {
-	border-radius: unset;
-	padding: 48px 20px;
-	color: var(--tekstColor);
-}
-
-.navbar .navbar_items .topul button > .languageSwitch.English {
+.navbar .logo 
+.navbar .navbar_items ul button>.languageSwitch.English {
 	color: white;
 }
 
@@ -96,6 +50,7 @@ button.darkmodeSwitch {
 	grid-row: 3;
 	margin-left: 0.8vw;
 }
+
 .weatherDesc {
 	grid-column: 2/4;
 	grid-row: 4;
@@ -105,9 +60,9 @@ button.darkmodeSwitch {
 }
 
 /* Banner Image */
+
 .banner_image {
 	background-color: rgba(0, 0, 0, 0.5);
-	background: url("../../images/jumbotron.jpg") no-repeat center;
 	background-size: cover;
 	width: 100%;
 	height: max-content;
@@ -128,20 +83,18 @@ button.darkmodeSwitch {
 
 .bannerTitle {
 	text-transform: capitalize;
-	font-size: 3vw;
+	font-size: 2.8vw;
 	font-weight: 700;
 	transition: 0.3s;
-	color: var(--dark);
 }
 
 .bannerSubTitle {
 	font-weight: 400;
 	text-transform: none;
 	transition: 0.3s;
-	color: var(--dark);
 }
 
-body > .jumbotron > .jumbotron-content > div.inputSearchField {
+body>.jumbotron>.jumbotron-content>div.inputSearchField {
 	margin-top: 15px;
 	width: 300px;
 }
@@ -151,11 +104,7 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	width: 100%;
 	grid-template-columns: 7vw 7vw 7vw 17vw 7vw 7vw 7vw 7vw 7vw 7vw 7vw;
 	grid-template-rows: 7vw 7vw 7vw 7vw;
-	grid-template-areas:
-		". . . . . . . . . J1 ."
-		". Titel Titel . Populair Populair . . . . J2"
-		". . . . Populair Populair . Contact J4 J3 ."
-		". . . . . . Mededelingen . . . .";
+	grid-template-areas: ". . . . . . . . . J1 ." ". Titel Titel . Populair Populair . . . . J2" ". . . . Populair Populair . Contact J4 J3 ." ". . . . . . Mededelingen . . . .";
 }
 
 .Titel {
@@ -207,6 +156,7 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	height: 100%;
 	transition: 0.3s;
 }
+
 .zoom:hover {
 	transform: scale(1.1);
 }
@@ -230,16 +180,11 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	font-family: sans-serif;
 }
 
-.dropbtn {
-	display: flex;
-	color: var(--tekstColor);
-	padding: 48px 35px 48px 35px;
-}
-
 .navDropdown {
 	position: relative;
 	display: inline-block;
 }
+
 .dropdown-content {
 	max-height: 0;
 	transition: max-height 0.15s ease-out;
@@ -248,14 +193,15 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	position: absolute;
 	background-color: #f1f1f1;
 	width: auto;
-	/* margin-left: 10px; */
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
+
 .navDropdown:hover .dropdown-content {
 	max-height: 500px;
 	transition: max-height 0.5s ease-in;
 }
+
 .navDropdown:hover,
 .dropdown-content:hover {
 	background: var(--lightPrimaryColor);
@@ -279,25 +225,46 @@ body > .jumbotron > .jumbotron-content > div.inputSearchField {
 	background-color: #ddd;
 }
 
-.dropbtn.darkmode {
-	padding: 48px 35px 48px 35px;
-	background-color: transparent;
+.mededelingenBlock {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 3.4vw;
+    margin-left: 3.7vw;
+}
+.mededelingenText, .contactText{
+    grid-row: 1;
+    grid-column: 1/2;
+    font-size: 1vw;
+    margin-left: 0.2vw;
+}
+.mededelingenText {
+    margin-top: 4vw;
+}
+.contactText {
+    margin-top: 4.9vw;
 }
 
-.langsitch button {
-	padding: 48px 20px 48px 20px;
+.contactBlock {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: 3.4vw;
+    margin-left: 3.7vw;
 }
-.logoutbutton {
-	color: var(--dark);
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	background: none;
-	text-transform: none;
-	text-transform: none;
-	text-align: left;
-	width: 100%;
+
+.jaarBlock {
+    display: grid;
+    grid-template-columns: auto 40%;
+    grid-template-rows: 50% 50%;
 }
-.logoutbutton:hover {
-	background-color: #ddd;
+.jaarBlockGrid {
+    grid-row: 1;
+    grid-column: 1/3;
+    font-size: 2vw;
+    margin-top: 4.3vw;
+    margin-left: 0.3vw;
+}
+.jaarBlockText {
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 4vw;
 }

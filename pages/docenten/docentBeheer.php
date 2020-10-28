@@ -4,7 +4,6 @@
 		<div class='contentBlock-side'></div>
 		<div class='contentBlock-content'>
 
-
 <?php
     //Toevoegen
     if(isset($_POST['submitInvoegen'])){
@@ -119,7 +118,7 @@
 
             $docentenResult = $DB->Get("SELECT *FROM docenten WHERE docent_id != '{$docentID}' ORDER BY docent_id ASC "); //Haalt alle docenten op
 
-            echo "<table>";
+            echo "<table class='docentBeheer'>";
             while($docentenData = $docentenResult->fetch_assoc()){
                 echo "<tr>";
                     echo "<td>{$docentenData['voornaam']} {$docentenData['achternaam']}</td>";
@@ -132,56 +131,56 @@
         //Laat de invoegen pagina zien
         else if(isset($_POST['invoegenPage']) && !isset($_POST['submitDelete'])){ ?>
         <div class='contentBlock-title'><?php echo $lang["DOCENTEN_BEHEER_ADD"]?> </div><div class='contentBlock-text-normal'>
-        <img src='images/avatar_default.jpg' style='color: var(--tekstColor); display: block; border-radius: 50%; object-fit: cover; margin: 2vw; height: 30vw; width: 30vw; max-width: 65%;'>
+        <img src='images/avatar_default.jpg' class='insertFoto'  alt="defaultFoto">
             <form method='POST' enctype='multipart/form-data'> 
-                <label for='docentVoornaam'><?PHP echo  $lang["DOCENTEN_BEHEER_FOTO"]?></label><br />
-                <input type='file' name='docentFoto'><br />
+                <label for='docentFoto'><?PHP echo  $lang["DOCENTEN_BEHEER_FOTO"]?></label><br />
+                <input type='file' id='docentFoto' name='docentFoto'><br />
                 <br />
                 <div class='subTitle'><?PHP echo $lang["DOCENTEN_BEHEER_PF_INFO"]?></div><br />
                 <label for='docentVoornaam'><?PHP echo $lang["CONTACT_VOORNAAM"]?>*</label><br />
-                <input type='text' name='docentVoornaam' placeholder='<?PHP echo $lang["CONTACT_VOORNAAM"]?>' required><br />
+                <input type='text' id='docentVoornaam' name='docentVoornaam' placeholder='<?PHP echo $lang["CONTACT_VOORNAAM"]?>' required><br />
                 
                 <label for='docentAchternaam'><?PHP echo $lang["CONTACT_ACHTERNAAM"]?>*</label><br />
-                <input type='text' name='docentAchternaam' placeholder='<?PHP echo $lang["CONTACT_VOORNAAM"]?>' required><br />
+                <input type='text' id='docentAchternaam' name='docentAchternaam' placeholder='<?PHP echo $lang["CONTACT_VOORNAAM"]?>' required><br />
                 
                 <label for='docentEmail'><?PHP echo $lang["CONTACT_EMAIL"]?>*</label><br />
-                <input type='text' name='docentEmail' placeholder='Docent@nhlstenden.com' required><br />
+                <input type='text' id='docentEmail' name='docentEmail' placeholder='Docent@nhlstenden.com' required><br />
             
                 <label for='docentTelefoonnummer'><?PHP echo $lang["CONTACT_TELL"]?></label><br />
-                <input type='text' name='docentTelefoonnummer' placeholder='0612345678'><br />
+                <input type='text' id='docentTelefoonnummer' name='docentTelefoonnummer' placeholder='0612345678'><br />
                 
                 <label for='docentGebruikersnaam'><?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>*</label><br />
-                <input type='text' name='docentGebruikersnaam' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>' required><br />
+                <input type='text' id='docentGebruikersnaam' name='docentGebruikersnaam' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_GEBRUIKERSNAAM"]?>' required><br />
                 <br />
                 <div class='subTitle'><?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL"]?></div><br />
-                <label for='docenttwitter'>
-<?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"]?></label><br />
-                <input type='text' name='docentTwitter' placeholder='Twitter'><br />
+                <label for='docentTwitter'>
+                <?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_TWITTER"]?></label><br />
+                <input type='text' id='docentTwitter' name='docentTwitter' placeholder='Twitter'><br />
                 
                 <label for='docentLinkedin'>
-<?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"]?></label><br />
-                <input type='text' name='docentLinkedin' placeholder='Linkedin'><br />
+                <?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_LINKEDIN"]?></label><br />
+                <input type='text' id='docentLinkedin' name='docentLinkedin' placeholder='Linkedin'><br />
                 
                 <label for='docentInstagram'>
-<?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_INSTA"]?></label><br />
-                <input type='text' name='docentInstagram' placeholder='Instagram'><br />
+                <?PHP echo $lang["DOCENTEN_BEHEER_SOCIAL_INSTA"]?></label><br />
+                <input type='text' id='docentInstagram' name='docentInstagram' placeholder='Instagram'><br />
                 <br />
                 <div class='subTitle'>
-<?PHP echo $lang["DOCENTEN_BEHEER_BEVEILIGING"]?></div><br />
+                <?PHP echo $lang["DOCENTEN_BEHEER_BEVEILIGING"]?></div><br />
                 <label for='docentWachtwoord'>
-<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>*</label><br />
-                <input type='password' name='docentWachtwoord' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>' required><br />
+                <?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>*</label><br />
+                <input type='password' id='docentWachtwoord' name='docentWachtwoord' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD"]?>' required><br />
 
                 <label for='docentWachtwoordHerhaal'>
-<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>*</label><br />
-                <input type='password' name='docentWachtwoordHerhaal' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>' required><br />
+                <?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>*</label><br />
+                <input type='password' id='docentWachtwoordHerhaal' name='docentWachtwoordHerhaal' placeholder='<?PHP echo $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"]?>' required><br />
 
                 <p>
-<?PHP echo $lang["DOCENTEN_BEHEER_VERPLICHT"]?></p>
+                <?PHP echo $lang["DOCENTEN_BEHEER_VERPLICHT"]?></p>
                 <button type='submit' name='submitInvoegen'>
-<?PHP echo $lang["BESCHIKBAARHEID_SAVE"]?></button>
-                <button type='button' onclick="."window.location.href='docentbeheer'".">
-<?PHP echo $lang["DOCENTEN_BEHEER_ANNULEREN"]?></button>
+                <?PHP echo $lang["BESCHIKBAARHEID_SAVE"]?></button>
+                <button type='button' onclick="window.location.href='docentbeheer'">
+                <?PHP echo $lang["DOCENTEN_BEHEER_ANNULEREN"]?></button>
             </form>
         <?PHP
     }
@@ -190,7 +189,8 @@
         header('location: docentbeheer');
     }
     ?>
-            </div>
-        </div>
     </div>
+             
+			</div>
+		</div>
 </main> 

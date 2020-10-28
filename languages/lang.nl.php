@@ -45,7 +45,7 @@ $lang['PRESENT_Wednesday'] = 'Woensdag';
 $lang['PRESENT_Thursday'] = 'Donderdag';
 $lang['PRESENT_Friday'] = 'Vrijdag';
 $lang['GEEN_BESCHIKBARE_DOCENTEN'] = 'Er zijn geen docenten aanwezig';
-$lang['DOCENTEN_VRIJ'] = 'Niet aanwezig';
+$lang['DOCENTEN_VRIJ'] = 'Niet beschikbaar';
 $lang['GEEN_DOCENT_NAAM'] = 'Geen naam gevonden';
 $lang['GEEN_DOCENT_VAKKEN'] = 'Vakken';
 $lang['GEEN_DOCENT_NONEXISTENT'] = 'Deze docent bestaat niet.';
@@ -62,6 +62,7 @@ $lang['VAKKEN_KLASSEN_JAAR'] = 'Klassen | Jaar';
 $lang['VAKKEN_PERIODE'] = 'Periode';
 $lang['VAKKEN_VAKKENLIJST'] = 'Vakkenlijst';
 $lang['VAKKEN_VAKKENLIJST_SUBTITLE'] = 'Selecteer hier een jaar om alle klassen van het betreffende jaar te tonen.';
+$lang['VAKKEN_JAAR'] = 'opleidingen tonen';
 $lang['VAKKEN_KLASSEN'] = 'Klassen tonen';
 $lang['VAKKEN_VAKDOCENT'] = 'Vakdocent';
 $lang['VAKKEN_NOCALSSES'] = 'Dit jaar heeft geen klassen.';
@@ -166,6 +167,7 @@ $lang['404_PAGE_DESC'] = 'Klik hier om terug te gaan naar de hoofd pagina';
 $lang['NOTLOGEDIN_TITLE'] = 'Deze pagina is alleen voor docenten.';
 
 //opleidingbeheer
+$lang['OPLEIDINGBEHEER_SELECTION_TITLE'] = 'Opleidingbeheer | Keuzemenu';
 $lang['OPLEIDINGBEHEER_INVOEG_TITLE'] = 'Opleidingbeheer | Invoegen';
 $lang['OPLEIDINGBEHEER_BEWERKEN_TITLE'] = 'Opleidingbeheer | Bewerken';
 $lang['OPLEIDINGBEHEER_OPLEIDINGNAAM'] = 'Opleidingnaam';
@@ -180,4 +182,31 @@ $lang['DOCENTBEHEER_ERRORLOG_GB'] = 'Nieuwe docent toevoegen mislukt: Geen Gebru
 $lang['DOCENTBEHEER_ERRORLOG_GMAIL'] = 'Nieuwe docent toevoegen mislukt: Geen Email ingevoerd.';
 $lang['DOCENTBEHEER_ERRORLOG_NA'] = 'Nieuwe docent toevoegen mislukt: Geen achternaam ingevoerd.';
 $lang['DOCENTBEHEER_ERRORLOG_NV'] = 'Nieuwe docent toevoegen mislukt: Geen voornaam ingevoerd.';
+
+//Subtitles nav
+$lang['NEWS_LASTUPDATE'] = 'Laatste update:';
+$lang['NEWS_NOLAST_UPDATE'] = 'Geen recente update gevonden';
+$lang['VAKKEN_SUBTITLE'] = 'Bekijk op deze pagina alle vakken. Door een vak te selecteren kom je alles te weten.';
+$lang['DOCENT_SUBTITLE'] = 'Bekijk een docent, hier kan je informatie vinden zoals een emailadres van een docent.';
+$lang['CONTACT_SUBTITLE'] =  'Op deze pagina staan alle contactgevens van NHL Stenden Emmen.';
+$lang['AANWEZIGHEID_SUBTITLE'] = 'Op deze pagina kan je de beschikbaarheid zien van alle docenten in een makkelijk overzicht.';
+$lang['LOGIN_SUBTITLE'] = "Op deze pagina kan een docent inloggen om de site te beheren.";
+
+
+//Titles nav
+$lang['NEWS_BANNERTITLE'] = 'Nieuws';
+$lang['VAKKEN_BANNERTITLE'] = 'Vakken';
+$lang['DOCENTEN_BANNERTITLE'] = 'Docenten';
+$lang['DOCENT_BANNERTITLE'] = 'Docent';
+$lang['CONTACT_BANNERTITLE'] =  'Contact';
+$lang['AANWEZIGHEID_BANNERTITLE'] = 'Beschikbaarheid';
+$lang['LOGIN_BANNERTITLE'] = "Aanmelden";
+
+$lang['PROFILE_EDIT_BANNERTITLE'] = "Profiel Bewerken";
+$lang['NEWSMANAGEMENT_TITLE'] = "Nieuwsbeheer";
+$lang['DOCENTMANAGEMENT_TITLE'] = "Docentbeheer";
+$lang['BESCHIKBAARHEID_TITLE'] = "Beschikbaarheid bewerken";
+$lang['SUBJECTMANAGEMENT_TITLE'] = "vakkenbeheer";
+$lang['EDUCATIONMANAGEMENT_TITLE'] = "opleidingbeheer";
+
 ?>

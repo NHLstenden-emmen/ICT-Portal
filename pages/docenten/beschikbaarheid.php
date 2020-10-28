@@ -80,7 +80,6 @@
         <input type="time" id="beschikbaarheidVrijdag_begin" value="<?= $beschikbaarheidOutput['Vrijdag'][0] ?>" name="beschikbaarheidVrijdagBegin" style="width: 25%;">
         <input type="time" value="<?= $beschikbaarheidOutput['Vrijdag'][1] ?>" name="beschikbaarheidVrijdagEind" style="width: 25%;"><br />
         <button type="submit" name="submitAction"><?PHP echo $lang["BESCHIKBAARHEID_SAVE"]?></button>
-        
     </form>
 </div></div></div>
 </main>

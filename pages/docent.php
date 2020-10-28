@@ -1,4 +1,4 @@
-<main class="content">
+<main class="content" onclick="">
 <?php
 
 	$docentID = intval($_GET['docent']);
@@ -72,7 +72,7 @@
 
 				echo "</i></p>
 
-				<hr class='mobileDivider'>
+				<hr class='mobileDivider' />	
 				<div class='docentBlok-Icons'>";
 
 					if (!empty($docent['telefoonnummer'])) {

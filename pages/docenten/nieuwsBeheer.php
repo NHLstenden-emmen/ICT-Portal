@@ -241,7 +241,7 @@
                 echo $lang['NIEUWS_BEHEER_MISSING_NEWS'].' '. $langTitle;
             }
             
-            echo "<table>";
+            echo "<table class='beheerTabel'>";
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
                 echo "<tr>";
                     echo "<td>{$nieuwsData['titel']} ({$lang["NIEUWS_BEHEER_POSTER"]}: {$nieuwsData['voornaam']} {$nieuwsData['achternaam']})</td>";

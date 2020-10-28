@@ -1,0 +1,19 @@
+.docentenFoto {
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin: 5% auto 0% auto;
+}
+
+.docentBlok-voornaam{
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.docentBlok-achternaam {
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}

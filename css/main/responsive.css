@@ -1,0 +1,171 @@
+@media (max-width: 950px) {
+	/* REPSONSIVE NAVBAR */
+	.navbar {
+		align-items: normal !;
+		height: auto;
+		flex-direction: column;
+		position: relative;
+	}
+	.navbar .navbar_items ul li {
+		display: none;
+	}
+	.navbar .navbar_items .divider {
+		display: none;
+	}
+	.navbar .navbar_items .darkmodeSwitch {
+		display: none;
+	}
+	.navbar ul li {
+		margin-bottom: 5px;
+	}
+	.navbar ul {
+		flex-direction: column;
+		text-align: center;
+	}
+	.navbar .logo {
+		padding: 2% 0% 2% 4%;
+	}
+	.navbar .logo img {
+		height: 10vh;
+	}
+	/*BANNER IMAGE RESPONSIVE */
+	.banner_image {
+		display: none;
+	}
+	.banner_content-left {
+		padding: 5% 0% 0% 4%;
+	}
+	.banner_content-left .bannerTitle {
+		font-size: 1.5em;
+		color: var(--tekstColor);
+	}
+	.banner_content-left .bannerSubTitle {
+		color: var(--tekstColor);
+	}
+	.banner_content-right {
+		display: none;
+		text-align: right;
+	}
+	.footer_desktop {
+		display: none;
+	}
+	main.content {
+		margin-bottom: 30vw;
+	}
+	.contentBlock-grid {
+		grid-template-columns: none;
+		grid-gap: unset;
+	}
+	.contentBlock-date-view {
+		font-size: 4vw;
+	}
+	.pageContentBlock {
+		width: 100%;
+		margin-bottom: 5vh;
+	}
+	button.languageSwitch,
+	button.darkmodeSwitch {
+		display: none;
+	}
+	#contactcontent {
+		float: left;
+		width: 100%;
+		margin-bottom: 2vw;
+	}
+	.contactsidebar {
+		float: left;
+		width: 100%;
+		padding: none;
+	}
+	.bewerkenFoto {
+		float: right;
+		height: 25vw;
+		width: 25vw;
+		margin-top: 1.5vw;
+	}
+	table.beheerTabel td:nth-child(1) {
+		min-width: 5%;
+		max-width: 2vw;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		padding-right: 1vw;
+	}
+	table.beheerTabel td:nth-child(2),
+	td:nth-child(3) {
+		display: none;
+	}
+	table.beheerTabel td:nth-child(3),
+	td:nth-child(4) {
+		width: unset;
+	}
+	.contentBlock-content {
+		grid-template-rows: auto;
+	}
+	.docentenWeergaveFoto {
+		display: block;
+		border-radius: 50%;
+		object-fit: cover;
+		margin: 5vw auto 5vw auto;
+		width: 40vw;
+		height: 40vw;
+		grid-column: 2/5;
+		grid-row: 2;
+	}
+	.docentBlok-naam {
+		font-size: 8vw;
+		grid-column: 2/5;
+		grid-row: 3;
+	}
+	.docentBlok-achternaam {
+		font-size: 8vw;
+		grid-column: 2/5;
+		grid-row: 4;
+	}
+	.docentBlok-beschikbaarheid {
+		text-align: center;
+		font-size: 4vw;
+		grid-column: 2/5;
+		grid-row: 5;
+	}
+	.docentBlok-vakken {
+		margin-top: 2vh;
+		font-size: 4vw;
+		grid-column: 2/5;
+		grid-row: 6;
+	}
+	.mobileDivider {
+		width: 50%;
+		border-top: 1px solid #b7acac;
+		grid-column: 2/5;
+		grid-row: 7;
+		margin: 2vw auto 0 auto;
+		height: 1px;
+	}
+	.docentBlok-Icons {
+		grid-column: 2/5;
+		grid-row: 8;
+		margin: 2vw auto 2vh auto;
+	}
+	.docentBlok-Icons a {
+		margin: 0 3vw 0 3vw;
+	}
+	.docentBlok-Icons i {
+		font-size: 8vw;
+	}
+}
+
+@media (min-width: 950px) {
+	.footer-mobile {
+		display: none;
+	}
+	.mobileDivider {
+		display: none;
+	}
+}
+
+@media (max-width: 1000px) {
+	.bottom {
+		width: 95vw;
+	}
+}

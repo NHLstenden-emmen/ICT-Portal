@@ -54,5 +54,16 @@
         ?>
         <link rel="stylesheet" href="css/main/darkmode.css">
         <link rel="stylesheet" href="css/main/responsive.css">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGJBD3PBS0"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-WGJBD3PBS0');
+        </script>
+        
     </head>
-    <body <?= (!empty($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == 'enabled') ?  "class='darkmode'" : ""; ?>>
+    <body <?= (!empty($_COOKIE['darkmode']) && $_COOKIE['darkmode'] == 'enabled') ?  "class='darkmode'" : ""; ?> onlick="">

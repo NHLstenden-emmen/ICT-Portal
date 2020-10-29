@@ -1,4 +1,4 @@
-<main class="content" onclick="">
+<main class="content">
     <div class="subTitle"><?php echo $lang['DOCENT_LIST']; ?></div>
     <div class = "contentBlock-grid">
     <?php $result = $DB->Get("SELECT * FROM docenten");

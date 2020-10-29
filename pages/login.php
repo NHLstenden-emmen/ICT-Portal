@@ -31,7 +31,7 @@
 	}
 ?>
 
-<main class="content" onclick="">
+<main class="content">
 	<div class='contentBlock-nohover' style="width: 100%;">
 		<div class='contentBlock-side' style="width: 100%;"></div>
 		<div class='contentBlock-content' style="width: 100%;">

@@ -10,8 +10,10 @@ class MySQL
 	function __construct()
 	{
 		$hostname = 'localhost';
-		$username = 'DatabaseGebruiker';
-		$password = 'yEyEGhaFe5KWR4PglkS3';
+		//$username = 'DatabaseGebruiker';
+		//$password = 'yEyEGhaFe5KWR4PglkS3';
+		$username = 'root';
+		$password = '';
 		$database = 'ictportal';
 
 		$this->link = new MySQLi($hostname, $username, $password, $database);

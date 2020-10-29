@@ -7,7 +7,7 @@ Download de bestanden en zet deze op de webserver. De webserver moet .htaccess-b
 
 Installatie database:
 
-Maak een database aan genaamd 'ictportal' en upload de sql die in de root folder van de website staat. Zorg daarnaast dat de MySQL server een maximale upload grootte van 15MB krijgt voor documenten en eventuele foto's (kan in my.ini worden veranderd). Minder kan problemen opleveren.
+Maak een database aan genaamd 'ictportal' en upload de sql die in de root folder van de website staat. Zorg daarnaast dat de MySQL server een maximale upload grootte van 15MB krijgt voor documenten en eventuele foto's (kan in my.ini worden veranderd). Minder kan problemen opleveren. Om connectie met de database te maken moet in inc/mysql.php een gebruikersnaam met wachtwoord opgegeven worden tussen de aanhalingstekens op regel 13 en 14.
 
 
 Inloggen:

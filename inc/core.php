@@ -99,34 +99,82 @@ class Core
 	}
 
 
-
+	function bannerTitleText($pageTitle){
+		global $lang;
+		switch ($pageTitle) {
+			case 'nieuws':
+                $pageTitle = $lang['NEWS_BANNERTITLE'];
+                break;
+            case 'vakken':
+                $pageTitle = $lang['VAKKEN_BANNERTITLE'];
+                break;
+			case 'docenten':
+				$pageTitle = $lang['DOCENTEN_BANNERTITLE'];
+				break;
+			case 'docent':	
+                $pageTitle = $lang['DOCENT_BANNERTITLE'];
+                break;
+            case 'contact':
+                $pageTitle = $lang['CONTACT_BANNERTITLE'];
+                break;
+            case 'aanwezigheid':
+                $pageTitle = $lang['AANWEZIGHEID_BANNERTITLE'];
+                break;
+            case 'login':
+                $pageTitle = $lang['LOGIN_BANNERTITLE'];
+				break;
+			//Docentenpaginas
+            case 'nieuwsbeheer':
+                $pageTitle = $lang['NEWSMANAGEMENT_TITLE'];
+                break;
+            case 'profiel bewerken':
+                $pageTitle = $lang['PROFILE_EDIT_BANNERTITLE'];
+                break;
+            case 'docentbeheer':
+                $pageTitle = $lang['DOCENTMANAGEMENT_TITLE'];
+                break;
+            case 'beschikbaarheid':
+                $pageTitle = $lang['BESCHIKBAARHEID_TITLE'];
+                break;
+            case 'vakkenbeheer':
+                $pageTitle = $lang['SUBJECTMANAGEMENT_TITLE'];
+                break;
+            case 'opleidingbeheer':
+                $pageTitle = $lang['EDUCATIONMANAGEMENT_TITLE'];
+                break;
+            default:
+				$pageTitle = $pageTitle;
+		}
+			return $pageTitle;
+	}
+	
 	function subTitleText($pageTitle){
 		global $lang, $DB;
 		switch ($pageTitle) {
 			case 'nieuws':
-				$bijgewerktTime = $DB->Get("SELECT datum FROM nieuws ORDER BY datum DESC");
+				$bijgewerktTime = $DB->Get("SELECT datum FROM nieuws ORDER BY datum DESC LIMIT 1");
 				if($bijgewerktTime->num_rows > 0){
-					$pageSubtitle = 'Laatst bijgewerkt: <br />'.$bijgewerktTime->fetch_assoc()['datum'];
+					$pageSubtitle = $lang['NEWS_LASTUPDATE'].'<br />'.$bijgewerktTime->fetch_assoc()['datum'];
 				}
 				else {
-					$pageSubtitle = 'Geen laatste bijwerking gevonden';
+					$pageSubtitle = $lang['NEWS_NOLAST_UPDATE'] ;
 				}
                 break;
             case 'vakken':
-                $pageSubtitle = "Bekijk op deze pagina alle vakken. Door een vak te selecteren kom je alles te weten.";
+                $pageSubtitle = $lang['VAKKEN_SUBTITLE'];
                 break;
 			case 'docenten':
 			case 'docent':	
-                $pageSubtitle = "Bekijk een docent, hier kan je informatie vinden zoals een emailadres van een docent.";
+                $pageSubtitle = $lang['DOCENT_SUBTITLE'];
                 break;
             case 'contact':
-                $pageSubtitle = "Op deze pagina staan alle contactgevens van NHL Stenden Emmen.";
+                $pageSubtitle = $lang['CONTACT_SUBTITLE'];
                 break;
             case 'aanwezigheid':
-                $pageSubtitle = "Op deze pagina kan je de beschikbaarheid zien van alle docenten in een makkelijk overzicht.";
+                $pageSubtitle = $lang['AANWEZIGHEID_SUBTITLE'];
                 break;
             case 'login':
-                $pageSubtitle = "Op deze pagina kan een docent inloggen om de site te beheren.";
+                $pageSubtitle = $lang['LOGIN_SUBTITLE'];
                 break;
             default:
 				$pageSubtitle = "";
@@ -150,7 +198,7 @@ class Core
 			$msgerror = '';
 		}
 		echo $msgerror;
-		mail("studentinfo@nhlstenden.com","This is a mail from ICT PORTAL","From:".$name."<br>Email:".$email."<br><br>".$message,$headers );
+		mail("noreply@serverict.nl","This is a mail from ICT PORTAL","From:".$name."<br>Email:".$email."<br><br>".$message,$headers );
 	}
 }
 ?>

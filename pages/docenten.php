@@ -1,9 +1,9 @@
-<main class="content">
+<main class="content" onclick="">
     <div class="subTitle"><?php echo $lang['DOCENT_LIST']; ?></div>
     <div class = "contentBlock-grid">
     <?php $result = $DB->Get("SELECT * FROM docenten");
     while($docentData = $result->fetch_assoc()){
-        echo "<div class='contentBlock' onclick="."window.location.href='docent?docent={$docentData["docent_id"]}'>
+        echo "<div class='contentBlock' onclick=".'"'."window.location.href='docent?docent={$docentData["docent_id"]}'".'"'.">
             <div class='contentBlock-side'></div>
             <div class='contentBlock-content'>";
                 if(!empty($docentData['foto'])){

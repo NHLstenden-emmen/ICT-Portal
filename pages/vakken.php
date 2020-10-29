@@ -1,9 +1,5 @@
-<style>
-.contentBlock-grid {
-    grid-template-columns: unset;
-}
-</style>
-<main class="content">
+
+<main class="content" onclick="">
     <?php
         if(isset($_POST['moduleboekSubmit'])){
             if(isset($_POST['moduleboekID'])){
@@ -20,8 +16,8 @@
    
         //Jaarweergave via vakken
         if(!isset($_POST['submitOpleiding-post']) && !isset($_POST['submitOpleiding-get']) && !isset($_POST['submitJaar']) && !isset($_GET['jaar'])){
-            ?><div class="subTitle">Vakkenlijst</div>
-            <p>Selecteer hier een jaar om alle klassen van het betreffende jaar te tonen.</p>
+            ?><div class="subTitle"><?= $lang['VAKKEN_VAKKENLIJST'] ?></div>
+            <p><?= $lang['VAKKEN_VAKKENLIJST_SUBTITLE'] ?></p>
             <form method="POST">
                 <select name="jaarSelectie">
                     <option value="1"><?php echo $lang['NAV_JAAR']; ?> 1</option>
@@ -29,7 +25,7 @@
                     <option value="3"><?php echo $lang['NAV_JAAR']; ?> 3</option>
                     <option value="4"><?php echo $lang['NAV_JAAR']; ?> 4</option>
                 </select>
-                <button type="submit" name="submitJaar">Klassen tonen</button>
+                <button type="submit" name="submitJaar"><?= $lang['VAKKEN_JAAR'] ?></button>
             </form><?php
             //Stap 1
         } 
@@ -55,7 +51,7 @@
                 while($opleidingData = $opleidingResult->fetch_assoc()){
                     echo "<option value='{$opleidingData['opleiding_id']}'>{$opleidingData['opleiding_naam']}</option>";
                 }
-                echo "</select><button type='submit' name='submitOpleiding-{$submitButton}'>vakken weergeven</button></form>";
+                echo "</select><button type='submit' name='submitOpleiding-{$submitButton}'>{$lang['VAKKEN_KLASSEN']}</button></form>";
             }
             else {
                 echo "{$lang['VAKKEN_NOCALSSES']}";
@@ -117,5 +113,4 @@
 
 
     ?>
-    </div>
 </main>

@@ -9,6 +9,10 @@ th, td {
   padding: 8px;
 }
 
+body.darkmode tr:nth-child(even){
+	background-color: #444343;
+}
+
 tr:nth-child(even){
 	background-color: #f2f2f2;
 }
@@ -16,9 +20,10 @@ tr:nth-child(even){
 th {
   background-color: var(--lightPrimaryColor);
   color: white;
+  width: 10%;
 }
 </style>
-<main class="content">
+<main class="content" onclick=""> 
 	<div class='contentBlock-nohover'>
 		<div class='contentBlock-side'></div>
 		<div class='contentBlock-content'>

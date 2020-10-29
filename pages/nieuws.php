@@ -1,6 +1,6 @@
 
-    <main class="content">
-
+    <main class="content" onclick="">
+   
     <?php 
     if(empty($_COOKIE)){
         $_COOKIE['lang'] = 'nl';
@@ -27,19 +27,19 @@
                     LIMIT 4");
 
             if($nieuwsResult->num_rows == 0){
-                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"];
+                echo '<p>'.$lang["NEWS_GEENNIEUWS_BERICHTEN"].'</p><br>';
             }
 
             while($nieuwsData = $nieuwsResult->fetch_assoc()){
-                echo "<div class='contentBlock' onclick="."window.location.href='nieuws?id={$nieuwsData["id"]}'>
+                echo "<div class='contentBlock' onclick=".'"'."window.location.href='nieuws?id={$nieuwsData["id"]}'".'"'.">
                     <div class='contentBlock-side'></div>
                     <div class='contentBlock-content'>";
                         if(!empty($nieuwsData['afbeelding'])){
-                            echo "<img alt={$lang['NEWS_IMAGE_ALT']} id='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
+                            echo "<img alt={$lang['NEWS_IMAGE_ALT']} class='image-Nieuws' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsData['afbeelding'])."' />";
                         }
                     echo "
                     <div class='contentBlock-title'>{$nieuwsData['titel']}</div>
-                        <div id='nieuws-short' class='contentBlock-text-normal'>{$nieuwsData['tekst']}</div>
+                        <div class='contentBlock-text-normal nieuws-short'>{$nieuwsData['tekst']}</div>
                         <div class='contentBlock-date'>{$nieuwsData['datum']} | {$nieuwsData['voornaam']} {$nieuwsData['achternaam']}</div>
                     </div>
                 </div>";
@@ -61,7 +61,7 @@
                 LIMIT 10");
 
             if($nieuwsResult10->num_rows == 0){
-                echo "Er zijn nog geen nieuwsberichten geplaatst in het {$langTitle}.";
+                echo '<p>'.$lang["NEWS_GEENNIEUWS_BERICHTEN"].'</p>';
             }
 
             echo '<table>';
@@ -71,10 +71,10 @@
                             <span class="dotIcon"></span>
                         </td>
                         <td>
-                            <p><a href="nieuws?id='.$nieuwsData10['id'].'">'.$nieuwsData10['titel'].'</p>
+                            <p><a href="nieuws?id='.$nieuwsData10['id'].'">'.$nieuwsData10['titel'].'</a></p>
                         </td>
                         <td class="time">
-                            <p>'.$nieuwsData10['datum'].'</a></p>
+                            <p>'.$nieuwsData10['datum'].'</p>
                         </td></tr>';
             }
             echo '</table>';
@@ -94,24 +94,24 @@
                 ORDER BY nieuws_{$_COOKIE['lang']}.nieuws_{$_COOKIE['lang']}_id ASC");
 
             if($nieuwsResultAll->num_rows == 0){
-                echo $lang["NEWS_GEENNIEUWS_BERICHTEN"] . $langTitle .".";
+                echo '<p>'.$lang["NEWS_GEENNIEUWS_BERICHTEN"].'</p>';
             }
 
-            echo '<table>';
+            echo '<br><table>';
             while($nieuwsDataAll = $nieuwsResultAll->fetch_assoc()){
                 echo '<tr>
                         <td class="dotTD">
                             <span class="dotIcon"></span>
                         </td>
                         <td>
-                            <p><a href="nieuws?id='.$nieuwsDataAll['id'].'">'.$nieuwsDataAll['titel'].'</p>
+                            <p><a href="nieuws?id='.$nieuwsDataAll['id'].'">'.$nieuwsDataAll['titel'].'</a></p>
                         </td>
                         <td class="time">
-                            <p>'.$nieuwsDataAll['datum'].'</a></p>
+                            <p>'.$nieuwsDataAll['datum'].'</p>
                         </td></tr>';
             }
             echo '</table>';
-            echo "<button onclick="."window.location.href='nieuws'>{$lang["NEWS_TERUG"]}</button>";
+            echo "<button onclick=".'"'."window.location.href='nieuws'".'"'.">{$lang["NEWS_TERUG"]}</button>";
         }
         else if(!isset($_POST['allNewsSumbit']) && isset($_GET['id']) && intval($_GET['id'])){ // 1 artikel weergeven volledig scherm
             
@@ -121,7 +121,6 @@
                 titel_{$_COOKIE['lang']} AS titel,
                 afbeelding_{$_COOKIE['lang']} AS afbeelding,
                 bijlage_{$_COOKIE['lang']} AS bijlage,
-
                 nieuws.datum AS datum,
                 docenten.voornaam,
                 docenten.achternaam                    
@@ -137,9 +136,9 @@
                 if($nieuwsViewResult->num_rows == 1){
                 echo "<div class='contentBlock-nohover'>
                 <div class='contentBlock-side'></div>
-                <div id='nieuwsWeergave'class='contentBlock-content'>";
+                <div id='nieuwsWeergave' class='contentBlock-content'>";
                     if(!empty($nieuwsViewData['afbeelding'])){
-                        echo "<img alt='nieuws afbeelding' id='image-Nieuws-View' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsViewData['afbeelding'])."' />
+                        echo "<img alt='nieuws afbeelding' class='image-Nieuws-View' src='data:image/jpg;charset=utf8;base64,".base64_encode($nieuwsViewData['afbeelding'])."' />
                         <div class='contentBlock-title'>{$nieuwsViewData['titel']}</div>
                     <div id='text-view'class='contentBlock-text-normal'>";
                     }
@@ -159,7 +158,6 @@
                     }
                 
                 echo "</div>
-                </div>
             </div>";
             }
             else {
@@ -194,6 +192,5 @@
         }
     }
     ?>
-    
-    </div>
+
 </main>

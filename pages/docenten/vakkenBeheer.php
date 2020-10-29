@@ -1,17 +1,6 @@
-<style>
-    table {
-        width: 100%;
-    }
-    td:nth-child(1){
-        width: 70%;
-    }
-    td:nth-child(2){
-        width: 8%;
-    }
-</style>
 <main class="content">
 
-<div class='contentBlock-nohover'>
+<div class='contentBlock-nohover vakkenbeheer'>
     <div class='contentBlock-side'></div>
     <div class='contentBlock-content'>
 
@@ -147,7 +136,7 @@
             ON docenten_vakken.vak_id = vakken.vak_id 
             ORDER BY vakken.jaarlaag ASC, vakken.periode ASC"); //Haalt alle vakken van de ID docent op.
 
-            echo "<table>";
+            echo "<table class='beheerTabel'>";
             while($vakkenData = $vakkenResult->fetch_assoc()){
                 echo "<tr>";
                     echo "<td>{$vakkenData['vak']}</td>";
@@ -169,17 +158,17 @@
                             
 
                             <label for="vakNaam">'.$lang["VAKKEN_BEHEER_VAKNAAM"].'*</label><br />
-                            <input type="text" name="vakNaam" placeholder="'.$lang["VAKKEN_BEHEER_VAKNAAM"].'" style="width: 65%;" required><br />
+                            <input type="text" id="vakNaam" name="vakNaam" placeholder="'.$lang["VAKKEN_BEHEER_VAKNAAM"].'" style="width: 65%;" required><br />
                             
-                            <label for="vakJaarlaag">'.$lang["VAKKEN_BEHEER_JAARLAAG"].'*</label><br />
-                            <select name="vakJaarlaag" style="width: 65%;">
-
+    
                             <label for="vakTeams">Microsoft Teams</label><br />
-                            <input type="text" name="vakTeams" placeholder="Teamcode" ><br />
+                            <input type="text" id="vakTeams" name="vakTeams" placeholder="Teamcode" ><br />
                             
                             <label for="vakBlackboard">Blackboardcourse</label><br />
-                            <input type="text" name="vakBlackboard" placeholder="Link naar blackboardcourse" ><br />
+                            <input type="text" id="vakBlackboard" name="vakBlackboard" placeholder="Link naar blackboardcourse" ><br />
 
+                            <label for="vakJaarlaag">'.$lang["VAKKEN_BEHEER_JAARLAAG"].'*</label><br />
+                            <select name="vakJaarlaag" id="vakJaarlaag">
                                 <option value="1">Jaar 1</option>
                                 <option value="2">Jaar 2</option>
                                 <option value="3">Jaar 3</option>
@@ -187,7 +176,7 @@
                             </select><br />
 
                             <label for="vakPeriode">'.$lang["VAKKEN_BEHEER_PERIODE"].'*</label><br />
-                            <select name="vakPeriode">
+                            <select name="vakPeriode" id="vakPeriode">
                                 <option value="1">Periode 1</option>
                                 <option value="2">Periode 2</option>
                                 <option value="3">Periode 3</option>
@@ -197,8 +186,8 @@
                     
                     $opleidingResult = $DB->Get("SELECT * FROM opleidingen");
 
-                    echo "<label for='vakPeriode'>Opleidingen*</label><br />
-                            <select class='selectMult' name='vakOpleidingen[]' multiple style='width: 65%;'>";
+                    echo "<label for='vakOpleidingen'>Opleidingen*</label><br />
+                            <select class='selectMult' name='vakOpleidingen[]' id='vakOpleidingen' multiple>";
                     while($opleidingData = $opleidingResult->fetch_assoc()){
                         echo "<option value='{$opleidingData['opleiding_id']}'>{$opleidingData['opleiding_naam']}</option>";
                     }
@@ -209,7 +198,7 @@
                     $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
             
                     echo "<label for='vakDocent'>".$lang['VAKKEN_BEHEER_DOCENTEN']."*</label><br />
-                            <select name='vakDocent'>";
+                            <select id='vakDocent' name='vakDocent'>";
 
                     while($docentData = $docentResult->fetch_assoc()){
                         echo "<option value='{$docentData['docent_id']}'>{$docentData['voornaam']} {$docentData['achternaam']}</option>";
@@ -218,10 +207,10 @@
                     echo "</select><br />        
                     <div class='subTitle'>".$lang['VAKKEN_BEHEER_BESTANDEN']."</div>
                         <label for='vakBoek'>".$lang['VAKKEN_BEHEER_MODULEBOEK']." (.pdf)</label><br />
-                        <input type='file' name='vakBoek' style='width: 65%;'><br />
+                        <input type='file' name='vakBoek' id='vakBoek'><br />
                         <p>{$lang["DOCENTEN_BEHEER_VERPLICHT"]}</p>
                         <button type='submit' name='submitInvoegen'>{$lang["BESCHIKBAARHEID_SAVE"]}</button>
-                        <button type='button' onclick="."window.location.href='vakkenbeheer'".">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
+                        <button type='button' onclick=".'"'."window.location.href='vakkenbeheer'".'"'.">{$lang["DOCENTEN_BEHEER_ANNULEREN"]}</button>
                     </form>";
     }
     //Laat de aanpassen pagina zien
@@ -246,22 +235,22 @@
             <div class="subTitle">'.$lang["VAKKEN_BEHEER_INFORMATIE"].'</div>
             
             <label for="vakNaam">'.$lang["VAKKEN_BEHEER_VAKNAAM"].'*</label><br />
-            <input value="'.$currentData['vak'].'" type="text" name="vakNaam" placeholder="'.$lang["VAKKEN_BEHEER_VAKNAAM"].'" style="width: 65%;" required><br />
+            <input value="'.$currentData['vak'].'" type="text" id="vakNaam" name="vakNaam" placeholder="'.$lang["VAKKEN_BEHEER_VAKNAAM"].'" style="width: 65%;" required><br />
  
             
             <label for="vakTeams">Microsoft Teams</label><br />
-            <input value="'.$currentData['teams'].'" type="text" name="vakTeams" placeholder="Teamcode" ><br />
+            <input value="'.$currentData['teams'].'" type="text" id="vakTeams" name="vakTeams" placeholder="Teamcode" ><br />
             
             <label for="vakBlackboard">Blackboardcourse</label><br />
-            <input value="'.$currentData['blackboard'].'" type="text" name="vakBlackboard" placeholder="Link naar blackboardcourse" ><br />
+            <input value="'.$currentData['blackboard'].'" type="text" id="vakBlackboard" name="vakBlackboard" placeholder="Link naar blackboardcourse" ><br />
 
 
             <label for="vakJaarlaag">'.$lang["VAKKEN_BEHEER_JAARLAAG"].'*</label><br />
-            <select name="vakJaarlaag" style="width: 65%;">';
+            <select name="vakJaarlaag" id="vakJaarlaag">';
 
                 for ($i=1; $i <= 4; $i++) { 
                     if($i == $currentData['jaarlaag']){
-                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>'.$lang["VAKKEN_BEHEER_JAAR"].$currentData['jaarlaag'].' (geselecteerd)</option>';
+                        echo '<option class="optionSelected" value="'.$currentData['jaarlaag'].'" selected>'.$lang["VAKKEN_BEHEER_JAAR"].$currentData['jaarlaag'].$lang["VAKKEN_BEHEER_GESELECTEERD"].'</option>';
                     }
                     else if($i != $currentData['jaarlaag']){
                         echo '<option value="'.$i.'">'.$lang["VAKKEN_BEHEER_JAAR"].$i.'</option>';
@@ -270,11 +259,11 @@
 
             echo '</select><br />
             <label for="vakPeriode">'.$lang["VAKKEN_BEHEER_PERIODE"].'*</label><br />
-            <select name="vakPeriode">';
+            <select name="vakPeriode" id="vakPeriode">';
 
             for ($i=1; $i <= 4; $i++) { 
                 if($i == $currentData['periode']){
-                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>'.$lang["VAKKEN_BEHEER_PERIODE"].$currentData['periode'].' (geselecteerd)</option>';
+                    echo '<option class="optionSelected" value="'.$currentData['periode'].'" selected>'.$lang["VAKKEN_BEHEER_PERIODE"].$currentData['periode'].$lang["VAKKEN_BEHEER_GESELECTEERD"].'</option>';
                 }
                 else if($i != $currentData['periode']){
                     echo '<option value="'.$i.'">'.$lang["VAKKEN_BEHEER_PERIODE"].$i.'</option>';
@@ -292,8 +281,8 @@
             
             $klassenResult = $DB->Get("SELECT * FROM opleidingen");
 
-            echo "<label for='vakPeriode'>Opleiding* (Selecteer meerdere met control.)</label><br />
-                    <select class='selectMult' name='vakKlas[]' multiple>";
+            echo "<label for='vakOpleiding'>Opleiding* (Selecteer meerdere met control.)</label><br />
+                    <select class='selectMult' name='vakKlas[]' id='vakOpleiding' multiple>";
 
 
             $klassenVakData = $klassen_vakkenResult->fetch_assoc();
@@ -315,7 +304,7 @@
             $docentResult = $DB->Get("SELECT docent_id, voornaam, achternaam FROM docenten");
            
             echo "<label for='vakDocent'>".$lang["VAKKEN_BEHEER_DOCENTEN"]."*</label><br />
-                    <select name='vakDocent'>";
+                    <select name='vakDocent' id='vakDocent'>";
             while($docentData = $docentResult->fetch_assoc()){
                 if($docentData['docent_id'] == $currentData['docent_id']){
                     echo "<option class='optionSelected' value='{$currentData['docent_id']}' selected>{$currentData['voornaam']} {$currentData ['achternaam']} {$lang["VAKKEN_BEHEER_GESELECTEERD"]}</option>";
@@ -331,15 +320,15 @@
                 }
                 else {
                     echo "<label for='vakBoek'>".$lang["VAKKEN_BEHEER_MODULEBOEK"]." (.pdf) 
-                <button type='submit' name='boekView'>".$lang["VAKKEN_BEHEER_WEERGEVEN"]."</button></label><br />";
+                <button type='submit' name='boekView' id='vakBoek'>".$lang["VAKKEN_BEHEER_WEERGEVEN"]."</button></label><br />";
                 }
 
                 echo "
-                <input type='file' name='vakBoek' style='width: 65%;'><br />
+                <input type='file' name='vakBoek' id='vakBoek'><br />
                 <p>".$lang["VAKKEN_BEHEER_VERPLICHT"]."</p>
                 <input type='hidden' name='boekVakID' value='{$currentData['vak_id']}'>
                 <button type='submit' name='aanpassenSubmit'>{$lang["VAKKEN_BEHEER_OPSLAAN"]}</button>
-                <button type='button' onclick="."window.location.href='vakkenbeheer'".">{$lang["VAKKEN_BEHEER_ANNULEREN"]}</button>
+                <button type='button' onclick=".'"'."window.location.href='vakkenbeheer'".'"'.">{$lang["VAKKEN_BEHEER_ANNULEREN"]}</button>
             </form>
         <br />";
 
@@ -354,9 +343,7 @@
         header('location: vakkenbeheer');
     }
     ?>
-    </div>
-             
-			</div>
-		</div>
+            </div>
+        </div>
     </div>
 </main> 

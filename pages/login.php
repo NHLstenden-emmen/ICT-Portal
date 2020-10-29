@@ -19,11 +19,6 @@
 				//Add cookies to header()
 				date_default_timezone_set('Europe/Amsterdam');
 
-				setcookie("user", $usernameForm, time()+3600);
-				setcookie("userID", $row['docent_id'], time()+3600);
-				setcookie("auth", $Core->AuthKey(128), time()+3600);
-				setcookie("fullUser", $row['voornaam']. " ".$row['achternaam'], time()+3600);
-
 				setcookie("user", $usernameForm, time()+ (3600 * 24 * 30));
 				setcookie("userID", $row['docent_id'], time()+ (3600 * 24 * 30));
 				setcookie("auth", $Core->AuthKey(128), time()+ (3600 * 24 * 30));
@@ -36,7 +31,7 @@
 	}
 ?>
 
-<main class="content">
+<main class="content" onclick="">
 	<div class='contentBlock-nohover' style="width: 100%;">
 		<div class='contentBlock-side' style="width: 100%;"></div>
 		<div class='contentBlock-content' style="width: 100%;">
@@ -44,15 +39,16 @@
 			<?php echo $lang['GEEN_INLOGGEN']; ?>
 			</div>
 			<div class='contentBlock-text-normal'>
-				<form method="POST"> 
+			<form method="POST"> 
 					<label for="gebruikersnaam"><?php echo $lang['GEEN_GEBRUIKERSNAAM']; ?></label><br>
-					<input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required> <br>
+					<input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="<?php echo $lang['GEEN_GEBRUIKERSNAAM']; ?>" required> <br>
 					<br>
 					<label for="wachtwoord"><?php echo $lang['GEEN_WACHTWOORD']; ?></label><br>
-					<input type="password" name="wachtwoord" placeholder="*********" required><br><br>
+					<input type="password" id="wachtwoord" name="wachtwoord" placeholder="*********" required><br><br>
 
 					<button type="submit" name="submitButton"><?php echo $lang['GEEN_INLOGGEN']; ?></button>
 				</form>
 			</div>
 		</div>
+	</div>
 </main>

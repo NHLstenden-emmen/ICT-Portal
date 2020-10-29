@@ -13,6 +13,7 @@ Maak een database aan genaamd 'ictportal' en upload de sql die in de root folder
 Inloggen:
 
 Voorbeeld account:
+
 Gebruikersnaam: gerjanvoenen
 Wachtwoord: test
 

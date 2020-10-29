@@ -37,7 +37,7 @@ $lang['NAV_LOGIN'] = 'Sign in';
 
 // aanwezigen / teacher
 $lang['PRESENT_TITLE'] = 'Availability';//Availability
-$lang['PRESENT_BESCHIKBAARHEID'] = 'Availability';//waar wordt this gebruikt
+$lang['PRESENT_BESCHIKBAARHEID'] = 'Availability';
 $lang['PRESENT_Teachers_Name'] = 'Teachers Name';
 $lang['PRESENT_Monday'] = 'Monday';
 $lang['PRESENT_Tuesday'] = 'Tuesday';

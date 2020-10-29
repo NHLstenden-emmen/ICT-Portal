@@ -170,3 +170,7 @@
 		width: 95vw;
 	}
 }
+
+body:hover .dropdown-mobile-content {
+	max-height: 0;
+}

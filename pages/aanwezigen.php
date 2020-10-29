@@ -1,29 +1,4 @@
-<style>
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-body.darkmode tr:nth-child(even){
-	background-color: #444343;
-}
-
-tr:nth-child(even){
-	background-color: #f2f2f2;
-}
-
-th {
-  background-color: var(--lightPrimaryColor);
-  color: white;
-  width: 10%;
-}
-</style>
-<main class="content" onclick=""> 
+<main class="content"> 
 	<div class='contentBlock-nohover'>
 		<div class='contentBlock-side'></div>
 		<div class='contentBlock-content'>

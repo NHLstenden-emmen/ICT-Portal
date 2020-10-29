@@ -11,7 +11,7 @@
 			<?php if($Core->AuthCheck()) { 
 				
 				echo "<div class='navDropdown'>
-				<li class='dropbtn' style='text-transform: none;' onclick=".'"'."window.location.href='docent?docent={$_COOKIE["userID"]}'".'"'.">
+				<li class='dropbtn' onclick=".'"'."window.location.href='docent?docent={$_COOKIE["userID"]}'".'"'.">
 					<i class='fa fa-user fa-lg fa-fw' aria-hidden='true' ></i><strong>{$_COOKIE['fullUser']}</strong>
 				</li>
 				<div class='dropdown-content'>
@@ -37,7 +37,7 @@
 			<li class="divider"></li>
 			<li class="darkmodeSwitch"><i class="fa fa-adjust fa-lg fa-fw" aria-hidden="true"></i></li>
 			<!-- END DARKMODESWITCH -->
-			<li style='padding: 0'>
+			<li class="listPadding">
 			<?php
 			// check if there is a cookie for lang set
 			if(!isset($_COOKIE['lang'])){
@@ -78,6 +78,7 @@
 		</div>
 	
 		<div onclick="window.location.href='https://www.buienradar.nl/weer/Emmen/NL/2756136'" class="Populair zoom colorBlock weatherWidget">
+				<?php if(isset($Core->weatherData()->weather[0]->id)){ ?> <!-- Start Check weather API -->
 				<div class="weahterIcon"><i class='wi wi-owm-<?= $Core->weatherData()->weather[0]->id ?>'></i></div>
 					<?php 
 						//tempratuur in 2 getallen
@@ -98,6 +99,11 @@
 				<div class="weatherTempIcon">°C</div>
 				<div class="weatherCity"><?= $Core->weatherData()->name ?></div>
 				<div class="weatherDesc"><?= $Core->weatherData()->weather[0]->description ?></div>
+
+				<?php } else{
+					echo "<div class=\"weatherCity\"><p>API Error.</p></div>"; //API ERROR
+				}				
+				?> <!-- Einde Check weather API -->
 		</div>
 
 		<div class="Mededelingen zoom colorBlock jaarBlock" onclick="window.location.href='nieuws?all=true'">

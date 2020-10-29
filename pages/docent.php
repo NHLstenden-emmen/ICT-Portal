@@ -1,4 +1,4 @@
-<main class="content" onclick="">
+<main class="content">
 <?php
 
 	$docentID = intval($_GET['docent']);

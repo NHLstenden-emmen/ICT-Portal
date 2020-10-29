@@ -131,10 +131,6 @@ main.content {
 	min-height: calc(100vh - 600px);
 }
 
-main.content:hover .dropdown-mobile-content {
-	max-height: 0;
-}
-
 .subTitle {
 	font-size: 30px;
 	font-weight: 700;
@@ -308,4 +304,29 @@ td:nth-child(4) {
 	height: 15vw; 
 	width: 15vw; 
 	max-width: 65%;
+}
+
+/* Tabellen */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+  
+th, td {
+	text-align: left;
+	padding: 8px;
+}
+  
+body.darkmode tr:nth-child(even){
+	background-color: #444343;
+}
+  
+tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+  
+th {
+	background-color: var(--lightPrimaryColor);
+	color: white;
+	width: 10%;
 }

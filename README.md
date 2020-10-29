@@ -17,6 +17,8 @@ Voorbeeld account:
 Gebruikersnaam: gerjanvoenen
 Wachtwoord: test
 
+(wachtwoorden kunnen in de database worden gewijzigd door naar de tabel 'docenten' te gaan en in een rij van de gebruiker te wijzigen. Het wachtwoord kan worden ingevuld en als functie moet MD5 worden geselecteerd.
+
 
 Live demo:
 

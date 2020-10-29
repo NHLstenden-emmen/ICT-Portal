@@ -1,10 +1,33 @@
 <?php
 	if(isset($_POST['submitButton'])){
-		$name = $_POST["contactVoornaam"]." ".$_POST["contactAchternaam"];
-		$email = $_POST["contactEmail"];
-		//wordwrap so it wont be one long string.
-		$message = wordwrap($_POST["contactMessage"],70,"<br>\n");
-		$Core->Mail($name,$email,$message);
+
+		if(isset($_POST['g-recaptcha-response'])){
+			$captcha=$_POST['g-recaptcha-response'];
+		  }
+		  if(!$captcha){
+			echo '<h2>Please check the the captcha form.</h2>';
+			exit;
+		  }
+		  
+
+		  $secretKey = "6LfruNwZAAAAAF13B3lY3NV6hOa6W4WeuisoSaKP";
+		  $ip = $_SERVER['REMOTE_ADDR'];
+		  // post request to server
+		  $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+		  $response = file_get_contents($url);
+		  $responseKeys = json_decode($response,true);
+		  // should return JSON with success as true
+		  if($responseKeys["success"]) {
+					$name = $_POST["contactVoornaam"]." ".$_POST["contactAchternaam"];
+					$email = $_POST["contactEmail"];
+					//wordwrap so it wont be one long string.
+					$message = wordwrap($_POST["contactMessage"],70,"<br>\n");
+					$Core->Mail($name,$email,$message);
+		  } else {
+
+		}
+
+		
 	}
 
 	//TODO: PHP Validatie van velden
@@ -30,6 +53,8 @@
 							<label for="contactMessage"><?php echo $lang['CONTACT_BERICHT']; ?></label><br>
 							<textarea name="contactMessage" id="contactMessage" placeholder="<?php echo $lang['CONTACT_BERICHT']; ?>" rows="4" cols="50" required></textarea><br>
 							
+							<div class="g-recaptcha" data-sitekey="6LfruNwZAAAAAGPuxmtdnbfflT8CPGIdL5tWEngW"></div>
+
 							<button type="submit" id="submit" name="submitButton"><?php echo $lang['CONTACT_BERICHT']; ?></button>
 						</form>
 					</div>

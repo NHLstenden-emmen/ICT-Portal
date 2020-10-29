@@ -20,6 +20,7 @@ tr:nth-child(even){
 th {
   background-color: var(--lightPrimaryColor);
   color: white;
+  width: 10%;
 }
 </style>
 <main class="content" onclick=""> 

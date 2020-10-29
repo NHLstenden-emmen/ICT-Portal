@@ -104,7 +104,7 @@ $lang["DOCENTEN_BEHEER_SOCIAL_INSTA"] = 'instagram';
 $lang["DOCENTEN_BEHEER_BEVEILIGING"] = 'Security';
 $lang["DOCENTEN_BEHEER_WACHTWOORD"] = 'Password';
 $lang["DOCENTEN_BEHEER_WACHTWOORD_HERHALEN"] = 'Repeat password';
-$lang["DOCENTEN_BEHEER_VERPLICHT"] = 'The boxes with a * are required';
+$lang["DOCENTEN_BEHEER_VERPLICHT"] = 'The fields with a * are required';
 $lang["DOCENTEN_BEHEER_ANNULEREN"] = 'Cancel';
  
 //nieuws  management
@@ -156,7 +156,7 @@ $lang["VAKKEN_BEHEER_JAAR"] = "Year";
 $lang["VAKKEN_BEHEER_MEERDERE"] = "Select multiple with CTRL";
 $lang["VAKKEN_BEHEER_GESELECTEERD"] = "Selected";
 $lang["VAKKEN_BEHEER_WEERGEVEN"] = "View";
-$lang["VAKKEN_BEHEER_VERPLICHT"] = "The boxes with a * are required";
+$lang["VAKKEN_BEHEER_VERPLICHT"] = "The fields with a * are required";
 $lang["VAKKEN_BEHEER_OPSLAAN"] = "Save";
 $lang["VAKKEN_BEHEER_ANNULEREN"] = "Cancel";
 //extra

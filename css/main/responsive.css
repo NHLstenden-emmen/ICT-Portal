@@ -1,7 +1,7 @@
 @media (max-width: 950px) {
 	/* REPSONSIVE NAVBAR */
 	.navbar {
-		align-items: normal !;
+		align-items: normal;
 		height: auto;
 		flex-direction: column;
 		position: relative;
@@ -51,6 +51,7 @@
 	}
 	main.content {
 		margin-bottom: 30vw;
+		width: 100%;
 	}
 	.contentBlock-grid {
 		grid-template-columns: none;
@@ -75,7 +76,7 @@
 	.contactsidebar {
 		float: left;
 		width: 100%;
-		padding: none;
+		padding-bottom: 10vh !important;
 	}
 	.bewerkenFoto {
 		float: right;
